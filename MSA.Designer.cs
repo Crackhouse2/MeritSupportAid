@@ -90,6 +90,13 @@
             this.clientRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createAmendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.createAmendToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cancelPermDiscountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportPlacementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.futureIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -406,6 +413,14 @@
             // 
             // placementsToolStripMenuItem
             // 
+            this.placementsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createAmendToolStripMenuItem1,
+            this.searchToolStripMenuItem2,
+            this.toolStripSeparator2,
+            this.cancelPermDiscountToolStripMenuItem,
+            this.exportPlacementsToolStripMenuItem,
+            this.futureIncomeReportToolStripMenuItem,
+            this.generateTimesheetsToolStripMenuItem});
             this.placementsToolStripMenuItem.Name = "placementsToolStripMenuItem";
             this.placementsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.placementsToolStripMenuItem.Text = "Placements";
@@ -551,6 +566,47 @@
             this.searchToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem1.Text = "Search";
             // 
+            // createAmendToolStripMenuItem1
+            // 
+            this.createAmendToolStripMenuItem1.Name = "createAmendToolStripMenuItem1";
+            this.createAmendToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.createAmendToolStripMenuItem1.Text = "Create/Amend";
+            // 
+            // searchToolStripMenuItem2
+            // 
+            this.searchToolStripMenuItem2.Name = "searchToolStripMenuItem2";
+            this.searchToolStripMenuItem2.Size = new System.Drawing.Size(191, 22);
+            this.searchToolStripMenuItem2.Text = "Search";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
+            // 
+            // cancelPermDiscountToolStripMenuItem
+            // 
+            this.cancelPermDiscountToolStripMenuItem.Name = "cancelPermDiscountToolStripMenuItem";
+            this.cancelPermDiscountToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cancelPermDiscountToolStripMenuItem.Text = "Cancel Perm Discount";
+            // 
+            // exportPlacementsToolStripMenuItem
+            // 
+            this.exportPlacementsToolStripMenuItem.Name = "exportPlacementsToolStripMenuItem";
+            this.exportPlacementsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.exportPlacementsToolStripMenuItem.Text = "Export Placements";
+            // 
+            // futureIncomeReportToolStripMenuItem
+            // 
+            this.futureIncomeReportToolStripMenuItem.Name = "futureIncomeReportToolStripMenuItem";
+            this.futureIncomeReportToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.futureIncomeReportToolStripMenuItem.Text = "Future Income Report";
+            // 
+            // generateTimesheetsToolStripMenuItem
+            // 
+            this.generateTimesheetsToolStripMenuItem.Name = "generateTimesheetsToolStripMenuItem";
+            this.generateTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.generateTimesheetsToolStripMenuItem.Text = "Generate Timesheets";
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,6 +697,13 @@
         private System.Windows.Forms.ToolStripMenuItem clientRatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createAmendToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem createAmendToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem cancelPermDiscountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportPlacementsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem futureIncomeReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateTimesheetsToolStripMenuItem;
     }
 }
 
