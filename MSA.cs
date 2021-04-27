@@ -43,6 +43,12 @@ namespace MeritSupportAid
             textBox1.Text.Replace(mnu.Text, "");
         }
 
+        private void CSMPreString(object sender, EventArgs e)
+        {
+            //This will create prefix string
+            string CSMPrefix = "Control -> System Menu";
+        }
+
         private void ResetTextBox(object sender, EventArgs e)
         {
             //Clear Textbox
