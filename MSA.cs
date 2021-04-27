@@ -64,15 +64,20 @@ namespace MeritSupportAid
 
         }
         /*
-        private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+        
+private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
+{
 
-        private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+}
 
-        }
-       */
+private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
+{
+
+}
+*/
     }
 }
