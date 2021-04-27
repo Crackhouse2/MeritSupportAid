@@ -47,6 +47,7 @@ namespace MeritSupportAid
         {
             //This will create prefix string
             string CSMPrefix = "Control -> System Menu";
+            textBox1.Text = CSMPrefix;
         }
 
         private void ResetTextBox(object sender, EventArgs e)
