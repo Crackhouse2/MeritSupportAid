@@ -37,7 +37,10 @@ namespace MeritSupportAid
 
         private void MenuClear(object sender, EventArgs e)
         {
-           //Clear Textbox
+            //Clear Textbox
+            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
+            StringBuilder sb = new StringBuilder();
+            textBox1.Text.Replace(mnu.Text, "");
         }
 
         private void ResetTextBox(object sender, EventArgs e)
@@ -60,5 +63,16 @@ namespace MeritSupportAid
         {
 
         }
+        /*
+        private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+       */
     }
 }
