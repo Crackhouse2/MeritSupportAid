@@ -97,6 +97,7 @@
             this.exportPlacementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.futureIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createAmendToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -427,6 +428,8 @@
             // 
             // timesheetsToolStripMenuItem
             // 
+            this.timesheetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createAmendToolStripMenuItem2});
             this.timesheetsToolStripMenuItem.Name = "timesheetsToolStripMenuItem";
             this.timesheetsToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.timesheetsToolStripMenuItem.Text = "Timesheets";
@@ -607,6 +610,12 @@
             this.generateTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.generateTimesheetsToolStripMenuItem.Text = "Generate Timesheets";
             // 
+            // createAmendToolStripMenuItem2
+            // 
+            this.createAmendToolStripMenuItem2.Name = "createAmendToolStripMenuItem2";
+            this.createAmendToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.createAmendToolStripMenuItem2.Text = "Create/Amend";
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,6 +713,7 @@
         private System.Windows.Forms.ToolStripMenuItem exportPlacementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem futureIncomeReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateTimesheetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createAmendToolStripMenuItem2;
     }
 }
 
