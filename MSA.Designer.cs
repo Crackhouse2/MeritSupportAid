@@ -225,6 +225,10 @@
             this.exportEmployeesContractorsXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportPaymentsXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.licensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.knowledgebaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remoteAssistanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -685,6 +689,9 @@
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.onlineHelpToolStripMenuItem,
+            this.licensesToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -1641,6 +1648,33 @@
             this.exportPaymentsXMLToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.exportPaymentsXMLToolStripMenuItem.Text = "Export Payments XML";
             // 
+            // onlineHelpToolStripMenuItem
+            // 
+            this.onlineHelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.knowledgebaseToolStripMenuItem,
+            this.remoteAssistanceToolStripMenuItem});
+            this.onlineHelpToolStripMenuItem.Name = "onlineHelpToolStripMenuItem";
+            this.onlineHelpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onlineHelpToolStripMenuItem.Text = "Online Help";
+            // 
+            // licensesToolStripMenuItem
+            // 
+            this.licensesToolStripMenuItem.Name = "licensesToolStripMenuItem";
+            this.licensesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.licensesToolStripMenuItem.Text = "Licenses";
+            // 
+            // knowledgebaseToolStripMenuItem
+            // 
+            this.knowledgebaseToolStripMenuItem.Name = "knowledgebaseToolStripMenuItem";
+            this.knowledgebaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.knowledgebaseToolStripMenuItem.Text = "Knowledgebase";
+            // 
+            // remoteAssistanceToolStripMenuItem
+            // 
+            this.remoteAssistanceToolStripMenuItem.Name = "remoteAssistanceToolStripMenuItem";
+            this.remoteAssistanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.remoteAssistanceToolStripMenuItem.Text = "Remote Assistance";
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1866,6 +1900,10 @@
         private System.Windows.Forms.ToolStripMenuItem exportPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportPaymentsXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppliersOutputToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onlineHelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem knowledgebaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem remoteAssistanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem licensesToolStripMenuItem;
     }
 }
 
