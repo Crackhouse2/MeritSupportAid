@@ -38,6 +38,7 @@ namespace MeritSupportAid
         private void MenuClear(object sender, EventArgs e)
         {
             //Clear Textbox
+            //This needs to be dynamically used in instances of opening and closing a submenu to strip out the erroneously opened menu item.
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
             textBox1.Text.Replace(mnu.Text, "");
@@ -45,7 +46,7 @@ namespace MeritSupportAid
 
         private void CSMPreString(object sender, EventArgs e)
         {
-            //This will create prefix string
+            //This will create prefix string for the CSM menuStrip
             string CSMPrefix = "Control -> System Menu";
             textBox1.Text = CSMPrefix;
         }
