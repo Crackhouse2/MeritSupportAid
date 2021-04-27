@@ -98,6 +98,35 @@
             this.futureIncomeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createAmendToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prelistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deductionPrelistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateHolidayTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loanPaymentTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractorsInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lTDCISCoPrelistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importTimesheetsFromCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pensionOptOutsAndRefundsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.furloughedPaymentModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sMSEmailToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetsEnteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.timesheetPOUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineTimesheetVerificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePurchaseOrderNumbersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.timesheetsWithImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetsWithoutImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.expressTimesheetImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.expensesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.holidayRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -429,7 +458,23 @@
             // timesheetsToolStripMenuItem
             // 
             this.timesheetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createAmendToolStripMenuItem2});
+            this.createAmendToolStripMenuItem2,
+            this.searchToolStripMenuItem3,
+            this.prelistToolStripMenuItem,
+            this.deductionPrelistToolStripMenuItem,
+            this.generateHolidayTimesheetsToolStripMenuItem,
+            this.loanPaymentTimesheetsToolStripMenuItem,
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem,
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem,
+            this.contractorsInvoicesToolStripMenuItem,
+            this.lTDCISCoPrelistToolStripMenuItem,
+            this.importTimesheetsFromCSVToolStripMenuItem,
+            this.pensionOptOutsAndRefundsToolStripMenuItem,
+            this.furloughedPaymentModuleToolStripMenuItem,
+            this.sMSEmailToolStripMenuItem1,
+            this.onlineToolStripMenuItem1,
+            this.toolStripSeparator3,
+            this.timesheetPOUpdateToolStripMenuItem});
             this.timesheetsToolStripMenuItem.Name = "timesheetsToolStripMenuItem";
             this.timesheetsToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.timesheetsToolStripMenuItem.Text = "Timesheets";
@@ -613,8 +658,192 @@
             // createAmendToolStripMenuItem2
             // 
             this.createAmendToolStripMenuItem2.Name = "createAmendToolStripMenuItem2";
-            this.createAmendToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.createAmendToolStripMenuItem2.Size = new System.Drawing.Size(266, 22);
             this.createAmendToolStripMenuItem2.Text = "Create/Amend";
+            // 
+            // searchToolStripMenuItem3
+            // 
+            this.searchToolStripMenuItem3.Name = "searchToolStripMenuItem3";
+            this.searchToolStripMenuItem3.Size = new System.Drawing.Size(266, 22);
+            this.searchToolStripMenuItem3.Text = "Search";
+            // 
+            // prelistToolStripMenuItem
+            // 
+            this.prelistToolStripMenuItem.Name = "prelistToolStripMenuItem";
+            this.prelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.prelistToolStripMenuItem.Text = "Prelist";
+            // 
+            // deductionPrelistToolStripMenuItem
+            // 
+            this.deductionPrelistToolStripMenuItem.Name = "deductionPrelistToolStripMenuItem";
+            this.deductionPrelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.deductionPrelistToolStripMenuItem.Text = "Deduction Prelist";
+            // 
+            // generateHolidayTimesheetsToolStripMenuItem
+            // 
+            this.generateHolidayTimesheetsToolStripMenuItem.Name = "generateHolidayTimesheetsToolStripMenuItem";
+            this.generateHolidayTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.generateHolidayTimesheetsToolStripMenuItem.Text = "Generate Holiday Timesheets";
+            // 
+            // loanPaymentTimesheetsToolStripMenuItem
+            // 
+            this.loanPaymentTimesheetsToolStripMenuItem.Name = "loanPaymentTimesheetsToolStripMenuItem";
+            this.loanPaymentTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.loanPaymentTimesheetsToolStripMenuItem.Text = "Loan Payment Timesheets";
+            // 
+            // releaseHoldTimesheetsPayrollToolStripMenuItem
+            // 
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem.Name = "releaseHoldTimesheetsPayrollToolStripMenuItem";
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem.Text = "Release/Hold Timesheets (Payroll)";
+            // 
+            // releaseHoldTimesheetsInvoicingToolStripMenuItem
+            // 
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Name = "releaseHoldTimesheetsInvoicingToolStripMenuItem";
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Text = "Release/Hold Timesheets (Invoicing)";
+            // 
+            // contractorsInvoicesToolStripMenuItem
+            // 
+            this.contractorsInvoicesToolStripMenuItem.Name = "contractorsInvoicesToolStripMenuItem";
+            this.contractorsInvoicesToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.contractorsInvoicesToolStripMenuItem.Text = "Contractors Invoices";
+            // 
+            // lTDCISCoPrelistToolStripMenuItem
+            // 
+            this.lTDCISCoPrelistToolStripMenuItem.Name = "lTDCISCoPrelistToolStripMenuItem";
+            this.lTDCISCoPrelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.lTDCISCoPrelistToolStripMenuItem.Text = "LTD/CIS Co Prelist";
+            // 
+            // importTimesheetsFromCSVToolStripMenuItem
+            // 
+            this.importTimesheetsFromCSVToolStripMenuItem.Name = "importTimesheetsFromCSVToolStripMenuItem";
+            this.importTimesheetsFromCSVToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.importTimesheetsFromCSVToolStripMenuItem.Text = "Import Timesheets from CSV";
+            // 
+            // pensionOptOutsAndRefundsToolStripMenuItem
+            // 
+            this.pensionOptOutsAndRefundsToolStripMenuItem.Name = "pensionOptOutsAndRefundsToolStripMenuItem";
+            this.pensionOptOutsAndRefundsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.pensionOptOutsAndRefundsToolStripMenuItem.Text = "Pension Opt Outs and Refunds";
+            // 
+            // furloughedPaymentModuleToolStripMenuItem
+            // 
+            this.furloughedPaymentModuleToolStripMenuItem.Name = "furloughedPaymentModuleToolStripMenuItem";
+            this.furloughedPaymentModuleToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.furloughedPaymentModuleToolStripMenuItem.Text = "Furloughed Payment Module";
+            // 
+            // sMSEmailToolStripMenuItem1
+            // 
+            this.sMSEmailToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timesheetsEnteredToolStripMenuItem});
+            this.sMSEmailToolStripMenuItem1.Name = "sMSEmailToolStripMenuItem1";
+            this.sMSEmailToolStripMenuItem1.Size = new System.Drawing.Size(266, 22);
+            this.sMSEmailToolStripMenuItem1.Text = "SMS/Email";
+            // 
+            // timesheetsEnteredToolStripMenuItem
+            // 
+            this.timesheetsEnteredToolStripMenuItem.Name = "timesheetsEnteredToolStripMenuItem";
+            this.timesheetsEnteredToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timesheetsEnteredToolStripMenuItem.Text = "Timesheets Entered";
+            // 
+            // onlineToolStripMenuItem1
+            // 
+            this.onlineToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.onlineTimesheetVerificationToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.updatePurchaseOrderNumbersToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.timesheetsWithImagesToolStripMenuItem,
+            this.timesheetsWithoutImagesToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.expressTimesheetImportToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.expensesToolStripMenuItem1,
+            this.toolStripSeparator7,
+            this.holidayRequestsToolStripMenuItem});
+            this.onlineToolStripMenuItem1.Name = "onlineToolStripMenuItem1";
+            this.onlineToolStripMenuItem1.Size = new System.Drawing.Size(266, 22);
+            this.onlineToolStripMenuItem1.Text = "Online";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(263, 6);
+            // 
+            // timesheetPOUpdateToolStripMenuItem
+            // 
+            this.timesheetPOUpdateToolStripMenuItem.Name = "timesheetPOUpdateToolStripMenuItem";
+            this.timesheetPOUpdateToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.timesheetPOUpdateToolStripMenuItem.Text = "Timesheet PO Update";
+            // 
+            // onlineTimesheetVerificationToolStripMenuItem
+            // 
+            this.onlineTimesheetVerificationToolStripMenuItem.Name = "onlineTimesheetVerificationToolStripMenuItem";
+            this.onlineTimesheetVerificationToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.onlineTimesheetVerificationToolStripMenuItem.Text = "Online Timesheet Verification";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(248, 22);
+            this.toolStripMenuItem2.Text = "Online Timesheets Import";
+            // 
+            // updatePurchaseOrderNumbersToolStripMenuItem
+            // 
+            this.updatePurchaseOrderNumbersToolStripMenuItem.Name = "updatePurchaseOrderNumbersToolStripMenuItem";
+            this.updatePurchaseOrderNumbersToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.updatePurchaseOrderNumbersToolStripMenuItem.Text = "Update Purchase Order Numbers";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(245, 6);
+            // 
+            // timesheetsWithImagesToolStripMenuItem
+            // 
+            this.timesheetsWithImagesToolStripMenuItem.Name = "timesheetsWithImagesToolStripMenuItem";
+            this.timesheetsWithImagesToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.timesheetsWithImagesToolStripMenuItem.Text = "Timesheets with Images";
+            // 
+            // timesheetsWithoutImagesToolStripMenuItem
+            // 
+            this.timesheetsWithoutImagesToolStripMenuItem.Name = "timesheetsWithoutImagesToolStripMenuItem";
+            this.timesheetsWithoutImagesToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.timesheetsWithoutImagesToolStripMenuItem.Text = "Timesheets without Images";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(245, 6);
+            // 
+            // expressTimesheetImportToolStripMenuItem
+            // 
+            this.expressTimesheetImportToolStripMenuItem.Name = "expressTimesheetImportToolStripMenuItem";
+            this.expressTimesheetImportToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.expressTimesheetImportToolStripMenuItem.Text = "Express Timesheet Import";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(245, 6);
+            // 
+            // expensesToolStripMenuItem1
+            // 
+            this.expensesToolStripMenuItem1.Name = "expensesToolStripMenuItem1";
+            this.expensesToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
+            this.expensesToolStripMenuItem1.Text = "Expenses";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(245, 6);
+            // 
+            // holidayRequestsToolStripMenuItem
+            // 
+            this.holidayRequestsToolStripMenuItem.Name = "holidayRequestsToolStripMenuItem";
+            this.holidayRequestsToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.holidayRequestsToolStripMenuItem.Text = "Holiday Requests";
             // 
             // MSA
             // 
@@ -714,6 +943,35 @@
         private System.Windows.Forms.ToolStripMenuItem futureIncomeReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateTimesheetsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createAmendToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem prelistToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deductionPrelistToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateHolidayTimesheetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loanPaymentTimesheetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem releaseHoldTimesheetsPayrollToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem releaseHoldTimesheetsInvoicingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contractorsInvoicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lTDCISCoPrelistToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importTimesheetsFromCSVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pensionOptOutsAndRefundsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem furloughedPaymentModuleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sMSEmailToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem timesheetsEnteredToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onlineToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem onlineTimesheetVerificationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem updatePurchaseOrderNumbersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem timesheetsWithImagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timesheetsWithoutImagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem expressTimesheetImportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem expensesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem holidayRequestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem timesheetPOUpdateToolStripMenuItem;
     }
 }
 
