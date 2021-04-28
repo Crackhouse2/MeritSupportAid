@@ -619,12 +619,14 @@
             this.outstandingToolStripMenuItem.Name = "outstandingToolStripMenuItem";
             this.outstandingToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingToolStripMenuItem.Text = "Outstanding";
+            this.outstandingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // outstandingAllToolStripMenuItem
             // 
             this.outstandingAllToolStripMenuItem.Name = "outstandingAllToolStripMenuItem";
             this.outstandingAllToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingAllToolStripMenuItem.Text = "Outstanding (All)";
+            this.outstandingAllToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // swapDatabaseToolStripMenuItem
             // 
@@ -638,13 +640,13 @@
             this.printerSelectionToolStripMenuItem.Name = "printerSelectionToolStripMenuItem";
             this.printerSelectionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.printerSelectionToolStripMenuItem.Text = "Printer Selection";
+            this.printerSelectionToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // usersLoggedOnToolStripMenuItem
             // 
             this.usersLoggedOnToolStripMenuItem.Name = "usersLoggedOnToolStripMenuItem";
             this.usersLoggedOnToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.usersLoggedOnToolStripMenuItem.Text = "Users Logged On";
-            this.usersLoggedOnToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.usersLoggedOnToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator1
@@ -657,8 +659,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.MenuDrop);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // employeesToolStripMenuItem
             // 
