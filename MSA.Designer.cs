@@ -810,30 +810,37 @@
             this.prospectsToolStripMenuItem.Name = "prospectsToolStripMenuItem";
             this.prospectsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.prospectsToolStripMenuItem.Text = "Prospects";
+            this.prospectsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
+            this.prospectsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
+            this.prospectsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // createBatchToolStripMenuItem
             // 
             this.createBatchToolStripMenuItem.Name = "createBatchToolStripMenuItem";
             this.createBatchToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.createBatchToolStripMenuItem.Text = "Create Batch";
+            this.createBatchToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // dailyEmailReportToolStripMenuItem
             // 
             this.dailyEmailReportToolStripMenuItem.Name = "dailyEmailReportToolStripMenuItem";
             this.dailyEmailReportToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.dailyEmailReportToolStripMenuItem.Text = "Daily Email Report";
+            this.dailyEmailReportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // dailyEmailUpdatesToolStripMenuItem
             // 
             this.dailyEmailUpdatesToolStripMenuItem.Name = "dailyEmailUpdatesToolStripMenuItem";
             this.dailyEmailUpdatesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.dailyEmailUpdatesToolStripMenuItem.Text = "Daily Email Updates";
+            this.dailyEmailUpdatesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // workListToolStripMenuItem
             // 
             this.workListToolStripMenuItem.Name = "workListToolStripMenuItem";
             this.workListToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.workListToolStripMenuItem.Text = "Work List";
+            this.workListToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // expensesToolStripMenuItem
             // 
@@ -850,18 +857,23 @@
             this.importExportToolStripMenuItem.Name = "importExportToolStripMenuItem";
             this.importExportToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.importExportToolStripMenuItem.Text = "Import/Export";
+            this.importExportToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
+            this.importExportToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
+            this.importExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // importEmployeesToolStripMenuItem
             // 
             this.importEmployeesToolStripMenuItem.Name = "importEmployeesToolStripMenuItem";
             this.importEmployeesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.importEmployeesToolStripMenuItem.Text = "Import Employees";
+            this.importEmployeesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportEmployeesToolStripMenuItem
             // 
             this.exportEmployeesToolStripMenuItem.Name = "exportEmployeesToolStripMenuItem";
             this.exportEmployeesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.exportEmployeesToolStripMenuItem.Text = "Export Employees";
+            this.exportEmployeesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // onlineToolStripMenuItem
             // 
@@ -870,12 +882,16 @@
             this.onlineToolStripMenuItem.Name = "onlineToolStripMenuItem";
             this.onlineToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.onlineToolStripMenuItem.Text = "Online";
+            this.onlineToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
+            this.onlineToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
+            this.onlineToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // importDocumentsToolStripMenuItem
             // 
             this.importDocumentsToolStripMenuItem.Name = "importDocumentsToolStripMenuItem";
             this.importDocumentsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.importDocumentsToolStripMenuItem.Text = "Import Documents";
+            this.importDocumentsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // clientsToolStripMenuItem
             // 
