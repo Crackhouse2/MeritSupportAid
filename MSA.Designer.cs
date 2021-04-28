@@ -550,8 +550,6 @@
             this.weedPlacementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.releasePayrollLockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.invisDDTextBox = new System.Windows.Forms.TextBox();
-            this.invisDropDownLastParent = new System.Windows.Forms.TextBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -592,7 +590,6 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            //this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuDropDownClose);
             this.fileToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
             // 
             // callsContactsToolStripMenuItem
@@ -614,8 +611,6 @@
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.contactsToolStripMenuItem.Text = "Contacts";
             this.contactsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
-            this.contactsToolStripMenuItem.MouseEnter += new System.EventHandler(this.MouseOverPopulate);
-            //this.contactsToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // outstandingToolStripMenuItem
             // 
@@ -623,8 +618,6 @@
             this.outstandingToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingToolStripMenuItem.Text = "Outstanding";
             this.outstandingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
-            //this.outstandingToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
-            //this.outstandingToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // outstandingAllToolStripMenuItem
             // 
@@ -632,8 +625,6 @@
             this.outstandingAllToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingAllToolStripMenuItem.Text = "Outstanding (All)";
             this.outstandingAllToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
-            //this.outstandingAllToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
-            //this.outstandingAllToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // swapDatabaseToolStripMenuItem
             // 
@@ -685,7 +676,6 @@
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.employeesToolStripMenuItem.Text = "Employees";
-            this.employeesToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.employeesToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
             // 
             // viewEmployeeToolStripMenuItem
@@ -718,7 +708,6 @@
             this.p45P46ToolStripMenuItem.Name = "p45P46ToolStripMenuItem";
             this.p45P46ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.p45P46ToolStripMenuItem.Text = "P45 P46";
-            this.p45P46ToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.p45P46ToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.p45P46ToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -768,7 +757,6 @@
             this.sMSEmailToolStripMenuItem.Name = "sMSEmailToolStripMenuItem";
             this.sMSEmailToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.sMSEmailToolStripMenuItem.Text = "SMS/Email";
-            this.sMSEmailToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.sMSEmailToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.sMSEmailToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -817,7 +805,6 @@
             this.prospectsToolStripMenuItem.Name = "prospectsToolStripMenuItem";
             this.prospectsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.prospectsToolStripMenuItem.Text = "Prospects";
-            this.prospectsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.prospectsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.prospectsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -864,7 +851,6 @@
             this.importExportToolStripMenuItem.Name = "importExportToolStripMenuItem";
             this.importExportToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.importExportToolStripMenuItem.Text = "Import/Export";
-            this.importExportToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.importExportToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.importExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -889,7 +875,6 @@
             this.onlineToolStripMenuItem.Name = "onlineToolStripMenuItem";
             this.onlineToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.onlineToolStripMenuItem.Text = "Online";
-            this.onlineToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
             this.onlineToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.onlineToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -4331,20 +4316,6 @@
             this.releasePayrollLockToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.releasePayrollLockToolStripMenuItem.Text = "Release Payroll Lock";
             // 
-            // invisDDTextBox
-            // 
-            this.invisDDTextBox.Location = new System.Drawing.Point(652, 27);
-            this.invisDDTextBox.Name = "invisDDTextBox";
-            this.invisDDTextBox.Size = new System.Drawing.Size(231, 20);
-            this.invisDDTextBox.TabIndex = 3;
-            // 
-            // invisDropDownLastParent
-            // 
-            this.invisDropDownLastParent.Location = new System.Drawing.Point(652, 53);
-            this.invisDropDownLastParent.Name = "invisDropDownLastParent";
-            this.invisDropDownLastParent.Size = new System.Drawing.Size(231, 20);
-            this.invisDropDownLastParent.TabIndex = 4;
-            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4353,8 +4324,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(895, 231);
-            this.Controls.Add(this.invisDropDownLastParent);
-            this.Controls.Add(this.invisDDTextBox);
             this.Controls.Add(this.MenuResultsBox);
             this.Controls.Add(this.MMT);
             this.Controls.Add(this.CSM);
@@ -4897,8 +4866,6 @@
         private System.Windows.Forms.ToolStripMenuItem weedPlacementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
         private System.Windows.Forms.ToolStripMenuItem releasePayrollLockToolStripMenuItem;
-        private System.Windows.Forms.TextBox invisDDTextBox;
-        private System.Windows.Forms.TextBox invisDropDownLastParent;
     }
 }
 
