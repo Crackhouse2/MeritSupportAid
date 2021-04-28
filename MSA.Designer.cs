@@ -2833,7 +2833,6 @@
             this.systemDefaultsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.systemDefaultsToolStripMenuItem.Text = "System Defaults";
             this.systemDefaultsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
-            //this.systemDefaultsToolStripMenuItem.Click += new System.EventHandler(this.MenuClear);
             // 
             // defaultsToolStripMenuItem
             // 
@@ -4294,6 +4293,7 @@
             this.invisDDTextBox.Name = "invisDDTextBox";
             this.invisDDTextBox.Size = new System.Drawing.Size(231, 20);
             this.invisDDTextBox.TabIndex = 3;
+            this.invisDDTextBox.Visible = false;
             // 
             // MSA
             // 
