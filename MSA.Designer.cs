@@ -224,12 +224,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.CSM = new System.Windows.Forms.MenuStrip();
             this.systemDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.branchTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payrollTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supervisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.submissionToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.submissionToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -1561,6 +1563,8 @@
             // 
             // cISToolStripMenuItem
             // 
+            this.cISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.submissionToolStripMenuItem5});
             this.cISToolStripMenuItem.Name = "cISToolStripMenuItem";
             this.cISToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.cISToolStripMenuItem.Text = "CIS";
@@ -1647,9 +1651,14 @@
             this.systemDefaultsToolStripMenuItem.Name = "systemDefaultsToolStripMenuItem";
             this.systemDefaultsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.systemDefaultsToolStripMenuItem.Text = "System Defaults";
-            this.systemDefaultsToolStripMenuItem.Click += new System.EventHandler(this.MenuClear);
-            this.systemDefaultsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.CSMPreString);
             this.systemDefaultsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
+            this.systemDefaultsToolStripMenuItem.Click += new System.EventHandler(this.MenuClear);
+            // 
+            // generalToolStripMenuItem
+            // 
+            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.generalToolStripMenuItem.Text = "General";
             // 
             // branchTablesToolStripMenuItem
             // 
@@ -1681,11 +1690,19 @@
             this.supervisorToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.supervisorToolStripMenuItem.Text = "Supervisor";
             // 
-            // generalToolStripMenuItem
+            // submissionToolStripMenuItem5
             // 
-            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.generalToolStripMenuItem.Text = "General";
+            this.submissionToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.submissionToolStripMenuItem6});
+            this.submissionToolStripMenuItem5.Name = "submissionToolStripMenuItem5";
+            this.submissionToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.submissionToolStripMenuItem5.Text = "Submission";
+            // 
+            // submissionToolStripMenuItem6
+            // 
+            this.submissionToolStripMenuItem6.Name = "submissionToolStripMenuItem6";
+            this.submissionToolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.submissionToolStripMenuItem6.Text = "Submission";
             // 
             // MSA
             // 
@@ -1917,6 +1934,8 @@
         private System.Windows.Forms.ToolStripMenuItem remoteAssistanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem licensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem submissionToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem submissionToolStripMenuItem6;
     }
 }
 
