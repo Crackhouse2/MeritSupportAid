@@ -19,7 +19,7 @@ namespace MeritSupportAid
 
         private void MouseOverPopulate(object sender, EventArgs e)
         {
-            //invisDDTextBox.Text = MenuResultsBox.Text;
+            invisDropDownLastParent.Text = MenuResultsBox.Text;
         }
 
         private void MenuClick(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace MeritSupportAid
             }
             else
             {
-                invisDDTextBox.Text = MenuResultsBox.Text;
+                //invisDDTextBox.Text = MenuResultsBox.Text;
                 DoArrow();
                 sb.Append(mnu.Text);
                 MenuResultsBox.Text += sb.ToString();
@@ -120,6 +120,8 @@ namespace MeritSupportAid
             }
         }
 
+        
+
         private void MenuClear(object sender, EventArgs e)
         {
             /*
@@ -137,7 +139,6 @@ namespace MeritSupportAid
             /*
             This function is called where the last parent is closed, such as with a click
             */
-
             MenuResultsBox.Text = invisDropDownLastParent.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
