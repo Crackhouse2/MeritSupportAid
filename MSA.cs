@@ -19,7 +19,7 @@ namespace MeritSupportAid
 
         private void MouseOverPopulate(object sender, EventArgs e)
         {
-            invisDropDownLastParent.Text = MenuResultsBox.Text;
+            //invisDropDownLastParent.Text = MenuResultsBox.Text;
         }
 
         private void MenuClick(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace MeritSupportAid
             if (mnu.HasDropDown == true)
             {
                 //do nothing
-                invisDropDownLastParent.Text = MenuResultsBox.Text;
+                //invisDropDownLastParent.Text = MenuResultsBox.Text;
             }
             else
             {
@@ -58,8 +58,8 @@ namespace MeritSupportAid
             */
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
-            invisDropDownLastParent.Text = null;
-            invisDDTextBox.Text = null;
+            //invisDropDownLastParent.Text = null;
+            //invisDDTextBox.Text = null;
 
             //Where called from CSM menu tree, use the system menu prefix
             if (mnu.Owner.Name == "CSM") 
@@ -76,8 +76,8 @@ namespace MeritSupportAid
                 sb.Append(mnu.Text);
                 MenuResultsBox.Text = sb.ToString();
             }
-            invisDDTextBox.Text = MenuResultsBox.Text;
-            invisDropDownLastParent.Text = invisDDTextBox.Text;
+            //invisDDTextBox.Text = MenuResultsBox.Text;
+            //invisDropDownLastParent.Text = invisDDTextBox.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
@@ -98,7 +98,7 @@ namespace MeritSupportAid
 
             //This catches MenuResults before manipulation so it can be replaced later 
             //if DropDownClosed triggered causing the MenuClear function
-            invisDropDownLastParent.Text = MenuResultsBox.Text;
+            //invisDropDownLastParent.Text = MenuResultsBox.Text;
 
             //To ensure that the same value isn't repeatedly added. May need further
             //thought with some of the repeated nesting in the tree.
@@ -130,16 +130,17 @@ namespace MeritSupportAid
             the text value in invisDDTextBox which is set at any point there is text added
             to the result field.
             */
-            MenuResultsBox.Text = invisDDTextBox.Text;
-            invisDDTextBox.Text = invisDropDownLastParent.Text;
-            Clipboard.SetText(MenuResultsBox.Text);
+            //MenuResultsBox.Text = invisDDTextBox.Text;
+            //invisDDTextBox.Text = invisDropDownLastParent.Text;
+            //Clipboard.SetText(MenuResultsBox.Text);
         }
         private void MenuDropDownClose(object sender, EventArgs e)
         {
             /*
-            This function is called where the last parent is closed, such as with a click
+            This function is called where a drop down closes. Works with 1 thus far
             */
-            MenuResultsBox.Text = invisDropDownLastParent.Text;
+            string MyString = " -> " + sender.ToString();
+            MenuResultsBox.Text = MenuResultsBox.Text.Substring(0, (MenuResultsBox.TextLength - MyString.Length));
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
