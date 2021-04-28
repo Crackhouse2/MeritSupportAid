@@ -428,11 +428,14 @@
             this.systemMenuSecurityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-            this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supervisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datapathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meritUtilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+            this.externalComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.adjustPaymentMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearChequeBankDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -440,55 +443,43 @@
             this.iRecruitMappingUtilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scanTypeChangerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.meritUtilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.externalComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supervisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advancedUtilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bureauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cISCredentialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlineToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.p45OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paymentRecordOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pensionsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timesheetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.yearEndToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.archiveOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importOfficeDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.p45AndMoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pSCOfficeIMportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pSCMoveFromHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bureauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onboardingImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cISCredentialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contractsSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthlyEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeMigrationWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeeUtilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recalcHolidayPayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchEmployeeMoveUtilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeeUtilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeesToUmbrellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recalcHolidayPayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eclipseBatchRemovalToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importHistoryFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importPensionsFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onholdImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAdjustmentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tradeshiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resendInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlineEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authoriserSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rejectReasonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -496,27 +487,61 @@
             this.timesheetRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.holidayRequestRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeDocumentRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForMissingDuplicatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p45OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bulkP45ByImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bulkP45ByAgencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bulkP45ByOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leaversDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.p45ByOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reverseP45ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentRecordOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createHistoryRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.foreignTaxAdjustmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentRecordEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rTIEYUEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rTIFPSRecordEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pensionsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importOfficeDataToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pensionCorrectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postponementAtStagingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reexportContributionScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genderPayGapReportingToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeAuditReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importOfficeDataToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pensionCorrectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.postponementAtStagingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reexportContributionScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAdjustmentsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.marginAdjustmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollReversalWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reversePayAndAccrualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetMonthlyReversalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetsMonthlyEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearEndToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p35SubstitutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unclaimedExpenseReportP87ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p11DReportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.p60PrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p60PrintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p60CustomListEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p14PrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p14PrintToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.p14CustomListEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p11DPrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incomeLevyReturnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltdCo46GReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
+            this.makeYearEndCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearEndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p9xUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processP9NoticesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printCISStatementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -3386,7 +3411,18 @@
             // 
             this.toolStripSeparator22.Name = "toolStripSeparator22";
             this.toolStripSeparator22.Size = new System.Drawing.Size(188, 6);
-            this.toolStripSeparator22.Click += new System.EventHandler(this.toolStripSeparator22_Click);
+            // 
+            // datapathsToolStripMenuItem
+            // 
+            this.datapathsToolStripMenuItem.Name = "datapathsToolStripMenuItem";
+            this.datapathsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.datapathsToolStripMenuItem.Text = "Datapaths";
+            // 
+            // systemUpdateToolStripMenuItem
+            // 
+            this.systemUpdateToolStripMenuItem.Name = "systemUpdateToolStripMenuItem";
+            this.systemUpdateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.systemUpdateToolStripMenuItem.Text = "System Update";
             // 
             // utilitiesToolStripMenuItem
             // 
@@ -3403,40 +3439,6 @@
             this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.utilitiesToolStripMenuItem.Text = "Utilities";
             // 
-            // supervisorToolStripMenuItem
-            // 
-            this.supervisorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedUtilitiesToolStripMenuItem,
-            this.bureauToolStripMenuItem,
-            this.cISCredentialsToolStripMenuItem,
-            this.employeesToolStripMenuItem1,
-            this.importsToolStripMenuItem,
-            this.invoicesToolStripMenuItem,
-            this.onlineToolStripMenuItem2,
-            this.p45OptionsToolStripMenuItem,
-            this.paymentRecordOptionsToolStripMenuItem,
-            this.pensionsToolStripMenuItem2,
-            this.reportingToolStripMenuItem,
-            this.timesheetsToolStripMenuItem1,
-            this.yearEndToolStripMenuItem,
-            this.toolStripSeparator25,
-            this.miscToolStripMenuItem});
-            this.supervisorToolStripMenuItem.Name = "supervisorToolStripMenuItem";
-            this.supervisorToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.supervisorToolStripMenuItem.Text = "Supervisor";
-            // 
-            // datapathsToolStripMenuItem
-            // 
-            this.datapathsToolStripMenuItem.Name = "datapathsToolStripMenuItem";
-            this.datapathsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.datapathsToolStripMenuItem.Text = "Datapaths";
-            // 
-            // systemUpdateToolStripMenuItem
-            // 
-            this.systemUpdateToolStripMenuItem.Name = "systemUpdateToolStripMenuItem";
-            this.systemUpdateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.systemUpdateToolStripMenuItem.Text = "System Update";
-            // 
             // supportToolStripMenuItem
             // 
             this.supportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3447,6 +3449,29 @@
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.supportToolStripMenuItem.Text = "Support";
+            // 
+            // meritUtilitiesToolStripMenuItem
+            // 
+            this.meritUtilitiesToolStripMenuItem.Name = "meritUtilitiesToolStripMenuItem";
+            this.meritUtilitiesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.meritUtilitiesToolStripMenuItem.Text = "Merit Utilities";
+            // 
+            // toolStripSeparator24
+            // 
+            this.toolStripSeparator24.Name = "toolStripSeparator24";
+            this.toolStripSeparator24.Size = new System.Drawing.Size(185, 6);
+            // 
+            // externalComponentsToolStripMenuItem
+            // 
+            this.externalComponentsToolStripMenuItem.Name = "externalComponentsToolStripMenuItem";
+            this.externalComponentsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.externalComponentsToolStripMenuItem.Text = "External Components";
+            // 
+            // scanToolStripMenuItem
+            // 
+            this.scanToolStripMenuItem.Name = "scanToolStripMenuItem";
+            this.scanToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.scanToolStripMenuItem.Text = "Scan";
             // 
             // toolStripSeparator23
             // 
@@ -3489,28 +3514,27 @@
             this.scanTypeChangerToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.scanTypeChangerToolStripMenuItem.Text = "Scan Type Changer";
             // 
-            // meritUtilitiesToolStripMenuItem
+            // supervisorToolStripMenuItem
             // 
-            this.meritUtilitiesToolStripMenuItem.Name = "meritUtilitiesToolStripMenuItem";
-            this.meritUtilitiesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.meritUtilitiesToolStripMenuItem.Text = "Merit Utilities";
-            // 
-            // toolStripSeparator24
-            // 
-            this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(185, 6);
-            // 
-            // externalComponentsToolStripMenuItem
-            // 
-            this.externalComponentsToolStripMenuItem.Name = "externalComponentsToolStripMenuItem";
-            this.externalComponentsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.externalComponentsToolStripMenuItem.Text = "External Components";
-            // 
-            // scanToolStripMenuItem
-            // 
-            this.scanToolStripMenuItem.Name = "scanToolStripMenuItem";
-            this.scanToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.scanToolStripMenuItem.Text = "Scan";
+            this.supervisorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.advancedUtilitiesToolStripMenuItem,
+            this.bureauToolStripMenuItem,
+            this.cISCredentialsToolStripMenuItem,
+            this.employeesToolStripMenuItem1,
+            this.importsToolStripMenuItem,
+            this.invoicesToolStripMenuItem,
+            this.onlineToolStripMenuItem2,
+            this.p45OptionsToolStripMenuItem,
+            this.paymentRecordOptionsToolStripMenuItem,
+            this.pensionsToolStripMenuItem2,
+            this.reportingToolStripMenuItem,
+            this.timesheetsToolStripMenuItem1,
+            this.yearEndToolStripMenuItem,
+            this.toolStripSeparator25,
+            this.miscToolStripMenuItem});
+            this.supervisorToolStripMenuItem.Name = "supervisorToolStripMenuItem";
+            this.supervisorToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.supervisorToolStripMenuItem.Text = "Supervisor";
             // 
             // advancedUtilitiesToolStripMenuItem
             // 
@@ -3523,137 +3547,6 @@
             this.advancedUtilitiesToolStripMenuItem.Name = "advancedUtilitiesToolStripMenuItem";
             this.advancedUtilitiesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.advancedUtilitiesToolStripMenuItem.Text = "Advanced Utilities";
-            // 
-            // bureauToolStripMenuItem
-            // 
-            this.bureauToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeImportToolStripMenuItem,
-            this.historyImportToolStripMenuItem,
-            this.onboardingImportToolStripMenuItem});
-            this.bureauToolStripMenuItem.Name = "bureauToolStripMenuItem";
-            this.bureauToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.bureauToolStripMenuItem.Text = "Bureau";
-            // 
-            // cISCredentialsToolStripMenuItem
-            // 
-            this.cISCredentialsToolStripMenuItem.Name = "cISCredentialsToolStripMenuItem";
-            this.cISCredentialsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.cISCredentialsToolStripMenuItem.Text = "CIS Credentials";
-            // 
-            // employeesToolStripMenuItem1
-            // 
-            this.employeesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contractsSetupToolStripMenuItem,
-            this.createMonthlyEmployeeToolStripMenuItem,
-            this.deleteEmployeesToolStripMenuItem,
-            this.employeeMigrationWizardToolStripMenuItem,
-            this.moveEmployeeUtilitiesToolStripMenuItem,
-            this.recalcHolidayPayToolStripMenuItem});
-            this.employeesToolStripMenuItem1.Name = "employeesToolStripMenuItem1";
-            this.employeesToolStripMenuItem1.Size = new System.Drawing.Size(206, 22);
-            this.employeesToolStripMenuItem1.Text = "Employees";
-            // 
-            // importsToolStripMenuItem
-            // 
-            this.importsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eclipseBatchRemovalToolToolStripMenuItem,
-            this.importDataToolStripMenuItem,
-            this.importHistoryFromFileToolStripMenuItem,
-            this.importPensionsFromFileToolStripMenuItem,
-            this.onholdImportToolStripMenuItem});
-            this.importsToolStripMenuItem.Name = "importsToolStripMenuItem";
-            this.importsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.importsToolStripMenuItem.Text = "Imports";
-            // 
-            // invoicesToolStripMenuItem
-            // 
-            this.invoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteAdjustmentsToolStripMenuItem1,
-            this.invoiceDatesToolStripMenuItem,
-            this.tradeshiftToolStripMenuItem});
-            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
-            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.invoicesToolStripMenuItem.Text = "Invoices";
-            // 
-            // onlineToolStripMenuItem2
-            // 
-            this.onlineToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.onlineTimesheetsToolStripMenuItem,
-            this.onlineEmployeesToolStripMenuItem});
-            this.onlineToolStripMenuItem2.Name = "onlineToolStripMenuItem2";
-            this.onlineToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
-            this.onlineToolStripMenuItem2.Text = "Online";
-            // 
-            // p45OptionsToolStripMenuItem
-            // 
-            this.p45OptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bulkP45ByImportToolStripMenuItem,
-            this.bulkP45ByAgencyToolStripMenuItem,
-            this.bulkP45ByOfficeToolStripMenuItem,
-            this.leaversDetailsToolStripMenuItem,
-            this.p45ByOfficeToolStripMenuItem,
-            this.reverseP45ToolStripMenuItem});
-            this.p45OptionsToolStripMenuItem.Name = "p45OptionsToolStripMenuItem";
-            this.p45OptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.p45OptionsToolStripMenuItem.Text = "P45 Options";
-            // 
-            // paymentRecordOptionsToolStripMenuItem
-            // 
-            this.paymentRecordOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createHistoryRecordToolStripMenuItem,
-            this.foreignTaxAdjustmentToolStripMenuItem,
-            this.paymentRecordEditToolStripMenuItem,
-            this.rTIEYUEntryToolStripMenuItem,
-            this.rTIFPSRecordEditToolStripMenuItem});
-            this.paymentRecordOptionsToolStripMenuItem.Name = "paymentRecordOptionsToolStripMenuItem";
-            this.paymentRecordOptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.paymentRecordOptionsToolStripMenuItem.Text = "Payment Record Options";
-            // 
-            // pensionsToolStripMenuItem2
-            // 
-            this.pensionsToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importOfficeDataToolStripMenuItem1,
-            this.pensionCorrectionsToolStripMenuItem,
-            this.postponementAtStagingToolStripMenuItem,
-            this.reexportContributionScheduleToolStripMenuItem});
-            this.pensionsToolStripMenuItem2.Name = "pensionsToolStripMenuItem2";
-            this.pensionsToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
-            this.pensionsToolStripMenuItem2.Text = "Pensions";
-            // 
-            // reportingToolStripMenuItem
-            // 
-            this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.auditReportToolStripMenuItem,
-            this.backupLogToolStripMenuItem,
-            this.genderPayGapReportingToolToolStripMenuItem,
-            this.statusReportToolStripMenuItem,
-            this.employeeAuditReportToolStripMenuItem});
-            this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
-            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.reportingToolStripMenuItem.Text = "Reporting";
-            // 
-            // timesheetsToolStripMenuItem1
-            // 
-            this.timesheetsToolStripMenuItem1.Name = "timesheetsToolStripMenuItem1";
-            this.timesheetsToolStripMenuItem1.Size = new System.Drawing.Size(206, 22);
-            this.timesheetsToolStripMenuItem1.Text = "Timesheets";
-            // 
-            // yearEndToolStripMenuItem
-            // 
-            this.yearEndToolStripMenuItem.Name = "yearEndToolStripMenuItem";
-            this.yearEndToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.yearEndToolStripMenuItem.Text = "Year End";
-            // 
-            // toolStripSeparator25
-            // 
-            this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(203, 6);
-            // 
-            // miscToolStripMenuItem
-            // 
-            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.miscToolStripMenuItem.Text = "Misc";
             // 
             // archiveOfficeToolStripMenuItem
             // 
@@ -3685,23 +3578,52 @@
             this.pSCMoveFromHoldingToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.pSCMoveFromHoldingToolStripMenuItem.Text = "PSC Move from Holding";
             // 
+            // bureauToolStripMenuItem
+            // 
+            this.bureauToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeImportToolStripMenuItem,
+            this.historyImportToolStripMenuItem,
+            this.onboardingImportToolStripMenuItem});
+            this.bureauToolStripMenuItem.Name = "bureauToolStripMenuItem";
+            this.bureauToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.bureauToolStripMenuItem.Text = "Bureau";
+            // 
             // employeeImportToolStripMenuItem
             // 
             this.employeeImportToolStripMenuItem.Name = "employeeImportToolStripMenuItem";
-            this.employeeImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.employeeImportToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.employeeImportToolStripMenuItem.Text = "Employee Import";
             // 
             // historyImportToolStripMenuItem
             // 
             this.historyImportToolStripMenuItem.Name = "historyImportToolStripMenuItem";
-            this.historyImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historyImportToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.historyImportToolStripMenuItem.Text = "History Import";
             // 
             // onboardingImportToolStripMenuItem
             // 
             this.onboardingImportToolStripMenuItem.Name = "onboardingImportToolStripMenuItem";
-            this.onboardingImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onboardingImportToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.onboardingImportToolStripMenuItem.Text = "Onboarding Import";
+            // 
+            // cISCredentialsToolStripMenuItem
+            // 
+            this.cISCredentialsToolStripMenuItem.Name = "cISCredentialsToolStripMenuItem";
+            this.cISCredentialsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.cISCredentialsToolStripMenuItem.Text = "CIS Credentials";
+            // 
+            // employeesToolStripMenuItem1
+            // 
+            this.employeesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contractsSetupToolStripMenuItem,
+            this.createMonthlyEmployeeToolStripMenuItem,
+            this.deleteEmployeesToolStripMenuItem,
+            this.employeeMigrationWizardToolStripMenuItem,
+            this.moveEmployeeUtilitiesToolStripMenuItem,
+            this.recalcHolidayPayToolStripMenuItem});
+            this.employeesToolStripMenuItem1.Name = "employeesToolStripMenuItem1";
+            this.employeesToolStripMenuItem1.Size = new System.Drawing.Size(206, 22);
+            this.employeesToolStripMenuItem1.Text = "Employees";
             // 
             // contractsSetupToolStripMenuItem
             // 
@@ -3738,12 +3660,6 @@
             this.moveEmployeeUtilitiesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.moveEmployeeUtilitiesToolStripMenuItem.Text = "Move Employee Utilities";
             // 
-            // recalcHolidayPayToolStripMenuItem
-            // 
-            this.recalcHolidayPayToolStripMenuItem.Name = "recalcHolidayPayToolStripMenuItem";
-            this.recalcHolidayPayToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.recalcHolidayPayToolStripMenuItem.Text = "Recalc Holiday Pay";
-            // 
             // batchEmployeeMoveUtilityToolStripMenuItem
             // 
             this.batchEmployeeMoveUtilityToolStripMenuItem.Name = "batchEmployeeMoveUtilityToolStripMenuItem";
@@ -3767,6 +3683,24 @@
             this.moveEmployeesToUmbrellaToolStripMenuItem.Name = "moveEmployeesToUmbrellaToolStripMenuItem";
             this.moveEmployeesToUmbrellaToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.moveEmployeesToUmbrellaToolStripMenuItem.Text = "Move Employees to Umbrella";
+            // 
+            // recalcHolidayPayToolStripMenuItem
+            // 
+            this.recalcHolidayPayToolStripMenuItem.Name = "recalcHolidayPayToolStripMenuItem";
+            this.recalcHolidayPayToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.recalcHolidayPayToolStripMenuItem.Text = "Recalc Holiday Pay";
+            // 
+            // importsToolStripMenuItem
+            // 
+            this.importsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eclipseBatchRemovalToolToolStripMenuItem,
+            this.importDataToolStripMenuItem,
+            this.importHistoryFromFileToolStripMenuItem,
+            this.importPensionsFromFileToolStripMenuItem,
+            this.onholdImportToolStripMenuItem});
+            this.importsToolStripMenuItem.Name = "importsToolStripMenuItem";
+            this.importsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.importsToolStripMenuItem.Text = "Imports";
             // 
             // eclipseBatchRemovalToolToolStripMenuItem
             // 
@@ -3798,16 +3732,26 @@
             this.onholdImportToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.onholdImportToolStripMenuItem.Text = "On-hold Import";
             // 
+            // invoicesToolStripMenuItem
+            // 
+            this.invoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteAdjustmentsToolStripMenuItem1,
+            this.invoiceDatesToolStripMenuItem,
+            this.tradeshiftToolStripMenuItem});
+            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
+            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.invoicesToolStripMenuItem.Text = "Invoices";
+            // 
             // deleteAdjustmentsToolStripMenuItem1
             // 
             this.deleteAdjustmentsToolStripMenuItem1.Name = "deleteAdjustmentsToolStripMenuItem1";
-            this.deleteAdjustmentsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteAdjustmentsToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
             this.deleteAdjustmentsToolStripMenuItem1.Text = "Delete Adjustments";
             // 
             // invoiceDatesToolStripMenuItem
             // 
             this.invoiceDatesToolStripMenuItem.Name = "invoiceDatesToolStripMenuItem";
-            this.invoiceDatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invoiceDatesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.invoiceDatesToolStripMenuItem.Text = "Invoice Dates";
             // 
             // tradeshiftToolStripMenuItem
@@ -3816,20 +3760,29 @@
             this.setupToolStripMenuItem,
             this.resendInvoicesToolStripMenuItem});
             this.tradeshiftToolStripMenuItem.Name = "tradeshiftToolStripMenuItem";
-            this.tradeshiftToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tradeshiftToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.tradeshiftToolStripMenuItem.Text = "Tradeshift";
             // 
             // setupToolStripMenuItem
             // 
             this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
-            this.setupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setupToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.setupToolStripMenuItem.Text = "Setup";
             // 
             // resendInvoicesToolStripMenuItem
             // 
             this.resendInvoicesToolStripMenuItem.Name = "resendInvoicesToolStripMenuItem";
-            this.resendInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resendInvoicesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.resendInvoicesToolStripMenuItem.Text = "Resend Invoices";
+            // 
+            // onlineToolStripMenuItem2
+            // 
+            this.onlineToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.onlineTimesheetsToolStripMenuItem,
+            this.onlineEmployeesToolStripMenuItem});
+            this.onlineToolStripMenuItem2.Name = "onlineToolStripMenuItem2";
+            this.onlineToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
+            this.onlineToolStripMenuItem2.Text = "Online";
             // 
             // onlineTimesheetsToolStripMenuItem
             // 
@@ -3842,16 +3795,8 @@
             this.holidayRequestRegressionToolStripMenuItem,
             this.employeeDocumentRegressionToolStripMenuItem});
             this.onlineTimesheetsToolStripMenuItem.Name = "onlineTimesheetsToolStripMenuItem";
-            this.onlineTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onlineTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.onlineTimesheetsToolStripMenuItem.Text = "Online Timesheets";
-            // 
-            // onlineEmployeesToolStripMenuItem
-            // 
-            this.onlineEmployeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkForMissingDuplicatesToolStripMenuItem});
-            this.onlineEmployeesToolStripMenuItem.Name = "onlineEmployeesToolStripMenuItem";
-            this.onlineEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.onlineEmployeesToolStripMenuItem.Text = "Online Employees";
             // 
             // authoriserSetupToolStripMenuItem
             // 
@@ -3895,47 +3840,80 @@
             this.employeeDocumentRegressionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.employeeDocumentRegressionToolStripMenuItem.Text = "Employee Document Regression";
             // 
+            // onlineEmployeesToolStripMenuItem
+            // 
+            this.onlineEmployeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkForMissingDuplicatesToolStripMenuItem});
+            this.onlineEmployeesToolStripMenuItem.Name = "onlineEmployeesToolStripMenuItem";
+            this.onlineEmployeesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.onlineEmployeesToolStripMenuItem.Text = "Online Employees";
+            // 
             // checkForMissingDuplicatesToolStripMenuItem
             // 
             this.checkForMissingDuplicatesToolStripMenuItem.Name = "checkForMissingDuplicatesToolStripMenuItem";
             this.checkForMissingDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.checkForMissingDuplicatesToolStripMenuItem.Text = "Check for Missing/Duplicates";
             // 
+            // p45OptionsToolStripMenuItem
+            // 
+            this.p45OptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bulkP45ByImportToolStripMenuItem,
+            this.bulkP45ByAgencyToolStripMenuItem,
+            this.bulkP45ByOfficeToolStripMenuItem,
+            this.leaversDetailsToolStripMenuItem,
+            this.p45ByOfficeToolStripMenuItem,
+            this.reverseP45ToolStripMenuItem});
+            this.p45OptionsToolStripMenuItem.Name = "p45OptionsToolStripMenuItem";
+            this.p45OptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.p45OptionsToolStripMenuItem.Text = "P45 Options";
+            // 
             // bulkP45ByImportToolStripMenuItem
             // 
             this.bulkP45ByImportToolStripMenuItem.Name = "bulkP45ByImportToolStripMenuItem";
-            this.bulkP45ByImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByImportToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.bulkP45ByImportToolStripMenuItem.Text = "Bulk P45 by Import";
             // 
             // bulkP45ByAgencyToolStripMenuItem
             // 
             this.bulkP45ByAgencyToolStripMenuItem.Name = "bulkP45ByAgencyToolStripMenuItem";
-            this.bulkP45ByAgencyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByAgencyToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.bulkP45ByAgencyToolStripMenuItem.Text = "Bulk P45 by Agency";
             // 
             // bulkP45ByOfficeToolStripMenuItem
             // 
             this.bulkP45ByOfficeToolStripMenuItem.Name = "bulkP45ByOfficeToolStripMenuItem";
-            this.bulkP45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.bulkP45ByOfficeToolStripMenuItem.Text = "Bulk P45 by Office";
             // 
             // leaversDetailsToolStripMenuItem
             // 
             this.leaversDetailsToolStripMenuItem.Name = "leaversDetailsToolStripMenuItem";
-            this.leaversDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.leaversDetailsToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.leaversDetailsToolStripMenuItem.Text = "Leavers Details";
             // 
             // p45ByOfficeToolStripMenuItem
             // 
             this.p45ByOfficeToolStripMenuItem.Name = "p45ByOfficeToolStripMenuItem";
-            this.p45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.p45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.p45ByOfficeToolStripMenuItem.Text = "P45 by Office";
             // 
             // reverseP45ToolStripMenuItem
             // 
             this.reverseP45ToolStripMenuItem.Name = "reverseP45ToolStripMenuItem";
-            this.reverseP45ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reverseP45ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.reverseP45ToolStripMenuItem.Text = "Reverse P45";
+            // 
+            // paymentRecordOptionsToolStripMenuItem
+            // 
+            this.paymentRecordOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createHistoryRecordToolStripMenuItem,
+            this.foreignTaxAdjustmentToolStripMenuItem,
+            this.paymentRecordEditToolStripMenuItem,
+            this.rTIEYUEntryToolStripMenuItem,
+            this.rTIFPSRecordEditToolStripMenuItem});
+            this.paymentRecordOptionsToolStripMenuItem.Name = "paymentRecordOptionsToolStripMenuItem";
+            this.paymentRecordOptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.paymentRecordOptionsToolStripMenuItem.Text = "Payment Record Options";
             // 
             // createHistoryRecordToolStripMenuItem
             // 
@@ -3967,6 +3945,53 @@
             this.rTIFPSRecordEditToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.rTIFPSRecordEditToolStripMenuItem.Text = "RTI FPS Record Edit";
             // 
+            // pensionsToolStripMenuItem2
+            // 
+            this.pensionsToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importOfficeDataToolStripMenuItem1,
+            this.pensionCorrectionsToolStripMenuItem,
+            this.postponementAtStagingToolStripMenuItem,
+            this.reexportContributionScheduleToolStripMenuItem});
+            this.pensionsToolStripMenuItem2.Name = "pensionsToolStripMenuItem2";
+            this.pensionsToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
+            this.pensionsToolStripMenuItem2.Text = "Pensions";
+            // 
+            // importOfficeDataToolStripMenuItem1
+            // 
+            this.importOfficeDataToolStripMenuItem1.Name = "importOfficeDataToolStripMenuItem1";
+            this.importOfficeDataToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
+            this.importOfficeDataToolStripMenuItem1.Text = "Import Office Data";
+            // 
+            // pensionCorrectionsToolStripMenuItem
+            // 
+            this.pensionCorrectionsToolStripMenuItem.Name = "pensionCorrectionsToolStripMenuItem";
+            this.pensionCorrectionsToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.pensionCorrectionsToolStripMenuItem.Text = "Pension Corrections";
+            // 
+            // postponementAtStagingToolStripMenuItem
+            // 
+            this.postponementAtStagingToolStripMenuItem.Name = "postponementAtStagingToolStripMenuItem";
+            this.postponementAtStagingToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.postponementAtStagingToolStripMenuItem.Text = "Postponement at Staging";
+            // 
+            // reexportContributionScheduleToolStripMenuItem
+            // 
+            this.reexportContributionScheduleToolStripMenuItem.Name = "reexportContributionScheduleToolStripMenuItem";
+            this.reexportContributionScheduleToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.reexportContributionScheduleToolStripMenuItem.Text = "Re-export Contribution Schedule";
+            // 
+            // reportingToolStripMenuItem
+            // 
+            this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.auditReportToolStripMenuItem,
+            this.backupLogToolStripMenuItem,
+            this.genderPayGapReportingToolToolStripMenuItem,
+            this.statusReportToolStripMenuItem,
+            this.employeeAuditReportToolStripMenuItem});
+            this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
+            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.reportingToolStripMenuItem.Text = "Reporting";
+            // 
             // auditReportToolStripMenuItem
             // 
             this.auditReportToolStripMenuItem.Name = "auditReportToolStripMenuItem";
@@ -3997,29 +4022,205 @@
             this.employeeAuditReportToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.employeeAuditReportToolStripMenuItem.Text = "Employee Audit Report";
             // 
-            // importOfficeDataToolStripMenuItem1
+            // timesheetsToolStripMenuItem1
             // 
-            this.importOfficeDataToolStripMenuItem1.Name = "importOfficeDataToolStripMenuItem1";
-            this.importOfficeDataToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
-            this.importOfficeDataToolStripMenuItem1.Text = "Import Office Data";
+            this.timesheetsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteAdjustmentsToolStripMenuItem2,
+            this.marginAdjustmentToolStripMenuItem,
+            this.payrollReversalWizardToolStripMenuItem,
+            this.reversePayAndAccrualToolStripMenuItem,
+            this.timesheetMonthlyReversalToolStripMenuItem,
+            this.timesheetsMonthlyEditToolStripMenuItem});
+            this.timesheetsToolStripMenuItem1.Name = "timesheetsToolStripMenuItem1";
+            this.timesheetsToolStripMenuItem1.Size = new System.Drawing.Size(206, 22);
+            this.timesheetsToolStripMenuItem1.Text = "Timesheets";
             // 
-            // pensionCorrectionsToolStripMenuItem
+            // deleteAdjustmentsToolStripMenuItem2
             // 
-            this.pensionCorrectionsToolStripMenuItem.Name = "pensionCorrectionsToolStripMenuItem";
-            this.pensionCorrectionsToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.pensionCorrectionsToolStripMenuItem.Text = "Pension Corrections";
+            this.deleteAdjustmentsToolStripMenuItem2.Name = "deleteAdjustmentsToolStripMenuItem2";
+            this.deleteAdjustmentsToolStripMenuItem2.Size = new System.Drawing.Size(222, 22);
+            this.deleteAdjustmentsToolStripMenuItem2.Text = "Delete Adjustments";
             // 
-            // postponementAtStagingToolStripMenuItem
+            // marginAdjustmentToolStripMenuItem
             // 
-            this.postponementAtStagingToolStripMenuItem.Name = "postponementAtStagingToolStripMenuItem";
-            this.postponementAtStagingToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.postponementAtStagingToolStripMenuItem.Text = "Postponement at Staging";
+            this.marginAdjustmentToolStripMenuItem.Name = "marginAdjustmentToolStripMenuItem";
+            this.marginAdjustmentToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.marginAdjustmentToolStripMenuItem.Text = "Margin Adjustment";
             // 
-            // reexportContributionScheduleToolStripMenuItem
+            // payrollReversalWizardToolStripMenuItem
             // 
-            this.reexportContributionScheduleToolStripMenuItem.Name = "reexportContributionScheduleToolStripMenuItem";
-            this.reexportContributionScheduleToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.reexportContributionScheduleToolStripMenuItem.Text = "Re-export Contribution Schedule";
+            this.payrollReversalWizardToolStripMenuItem.Name = "payrollReversalWizardToolStripMenuItem";
+            this.payrollReversalWizardToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.payrollReversalWizardToolStripMenuItem.Text = "Payroll Reversal Wizard";
+            // 
+            // reversePayAndAccrualToolStripMenuItem
+            // 
+            this.reversePayAndAccrualToolStripMenuItem.Name = "reversePayAndAccrualToolStripMenuItem";
+            this.reversePayAndAccrualToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.reversePayAndAccrualToolStripMenuItem.Text = "Reverse Pay and Accrual";
+            // 
+            // timesheetMonthlyReversalToolStripMenuItem
+            // 
+            this.timesheetMonthlyReversalToolStripMenuItem.Name = "timesheetMonthlyReversalToolStripMenuItem";
+            this.timesheetMonthlyReversalToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.timesheetMonthlyReversalToolStripMenuItem.Text = "Timesheet Monthly Reversal";
+            // 
+            // timesheetsMonthlyEditToolStripMenuItem
+            // 
+            this.timesheetsMonthlyEditToolStripMenuItem.Name = "timesheetsMonthlyEditToolStripMenuItem";
+            this.timesheetsMonthlyEditToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.timesheetsMonthlyEditToolStripMenuItem.Text = "Timesheets Monthly Edit";
+            // 
+            // yearEndToolStripMenuItem
+            // 
+            this.yearEndToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.p35SubstitutionToolStripMenuItem,
+            this.unclaimedExpenseReportP87ToolStripMenuItem,
+            this.p11DReportToolStripMenuItem1,
+            this.p60PrintToolStripMenuItem,
+            this.p14PrintToolStripMenuItem,
+            this.p11DPrintToolStripMenuItem,
+            this.incomeLevyReturnToolStripMenuItem,
+            this.toolStripSeparator26,
+            this.ltdCo46GReportToolStripMenuItem,
+            this.toolStripSeparator27,
+            this.makeYearEndCopyToolStripMenuItem,
+            this.yearEndUpdateToolStripMenuItem,
+            this.p9xUpdateToolStripMenuItem,
+            this.processP9NoticesToolStripMenuItem,
+            this.printCISStatementsToolStripMenuItem});
+            this.yearEndToolStripMenuItem.Name = "yearEndToolStripMenuItem";
+            this.yearEndToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.yearEndToolStripMenuItem.Text = "Year End";
+            // 
+            // p35SubstitutionToolStripMenuItem
+            // 
+            this.p35SubstitutionToolStripMenuItem.Name = "p35SubstitutionToolStripMenuItem";
+            this.p35SubstitutionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.p35SubstitutionToolStripMenuItem.Text = "P35 Substitution";
+            // 
+            // unclaimedExpenseReportP87ToolStripMenuItem
+            // 
+            this.unclaimedExpenseReportP87ToolStripMenuItem.Name = "unclaimedExpenseReportP87ToolStripMenuItem";
+            this.unclaimedExpenseReportP87ToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.unclaimedExpenseReportP87ToolStripMenuItem.Text = "Unclaimed Expense Report (P87)";
+            // 
+            // p11DReportToolStripMenuItem1
+            // 
+            this.p11DReportToolStripMenuItem1.Name = "p11DReportToolStripMenuItem1";
+            this.p11DReportToolStripMenuItem1.Size = new System.Drawing.Size(245, 22);
+            this.p11DReportToolStripMenuItem1.Text = "P11D Report";
+            // 
+            // p60PrintToolStripMenuItem
+            // 
+            this.p60PrintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.p60PrintsToolStripMenuItem,
+            this.p60CustomListEntryToolStripMenuItem});
+            this.p60PrintToolStripMenuItem.Name = "p60PrintToolStripMenuItem";
+            this.p60PrintToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.p60PrintToolStripMenuItem.Text = "P60 Print";
+            // 
+            // p60PrintsToolStripMenuItem
+            // 
+            this.p60PrintsToolStripMenuItem.Name = "p60PrintsToolStripMenuItem";
+            this.p60PrintsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.p60PrintsToolStripMenuItem.Text = "P60 Prints";
+            // 
+            // p60CustomListEntryToolStripMenuItem
+            // 
+            this.p60CustomListEntryToolStripMenuItem.Name = "p60CustomListEntryToolStripMenuItem";
+            this.p60CustomListEntryToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.p60CustomListEntryToolStripMenuItem.Text = "P60 Custom List Entry";
+            // 
+            // p14PrintToolStripMenuItem
+            // 
+            this.p14PrintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.p14PrintToolStripMenuItem1,
+            this.p14CustomListEntryToolStripMenuItem});
+            this.p14PrintToolStripMenuItem.Name = "p14PrintToolStripMenuItem";
+            this.p14PrintToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.p14PrintToolStripMenuItem.Text = "P14 Print";
+            // 
+            // p14PrintToolStripMenuItem1
+            // 
+            this.p14PrintToolStripMenuItem1.Name = "p14PrintToolStripMenuItem1";
+            this.p14PrintToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.p14PrintToolStripMenuItem1.Text = "P14 print";
+            // 
+            // p14CustomListEntryToolStripMenuItem
+            // 
+            this.p14CustomListEntryToolStripMenuItem.Name = "p14CustomListEntryToolStripMenuItem";
+            this.p14CustomListEntryToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.p14CustomListEntryToolStripMenuItem.Text = "P14 Custom List Entry";
+            // 
+            // p11DPrintToolStripMenuItem
+            // 
+            this.p11DPrintToolStripMenuItem.Name = "p11DPrintToolStripMenuItem";
+            this.p11DPrintToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.p11DPrintToolStripMenuItem.Text = "P11D Print";
+            // 
+            // incomeLevyReturnToolStripMenuItem
+            // 
+            this.incomeLevyReturnToolStripMenuItem.Name = "incomeLevyReturnToolStripMenuItem";
+            this.incomeLevyReturnToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.incomeLevyReturnToolStripMenuItem.Text = "Income Levy Return";
+            // 
+            // toolStripSeparator26
+            // 
+            this.toolStripSeparator26.Name = "toolStripSeparator26";
+            this.toolStripSeparator26.Size = new System.Drawing.Size(242, 6);
+            // 
+            // toolStripSeparator25
+            // 
+            this.toolStripSeparator25.Name = "toolStripSeparator25";
+            this.toolStripSeparator25.Size = new System.Drawing.Size(203, 6);
+            // 
+            // miscToolStripMenuItem
+            // 
+            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.miscToolStripMenuItem.Text = "Misc";
+            // 
+            // ltdCo46GReportToolStripMenuItem
+            // 
+            this.ltdCo46GReportToolStripMenuItem.Name = "ltdCo46GReportToolStripMenuItem";
+            this.ltdCo46GReportToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.ltdCo46GReportToolStripMenuItem.Text = "Ltd Co 46G Report";
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(242, 6);
+            // 
+            // makeYearEndCopyToolStripMenuItem
+            // 
+            this.makeYearEndCopyToolStripMenuItem.Name = "makeYearEndCopyToolStripMenuItem";
+            this.makeYearEndCopyToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.makeYearEndCopyToolStripMenuItem.Text = "Make Year End Copy";
+            // 
+            // yearEndUpdateToolStripMenuItem
+            // 
+            this.yearEndUpdateToolStripMenuItem.Name = "yearEndUpdateToolStripMenuItem";
+            this.yearEndUpdateToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.yearEndUpdateToolStripMenuItem.Text = "Year End Update";
+            // 
+            // p9xUpdateToolStripMenuItem
+            // 
+            this.p9xUpdateToolStripMenuItem.Name = "p9xUpdateToolStripMenuItem";
+            this.p9xUpdateToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.p9xUpdateToolStripMenuItem.Text = "P9x Update";
+            // 
+            // processP9NoticesToolStripMenuItem
+            // 
+            this.processP9NoticesToolStripMenuItem.Name = "processP9NoticesToolStripMenuItem";
+            this.processP9NoticesToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.processP9NoticesToolStripMenuItem.Text = "Process P9 Notices";
+            // 
+            // printCISStatementsToolStripMenuItem
+            // 
+            this.printCISStatementsToolStripMenuItem.Name = "printCISStatementsToolStripMenuItem";
+            this.printCISStatementsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.printCISStatementsToolStripMenuItem.Text = "Print CIS Statements";
             // 
             // MSA
             // 
@@ -4538,6 +4739,31 @@
         private System.Windows.Forms.ToolStripMenuItem genderPayGapReportingToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeAuditReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAdjustmentsToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem marginAdjustmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrollReversalWizardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reversePayAndAccrualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timesheetMonthlyReversalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timesheetsMonthlyEditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p35SubstitutionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unclaimedExpenseReportP87ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p11DReportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem p60PrintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p60PrintsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p60CustomListEntryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p14PrintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p14PrintToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem p14CustomListEntryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p11DPrintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem incomeLevyReturnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
+        private System.Windows.Forms.ToolStripMenuItem ltdCo46GReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
+        private System.Windows.Forms.ToolStripMenuItem makeYearEndCopyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearEndUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p9xUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem processP9NoticesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printCISStatementsToolStripMenuItem;
     }
 }
 
