@@ -592,7 +592,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuDropDownClose);
+            //this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuDropDownClose);
             this.fileToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
             // 
             // callsContactsToolStripMenuItem
@@ -614,8 +614,8 @@
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.contactsToolStripMenuItem.Text = "Contacts";
             this.contactsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
-            this.contactsToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
-            this.contactsToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
+            this.contactsToolStripMenuItem.MouseEnter += new System.EventHandler(this.MouseOverPopulate);
+            //this.contactsToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // outstandingToolStripMenuItem
             // 
@@ -623,6 +623,8 @@
             this.outstandingToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingToolStripMenuItem.Text = "Outstanding";
             this.outstandingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
+            //this.outstandingToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
+            //this.outstandingToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // outstandingAllToolStripMenuItem
             // 
@@ -630,6 +632,8 @@
             this.outstandingAllToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.outstandingAllToolStripMenuItem.Text = "Outstanding (All)";
             this.outstandingAllToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
+            //this.outstandingAllToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
+            //this.outstandingAllToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // swapDatabaseToolStripMenuItem
             // 

@@ -17,6 +17,11 @@ namespace MeritSupportAid
             InitializeComponent();
         }
 
+        private void MouseOverPopulate(object sender, EventArgs e)
+        {
+            //invisDDTextBox.Text = MenuResultsBox.Text;
+        }
+
         private void MenuClick(object sender, EventArgs e)
         {
             /* 
@@ -26,19 +31,21 @@ namespace MeritSupportAid
             */
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
+
             if (mnu.HasDropDown == true)
             {
                 //do nothing
+                invisDropDownLastParent.Text = MenuResultsBox.Text;
             }
             else
             {
-                //MenuResultsBox.Text = invisDDTextBox.Text;
+                invisDDTextBox.Text = MenuResultsBox.Text;
                 DoArrow();
                 sb.Append(mnu.Text);
-                invisDDTextBox.Text = MenuResultsBox.Text;
                 MenuResultsBox.Text += sb.ToString();
             }
-
+            
+            //MenuResultsBox.Text
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
@@ -49,10 +56,11 @@ namespace MeritSupportAid
             string again, no adding. MenuDrop is for submenus and will add to strings. PrimaryMenuDrop will
             also assess the menu item to see if it is the MMT or CSM variant and if the latter, apply a prefix
             */
-            
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
-           
+            invisDropDownLastParent.Text = null;
+            invisDDTextBox.Text = null;
+
             //Where called from CSM menu tree, use the system menu prefix
             if (mnu.Owner.Name == "CSM") 
             {
@@ -69,6 +77,7 @@ namespace MeritSupportAid
                 MenuResultsBox.Text = sb.ToString();
             }
             invisDDTextBox.Text = MenuResultsBox.Text;
+            invisDropDownLastParent.Text = invisDDTextBox.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
@@ -94,16 +103,18 @@ namespace MeritSupportAid
             //To ensure that the same value isn't repeatedly added. May need further
             //thought with some of the repeated nesting in the tree.
             //Post
-            bool TextCheck = MenuResultsBox.Text.EndsWith(mnu.Text);
-            if (TextCheck == true)
+            if (MenuResultsBox.Text.EndsWith(mnu.Text) == true)
             {
                 //Don't keep adding
+            }
+            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
+            {
+                //Don't add if mnu.Text with an arrow is the end
             }
             else
             {
                 DoArrow();
                 sb.Append(mnu.Text);
-                string test = MenuResultsBox.Text + sb.ToString();
                 MenuResultsBox.Text += sb.ToString();
                 Clipboard.SetText(MenuResultsBox.Text);
             }
@@ -118,6 +129,7 @@ namespace MeritSupportAid
             to the result field.
             */
             MenuResultsBox.Text = invisDDTextBox.Text;
+            invisDDTextBox.Text = invisDropDownLastParent.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
         private void MenuDropDownClose(object sender, EventArgs e)
@@ -125,6 +137,7 @@ namespace MeritSupportAid
             /*
             This function is called where the last parent is closed, such as with a click
             */
+
             MenuResultsBox.Text = invisDropDownLastParent.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
@@ -135,8 +148,7 @@ namespace MeritSupportAid
             Where called and MenuResultsBox isn't null, it will concat an arrow inbetween 
             current string and the next child element. Protection for multiple arrows added.
             */
-            string s = MenuResultsBox.Text;
-            if (s.Length > 0)
+            if (MenuResultsBox.Text.Length > 0)
             {
                 if (MenuResultsBox.Text.EndsWith(" -> ") == false)
                 {
@@ -144,7 +156,6 @@ namespace MeritSupportAid
                 }
             }
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
