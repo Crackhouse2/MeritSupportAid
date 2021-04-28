@@ -23,16 +23,46 @@ namespace MeritSupportAid
             StringBuilder sb = new StringBuilder();
             DoArrow();
             sb.Append(mnu.Text);
-            textBox1.Text += sb.ToString();
+            MenuResultsBox.Text += sb.ToString();
         }
+
+        private void PrimaryMenuDrop(object sender, EventArgs e)
+        {
+            //Created supplementary menu drop for PrimaryMenuItems, this will create a new string rather than append
+            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
+            StringBuilder sb = new StringBuilder();
+           
+            //Where called from CSM menu tree, use the system menu prefix
+            if (mnu.Owner.Name == "CSM") 
+            {
+                string CSMPrefix = "Control -> System Menu -> ";
+                sb.Append(CSMPrefix);
+                MenuResultsBox.Text = sb.ToString();
+                sb.Append(mnu.Text);
+                MenuResultsBox.Text += sb.ToString();
+            }
+            //Otherwise use no prefix
+            else
+            {
+                sb.Append(mnu.Text);
+            }
+             
+            MenuResultsBox.Text = sb.ToString();
+            invisDDTextBox.Text = MenuResultsBox.Text;
+        }
+
 
         private void MenuDrop(object sender, EventArgs e)
         {
+            //This will be for all sub menu items after first drop downs for example File -> Contacts
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
+
+            //This catches MenuResults before manipulation so it can be replaced later if DropDownClosed triggered causing the MenuClear
+            invisDDTextBox.Text = MenuResultsBox.Text;
             DoArrow();
             sb.Append(mnu.Text);
-            textBox1.Text += sb.ToString();
+            MenuResultsBox.Text += sb.ToString();
         }
 
         private void MenuClear(object sender, EventArgs e)
@@ -41,28 +71,23 @@ namespace MeritSupportAid
             //This needs to be dynamically used in instances of opening and closing a submenu to strip out the erroneously opened menu item.
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
-            textBox1.Text.Replace(mnu.Text, "");
-        }
+            MenuResultsBox.Text = invisDDTextBox.Text;
 
-        private void CSMPreString(object sender, EventArgs e)
-        {
-            //This will create prefix string for the CSM menuStrip
-            string CSMPrefix = "Control -> System Menu";
-            textBox1.Text = CSMPrefix;
         }
 
         private void ResetTextBox(object sender, EventArgs e)
         {
-            //Clear Textbox
-            textBox1.Text = "";
+            //Clear Textboxes
+            MenuResultsBox.Text = null;
+            invisDDTextBox.Text = null;
         }
 
         private void DoArrow()
         {
-            string s = textBox1.Text;
+            string s = MenuResultsBox.Text;
             if (s.Length > 0)
             {
-                textBox1.Text += (" -> ");
+                MenuResultsBox.Text += (" -> ");
             }
         }
 
@@ -72,20 +97,21 @@ namespace MeritSupportAid
 
         }
 
-        private void CSM_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         /*
-      private void toolStripSeparator22_Click(object sender, EventArgs e)
-      {
+            private void CSM_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+            {
 
-      }
+            }
+        
+          private void toolStripSeparator22_Click(object sender, EventArgs e)
+          {
 
-      private void toolStripSeparator26_Click(object sender, EventArgs e)
-      {
+          }
 
-      }
+          private void toolStripSeparator26_Click(object sender, EventArgs e)
+          {
+
+          }
 
 private void textBox1_TextChanged(object sender, EventArgs e)
 {
