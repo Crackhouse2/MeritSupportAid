@@ -503,6 +503,20 @@
             this.leaversDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.p45ByOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reverseP45ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createHistoryRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.foreignTaxAdjustmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentRecordEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rTIEYUEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rTIFPSRecordEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genderPayGapReportingToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeAuditReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importOfficeDataToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pensionCorrectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postponementAtStagingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reexportContributionScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -3585,18 +3599,35 @@
             // 
             // paymentRecordOptionsToolStripMenuItem
             // 
+            this.paymentRecordOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createHistoryRecordToolStripMenuItem,
+            this.foreignTaxAdjustmentToolStripMenuItem,
+            this.paymentRecordEditToolStripMenuItem,
+            this.rTIEYUEntryToolStripMenuItem,
+            this.rTIFPSRecordEditToolStripMenuItem});
             this.paymentRecordOptionsToolStripMenuItem.Name = "paymentRecordOptionsToolStripMenuItem";
             this.paymentRecordOptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.paymentRecordOptionsToolStripMenuItem.Text = "Payment Record Options";
             // 
             // pensionsToolStripMenuItem2
             // 
+            this.pensionsToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importOfficeDataToolStripMenuItem1,
+            this.pensionCorrectionsToolStripMenuItem,
+            this.postponementAtStagingToolStripMenuItem,
+            this.reexportContributionScheduleToolStripMenuItem});
             this.pensionsToolStripMenuItem2.Name = "pensionsToolStripMenuItem2";
             this.pensionsToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
             this.pensionsToolStripMenuItem2.Text = "Pensions";
             // 
             // reportingToolStripMenuItem
             // 
+            this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.auditReportToolStripMenuItem,
+            this.backupLogToolStripMenuItem,
+            this.genderPayGapReportingToolToolStripMenuItem,
+            this.statusReportToolStripMenuItem,
+            this.employeeAuditReportToolStripMenuItem});
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
             this.reportingToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.reportingToolStripMenuItem.Text = "Reporting";
@@ -3905,6 +3936,90 @@
             this.reverseP45ToolStripMenuItem.Name = "reverseP45ToolStripMenuItem";
             this.reverseP45ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reverseP45ToolStripMenuItem.Text = "Reverse P45";
+            // 
+            // createHistoryRecordToolStripMenuItem
+            // 
+            this.createHistoryRecordToolStripMenuItem.Name = "createHistoryRecordToolStripMenuItem";
+            this.createHistoryRecordToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.createHistoryRecordToolStripMenuItem.Text = "Create History Record";
+            // 
+            // foreignTaxAdjustmentToolStripMenuItem
+            // 
+            this.foreignTaxAdjustmentToolStripMenuItem.Name = "foreignTaxAdjustmentToolStripMenuItem";
+            this.foreignTaxAdjustmentToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.foreignTaxAdjustmentToolStripMenuItem.Text = "Foreign Tax Adjustment";
+            // 
+            // paymentRecordEditToolStripMenuItem
+            // 
+            this.paymentRecordEditToolStripMenuItem.Name = "paymentRecordEditToolStripMenuItem";
+            this.paymentRecordEditToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.paymentRecordEditToolStripMenuItem.Text = "Payment Record Edit";
+            // 
+            // rTIEYUEntryToolStripMenuItem
+            // 
+            this.rTIEYUEntryToolStripMenuItem.Name = "rTIEYUEntryToolStripMenuItem";
+            this.rTIEYUEntryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.rTIEYUEntryToolStripMenuItem.Text = "RTI EYU Entry";
+            // 
+            // rTIFPSRecordEditToolStripMenuItem
+            // 
+            this.rTIFPSRecordEditToolStripMenuItem.Name = "rTIFPSRecordEditToolStripMenuItem";
+            this.rTIFPSRecordEditToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.rTIFPSRecordEditToolStripMenuItem.Text = "RTI FPS Record Edit";
+            // 
+            // auditReportToolStripMenuItem
+            // 
+            this.auditReportToolStripMenuItem.Name = "auditReportToolStripMenuItem";
+            this.auditReportToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.auditReportToolStripMenuItem.Text = "Audit Report";
+            // 
+            // backupLogToolStripMenuItem
+            // 
+            this.backupLogToolStripMenuItem.Name = "backupLogToolStripMenuItem";
+            this.backupLogToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.backupLogToolStripMenuItem.Text = "Backup Log";
+            // 
+            // genderPayGapReportingToolToolStripMenuItem
+            // 
+            this.genderPayGapReportingToolToolStripMenuItem.Name = "genderPayGapReportingToolToolStripMenuItem";
+            this.genderPayGapReportingToolToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.genderPayGapReportingToolToolStripMenuItem.Text = "Gender Pay Gap Reporting Tool";
+            // 
+            // statusReportToolStripMenuItem
+            // 
+            this.statusReportToolStripMenuItem.Name = "statusReportToolStripMenuItem";
+            this.statusReportToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.statusReportToolStripMenuItem.Text = "Status Report";
+            // 
+            // employeeAuditReportToolStripMenuItem
+            // 
+            this.employeeAuditReportToolStripMenuItem.Name = "employeeAuditReportToolStripMenuItem";
+            this.employeeAuditReportToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.employeeAuditReportToolStripMenuItem.Text = "Employee Audit Report";
+            // 
+            // importOfficeDataToolStripMenuItem1
+            // 
+            this.importOfficeDataToolStripMenuItem1.Name = "importOfficeDataToolStripMenuItem1";
+            this.importOfficeDataToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
+            this.importOfficeDataToolStripMenuItem1.Text = "Import Office Data";
+            // 
+            // pensionCorrectionsToolStripMenuItem
+            // 
+            this.pensionCorrectionsToolStripMenuItem.Name = "pensionCorrectionsToolStripMenuItem";
+            this.pensionCorrectionsToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.pensionCorrectionsToolStripMenuItem.Text = "Pension Corrections";
+            // 
+            // postponementAtStagingToolStripMenuItem
+            // 
+            this.postponementAtStagingToolStripMenuItem.Name = "postponementAtStagingToolStripMenuItem";
+            this.postponementAtStagingToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.postponementAtStagingToolStripMenuItem.Text = "Postponement at Staging";
+            // 
+            // reexportContributionScheduleToolStripMenuItem
+            // 
+            this.reexportContributionScheduleToolStripMenuItem.Name = "reexportContributionScheduleToolStripMenuItem";
+            this.reexportContributionScheduleToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.reexportContributionScheduleToolStripMenuItem.Text = "Re-export Contribution Schedule";
             // 
             // MSA
             // 
@@ -4409,6 +4524,20 @@
         private System.Windows.Forms.ToolStripMenuItem leaversDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem p45ByOfficeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reverseP45ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createHistoryRecordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem foreignTaxAdjustmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentRecordEditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rTIEYUEntryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rTIFPSRecordEditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importOfficeDataToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pensionCorrectionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem postponementAtStagingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reexportContributionScheduleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem auditReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem genderPayGapReportingToolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeAuditReportToolStripMenuItem;
     }
 }
 
