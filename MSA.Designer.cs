@@ -604,7 +604,8 @@
             this.callsContactsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.callsContactsToolStripMenuItem.Text = "Calls/Contacts";
             this.callsContactsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
-            this.callsContactsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuClick);
+            this.callsContactsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
+            this.callsContactsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // contactsToolStripMenuItem
             // 

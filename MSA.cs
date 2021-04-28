@@ -21,9 +21,18 @@ namespace MeritSupportAid
         {
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
-            DoArrow();
-            sb.Append(mnu.Text);
-            MenuResultsBox.Text += sb.ToString();
+            if (mnu.HasDropDown == true)
+            {
+                //do nothing
+            }
+            else
+            {
+                DoArrow();
+                sb.Append(mnu.Text);
+                MenuResultsBox.Text += sb.ToString();
+            }
+
+            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
         }
 
         private void PrimaryMenuDrop(object sender, EventArgs e)
@@ -49,6 +58,7 @@ namespace MeritSupportAid
              
             MenuResultsBox.Text = sb.ToString();
             invisDDTextBox.Text = MenuResultsBox.Text;
+            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
         }
 
 
@@ -63,6 +73,7 @@ namespace MeritSupportAid
             DoArrow();
             sb.Append(mnu.Text);
             MenuResultsBox.Text += sb.ToString();
+            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
         }
 
         private void MenuClear(object sender, EventArgs e)
@@ -72,7 +83,7 @@ namespace MeritSupportAid
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
             MenuResultsBox.Text = invisDDTextBox.Text;
-
+            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
         }
 
         private void ResetTextBox(object sender, EventArgs e)
