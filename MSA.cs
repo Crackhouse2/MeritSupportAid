@@ -19,6 +19,11 @@ namespace MeritSupportAid
 
         private void MenuClick(object sender, EventArgs e)
         {
+            /* 
+            When click event is triggered, if there are no further drop down elements
+            it will add the clicked menu item to the string before copying. May consider a 
+            mouseover argument later on.
+            */
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
             if (mnu.HasDropDown == true)
@@ -37,7 +42,12 @@ namespace MeritSupportAid
 
         private void PrimaryMenuDrop(object sender, EventArgs e)
         {
-            //Created supplementary menu drop for PrimaryMenuItems, this will create a new string rather than append
+            /*
+            The primary difference with PrimaryMenuDrop and MenuDrop is that Primary ALWAYS begins the 
+            string again, no adding. MenuDrop is for submenus and will add to strings. PrimaryMenuDrop will
+            also assess the menu item to see if it is the MMT or CSM variant and if the latter, apply a prefix
+            */
+            
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
            
@@ -64,11 +74,20 @@ namespace MeritSupportAid
 
         private void MenuDrop(object sender, EventArgs e)
         {
-            //This will be for all sub menu items after first drop downs for example File -> Contacts
+            /*
+            Where this differs is that it will concatonate the strings at the end.
+            This will be for all sub menu items after first drop downs for example 
+            File -> Contacts -> to gain access to the further drop down items such as 
+            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
+            also need to implement MenuClear as DropDownClosed to avoid duplication in
+            the string.
+            */
+
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
 
-            //This catches MenuResults before manipulation so it can be replaced later if DropDownClosed triggered causing the MenuClear
+            //This catches MenuResults before manipulation so it can be replaced later 
+            //if DropDownClosed triggered causing the MenuClear function
             invisDDTextBox.Text = MenuResultsBox.Text;
             DoArrow();
             sb.Append(mnu.Text);
@@ -78,23 +97,25 @@ namespace MeritSupportAid
 
         private void MenuClear(object sender, EventArgs e)
         {
-            //Clear Textbox
-            //This needs to be dynamically used in instances of opening and closing a submenu to strip out the erroneously opened menu item.
+            /*
+            This function is called ot to entirely clear the text boxes but to step back
+            from any DropDownOpened additions that you may not want. It does this by using
+            the text value in invisDDTextBox which is set at any point there is text added
+            to the result field.
+            */
             ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
             StringBuilder sb = new StringBuilder();
             MenuResultsBox.Text = invisDDTextBox.Text;
             System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
         }
 
-        private void ResetTextBox(object sender, EventArgs e)
-        {
-            //Clear Textboxes
-            MenuResultsBox.Text = null;
-            invisDDTextBox.Text = null;
-        }
 
         private void DoArrow()
         {
+            /*
+            Where called and MenuResultsBox isn't null, it will concat an arrow inbetween 
+            current string and the next child element.
+            */
             string s = MenuResultsBox.Text;
             if (s.Length > 0)
             {
@@ -108,36 +129,5 @@ namespace MeritSupportAid
 
         }
 
-        /*
-            private void CSM_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-            {
-
-            }
-        
-          private void toolStripSeparator22_Click(object sender, EventArgs e)
-          {
-
-          }
-
-          private void toolStripSeparator26_Click(object sender, EventArgs e)
-          {
-
-          }
-
-private void textBox1_TextChanged(object sender, EventArgs e)
-{
-
-}
-
-private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
-{
-
-}
-
-private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
-{
-
-}
-*/
     }
 }
