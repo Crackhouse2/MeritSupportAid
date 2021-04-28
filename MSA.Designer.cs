@@ -551,6 +551,7 @@
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.releasePayrollLockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invisDDTextBox = new System.Windows.Forms.TextBox();
+            this.invisDropDownLastParent = new System.Windows.Forms.TextBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -591,7 +592,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
+            this.fileToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuDropDownClose);
             this.fileToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
             // 
             // callsContactsToolStripMenuItem
@@ -603,7 +604,7 @@
             this.callsContactsToolStripMenuItem.Name = "callsContactsToolStripMenuItem";
             this.callsContactsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.callsContactsToolStripMenuItem.Text = "Calls/Contacts";
-            this.callsContactsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
+            this.callsContactsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuDropDownClose);
             this.callsContactsToolStripMenuItem.DropDownOpened += new System.EventHandler(this.MenuDrop);
             this.callsContactsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -613,6 +614,8 @@
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.contactsToolStripMenuItem.Text = "Contacts";
             this.contactsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
+            this.contactsToolStripMenuItem.MouseEnter += new System.EventHandler(this.MenuClick);
+            this.contactsToolStripMenuItem.MouseLeave += new System.EventHandler(this.MenuClear);
             // 
             // outstandingToolStripMenuItem
             // 
@@ -679,7 +682,7 @@
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.DropDownClosed += new System.EventHandler(this.MenuClear);
-            this.employeesToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop); 
+            this.employeesToolStripMenuItem.DropDownOpened += new System.EventHandler(this.PrimaryMenuDrop);
             // 
             // viewEmployeeToolStripMenuItem
             // 
@@ -4330,7 +4333,13 @@
             this.invisDDTextBox.Name = "invisDDTextBox";
             this.invisDDTextBox.Size = new System.Drawing.Size(231, 20);
             this.invisDDTextBox.TabIndex = 3;
-            this.invisDDTextBox.Visible = false;
+            // 
+            // invisDropDownLastParent
+            // 
+            this.invisDropDownLastParent.Location = new System.Drawing.Point(652, 53);
+            this.invisDropDownLastParent.Name = "invisDropDownLastParent";
+            this.invisDropDownLastParent.Size = new System.Drawing.Size(231, 20);
+            this.invisDropDownLastParent.TabIndex = 4;
             // 
             // MSA
             // 
@@ -4340,6 +4349,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(895, 231);
+            this.Controls.Add(this.invisDropDownLastParent);
             this.Controls.Add(this.invisDDTextBox);
             this.Controls.Add(this.MenuResultsBox);
             this.Controls.Add(this.MMT);
@@ -4884,6 +4894,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
         private System.Windows.Forms.ToolStripMenuItem releasePayrollLockToolStripMenuItem;
         private System.Windows.Forms.TextBox invisDDTextBox;
+        private System.Windows.Forms.TextBox invisDropDownLastParent;
     }
 }
 

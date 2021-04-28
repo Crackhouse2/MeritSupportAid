@@ -32,12 +32,14 @@ namespace MeritSupportAid
             }
             else
             {
+                //MenuResultsBox.Text = invisDDTextBox.Text;
                 DoArrow();
                 sb.Append(mnu.Text);
+                invisDDTextBox.Text = MenuResultsBox.Text;
                 MenuResultsBox.Text += sb.ToString();
             }
 
-            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
+            Clipboard.SetText(MenuResultsBox.Text);
         }
 
         private void PrimaryMenuDrop(object sender, EventArgs e)
@@ -64,11 +66,10 @@ namespace MeritSupportAid
             else
             {
                 sb.Append(mnu.Text);
+                MenuResultsBox.Text = sb.ToString();
             }
-             
-            MenuResultsBox.Text = sb.ToString();
             invisDDTextBox.Text = MenuResultsBox.Text;
-            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
+            Clipboard.SetText(MenuResultsBox.Text);
         }
 
 
@@ -88,11 +89,23 @@ namespace MeritSupportAid
 
             //This catches MenuResults before manipulation so it can be replaced later 
             //if DropDownClosed triggered causing the MenuClear function
-            invisDDTextBox.Text = MenuResultsBox.Text;
-            DoArrow();
-            sb.Append(mnu.Text);
-            MenuResultsBox.Text += sb.ToString();
-            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
+            invisDropDownLastParent.Text = MenuResultsBox.Text;
+
+            //To ensure that the same value isn't repeatedly added. May need further
+            //thought with some of the repeated nesting in the tree.
+            bool TextCheck = MenuResultsBox.Text.EndsWith(mnu.Text);
+            if (TextCheck == true)
+            {
+                //Don't keep adding
+            }
+            else
+            {
+                DoArrow();
+                sb.Append(mnu.Text);
+                string test = MenuResultsBox.Text + sb.ToString();
+                MenuResultsBox.Text += sb.ToString();
+                Clipboard.SetText(MenuResultsBox.Text);
+            }
         }
 
         private void MenuClear(object sender, EventArgs e)
@@ -103,23 +116,31 @@ namespace MeritSupportAid
             the text value in invisDDTextBox which is set at any point there is text added
             to the result field.
             */
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
             MenuResultsBox.Text = invisDDTextBox.Text;
-            System.Windows.Forms.Clipboard.SetText(MenuResultsBox.Text);
+            Clipboard.SetText(MenuResultsBox.Text);
         }
-
+        private void MenuDropDownClose(object sender, EventArgs e)
+        {
+            /*
+            This function is called where the last parent is closed, such as with a click
+            */
+            MenuResultsBox.Text = invisDropDownLastParent.Text;
+            Clipboard.SetText(MenuResultsBox.Text);
+        }
 
         private void DoArrow()
         {
             /*
             Where called and MenuResultsBox isn't null, it will concat an arrow inbetween 
-            current string and the next child element.
+            current string and the next child element. Protection for multiple arrows added.
             */
             string s = MenuResultsBox.Text;
             if (s.Length > 0)
             {
-                MenuResultsBox.Text += (" -> ");
+                if (MenuResultsBox.Text.EndsWith(" -> ") == false)
+                {
+                    MenuResultsBox.Text += (" -> ");
+                }
             }
         }
 
