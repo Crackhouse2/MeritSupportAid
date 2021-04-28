@@ -477,6 +477,32 @@
             this.moveEmployeeUtilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveEmployeesToUmbrellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eclipseBatchRemovalToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importHistoryFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importPensionsFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onholdImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAdjustmentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoiceDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tradeshiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resendInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.authoriserSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rejectReasonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expenseRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.holidayRequestRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeDocumentRegressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForMissingDuplicatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bulkP45ByImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bulkP45ByAgencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bulkP45ByOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leaversDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.p45ByOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reverseP45ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -3515,24 +3541,44 @@
             // 
             // importsToolStripMenuItem
             // 
+            this.importsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eclipseBatchRemovalToolToolStripMenuItem,
+            this.importDataToolStripMenuItem,
+            this.importHistoryFromFileToolStripMenuItem,
+            this.importPensionsFromFileToolStripMenuItem,
+            this.onholdImportToolStripMenuItem});
             this.importsToolStripMenuItem.Name = "importsToolStripMenuItem";
             this.importsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.importsToolStripMenuItem.Text = "Imports";
             // 
             // invoicesToolStripMenuItem
             // 
+            this.invoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteAdjustmentsToolStripMenuItem1,
+            this.invoiceDatesToolStripMenuItem,
+            this.tradeshiftToolStripMenuItem});
             this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
             this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.invoicesToolStripMenuItem.Text = "Invoices";
             // 
             // onlineToolStripMenuItem2
             // 
+            this.onlineToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.onlineTimesheetsToolStripMenuItem,
+            this.onlineEmployeesToolStripMenuItem});
             this.onlineToolStripMenuItem2.Name = "onlineToolStripMenuItem2";
             this.onlineToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
             this.onlineToolStripMenuItem2.Text = "Online";
             // 
             // p45OptionsToolStripMenuItem
             // 
+            this.p45OptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bulkP45ByImportToolStripMenuItem,
+            this.bulkP45ByAgencyToolStripMenuItem,
+            this.bulkP45ByOfficeToolStripMenuItem,
+            this.leaversDetailsToolStripMenuItem,
+            this.p45ByOfficeToolStripMenuItem,
+            this.reverseP45ToolStripMenuItem});
             this.p45OptionsToolStripMenuItem.Name = "p45OptionsToolStripMenuItem";
             this.p45OptionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.p45OptionsToolStripMenuItem.Text = "P45 Options";
@@ -3690,6 +3736,175 @@
             this.moveEmployeesToUmbrellaToolStripMenuItem.Name = "moveEmployeesToUmbrellaToolStripMenuItem";
             this.moveEmployeesToUmbrellaToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.moveEmployeesToUmbrellaToolStripMenuItem.Text = "Move Employees to Umbrella";
+            // 
+            // eclipseBatchRemovalToolToolStripMenuItem
+            // 
+            this.eclipseBatchRemovalToolToolStripMenuItem.Name = "eclipseBatchRemovalToolToolStripMenuItem";
+            this.eclipseBatchRemovalToolToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.eclipseBatchRemovalToolToolStripMenuItem.Text = "Eclipse Batch Removal Tool";
+            // 
+            // importDataToolStripMenuItem
+            // 
+            this.importDataToolStripMenuItem.Name = "importDataToolStripMenuItem";
+            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.importDataToolStripMenuItem.Text = "Import Data";
+            // 
+            // importHistoryFromFileToolStripMenuItem
+            // 
+            this.importHistoryFromFileToolStripMenuItem.Name = "importHistoryFromFileToolStripMenuItem";
+            this.importHistoryFromFileToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.importHistoryFromFileToolStripMenuItem.Text = "Import History From File";
+            // 
+            // importPensionsFromFileToolStripMenuItem
+            // 
+            this.importPensionsFromFileToolStripMenuItem.Name = "importPensionsFromFileToolStripMenuItem";
+            this.importPensionsFromFileToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.importPensionsFromFileToolStripMenuItem.Text = "Import Pensions From File";
+            // 
+            // onholdImportToolStripMenuItem
+            // 
+            this.onholdImportToolStripMenuItem.Name = "onholdImportToolStripMenuItem";
+            this.onholdImportToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.onholdImportToolStripMenuItem.Text = "On-hold Import";
+            // 
+            // deleteAdjustmentsToolStripMenuItem1
+            // 
+            this.deleteAdjustmentsToolStripMenuItem1.Name = "deleteAdjustmentsToolStripMenuItem1";
+            this.deleteAdjustmentsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteAdjustmentsToolStripMenuItem1.Text = "Delete Adjustments";
+            // 
+            // invoiceDatesToolStripMenuItem
+            // 
+            this.invoiceDatesToolStripMenuItem.Name = "invoiceDatesToolStripMenuItem";
+            this.invoiceDatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invoiceDatesToolStripMenuItem.Text = "Invoice Dates";
+            // 
+            // tradeshiftToolStripMenuItem
+            // 
+            this.tradeshiftToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setupToolStripMenuItem,
+            this.resendInvoicesToolStripMenuItem});
+            this.tradeshiftToolStripMenuItem.Name = "tradeshiftToolStripMenuItem";
+            this.tradeshiftToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tradeshiftToolStripMenuItem.Text = "Tradeshift";
+            // 
+            // setupToolStripMenuItem
+            // 
+            this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
+            this.setupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setupToolStripMenuItem.Text = "Setup";
+            // 
+            // resendInvoicesToolStripMenuItem
+            // 
+            this.resendInvoicesToolStripMenuItem.Name = "resendInvoicesToolStripMenuItem";
+            this.resendInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resendInvoicesToolStripMenuItem.Text = "Resend Invoices";
+            // 
+            // onlineTimesheetsToolStripMenuItem
+            // 
+            this.onlineTimesheetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.authoriserSetupToolStripMenuItem,
+            this.userSetupToolStripMenuItem,
+            this.rejectReasonsToolStripMenuItem,
+            this.expenseRegressionToolStripMenuItem,
+            this.timesheetRegressionToolStripMenuItem,
+            this.holidayRequestRegressionToolStripMenuItem,
+            this.employeeDocumentRegressionToolStripMenuItem});
+            this.onlineTimesheetsToolStripMenuItem.Name = "onlineTimesheetsToolStripMenuItem";
+            this.onlineTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onlineTimesheetsToolStripMenuItem.Text = "Online Timesheets";
+            // 
+            // onlineEmployeesToolStripMenuItem
+            // 
+            this.onlineEmployeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkForMissingDuplicatesToolStripMenuItem});
+            this.onlineEmployeesToolStripMenuItem.Name = "onlineEmployeesToolStripMenuItem";
+            this.onlineEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onlineEmployeesToolStripMenuItem.Text = "Online Employees";
+            // 
+            // authoriserSetupToolStripMenuItem
+            // 
+            this.authoriserSetupToolStripMenuItem.Name = "authoriserSetupToolStripMenuItem";
+            this.authoriserSetupToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.authoriserSetupToolStripMenuItem.Text = "Authoriser Setup";
+            // 
+            // userSetupToolStripMenuItem
+            // 
+            this.userSetupToolStripMenuItem.Name = "userSetupToolStripMenuItem";
+            this.userSetupToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.userSetupToolStripMenuItem.Text = "User Setup";
+            // 
+            // rejectReasonsToolStripMenuItem
+            // 
+            this.rejectReasonsToolStripMenuItem.Name = "rejectReasonsToolStripMenuItem";
+            this.rejectReasonsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.rejectReasonsToolStripMenuItem.Text = "Reject Reasons";
+            // 
+            // expenseRegressionToolStripMenuItem
+            // 
+            this.expenseRegressionToolStripMenuItem.Name = "expenseRegressionToolStripMenuItem";
+            this.expenseRegressionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.expenseRegressionToolStripMenuItem.Text = "Expense Regression";
+            // 
+            // timesheetRegressionToolStripMenuItem
+            // 
+            this.timesheetRegressionToolStripMenuItem.Name = "timesheetRegressionToolStripMenuItem";
+            this.timesheetRegressionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.timesheetRegressionToolStripMenuItem.Text = "Timesheet Regression";
+            // 
+            // holidayRequestRegressionToolStripMenuItem
+            // 
+            this.holidayRequestRegressionToolStripMenuItem.Name = "holidayRequestRegressionToolStripMenuItem";
+            this.holidayRequestRegressionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.holidayRequestRegressionToolStripMenuItem.Text = "Holiday Request Regression";
+            // 
+            // employeeDocumentRegressionToolStripMenuItem
+            // 
+            this.employeeDocumentRegressionToolStripMenuItem.Name = "employeeDocumentRegressionToolStripMenuItem";
+            this.employeeDocumentRegressionToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.employeeDocumentRegressionToolStripMenuItem.Text = "Employee Document Regression";
+            // 
+            // checkForMissingDuplicatesToolStripMenuItem
+            // 
+            this.checkForMissingDuplicatesToolStripMenuItem.Name = "checkForMissingDuplicatesToolStripMenuItem";
+            this.checkForMissingDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.checkForMissingDuplicatesToolStripMenuItem.Text = "Check for Missing/Duplicates";
+            // 
+            // bulkP45ByImportToolStripMenuItem
+            // 
+            this.bulkP45ByImportToolStripMenuItem.Name = "bulkP45ByImportToolStripMenuItem";
+            this.bulkP45ByImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByImportToolStripMenuItem.Text = "Bulk P45 by Import";
+            // 
+            // bulkP45ByAgencyToolStripMenuItem
+            // 
+            this.bulkP45ByAgencyToolStripMenuItem.Name = "bulkP45ByAgencyToolStripMenuItem";
+            this.bulkP45ByAgencyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByAgencyToolStripMenuItem.Text = "Bulk P45 by Agency";
+            // 
+            // bulkP45ByOfficeToolStripMenuItem
+            // 
+            this.bulkP45ByOfficeToolStripMenuItem.Name = "bulkP45ByOfficeToolStripMenuItem";
+            this.bulkP45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bulkP45ByOfficeToolStripMenuItem.Text = "Bulk P45 by Office";
+            // 
+            // leaversDetailsToolStripMenuItem
+            // 
+            this.leaversDetailsToolStripMenuItem.Name = "leaversDetailsToolStripMenuItem";
+            this.leaversDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.leaversDetailsToolStripMenuItem.Text = "Leavers Details";
+            // 
+            // p45ByOfficeToolStripMenuItem
+            // 
+            this.p45ByOfficeToolStripMenuItem.Name = "p45ByOfficeToolStripMenuItem";
+            this.p45ByOfficeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.p45ByOfficeToolStripMenuItem.Text = "P45 by Office";
+            // 
+            // reverseP45ToolStripMenuItem
+            // 
+            this.reverseP45ToolStripMenuItem.Name = "reverseP45ToolStripMenuItem";
+            this.reverseP45ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reverseP45ToolStripMenuItem.Text = "Reverse P45";
             // 
             // MSA
             // 
@@ -4168,6 +4383,32 @@
         private System.Windows.Forms.ToolStripMenuItem yearEndToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
         private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eclipseBatchRemovalToolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importHistoryFromFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importPensionsFromFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onholdImportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAdjustmentsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem invoiceDatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tradeshiftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resendInvoicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onlineTimesheetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem authoriserSetupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userSetupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rejectReasonsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expenseRegressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timesheetRegressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem holidayRequestRegressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeDocumentRegressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onlineEmployeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkForMissingDuplicatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bulkP45ByImportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bulkP45ByAgencyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bulkP45ByOfficeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leaversDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem p45ByOfficeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reverseP45ToolStripMenuItem;
     }
 }
 
