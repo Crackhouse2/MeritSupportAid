@@ -71,31 +71,36 @@ namespace MeritSupportAid
         {
 
         }
+
+        private void CSM_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
         /*
-               private void toolStripSeparator22_Click(object sender, EventArgs e)
-               {
+      private void toolStripSeparator22_Click(object sender, EventArgs e)
+      {
 
-               }
+      }
 
-               private void toolStripSeparator26_Click(object sender, EventArgs e)
-               {
+      private void toolStripSeparator26_Click(object sender, EventArgs e)
+      {
 
-               }
+      }
 
-       private void textBox1_TextChanged(object sender, EventArgs e)
-       {
+private void textBox1_TextChanged(object sender, EventArgs e)
+{
 
-       }
+}
 
-       private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
-       {
+private void callsContactsToolStripMenuItem_Click(object sender, EventArgs e)
+{
 
-       }
+}
 
-       private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
-       {
+private void allCallsToolStripMenuItem_Click(object sender, EventArgs e)
+{
 
-       }
-       */
+}
+*/
     }
 }

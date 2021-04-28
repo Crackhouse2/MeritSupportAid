@@ -542,6 +542,14 @@
             this.p9xUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processP9NoticesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printCISStatementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.amendUnionFeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conversionTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadTFAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oneBillConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paperTypeSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weedPlacementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            this.releasePayrollLockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -564,7 +572,7 @@
             this.reportsToolStripMenuItem,
             this.controlToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.MMT.Location = new System.Drawing.Point(0, 24);
+            this.MMT.Location = new System.Drawing.Point(0, 0);
             this.MMT.Name = "MMT";
             this.MMT.Size = new System.Drawing.Size(895, 24);
             this.MMT.TabIndex = 0;
@@ -673,19 +681,19 @@
             // viewEmployeeToolStripMenuItem
             // 
             this.viewEmployeeToolStripMenuItem.Name = "viewEmployeeToolStripMenuItem";
-            this.viewEmployeeToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.viewEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewEmployeeToolStripMenuItem.Text = "Create/Amend";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // expenseSearchToolStripMenuItem
             // 
             this.expenseSearchToolStripMenuItem.Name = "expenseSearchToolStripMenuItem";
-            this.expenseSearchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.expenseSearchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.expenseSearchToolStripMenuItem.Text = "Expense Search";
             // 
             // p45P46ToolStripMenuItem
@@ -695,7 +703,7 @@
             this.p45P46ViewAmendToolStripMenuItem,
             this.newStartersToolStripMenuItem});
             this.p45P46ToolStripMenuItem.Name = "p45P46ToolStripMenuItem";
-            this.p45P46ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.p45P46ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.p45P46ToolStripMenuItem.Text = "P45 P46";
             // 
             // p45P46EntryToolStripMenuItem
@@ -719,13 +727,13 @@
             // bulkTAXCodesToolStripMenuItem
             // 
             this.bulkTAXCodesToolStripMenuItem.Name = "bulkTAXCodesToolStripMenuItem";
-            this.bulkTAXCodesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.bulkTAXCodesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bulkTAXCodesToolStripMenuItem.Text = "Bulk TAX Codes";
             // 
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             // 
             // sMSEmailToolStripMenuItem
@@ -737,7 +745,7 @@
             this.emailPayConfirmationToolStripMenuItem,
             this.manageScheduledSMSToolStripMenuItem});
             this.sMSEmailToolStripMenuItem.Name = "sMSEmailToolStripMenuItem";
-            this.sMSEmailToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.sMSEmailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sMSEmailToolStripMenuItem.Text = "SMS/Email";
             // 
             // sendSMSToEmployeesToolStripMenuItem
@@ -778,7 +786,7 @@
             this.dailyEmailUpdatesToolStripMenuItem,
             this.workListToolStripMenuItem});
             this.prospectsToolStripMenuItem.Name = "prospectsToolStripMenuItem";
-            this.prospectsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.prospectsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.prospectsToolStripMenuItem.Text = "Prospects";
             // 
             // createBatchToolStripMenuItem
@@ -808,7 +816,7 @@
             // expensesToolStripMenuItem
             // 
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
-            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.expensesToolStripMenuItem.Text = "Expenses";
             // 
             // importExportToolStripMenuItem
@@ -817,7 +825,7 @@
             this.importEmployeesToolStripMenuItem,
             this.exportEmployeesToolStripMenuItem});
             this.importExportToolStripMenuItem.Name = "importExportToolStripMenuItem";
-            this.importExportToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.importExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importExportToolStripMenuItem.Text = "Import/Export";
             // 
             // importEmployeesToolStripMenuItem
@@ -837,7 +845,7 @@
             this.onlineToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importDocumentsToolStripMenuItem});
             this.onlineToolStripMenuItem.Name = "onlineToolStripMenuItem";
-            this.onlineToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.onlineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.onlineToolStripMenuItem.Text = "Online";
             // 
             // importDocumentsToolStripMenuItem
@@ -2797,6 +2805,7 @@
             // CSM
             // 
             this.CSM.BackColor = System.Drawing.Color.Transparent;
+            this.CSM.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CSM.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.systemDefaultsToolStripMenuItem,
             this.branchTablesToolStripMenuItem,
@@ -2804,11 +2813,12 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 0);
+            this.CSM.Location = new System.Drawing.Point(0, 207);
             this.CSM.Name = "CSM";
             this.CSM.Size = new System.Drawing.Size(895, 24);
             this.CSM.TabIndex = 2;
             this.CSM.Text = "CSM";
+            this.CSM.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CSM_ItemClicked);
             // 
             // systemDefaultsToolStripMenuItem
             // 
@@ -4177,6 +4187,15 @@
             // 
             // miscToolStripMenuItem
             // 
+            this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.amendUnionFeesToolStripMenuItem,
+            this.conversionTablesToolStripMenuItem,
+            this.loadTFAToolStripMenuItem,
+            this.oneBillConfigurationToolStripMenuItem,
+            this.paperTypeSetupToolStripMenuItem,
+            this.weedPlacementsToolStripMenuItem,
+            this.toolStripSeparator28,
+            this.releasePayrollLockToolStripMenuItem});
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.miscToolStripMenuItem.Text = "Misc";
@@ -4221,6 +4240,53 @@
             this.printCISStatementsToolStripMenuItem.Name = "printCISStatementsToolStripMenuItem";
             this.printCISStatementsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.printCISStatementsToolStripMenuItem.Text = "Print CIS Statements";
+            // 
+            // amendUnionFeesToolStripMenuItem
+            // 
+            this.amendUnionFeesToolStripMenuItem.Name = "amendUnionFeesToolStripMenuItem";
+            this.amendUnionFeesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.amendUnionFeesToolStripMenuItem.Text = "Amend Union Fees";
+            // 
+            // conversionTablesToolStripMenuItem
+            // 
+            this.conversionTablesToolStripMenuItem.Name = "conversionTablesToolStripMenuItem";
+            this.conversionTablesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.conversionTablesToolStripMenuItem.Text = "Conversion Tables";
+            // 
+            // loadTFAToolStripMenuItem
+            // 
+            this.loadTFAToolStripMenuItem.Name = "loadTFAToolStripMenuItem";
+            this.loadTFAToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.loadTFAToolStripMenuItem.Text = "Load TFA";
+            // 
+            // oneBillConfigurationToolStripMenuItem
+            // 
+            this.oneBillConfigurationToolStripMenuItem.Name = "oneBillConfigurationToolStripMenuItem";
+            this.oneBillConfigurationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.oneBillConfigurationToolStripMenuItem.Text = "One Bill Configuration";
+            // 
+            // paperTypeSetupToolStripMenuItem
+            // 
+            this.paperTypeSetupToolStripMenuItem.Name = "paperTypeSetupToolStripMenuItem";
+            this.paperTypeSetupToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.paperTypeSetupToolStripMenuItem.Text = "Paper Type Setup";
+            // 
+            // weedPlacementsToolStripMenuItem
+            // 
+            this.weedPlacementsToolStripMenuItem.Name = "weedPlacementsToolStripMenuItem";
+            this.weedPlacementsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.weedPlacementsToolStripMenuItem.Text = "Weed Placements";
+            // 
+            // toolStripSeparator28
+            // 
+            this.toolStripSeparator28.Name = "toolStripSeparator28";
+            this.toolStripSeparator28.Size = new System.Drawing.Size(189, 6);
+            // 
+            // releasePayrollLockToolStripMenuItem
+            // 
+            this.releasePayrollLockToolStripMenuItem.Name = "releasePayrollLockToolStripMenuItem";
+            this.releasePayrollLockToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.releasePayrollLockToolStripMenuItem.Text = "Release Payroll Lock";
             // 
             // MSA
             // 
@@ -4764,6 +4830,14 @@
         private System.Windows.Forms.ToolStripMenuItem p9xUpdateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem processP9NoticesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printCISStatementsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem amendUnionFeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conversionTablesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadTFAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oneBillConfigurationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paperTypeSetupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weedPlacementsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
+        private System.Windows.Forms.ToolStripMenuItem releasePayrollLockToolStripMenuItem;
     }
 }
 
