@@ -3028,6 +3028,7 @@
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
             this.generalToolStripMenuItem.Text = "General";
+            this.generalToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // officeMaintenanceToolStripMenuItem
             // 
