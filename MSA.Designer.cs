@@ -892,24 +892,28 @@
             this.clientRatesToolStripMenuItem.Name = "clientRatesToolStripMenuItem";
             this.clientRatesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.clientRatesToolStripMenuItem.Text = "Client Rates";
+            this.clientRatesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // createAmendToolStripMenuItem
             // 
             this.createAmendToolStripMenuItem.Name = "createAmendToolStripMenuItem";
             this.createAmendToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.createAmendToolStripMenuItem.Text = "Create/Amend";
+            this.createAmendToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // searchToolStripMenuItem1
             // 
             this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
             this.searchToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
             this.searchToolStripMenuItem1.Text = "Search";
+            this.searchToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // updateClientBalancesToolStripMenuItem
             // 
             this.updateClientBalancesToolStripMenuItem.Name = "updateClientBalancesToolStripMenuItem";
             this.updateClientBalancesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.updateClientBalancesToolStripMenuItem.Text = "Update Client Balances";
+            this.updateClientBalancesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // placementsToolStripMenuItem
             // 
@@ -930,12 +934,14 @@
             this.createAmendToolStripMenuItem1.Name = "createAmendToolStripMenuItem1";
             this.createAmendToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.createAmendToolStripMenuItem1.Text = "Create/Amend";
+            this.createAmendToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // searchToolStripMenuItem2
             // 
             this.searchToolStripMenuItem2.Name = "searchToolStripMenuItem2";
             this.searchToolStripMenuItem2.Size = new System.Drawing.Size(191, 22);
             this.searchToolStripMenuItem2.Text = "Search";
+            this.searchToolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator2
             // 
@@ -947,24 +953,28 @@
             this.cancelPermDiscountToolStripMenuItem.Name = "cancelPermDiscountToolStripMenuItem";
             this.cancelPermDiscountToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.cancelPermDiscountToolStripMenuItem.Text = "Cancel Perm Discount";
+            this.cancelPermDiscountToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportPlacementsToolStripMenuItem
             // 
             this.exportPlacementsToolStripMenuItem.Name = "exportPlacementsToolStripMenuItem";
             this.exportPlacementsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.exportPlacementsToolStripMenuItem.Text = "Export Placements";
+            this.exportPlacementsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // futureIncomeReportToolStripMenuItem
             // 
             this.futureIncomeReportToolStripMenuItem.Name = "futureIncomeReportToolStripMenuItem";
             this.futureIncomeReportToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.futureIncomeReportToolStripMenuItem.Text = "Future Income Report";
+            this.futureIncomeReportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // generateTimesheetsToolStripMenuItem
             // 
             this.generateTimesheetsToolStripMenuItem.Name = "generateTimesheetsToolStripMenuItem";
             this.generateTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.generateTimesheetsToolStripMenuItem.Text = "Generate Timesheets";
+            this.generateTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // timesheetsToolStripMenuItem
             // 
@@ -995,78 +1005,91 @@
             this.createAmendToolStripMenuItem2.Name = "createAmendToolStripMenuItem2";
             this.createAmendToolStripMenuItem2.Size = new System.Drawing.Size(266, 22);
             this.createAmendToolStripMenuItem2.Text = "Create/Amend";
+            this.createAmendToolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // searchToolStripMenuItem3
             // 
             this.searchToolStripMenuItem3.Name = "searchToolStripMenuItem3";
             this.searchToolStripMenuItem3.Size = new System.Drawing.Size(266, 22);
             this.searchToolStripMenuItem3.Text = "Search";
+            this.searchToolStripMenuItem3.Click += new System.EventHandler(this.MenuClick);
             // 
             // prelistToolStripMenuItem
             // 
             this.prelistToolStripMenuItem.Name = "prelistToolStripMenuItem";
             this.prelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.prelistToolStripMenuItem.Text = "Prelist";
+            this.prelistToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // deductionPrelistToolStripMenuItem
             // 
             this.deductionPrelistToolStripMenuItem.Name = "deductionPrelistToolStripMenuItem";
             this.deductionPrelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.deductionPrelistToolStripMenuItem.Text = "Deduction Prelist";
+            this.deductionPrelistToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // generateHolidayTimesheetsToolStripMenuItem
             // 
             this.generateHolidayTimesheetsToolStripMenuItem.Name = "generateHolidayTimesheetsToolStripMenuItem";
             this.generateHolidayTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.generateHolidayTimesheetsToolStripMenuItem.Text = "Generate Holiday Timesheets";
+            this.generateHolidayTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // loanPaymentTimesheetsToolStripMenuItem
             // 
             this.loanPaymentTimesheetsToolStripMenuItem.Name = "loanPaymentTimesheetsToolStripMenuItem";
             this.loanPaymentTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.loanPaymentTimesheetsToolStripMenuItem.Text = "Loan Payment Timesheets";
+            this.loanPaymentTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // releaseHoldTimesheetsPayrollToolStripMenuItem
             // 
             this.releaseHoldTimesheetsPayrollToolStripMenuItem.Name = "releaseHoldTimesheetsPayrollToolStripMenuItem";
             this.releaseHoldTimesheetsPayrollToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.releaseHoldTimesheetsPayrollToolStripMenuItem.Text = "Release/Hold Timesheets (Payroll)";
+            this.releaseHoldTimesheetsPayrollToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // releaseHoldTimesheetsInvoicingToolStripMenuItem
             // 
             this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Name = "releaseHoldTimesheetsInvoicingToolStripMenuItem";
             this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Text = "Release/Hold Timesheets (Invoicing)";
+            this.releaseHoldTimesheetsInvoicingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // contractorsInvoicesToolStripMenuItem
             // 
             this.contractorsInvoicesToolStripMenuItem.Name = "contractorsInvoicesToolStripMenuItem";
             this.contractorsInvoicesToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.contractorsInvoicesToolStripMenuItem.Text = "Contractors Invoices";
+            this.contractorsInvoicesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // lTDCISCoPrelistToolStripMenuItem
             // 
             this.lTDCISCoPrelistToolStripMenuItem.Name = "lTDCISCoPrelistToolStripMenuItem";
             this.lTDCISCoPrelistToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.lTDCISCoPrelistToolStripMenuItem.Text = "LTD/CIS Co Prelist";
+            this.lTDCISCoPrelistToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // importTimesheetsFromCSVToolStripMenuItem
             // 
             this.importTimesheetsFromCSVToolStripMenuItem.Name = "importTimesheetsFromCSVToolStripMenuItem";
             this.importTimesheetsFromCSVToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.importTimesheetsFromCSVToolStripMenuItem.Text = "Import Timesheets from CSV";
+            this.importTimesheetsFromCSVToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // pensionOptOutsAndRefundsToolStripMenuItem
             // 
             this.pensionOptOutsAndRefundsToolStripMenuItem.Name = "pensionOptOutsAndRefundsToolStripMenuItem";
             this.pensionOptOutsAndRefundsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.pensionOptOutsAndRefundsToolStripMenuItem.Text = "Pension Opt Outs and Refunds";
+            this.pensionOptOutsAndRefundsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // furloughedPaymentModuleToolStripMenuItem
             // 
             this.furloughedPaymentModuleToolStripMenuItem.Name = "furloughedPaymentModuleToolStripMenuItem";
             this.furloughedPaymentModuleToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.furloughedPaymentModuleToolStripMenuItem.Text = "Furloughed Payment Module";
+            this.furloughedPaymentModuleToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // sMSEmailToolStripMenuItem1
             // 
@@ -1075,12 +1098,14 @@
             this.sMSEmailToolStripMenuItem1.Name = "sMSEmailToolStripMenuItem1";
             this.sMSEmailToolStripMenuItem1.Size = new System.Drawing.Size(266, 22);
             this.sMSEmailToolStripMenuItem1.Text = "SMS/Email";
+            this.sMSEmailToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // timesheetsEnteredToolStripMenuItem
             // 
             this.timesheetsEnteredToolStripMenuItem.Name = "timesheetsEnteredToolStripMenuItem";
             this.timesheetsEnteredToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.timesheetsEnteredToolStripMenuItem.Text = "Timesheets Entered";
+            this.timesheetsEnteredToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // onlineToolStripMenuItem1
             // 
@@ -1100,24 +1125,28 @@
             this.onlineToolStripMenuItem1.Name = "onlineToolStripMenuItem1";
             this.onlineToolStripMenuItem1.Size = new System.Drawing.Size(266, 22);
             this.onlineToolStripMenuItem1.Text = "Online";
+            this.onlineToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // onlineTimesheetVerificationToolStripMenuItem
             // 
             this.onlineTimesheetVerificationToolStripMenuItem.Name = "onlineTimesheetVerificationToolStripMenuItem";
             this.onlineTimesheetVerificationToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.onlineTimesheetVerificationToolStripMenuItem.Text = "Online Timesheet Verification";
+            this.onlineTimesheetVerificationToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(248, 22);
             this.toolStripMenuItem2.Text = "Online Timesheets Import";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // updatePurchaseOrderNumbersToolStripMenuItem
             // 
             this.updatePurchaseOrderNumbersToolStripMenuItem.Name = "updatePurchaseOrderNumbersToolStripMenuItem";
             this.updatePurchaseOrderNumbersToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.updatePurchaseOrderNumbersToolStripMenuItem.Text = "Update Purchase Order Numbers";
+            this.updatePurchaseOrderNumbersToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator4
             // 
@@ -1129,12 +1158,14 @@
             this.timesheetsWithImagesToolStripMenuItem.Name = "timesheetsWithImagesToolStripMenuItem";
             this.timesheetsWithImagesToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.timesheetsWithImagesToolStripMenuItem.Text = "Timesheets with Images";
+            this.timesheetsWithImagesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // timesheetsWithoutImagesToolStripMenuItem
             // 
             this.timesheetsWithoutImagesToolStripMenuItem.Name = "timesheetsWithoutImagesToolStripMenuItem";
             this.timesheetsWithoutImagesToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.timesheetsWithoutImagesToolStripMenuItem.Text = "Timesheets without Images";
+            this.timesheetsWithoutImagesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator5
             // 
@@ -1146,6 +1177,7 @@
             this.expressTimesheetImportToolStripMenuItem.Name = "expressTimesheetImportToolStripMenuItem";
             this.expressTimesheetImportToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.expressTimesheetImportToolStripMenuItem.Text = "Express Timesheet Import";
+            this.expressTimesheetImportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator6
             // 
@@ -1157,6 +1189,7 @@
             this.expensesToolStripMenuItem1.Name = "expensesToolStripMenuItem1";
             this.expensesToolStripMenuItem1.Size = new System.Drawing.Size(248, 22);
             this.expensesToolStripMenuItem1.Text = "Expenses";
+            this.expensesToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator7
             // 
@@ -1168,6 +1201,7 @@
             this.holidayRequestsToolStripMenuItem.Name = "holidayRequestsToolStripMenuItem";
             this.holidayRequestsToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.holidayRequestsToolStripMenuItem.Text = "Holiday Requests";
+            this.holidayRequestsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator3
             // 
@@ -1179,6 +1213,7 @@
             this.timesheetPOUpdateToolStripMenuItem.Name = "timesheetPOUpdateToolStripMenuItem";
             this.timesheetPOUpdateToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.timesheetPOUpdateToolStripMenuItem.Text = "Timesheet PO Update";
+            this.timesheetPOUpdateToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // payrollToolStripMenuItem
             // 
@@ -1204,36 +1239,42 @@
             this.processPayrollToolStripMenuItem.Name = "processPayrollToolStripMenuItem";
             this.processPayrollToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.processPayrollToolStripMenuItem.Text = "Process Payroll";
+            this.processPayrollToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // deductAdminFeesToolStripMenuItem
             // 
             this.deductAdminFeesToolStripMenuItem.Name = "deductAdminFeesToolStripMenuItem";
             this.deductAdminFeesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.deductAdminFeesToolStripMenuItem.Text = "Deduct Admin Fees";
+            this.deductAdminFeesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // releaseTaxRebatesToolStripMenuItem
             // 
             this.releaseTaxRebatesToolStripMenuItem.Name = "releaseTaxRebatesToolStripMenuItem";
             this.releaseTaxRebatesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.releaseTaxRebatesToolStripMenuItem.Text = "Release Tax Rebates";
+            this.releaseTaxRebatesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // rebatesReleasedReportToolStripMenuItem
             // 
             this.rebatesReleasedReportToolStripMenuItem.Name = "rebatesReleasedReportToolStripMenuItem";
             this.rebatesReleasedReportToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.rebatesReleasedReportToolStripMenuItem.Text = "Rebates Released Report";
+            this.rebatesReleasedReportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exceptionReportsToolStripMenuItem
             // 
             this.exceptionReportsToolStripMenuItem.Name = "exceptionReportsToolStripMenuItem";
             this.exceptionReportsToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.exceptionReportsToolStripMenuItem.Text = "Exception Reports";
+            this.exceptionReportsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // payrunUpdateToolStripMenuItem
             // 
             this.payrunUpdateToolStripMenuItem.Name = "payrunUpdateToolStripMenuItem";
             this.payrunUpdateToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.payrunUpdateToolStripMenuItem.Text = "Payrun Update";
+            this.payrunUpdateToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // listingsToolStripMenuItem
             // 
@@ -1245,36 +1286,42 @@
             this.listingsToolStripMenuItem.Name = "listingsToolStripMenuItem";
             this.listingsToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.listingsToolStripMenuItem.Text = "Listings";
+            this.listingsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // paymentListingsToolStripMenuItem
             // 
             this.paymentListingsToolStripMenuItem.Name = "paymentListingsToolStripMenuItem";
             this.paymentListingsToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.paymentListingsToolStripMenuItem.Text = "Payment Listings";
+            this.paymentListingsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // ltdCompanyPaymentListingToolStripMenuItem
             // 
             this.ltdCompanyPaymentListingToolStripMenuItem.Name = "ltdCompanyPaymentListingToolStripMenuItem";
             this.ltdCompanyPaymentListingToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.ltdCompanyPaymentListingToolStripMenuItem.Text = "Ltd Company Payment Listing";
+            this.ltdCompanyPaymentListingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // signatoryListingToolStripMenuItem
             // 
             this.signatoryListingToolStripMenuItem.Name = "signatoryListingToolStripMenuItem";
             this.signatoryListingToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.signatoryListingToolStripMenuItem.Text = "Signatory Listing";
+            this.signatoryListingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // cISPaymentListingToolStripMenuItem
             // 
             this.cISPaymentListingToolStripMenuItem.Name = "cISPaymentListingToolStripMenuItem";
             this.cISPaymentListingToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.cISPaymentListingToolStripMenuItem.Text = "CIS Payment Listing";
+            this.cISPaymentListingToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // payslipsChequesToolStripMenuItem
             // 
             this.payslipsChequesToolStripMenuItem.Name = "payslipsChequesToolStripMenuItem";
             this.payslipsChequesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.payslipsChequesToolStripMenuItem.Text = "Payslips/Cheques";
+            this.payslipsChequesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator8
             // 
@@ -1286,18 +1333,21 @@
             this.onlinePayslipUploadSetupToolStripMenuItem.Name = "onlinePayslipUploadSetupToolStripMenuItem";
             this.onlinePayslipUploadSetupToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.onlinePayslipUploadSetupToolStripMenuItem.Text = "Online Payslip Upload Setup";
+            this.onlinePayslipUploadSetupToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // onlinePayslipUploadToolStripMenuItem
             // 
             this.onlinePayslipUploadToolStripMenuItem.Name = "onlinePayslipUploadToolStripMenuItem";
             this.onlinePayslipUploadToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.onlinePayslipUploadToolStripMenuItem.Text = "Online Payslip Upload";
+            this.onlinePayslipUploadToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // umbrellaIllustratorShiftF10ToolStripMenuItem
             // 
             this.umbrellaIllustratorShiftF10ToolStripMenuItem.Name = "umbrellaIllustratorShiftF10ToolStripMenuItem";
             this.umbrellaIllustratorShiftF10ToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.umbrellaIllustratorShiftF10ToolStripMenuItem.Text = "Umbrella Illustrator Shift+F10";
+            this.umbrellaIllustratorShiftF10ToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoicingToolStripMenuItem
             // 
@@ -1328,6 +1378,7 @@
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
             this.processToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.processToolStripMenuItem.Text = "Process";
+            this.processToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator9
             // 
@@ -1339,24 +1390,28 @@
             this.printWeeklyToolStripMenuItem.Name = "printWeeklyToolStripMenuItem";
             this.printWeeklyToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.printWeeklyToolStripMenuItem.Text = "Print Weekly";
+            this.printWeeklyToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // printMonthlyToolStripMenuItem
             // 
             this.printMonthlyToolStripMenuItem.Name = "printMonthlyToolStripMenuItem";
             this.printMonthlyToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.printMonthlyToolStripMenuItem.Text = "Print Monthly";
+            this.printMonthlyToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoiceReprintsSearchToolStripMenuItem
             // 
             this.invoiceReprintsSearchToolStripMenuItem.Name = "invoiceReprintsSearchToolStripMenuItem";
             this.invoiceReprintsSearchToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.invoiceReprintsSearchToolStripMenuItem.Text = "Invoice Reprints/Search";
+            this.invoiceReprintsSearchToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // agencyInvoiceSummaryToolStripMenuItem
             // 
             this.agencyInvoiceSummaryToolStripMenuItem.Name = "agencyInvoiceSummaryToolStripMenuItem";
             this.agencyInvoiceSummaryToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.agencyInvoiceSummaryToolStripMenuItem.Text = "Agency Invoice Summary";
+            this.agencyInvoiceSummaryToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator10
             // 
@@ -1368,24 +1423,28 @@
             this.manualInvoicesCreditsToolStripMenuItem.Name = "manualInvoicesCreditsToolStripMenuItem";
             this.manualInvoicesCreditsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.manualInvoicesCreditsToolStripMenuItem.Text = "Manual Invoices/Credits";
+            this.manualInvoicesCreditsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // creditAndReissueInvoicesToolStripMenuItem
             // 
             this.creditAndReissueInvoicesToolStripMenuItem.Name = "creditAndReissueInvoicesToolStripMenuItem";
             this.creditAndReissueInvoicesToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.creditAndReissueInvoicesToolStripMenuItem.Text = "Credit and Reissue Invoices";
+            this.creditAndReissueInvoicesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoicePermsToolStripMenuItem
             // 
             this.invoicePermsToolStripMenuItem.Name = "invoicePermsToolStripMenuItem";
             this.invoicePermsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.invoicePermsToolStripMenuItem.Text = "Invoice Perms";
+            this.invoicePermsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // daybooksToolStripMenuItem
             // 
             this.daybooksToolStripMenuItem.Name = "daybooksToolStripMenuItem";
             this.daybooksToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.daybooksToolStripMenuItem.Text = "Daybooks";
+            this.daybooksToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoiceScanningToolStripMenuItem
             // 
@@ -1395,18 +1454,21 @@
             this.invoiceScanningToolStripMenuItem.Name = "invoiceScanningToolStripMenuItem";
             this.invoiceScanningToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.invoiceScanningToolStripMenuItem.Text = "Invoice Scanning";
+            this.invoiceScanningToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // scannersDaybookToolStripMenuItem
             // 
             this.scannersDaybookToolStripMenuItem.Name = "scannersDaybookToolStripMenuItem";
             this.scannersDaybookToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.scannersDaybookToolStripMenuItem.Text = "Scanners Daybook";
+            this.scannersDaybookToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // recreateScanFilesToolStripMenuItem
             // 
             this.recreateScanFilesToolStripMenuItem.Name = "recreateScanFilesToolStripMenuItem";
             this.recreateScanFilesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.recreateScanFilesToolStripMenuItem.Text = "Recreate Scan Files";
+            this.recreateScanFilesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator11
             // 
@@ -1418,12 +1480,14 @@
             this.invoicesPaidToolStripMenuItem.Name = "invoicesPaidToolStripMenuItem";
             this.invoicesPaidToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.invoicesPaidToolStripMenuItem.Text = "Invoices Paid";
+            this.invoicesPaidToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // deleteAdjustmentsToolStripMenuItem
             // 
             this.deleteAdjustmentsToolStripMenuItem.Name = "deleteAdjustmentsToolStripMenuItem";
             this.deleteAdjustmentsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.deleteAdjustmentsToolStripMenuItem.Text = "Delete Adjustments";
+            this.deleteAdjustmentsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator12
             // 
@@ -1438,18 +1502,21 @@
             this.invoiceEmailOptionsToolStripMenuItem.Name = "invoiceEmailOptionsToolStripMenuItem";
             this.invoiceEmailOptionsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.invoiceEmailOptionsToolStripMenuItem.Text = "Invoice Email Options";
+            this.invoiceEmailOptionsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // emailBodyToolStripMenuItem
             // 
             this.emailBodyToolStripMenuItem.Name = "emailBodyToolStripMenuItem";
             this.emailBodyToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.emailBodyToolStripMenuItem.Text = "Email Body";
+            this.emailBodyToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // emailSubjectToolStripMenuItem
             // 
             this.emailSubjectToolStripMenuItem.Name = "emailSubjectToolStripMenuItem";
             this.emailSubjectToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.emailSubjectToolStripMenuItem.Text = "Email Subject";
+            this.emailSubjectToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // conversionsToolStripMenuItem
             // 
@@ -1496,18 +1563,21 @@
             this.hMRCToolStripMenuItem.Name = "hMRCToolStripMenuItem";
             this.hMRCToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.hMRCToolStripMenuItem.Text = "HMRC";
+            this.hMRCToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // hMRCDefaultsToolStripMenuItem
             // 
             this.hMRCDefaultsToolStripMenuItem.Name = "hMRCDefaultsToolStripMenuItem";
             this.hMRCDefaultsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.hMRCDefaultsToolStripMenuItem.Text = "HMRC Defaults";
+            this.hMRCDefaultsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // hMRCNotificationsToolStripMenuItem
             // 
             this.hMRCNotificationsToolStripMenuItem.Name = "hMRCNotificationsToolStripMenuItem";
             this.hMRCNotificationsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.hMRCNotificationsToolStripMenuItem.Text = "HMRC Notifications";
+            this.hMRCNotificationsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // hMRCRealTimeInformationToolStripMenuItem
             // 
@@ -1549,6 +1619,7 @@
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // employerPaymentSummaryEPSToolStripMenuItem
             // 
@@ -1559,24 +1630,28 @@
             this.employerPaymentSummaryEPSToolStripMenuItem.Name = "employerPaymentSummaryEPSToolStripMenuItem";
             this.employerPaymentSummaryEPSToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.employerPaymentSummaryEPSToolStripMenuItem.Text = "Employer Payment Summary (EPS)";
+            this.employerPaymentSummaryEPSToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // prelistToolStripMenuItem1
             // 
             this.prelistToolStripMenuItem1.Name = "prelistToolStripMenuItem1";
             this.prelistToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.prelistToolStripMenuItem1.Text = "Prelist";
+            this.prelistToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // submissionToolStripMenuItem1
             // 
             this.submissionToolStripMenuItem1.Name = "submissionToolStripMenuItem1";
             this.submissionToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.submissionToolStripMenuItem1.Text = "Submission";
+            this.submissionToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // reportToolStripMenuItem1
             // 
             this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
             this.reportToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.reportToolStripMenuItem1.Text = "Report";
+            this.reportToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // earlierYearUpdateEYUToolStripMenuItem
             // 
@@ -1586,19 +1661,21 @@
             this.earlierYearUpdateEYUToolStripMenuItem.Name = "earlierYearUpdateEYUToolStripMenuItem";
             this.earlierYearUpdateEYUToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.earlierYearUpdateEYUToolStripMenuItem.Text = "Earlier Year Update (EYU)";
-            this.earlierYearUpdateEYUToolStripMenuItem.DropDownOpened += new System.EventHandler(this.QuaternaryMenuDrop);
+            this.earlierYearUpdateEYUToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // submissionToolStripMenuItem2
             // 
             this.submissionToolStripMenuItem2.Name = "submissionToolStripMenuItem2";
             this.submissionToolStripMenuItem2.Size = new System.Drawing.Size(135, 22);
             this.submissionToolStripMenuItem2.Text = "Submission";
+            this.submissionToolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // reportToolStripMenuItem2
             // 
             this.reportToolStripMenuItem2.Name = "reportToolStripMenuItem2";
             this.reportToolStripMenuItem2.Size = new System.Drawing.Size(135, 22);
             this.reportToolStripMenuItem2.Text = "Report";
+            this.reportToolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // hMRCIntermediaryReportToolStripMenuItem
             // 
@@ -1608,18 +1685,21 @@
             this.hMRCIntermediaryReportToolStripMenuItem.Name = "hMRCIntermediaryReportToolStripMenuItem";
             this.hMRCIntermediaryReportToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.hMRCIntermediaryReportToolStripMenuItem.Text = "HMRC Intermediary Report";
+            this.hMRCIntermediaryReportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // setupOptionsToolStripMenuItem
             // 
             this.setupOptionsToolStripMenuItem.Name = "setupOptionsToolStripMenuItem";
             this.setupOptionsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.setupOptionsToolStripMenuItem.Text = "Setup Options";
+            this.setupOptionsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // reportToolStripMenuItem3
             // 
             this.reportToolStripMenuItem3.Name = "reportToolStripMenuItem3";
             this.reportToolStripMenuItem3.Size = new System.Drawing.Size(149, 22);
             this.reportToolStripMenuItem3.Text = "Report";
+            this.reportToolStripMenuItem3.Click += new System.EventHandler(this.MenuClick);
             // 
             // hMRCPaymentsToolStripMenuItem
             // 
@@ -1628,12 +1708,14 @@
             this.hMRCPaymentsToolStripMenuItem.Name = "hMRCPaymentsToolStripMenuItem";
             this.hMRCPaymentsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.hMRCPaymentsToolStripMenuItem.Text = "HMRC Payments";
+            this.hMRCPaymentsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // paymentOutputToolStripMenuItem1
             // 
             this.paymentOutputToolStripMenuItem1.Name = "paymentOutputToolStripMenuItem1";
             this.paymentOutputToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
             this.paymentOutputToolStripMenuItem1.Text = "Payment Output";
+            this.paymentOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // vATReturnsToolStripMenuItem
             // 
@@ -1643,18 +1725,21 @@
             this.vATReturnsToolStripMenuItem.Name = "vATReturnsToolStripMenuItem";
             this.vATReturnsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.vATReturnsToolStripMenuItem.Text = "VAT Returns";
+            this.vATReturnsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // submissionToolStripMenuItem3
             // 
             this.submissionToolStripMenuItem3.Name = "submissionToolStripMenuItem3";
             this.submissionToolStripMenuItem3.Size = new System.Drawing.Size(135, 22);
             this.submissionToolStripMenuItem3.Text = "Submission";
+            this.submissionToolStripMenuItem3.Click += new System.EventHandler(this.MenuClick);
             // 
             // paymentsToolStripMenuItem
             // 
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
             this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.paymentsToolStripMenuItem.Text = "Payments";
+            this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // toolStripSeparator13
             // 
@@ -1670,18 +1755,21 @@
             this.rOIToolStripMenuItem.Name = "rOIToolStripMenuItem";
             this.rOIToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.rOIToolStripMenuItem.Text = "ROI";
+            this.rOIToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // certificatesToolStripMenuItem
             // 
             this.certificatesToolStripMenuItem.Name = "certificatesToolStripMenuItem";
             this.certificatesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.certificatesToolStripMenuItem.Text = "Certificates";
+            this.certificatesToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // rPNToolStripMenuItem
             // 
             this.rPNToolStripMenuItem.Name = "rPNToolStripMenuItem";
             this.rPNToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.rPNToolStripMenuItem.Text = "RPN";
+            this.rPNToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // pSRToolStripMenuItem
             // 
@@ -1691,126 +1779,147 @@
             this.pSRToolStripMenuItem.Name = "pSRToolStripMenuItem";
             this.pSRToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.pSRToolStripMenuItem.Text = "PSR";
+            this.pSRToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // submissionToolStripMenuItem4
             // 
             this.submissionToolStripMenuItem4.Name = "submissionToolStripMenuItem4";
             this.submissionToolStripMenuItem4.Size = new System.Drawing.Size(135, 22);
             this.submissionToolStripMenuItem4.Text = "Submission";
+            this.submissionToolStripMenuItem4.Click += new System.EventHandler(this.MenuClick);
             // 
             // reportToolStripMenuItem4
             // 
             this.reportToolStripMenuItem4.Name = "reportToolStripMenuItem4";
             this.reportToolStripMenuItem4.Size = new System.Drawing.Size(135, 22);
             this.reportToolStripMenuItem4.Text = "Report";
+            this.reportToolStripMenuItem4.Click += new System.EventHandler(this.MenuClick);
             // 
             // bACSToolStripMenuItem
             // 
             this.bACSToolStripMenuItem.Name = "bACSToolStripMenuItem";
             this.bACSToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.bACSToolStripMenuItem.Text = "BACS";
+            this.bACSToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // advanceDeductionsBACSToolStripMenuItem
             // 
             this.advanceDeductionsBACSToolStripMenuItem.Name = "advanceDeductionsBACSToolStripMenuItem";
             this.advanceDeductionsBACSToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.advanceDeductionsBACSToolStripMenuItem.Text = "Advance Deductions BACS";
+            this.advanceDeductionsBACSToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // chapsToolStripMenuItem
             // 
             this.chapsToolStripMenuItem.Name = "chapsToolStripMenuItem";
             this.chapsToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.chapsToolStripMenuItem.Text = "Chaps";
+            this.chapsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // autoPayToolStripMenuItem
             // 
             this.autoPayToolStripMenuItem.Name = "autoPayToolStripMenuItem";
             this.autoPayToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.autoPayToolStripMenuItem.Text = "AutoPay";
+            this.autoPayToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // costOutputToolStripMenuItem
             // 
             this.costOutputToolStripMenuItem.Name = "costOutputToolStripMenuItem";
             this.costOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.costOutputToolStripMenuItem.Text = "Cost Output";
+            this.costOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // clientOutputToolStripMenuItem
             // 
             this.clientOutputToolStripMenuItem.Name = "clientOutputToolStripMenuItem";
             this.clientOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.clientOutputToolStripMenuItem.Text = "Client Output";
+            this.clientOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // employeesOutputToolStripMenuItem
             // 
             this.employeesOutputToolStripMenuItem.Name = "employeesOutputToolStripMenuItem";
             this.employeesOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.employeesOutputToolStripMenuItem.Text = "Employees Output";
+            this.employeesOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // timesheetOutputToolStripMenuItem
             // 
             this.timesheetOutputToolStripMenuItem.Name = "timesheetOutputToolStripMenuItem";
             this.timesheetOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.timesheetOutputToolStripMenuItem.Text = "Timesheet Output";
+            this.timesheetOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoiceOutputToolStripMenuItem
             // 
             this.invoiceOutputToolStripMenuItem.Name = "invoiceOutputToolStripMenuItem";
             this.invoiceOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.invoiceOutputToolStripMenuItem.Text = "Invoice Output";
+            this.invoiceOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // factorOutputToolStripMenuItem
             // 
             this.factorOutputToolStripMenuItem.Name = "factorOutputToolStripMenuItem";
             this.factorOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.factorOutputToolStripMenuItem.Text = "Factor Output";
+            this.factorOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // accrualOutputToolStripMenuItem
             // 
             this.accrualOutputToolStripMenuItem.Name = "accrualOutputToolStripMenuItem";
             this.accrualOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.accrualOutputToolStripMenuItem.Text = "Accrual Output";
+            this.accrualOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // clienToolStripMenuItem
             // 
             this.clienToolStripMenuItem.Name = "clienToolStripMenuItem";
             this.clienToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.clienToolStripMenuItem.Text = "Client Invoice Output";
+            this.clienToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // adjustedTimesheetsToolStripMenuItem
             // 
             this.adjustedTimesheetsToolStripMenuItem.Name = "adjustedTimesheetsToolStripMenuItem";
             this.adjustedTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.adjustedTimesheetsToolStripMenuItem.Text = "Adjusted Timesheets";
+            this.adjustedTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // oneBillToolStripMenuItem
             // 
             this.oneBillToolStripMenuItem.Name = "oneBillToolStripMenuItem";
             this.oneBillToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.oneBillToolStripMenuItem.Text = "One Bill";
+            this.oneBillToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // grossMarginOutputToolStripMenuItem
             // 
             this.grossMarginOutputToolStripMenuItem.Name = "grossMarginOutputToolStripMenuItem";
             this.grossMarginOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.grossMarginOutputToolStripMenuItem.Text = "Gross Margin Output";
+            this.grossMarginOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // vehicleExportToolStripMenuItem
             // 
             this.vehicleExportToolStripMenuItem.Name = "vehicleExportToolStripMenuItem";
             this.vehicleExportToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.vehicleExportToolStripMenuItem.Text = "Vehicle Export";
+            this.vehicleExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // oB10ExportToolStripMenuItem
             // 
             this.oB10ExportToolStripMenuItem.Name = "oB10ExportToolStripMenuItem";
             this.oB10ExportToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.oB10ExportToolStripMenuItem.Text = "OB10 Export";
+            this.oB10ExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // paymentOutputToolStripMenuItem
             // 
             this.paymentOutputToolStripMenuItem.Name = "paymentOutputToolStripMenuItem";
             this.paymentOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.paymentOutputToolStripMenuItem.Text = "Payment Output";
+            this.paymentOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // generalLedgerToolStripMenuItem
             // 
@@ -1821,36 +1930,42 @@
             this.generalLedgerToolStripMenuItem.Name = "generalLedgerToolStripMenuItem";
             this.generalLedgerToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.generalLedgerToolStripMenuItem.Text = "General Ledger";
+            this.generalLedgerToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // paymentOutputToolStripMenuItem2
             // 
             this.paymentOutputToolStripMenuItem2.Name = "paymentOutputToolStripMenuItem2";
             this.paymentOutputToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.paymentOutputToolStripMenuItem2.Text = "Payment Output";
+            this.paymentOutputToolStripMenuItem2.Click += new System.EventHandler(this.MenuClick);
             // 
             // invoiceOutputToolStripMenuItem1
             // 
             this.invoiceOutputToolStripMenuItem1.Name = "invoiceOutputToolStripMenuItem1";
             this.invoiceOutputToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
             this.invoiceOutputToolStripMenuItem1.Text = "Invoice Output";
+            this.invoiceOutputToolStripMenuItem1.Click += new System.EventHandler(this.MenuClick);
             // 
             // payAccrualOutputToolStripMenuItem
             // 
             this.payAccrualOutputToolStripMenuItem.Name = "payAccrualOutputToolStripMenuItem";
             this.payAccrualOutputToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.payAccrualOutputToolStripMenuItem.Text = "Pay Accrual Output";
+            this.payAccrualOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // umbrellaCompanyExportToolStripMenuItem
             // 
             this.umbrellaCompanyExportToolStripMenuItem.Name = "umbrellaCompanyExportToolStripMenuItem";
             this.umbrellaCompanyExportToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.umbrellaCompanyExportToolStripMenuItem.Text = "Umbrella Company Export";
+            this.umbrellaCompanyExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // umbrellaCompanyExportTimesheetsToolStripMenuItem
             // 
             this.umbrellaCompanyExportTimesheetsToolStripMenuItem.Name = "umbrellaCompanyExportTimesheetsToolStripMenuItem";
             this.umbrellaCompanyExportTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.umbrellaCompanyExportTimesheetsToolStripMenuItem.Text = "Umbrella Company Export (Timesheets)";
+            this.umbrellaCompanyExportTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // vantageExportToolStripMenuItem
             // 
@@ -1863,42 +1978,49 @@
             this.vantageExportToolStripMenuItem.Name = "vantageExportToolStripMenuItem";
             this.vantageExportToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.vantageExportToolStripMenuItem.Text = "Vantage Export";
+            this.vantageExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // dailyEmployeeExportToolStripMenuItem
             // 
             this.dailyEmployeeExportToolStripMenuItem.Name = "dailyEmployeeExportToolStripMenuItem";
             this.dailyEmployeeExportToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.dailyEmployeeExportToolStripMenuItem.Text = "Daily Employee Export";
+            this.dailyEmployeeExportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportEmployeesContractorsToolStripMenuItem
             // 
             this.exportEmployeesContractorsToolStripMenuItem.Name = "exportEmployeesContractorsToolStripMenuItem";
             this.exportEmployeesContractorsToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.exportEmployeesContractorsToolStripMenuItem.Text = "Export Employees/Contractors";
+            this.exportEmployeesContractorsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportEmployeesContractorsXMLToolStripMenuItem
             // 
             this.exportEmployeesContractorsXMLToolStripMenuItem.Name = "exportEmployeesContractorsXMLToolStripMenuItem";
             this.exportEmployeesContractorsXMLToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.exportEmployeesContractorsXMLToolStripMenuItem.Text = "Export Employees/Contractors XML";
+            this.exportEmployeesContractorsXMLToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportPaymentsToolStripMenuItem
             // 
             this.exportPaymentsToolStripMenuItem.Name = "exportPaymentsToolStripMenuItem";
             this.exportPaymentsToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.exportPaymentsToolStripMenuItem.Text = "Export Payments";
+            this.exportPaymentsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportPaymentsXMLToolStripMenuItem
             // 
             this.exportPaymentsXMLToolStripMenuItem.Name = "exportPaymentsXMLToolStripMenuItem";
             this.exportPaymentsXMLToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.exportPaymentsXMLToolStripMenuItem.Text = "Export Payments XML";
+            this.exportPaymentsXMLToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // suppliersOutputToolStripMenuItem
             // 
             this.suppliersOutputToolStripMenuItem.Name = "suppliersOutputToolStripMenuItem";
             this.suppliersOutputToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.suppliersOutputToolStripMenuItem.Text = "Suppliers Output";
+            this.suppliersOutputToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // pensionsToolStripMenuItem
             // 
@@ -1928,21 +2050,24 @@
             this.genericToolStripMenuItem.Name = "genericToolStripMenuItem";
             this.genericToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.genericToolStripMenuItem.Text = "Generic";
+            this.genericToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // genericContributionsReportToolStripMenuItem
             // 
             this.genericContributionsReportToolStripMenuItem.Name = "genericContributionsReportToolStripMenuItem";
             this.genericContributionsReportToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.genericContributionsReportToolStripMenuItem.Text = "Generic Contributions Report";
+            this.genericContributionsReportToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // exportMembersContributionsToolStripMenuItem
             // 
             this.exportMembersContributionsToolStripMenuItem.Name = "exportMembersContributionsToolStripMenuItem";
             this.exportMembersContributionsToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.exportMembersContributionsToolStripMenuItem.Text = "Export Members and Contributions";
+            this.exportMembersAndContributionsToolStripMenuItem.Click += new System.EventHandler(this.MenuClick);
             // 
             // nestPensionsToolStripMenuItem
-            // 
+            // AS FAR AS HERE
             this.nestPensionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.memberValidationReportToolStripMenuItem,
             this.exportNewMembersToolStripMenuItem,
