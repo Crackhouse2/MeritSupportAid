@@ -17,347 +17,104 @@ namespace MeritSupportAid
             InitializeComponent();
         }
 
-
         private void MenuClick(object sender, EventArgs e)
         {
-            /* 
-            When click event is triggered, if there are no further drop down elements
-            it will add the clicked menu item to the string before copying. May consider a 
-            mouseover argument later on.
-            
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-
-            if (mnu.HasDropDown == true)
-            {
-                //do nothing
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-            }
-            */
-            Clipboard.SetText(MenuResultsBox.Text);
-        }
-
-        private void PrimaryMenuDrop(object sender, EventArgs e)
-        {
+            MenuResultsBox.Text = "";
+            ToolStripMenuItem mi = (ToolStripMenuItem)sender;
+            string WhatClicked = mi.ToString();
+            ToolStripMenuItem miOwnerItem = (ToolStripMenuItem)(mi.GetCurrentParent() as ToolStripDropDown).OwnerItem;
+            string WhatClicked1up = miOwnerItem.ToString();
+            string WhatClicked2up = "";
+            string WhatClicked3up = "";
+            string WhatClicked4up = "";
+            string WhatClicked5up = "";
             /*
-            The primary difference with PrimaryMenuDrop and MenuDrop is that Primary ALWAYS begins the 
-            string again, no adding. MenuDrop is for submenus and will add to strings. PrimaryMenuDrop will
-            also assess the menu item to see if it is the MMT or CSM variant and if the latter, apply a prefix
+            Array Handling to catch exceptions, click events not added to the initial drop down item.
             */
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            //Where called from CSM menu tree, use the system menu prefix
-            if (mnu.Owner.Name == "CSM") 
+            bool SaferThanSorry = true;
+            float howDeep = 1;
+
+
+            SaferThanSorry = isThisTheEnd(WhatClicked1up);
+            if (SaferThanSorry == false)
             {
-                string CSMPrefix = "Control -> System Menu -> ";
-                sb.Append(CSMPrefix);
-                MenuResultsBox.Text = sb.ToString();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
+                ToolStripMenuItem miGrandpapaOwnerItem = (ToolStripMenuItem)(miOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
+                WhatClicked2up = miGrandpapaOwnerItem.ToString();
+                SaferThanSorry = isThisTheEnd(WhatClicked2up);
+                howDeep = 2;
+                if (SaferThanSorry == false)
+                {
+                    ToolStripMenuItem miGreatGrandpapaOwnerItem = (ToolStripMenuItem)(miGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
+                    WhatClicked3up = miGreatGrandpapaOwnerItem.ToString();
+                    SaferThanSorry = isThisTheEnd(WhatClicked3up);
+                    howDeep = 3;
+                    if (SaferThanSorry == false)
+                    {
+                        ToolStripMenuItem miGreatestGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
+                        WhatClicked4up = miGreatestGrandpapaOwnerItem.ToString();
+                        SaferThanSorry = isThisTheEnd(WhatClicked4up);
+                        howDeep = 4;
+                        if (SaferThanSorry == false)
+                        {
+                            ToolStripMenuItem miAncestralGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatestGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
+                            WhatClicked5up = miAncestralGrandpapaOwnerItem.ToString();
+                            howDeep = 5;
+                        }
+                            
+                    }
+
+                        
+                }
                 
             }
-            //Otherwise use no prefix
-            else
-            {
-                sb.Append(mnu.Text);
-                textBox1.Text = sb.ToString();
-                MenuResultsBox.Text = sb.ToString();
-            }
-            Clipboard.SetText(MenuResultsBox.Text);
-        }
 
-
-        private void SecondaryMenuDrop(object sender, EventArgs e)
-        {
-            /*
-            Where this differs is that it will concatonate the strings at the end.
-            This will be for all sub menu items after first drop downs for example 
-            File -> Contacts -> to gain access to the further drop down items such as 
-            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
-            also need to implement MenuClear as DropDownClosed to avoid duplication in
-            the string.
-            */
-
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            if ((MenuResultsBox.Text.EndsWith(mnu.Text) == true) &(MenuResultsBox.Text.EndsWith("/" + mnu.Text) == false))
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-                textBox2.Text = MenuResultsBox.Text;
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-        }
-
-        private void TertiaryMenuDrop(object sender, EventArgs e)
-        {
-            /*
-            Where this differs is that it will concatonate the strings at the end.
-            This will be for all sub menu items after first drop downs for example 
-            File -> Contacts -> to gain access to the further drop down items such as 
-            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
-            also need to implement MenuClear as DropDownClosed to avoid duplication in
-            the string.
-            */
-
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            if ((MenuResultsBox.Text.EndsWith(mnu.Text) == true) & (MenuResultsBox.Text.EndsWith("/" + mnu.Text) == false))
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-                textBox3.Text = MenuResultsBox.Text;
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-        }
-        private void QuaternaryMenuDrop(object sender, EventArgs e)
-        {
-            /*
-            Where this differs is that it will concatonate the strings at the end.
-            This will be for all sub menu items after first drop downs for example 
-            File -> Contacts -> to gain access to the further drop down items such as 
-            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
-            also need to implement MenuClear as DropDownClosed to avoid duplication in
-            the string.
-            */
-
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-            textBox4.Text = "";
-            textBox5.Text = "";
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            if ((MenuResultsBox.Text.EndsWith(mnu.Text) == true) & (MenuResultsBox.Text.EndsWith("/" + mnu.Text) == false))
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-                textBox4.Text = MenuResultsBox.Text;
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-        }
-
-        private void QuinaryMenuDrop(object sender, EventArgs e)
-        {
-            /*
-            Where this differs is that it will concatonate the strings at the end.
-            This will be for all sub menu items after first drop downs for example 
-            File -> Contacts -> to gain access to the further drop down items such as 
-            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
-            also need to implement MenuClear as DropDownClosed to avoid duplication in
-            the string.
-            */
-
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-            textBox5.Text = "";
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            if ((MenuResultsBox.Text.EndsWith(mnu.Text) == true) & (MenuResultsBox.Text.EndsWith("/" + mnu.Text) == false))
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-                textBox5.Text = MenuResultsBox.Text;
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-        }
-        private void MenuDrop(object sender, EventArgs e)
-        {
-            /*
-            Where this differs is that it will concatonate the strings at the end.
-            This will be for all sub menu items after first drop downs for example 
-            File -> Contacts -> to gain access to the further drop down items such as 
-            Outstanding (All) etc. Where this is implemented, as DropDownOpened, you
-            also need to implement MenuClear as DropDownClosed to avoid duplication in
-            the string.
-            */
-
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            if ((MenuResultsBox.Text.EndsWith(mnu.Text) == true) & (MenuResultsBox.Text.EndsWith("/" + mnu.Text) == false))
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text += sb.ToString();
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-        }
-
-
-
-        private void MouseOver(object sender, EventArgs e)
-        {
-            /*
-            Treated the same way as menu drop in terms of logic
-            */
-            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
-            StringBuilder sb = new StringBuilder();
-
-            //This catches MenuResults before manipulation so it can be replaced later 
-            //if DropDownClosed triggered causing the MenuClear function
-
-            //To ensure that the same value isn't repeatedly added. May need further
-            //thought with some of the repeated nesting in the tree.
-            //Post
-            
-            if (MenuResultsBox.Text.EndsWith(mnu.Text) == true)
-            {
-                //Don't keep adding
-            }
-            else if (MenuResultsBox.Text.EndsWith(mnu.Text + " -> ") == true)
-            {
-                //Don't add if mnu.Text with an arrow is the end
-            }
-            else
-            {
-                DoArrow();
-                sb.Append(mnu.Text);
-                MenuResultsBox.Text = textBox1.Text + " -> " + sb.ToString();
-                Clipboard.SetText(MenuResultsBox.Text);
-            }
-            
-        }
-
-        private void MouseLeave(object sender, EventArgs e)
-        {//MenuResultsBox.Text.Substring(0, (MenuResultsBox.TextLength - MyString.Length));
-            string MyString = sender.ToString();
-            float BoxNoToGo = 0;
-            if (textBox1.Text != "") { BoxNoToGo = 1; }
-            if (textBox2.Text != "") { BoxNoToGo = 2; }
-            if (textBox3.Text != "") { BoxNoToGo = 3; }
-            if (textBox4.Text != "") { BoxNoToGo = 4; }
-            if (textBox5.Text != "") { BoxNoToGo = 5; }
-            switch (BoxNoToGo)
+            switch (howDeep)
             {
                 case 1:
-                    //MenuResultsBox.Text
+                    MenuResultsBox.Text = WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 2:
+                    MenuResultsBox.Text = WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 3:
+                    MenuResultsBox.Text = WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 4:
+                    MenuResultsBox.Text = WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 5:
+                    MenuResultsBox.Text = WhatClicked5up + " -> " + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 default:
+                    MenuResultsBox.Text = "Error when determining parent components in click event";
                     break;
             }
-
-            MenuResultsBox.Text = textBox1.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
-        private void MenuDropDownClose(object sender, EventArgs e)
+        private bool isThisTheEnd(string CheckMyVarOut)
         {
-            /*
-            This function is called where a drop down closes. Works with 1 thus far
-            */
-            //string MyString = " -> " + sender.ToString(); MenuResultsBox.Text.Substring(0, (MenuResultsBox.TextLength - MyString.Length));
-            MenuResultsBox.Text = textBox1.Text;
-            Clipboard.SetText(MenuResultsBox.Text);
-        }
-
-        private void DoArrow()
-        {
-            /*
-            Where called and MenuResultsBox isn't null, it will concat an arrow inbetween 
-            current string and the next child element. Protection for multiple arrows added.
-            */
-            if (MenuResultsBox.Text.Length > 0)
-            {
-               if (MenuResultsBox.Text.EndsWith(" -> ") == false)
-               {
-                    MenuResultsBox.Text += (" -> ");
-               }
-            }
+            if (CheckMyVarOut == "File") { return true; }
+            if (CheckMyVarOut == "Employees") { return true; }
+            if (CheckMyVarOut == "Clients") { return true; }
+            if (CheckMyVarOut == "Placements") { return true; }
+            if (CheckMyVarOut == "Timesheets") { return true; }
+            if (CheckMyVarOut == "Payroll") { return true; }
+            if (CheckMyVarOut == "Invoicing") { return true; }
+            if (CheckMyVarOut == "Conversions") { return true; }
+            if (CheckMyVarOut == "Pensions") { return true; }
+            if (CheckMyVarOut == "P45/Leavers") { return true; }
+            if (CheckMyVarOut == "CIS") { return true; }
+            if (CheckMyVarOut == "Reports") { return true; }
+            if (CheckMyVarOut == "Control") { return true; }
+            if (CheckMyVarOut == "Help") { return true; }
+            if (CheckMyVarOut == "System Defaults") { return true; }
+            if (CheckMyVarOut == "Branch Tables") { return true; }
+            if (CheckMyVarOut == "Payroll Tables") { return true; }
+            if (CheckMyVarOut == "Security") { return true; }
+            if (CheckMyVarOut == "Utilities") { return true; }
+            if (CheckMyVarOut == "Supervisor") { return true; }
+            return false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
