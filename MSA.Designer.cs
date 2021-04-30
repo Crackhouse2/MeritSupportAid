@@ -549,12 +549,14 @@
             this.weedPlacementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.releasePayrollLockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuResultsBox2 = new System.Windows.Forms.Label();
+            this.MenuResultsString = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.TodaysInternal = new System.Windows.Forms.Label();
             this.lblYourDateToday = new System.Windows.Forms.Label();
             this.lblInput = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DateConvInput = new System.Windows.Forms.TextBox();
+            this.ConvertButton = new System.Windows.Forms.Button();
+            this.DateConvResult = new System.Windows.Forms.Label();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -4432,28 +4434,28 @@
             this.releasePayrollLockToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.releasePayrollLockToolStripMenuItem.Text = "Release Payroll Lock";
             // 
-            // MenuResultsBox2
+            // MenuResultsString
             // 
-            this.MenuResultsBox2.BackColor = System.Drawing.Color.Transparent;
-            this.MenuResultsBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuResultsBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuResultsBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
-            this.MenuResultsBox2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuResultsBox2.Location = new System.Drawing.Point(0, 24);
-            this.MenuResultsBox2.Name = "MenuResultsBox2";
-            this.MenuResultsBox2.Size = new System.Drawing.Size(895, 183);
-            this.MenuResultsBox2.TabIndex = 3;
-            this.MenuResultsBox2.Text = "BLANK TEXT";
-            this.MenuResultsBox2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuResultsBox2.Visible = false;
-            this.MenuResultsBox2.Click += new System.EventHandler(this.label_Click);
+            this.MenuResultsString.BackColor = System.Drawing.Color.Transparent;
+            this.MenuResultsString.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuResultsString.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuResultsString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
+            this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
+            this.MenuResultsString.Name = "MenuResultsString";
+            this.MenuResultsString.Size = new System.Drawing.Size(895, 183);
+            this.MenuResultsString.TabIndex = 3;
+            this.MenuResultsString.Text = "BLANK TEXT";
+            this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MenuResultsString.Visible = false;
+            this.MenuResultsString.Click += new System.EventHandler(this.label_Click);
             // 
             // TodaysInternal
             // 
             this.TodaysInternal.AutoSize = true;
             this.TodaysInternal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.TodaysInternal.Location = new System.Drawing.Point(85, 50);
+            this.TodaysInternal.Location = new System.Drawing.Point(86, 51);
             this.TodaysInternal.Name = "TodaysInternal";
             this.TodaysInternal.Size = new System.Drawing.Size(92, 31);
             this.TodaysInternal.TabIndex = 4;
@@ -4464,7 +4466,7 @@
             this.lblYourDateToday.AutoSize = true;
             this.lblYourDateToday.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYourDateToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
-            this.lblYourDateToday.Location = new System.Drawing.Point(26, 34);
+            this.lblYourDateToday.Location = new System.Drawing.Point(27, 35);
             this.lblYourDateToday.Name = "lblYourDateToday";
             this.lblYourDateToday.Size = new System.Drawing.Size(151, 12);
             this.lblYourDateToday.TabIndex = 5;
@@ -4475,18 +4477,44 @@
             this.lblInput.AutoSize = true;
             this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.lblInput.Location = new System.Drawing.Point(25, 98);
+            this.lblInput.Location = new System.Drawing.Point(26, 99);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(33, 12);
             this.lblInput.TabIndex = 6;
             this.lblInput.Text = "Input";
             // 
-            // textBox1
+            // DateConvInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 20);
-            this.textBox1.TabIndex = 7;
+            this.DateConvInput.Location = new System.Drawing.Point(28, 114);
+            this.DateConvInput.Name = "DateConvInput";
+            this.DateConvInput.Size = new System.Drawing.Size(73, 20);
+            this.DateConvInput.TabIndex = 7;
+            // 
+            // ConvertButton
+            // 
+            this.ConvertButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ConvertButton.BackgroundImage")));
+            this.ConvertButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ConvertButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ConvertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConvertButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ConvertButton.Location = new System.Drawing.Point(107, 98);
+            this.ConvertButton.Name = "ConvertButton";
+            this.ConvertButton.Size = new System.Drawing.Size(70, 69);
+            this.ConvertButton.TabIndex = 8;
+            this.ConvertButton.UseVisualStyleBackColor = true;
+            this.ConvertButton.Click += new System.EventHandler(this.DateConvClick);
+            // 
+            // DateConvResult
+            // 
+            this.DateConvResult.AutoSize = true;
+            this.DateConvResult.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateConvResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
+            this.DateConvResult.Location = new System.Drawing.Point(174, 127);
+            this.DateConvResult.Name = "DateConvResult";
+            this.DateConvResult.Size = new System.Drawing.Size(120, 40);
+            this.DateConvResult.TabIndex = 9;
+            this.DateConvResult.Text = "label1";
+            this.DateConvResult.Visible = false;
             // 
             // MSA
             // 
@@ -4496,11 +4524,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(895, 231);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DateConvResult);
+            this.Controls.Add(this.ConvertButton);
+            this.Controls.Add(this.DateConvInput);
             this.Controls.Add(this.lblInput);
             this.Controls.Add(this.lblYourDateToday);
             this.Controls.Add(this.TodaysInternal);
-            this.Controls.Add(this.MenuResultsBox2);
+            this.Controls.Add(this.MenuResultsString);
             this.Controls.Add(this.MMT);
             this.Controls.Add(this.CSM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -5041,12 +5071,14 @@
         private System.Windows.Forms.ToolStripMenuItem weedPlacementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
         private System.Windows.Forms.ToolStripMenuItem releasePayrollLockToolStripMenuItem;
-        private System.Windows.Forms.Label MenuResultsBox2;
+        private System.Windows.Forms.Label MenuResultsString;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label TodaysInternal;
         private System.Windows.Forms.Label lblYourDateToday;
         private System.Windows.Forms.Label lblInput;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DateConvInput;
+        private System.Windows.Forms.Button ConvertButton;
+        private System.Windows.Forms.Label DateConvResult;
     }
 }
 

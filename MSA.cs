@@ -20,8 +20,8 @@ namespace MeritSupportAid
         private void MenuClick(object sender, EventArgs e)
         {
             //Click event begins by setting up variables and bringing in the sender as a menu item
-            MenuResultsBox2.Visible = false;
-            MenuResultsBox2.Text = "";
+            MenuResultsString.Visible = false;
+            MenuResultsString.Text = "";
             ToolStripMenuItem mi = (ToolStripMenuItem)sender;
             string WhatClicked = mi.ToString();
             ToolStripMenuItem miOwnerItem = (ToolStripMenuItem)(mi.GetCurrentParent() as ToolStripDropDown).OwnerItem;
@@ -123,31 +123,31 @@ namespace MeritSupportAid
             switch (howDeep)
             {
                 case 1:
-                    MenuResultsBox2.Text = CSM + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsString.Text = CSM + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 2:
-                    MenuResultsBox2.Text = CSM + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsString.Text = CSM + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 3:
-                    MenuResultsBox2.Text = CSM + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsString.Text = CSM + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 4:
-                    MenuResultsBox2.Text = CSM + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsString.Text = CSM + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 5:
-                    MenuResultsBox2.Text = CSM + WhatClicked5up + " -> " + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsString.Text = CSM + WhatClicked5up + " -> " + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 default:
-                    MenuResultsBox2.Text = "Error when determining parent components in click event";
+                    MenuResultsString.Text = "Error when determining parent components in click event";
                     break;
             }
 
             /*
             Simple copy to clipboard command to close 
             */
-            MenuResultsBox2.Visible = true;
+            MenuResultsString.Visible = true;
             //MenuResultsBox2.Text = MenuResultsBox.Text;
-            Clipboard.SetText(MenuResultsBox2.Text);
+            Clipboard.SetText(MenuResultsString.Text);
         }
 
         private bool isThisTheEnd(string CheckMyVarOut)
@@ -251,11 +251,12 @@ namespace MeritSupportAid
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //on system load define TodaysInternal
+            /*
+            on system load define TodaysInternal
+            */
             string DayForLoad = DateTime.Today.ToString();
             string RightNow = DateConversion(DayForLoad);
             TodaysInternal.Text = RightNow;
-            //label1.Text = (NrOfDays.ToString());
         }
 
         private string DateConversion(string PrimaryInput)
@@ -289,7 +290,9 @@ namespace MeritSupportAid
                     DateTime DayOne = new DateTime(1967, 12, 31);
                     double MyVar = Convert.ToDouble(PrimaryInput);
                     DayTwoConv = DayOne.AddDays(MyVar);
-                    return (DayTwoConv.ToShortDateString());
+                    string OutputVar = DayTwoConv.ToString("dd/MM/yy");
+                    //return (DayTwoConv.ToShortDateString());
+                    return OutputVar;
                 }
                 catch (FormatException)
                 {
@@ -297,12 +300,48 @@ namespace MeritSupportAid
                 }
 
             }
+            /*
+            Need to add error handling when user entered data is being considered
+            */
             return "Error in function, neither parses worked";
         }
 
         private void label_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(MenuResultsBox2.Text);
+            Clipboard.SetText(MenuResultsString.Text);
+        }
+    
+        private void DateConvClick(object sender, EventArgs e)
+        {
+            ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipY);
+            string PrimaryInput = DateConvInput.Text;
+            if (PrimaryInput != "")
+            {
+                DateConvResult.Text = DateConversion(PrimaryInput);
+                string ColCheck = DateConvResult.ForeColor.ToString();
+                if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
+                {
+                    DateConvResult.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                }
+                else
+                {
+                    DateConvResult.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                }
+                
+                if (DateConvResult.Text != "label1")
+                {
+                    //DateConvInput.Text = DateConvResult.Text;
+                }
+
+                DateConvResult.Visible = true;
+
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter a value to convert", "Error");
+            }
+
         }
     }
 }
