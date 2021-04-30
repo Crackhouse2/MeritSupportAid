@@ -21,6 +21,8 @@ namespace MeritSupportAid
         {
             //Click event begins by setting up variables and bringing in the sender as a menu item
             MenuResultsBox.Text = "";
+            MenuResultsBox2.Visible = false;
+            MenuResultsBox2.Text = "";
             ToolStripMenuItem mi = (ToolStripMenuItem)sender;
             string WhatClicked = mi.ToString();
             ToolStripMenuItem miOwnerItem = (ToolStripMenuItem)(mi.GetCurrentParent() as ToolStripDropDown).OwnerItem;
@@ -144,6 +146,8 @@ namespace MeritSupportAid
             /*
             Simple copy to clipboard command to close 
             */
+            MenuResultsBox2.Visible = true;
+            MenuResultsBox2.Text = MenuResultsBox.Text;
             Clipboard.SetText(MenuResultsBox.Text);
         }
 
@@ -251,5 +255,9 @@ namespace MeritSupportAid
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
