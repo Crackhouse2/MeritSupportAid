@@ -149,6 +149,16 @@ namespace MeritSupportAid
 
         private bool isThisTheEnd(string CheckMyVarOut)
         {
+            /*
+            This function is to determine whether or not this is the last
+            entry in the tree by taking the text entry and comparing the 
+            passed in variable versus various text strings, if found, true
+            is returned
+            */
+
+            /*
+            Regular Payroll form drop downs 
+            */
             if (CheckMyVarOut == "File") { return true; }
             if (CheckMyVarOut == "Employees") { return true; }
             if (CheckMyVarOut == "Clients") { return true; }
@@ -173,11 +183,25 @@ namespace MeritSupportAid
             if (CheckMyVarOut == "Security") { return true; }
             if (CheckMyVarOut == "Utilities") { return true; }
             if (CheckMyVarOut == "Supervisor") { return true; }
+
+            /*
+            Case 1 / Default returns false
+            */
             return false;
         }
 
         private bool isThisTheSystemMenu(string CheckMyVarOut)
         {
+            /*
+            This function is to determine whether or not this is the last
+            entry in the CSM tree by taking the text entry and comparing the 
+            passed in variable versus various text strings, if found to be
+            on of the system menu roots, true is returned
+            */
+
+            /*
+            Regular Payroll form drop downs -Return False
+            */
             if (CheckMyVarOut == "File") { return false; }
             if (CheckMyVarOut == "Employees") { return false; }
             if (CheckMyVarOut == "Clients") { return false; }
@@ -202,6 +226,10 @@ namespace MeritSupportAid
             if (CheckMyVarOut == "Security") { return true; }
             if (CheckMyVarOut == "Utilities") { return true; }
             if (CheckMyVarOut == "Supervisor") { return true; }
+
+            /*
+            Case 1 / Default returns false
+            */
             return false;
         }
 
