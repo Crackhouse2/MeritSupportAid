@@ -20,7 +20,6 @@ namespace MeritSupportAid
         private void MenuClick(object sender, EventArgs e)
         {
             //Click event begins by setting up variables and bringing in the sender as a menu item
-            MenuResultsBox.Text = "";
             MenuResultsBox2.Visible = false;
             MenuResultsBox2.Text = "";
             ToolStripMenuItem mi = (ToolStripMenuItem)sender;
@@ -124,22 +123,22 @@ namespace MeritSupportAid
             switch (howDeep)
             {
                 case 1:
-                    MenuResultsBox.Text = CSM + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsBox2.Text = CSM + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 2:
-                    MenuResultsBox.Text = CSM + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsBox2.Text = CSM + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 3:
-                    MenuResultsBox.Text = CSM + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsBox2.Text = CSM + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 4:
-                    MenuResultsBox.Text = CSM + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsBox2.Text = CSM + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 case 5:
-                    MenuResultsBox.Text = CSM + WhatClicked5up + " -> " + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
+                    MenuResultsBox2.Text = CSM + WhatClicked5up + " -> " + WhatClicked4up + " -> " + WhatClicked3up + " -> " + WhatClicked2up + " -> " + WhatClicked1up + " -> " + WhatClicked;
                     break;
                 default:
-                    MenuResultsBox.Text = "Error when determining parent components in click event";
+                    MenuResultsBox2.Text = "Error when determining parent components in click event";
                     break;
             }
 
@@ -147,8 +146,8 @@ namespace MeritSupportAid
             Simple copy to clipboard command to close 
             */
             MenuResultsBox2.Visible = true;
-            MenuResultsBox2.Text = MenuResultsBox.Text;
-            Clipboard.SetText(MenuResultsBox.Text);
+            //MenuResultsBox2.Text = MenuResultsBox.Text;
+            Clipboard.SetText(MenuResultsBox2.Text);
         }
 
         private bool isThisTheEnd(string CheckMyVarOut)
@@ -252,7 +251,53 @@ namespace MeritSupportAid
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //on system load define TodaysInternal
+            string DayForLoad = DateTime.Today.ToString();
+            string RightNow = DateConversion(DayForLoad);
+            TodaysInternal.Text = RightNow;
+            //label1.Text = (NrOfDays.ToString());
+        }
 
+        private string DateConversion(string PrimaryInput)
+        {
+            int i;
+            if (!int.TryParse(PrimaryInput, out i))
+            {
+                try
+                {
+                    /*
+                    This is where a date is converted to a number
+                    */
+                    DateTime DayOne = new DateTime(1967, 12, 31);
+                    DateTime DayTwo = DateTime.Parse(PrimaryInput);
+                    TimeSpan t = DayTwo - DayOne;
+                    double NrOfDays = t.TotalDays;
+                    return (NrOfDays.ToString());
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Enter a date or a number", "Error");
+                }
+
+            }
+            else
+            {
+                //If textBox has been entered as number
+                try
+                {
+                    DateTime DayTwoConv;
+                    DateTime DayOne = new DateTime(1967, 12, 31);
+                    double MyVar = Convert.ToDouble(PrimaryInput);
+                    DayTwoConv = DayOne.AddDays(MyVar);
+                    return (DayTwoConv.ToShortDateString());
+                }
+                catch (FormatException)
+                {
+                   MessageBox.Show("Enter a date or a number", "Error");
+                }
+
+            }
+            return "Error in function, neither parses worked";
         }
 
         private void label_Click(object sender, EventArgs e)

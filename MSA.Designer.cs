@@ -342,7 +342,6 @@
             this.knowledgebaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteAssistanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuResultsBox = new System.Windows.Forms.TextBox();
             this.CSM = new System.Windows.Forms.MenuStrip();
             this.systemDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -551,6 +550,11 @@
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.releasePayrollLockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuResultsBox2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.TodaysInternal = new System.Windows.Forms.Label();
+            this.lblYourDateToday = new System.Windows.Forms.Label();
+            this.lblInput = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -2944,17 +2948,6 @@
             this.licensesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.licensesToolStripMenuItem.Text = "Licenses";
             // 
-            // MenuResultsBox
-            // 
-            this.MenuResultsBox.BackColor = System.Drawing.SystemColors.Window;
-            this.MenuResultsBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MenuResultsBox.Location = new System.Drawing.Point(159, 27);
-            this.MenuResultsBox.Name = "MenuResultsBox";
-            this.MenuResultsBox.Size = new System.Drawing.Size(561, 20);
-            this.MenuResultsBox.TabIndex = 1;
-            this.MenuResultsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MenuResultsBox.Visible = false;
-            // 
             // CSM
             // 
             this.CSM.BackColor = System.Drawing.Color.Transparent;
@@ -4443,7 +4436,9 @@
             // 
             this.MenuResultsBox2.BackColor = System.Drawing.Color.Transparent;
             this.MenuResultsBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuResultsBox2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuResultsBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuResultsBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
+            this.MenuResultsBox2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsBox2.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsBox2.Name = "MenuResultsBox2";
             this.MenuResultsBox2.Size = new System.Drawing.Size(895, 183);
@@ -4453,6 +4448,46 @@
             this.MenuResultsBox2.Visible = false;
             this.MenuResultsBox2.Click += new System.EventHandler(this.label_Click);
             // 
+            // TodaysInternal
+            // 
+            this.TodaysInternal.AutoSize = true;
+            this.TodaysInternal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.TodaysInternal.Location = new System.Drawing.Point(85, 50);
+            this.TodaysInternal.Name = "TodaysInternal";
+            this.TodaysInternal.Size = new System.Drawing.Size(92, 31);
+            this.TodaysInternal.TabIndex = 4;
+            this.TodaysInternal.Text = "label1";
+            // 
+            // lblYourDateToday
+            // 
+            this.lblYourDateToday.AutoSize = true;
+            this.lblYourDateToday.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourDateToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
+            this.lblYourDateToday.Location = new System.Drawing.Point(26, 34);
+            this.lblYourDateToday.Name = "lblYourDateToday";
+            this.lblYourDateToday.Size = new System.Drawing.Size(151, 12);
+            this.lblYourDateToday.TabIndex = 5;
+            this.lblYourDateToday.Text = "Your internal date today is";
+            // 
+            // lblInput
+            // 
+            this.lblInput.AutoSize = true;
+            this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.lblInput.Location = new System.Drawing.Point(25, 98);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(33, 12);
+            this.lblInput.TabIndex = 6;
+            this.lblInput.Text = "Input";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(27, 113);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(69, 20);
+            this.textBox1.TabIndex = 7;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4461,8 +4496,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(895, 231);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblInput);
+            this.Controls.Add(this.lblYourDateToday);
+            this.Controls.Add(this.TodaysInternal);
             this.Controls.Add(this.MenuResultsBox2);
-            this.Controls.Add(this.MenuResultsBox);
             this.Controls.Add(this.MMT);
             this.Controls.Add(this.CSM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -4489,7 +4527,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewEmployeeToolStripMenuItem;
-        private System.Windows.Forms.TextBox MenuResultsBox;
         private System.Windows.Forms.ToolStripMenuItem callsContactsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem swapDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printerSelectionToolStripMenuItem;
@@ -5005,6 +5042,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
         private System.Windows.Forms.ToolStripMenuItem releasePayrollLockToolStripMenuItem;
         private System.Windows.Forms.Label MenuResultsBox2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label TodaysInternal;
+        private System.Windows.Forms.Label lblYourDateToday;
+        private System.Windows.Forms.Label lblInput;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
