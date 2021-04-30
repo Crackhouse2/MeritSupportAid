@@ -255,9 +255,9 @@ namespace MeritSupportAid
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label_Click(object sender, EventArgs e)
         {
-
+            Clipboard.SetText(MenuResultsBox2.Text);
         }
     }
 }

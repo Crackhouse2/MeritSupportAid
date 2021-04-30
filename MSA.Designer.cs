@@ -4443,7 +4443,7 @@
             // 
             this.MenuResultsBox2.BackColor = System.Drawing.Color.Transparent;
             this.MenuResultsBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuResultsBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuResultsBox2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuResultsBox2.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsBox2.Name = "MenuResultsBox2";
             this.MenuResultsBox2.Size = new System.Drawing.Size(895, 183);
@@ -4451,7 +4451,7 @@
             this.MenuResultsBox2.Text = "BLANK TEXT";
             this.MenuResultsBox2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsBox2.Visible = false;
-            this.MenuResultsBox2.Click += new System.EventHandler(this.label1_Click);
+            this.MenuResultsBox2.Click += new System.EventHandler(this.label_Click);
             // 
             // MSA
             // 
