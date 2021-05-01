@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -257,6 +258,16 @@ namespace MeritSupportAid
             string DayForLoad = DateTime.Today.ToString();
             string RightNow = DateConversion(DayForLoad);
             TodaysInternal.Text = RightNow;
+
+            /*
+            Use app config to get TopMost property
+            */
+            var TopThis = ConfigurationManager.AppSettings["TopThis"];
+            if (TopThis == "true")
+            {
+                //this being the active current window
+                this.TopMost = true;
+            }
         }
 
         private string DateConversion(string PrimaryInput)

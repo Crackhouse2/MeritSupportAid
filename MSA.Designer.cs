@@ -581,7 +581,7 @@
             this.helpToolStripMenuItem});
             this.MMT.Location = new System.Drawing.Point(0, 0);
             this.MMT.Name = "MMT";
-            this.MMT.Size = new System.Drawing.Size(895, 24);
+            this.MMT.Size = new System.Drawing.Size(900, 24);
             this.MMT.TabIndex = 0;
             this.MMT.Text = "MMT";
             // 
@@ -2961,9 +2961,9 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 207);
+            this.CSM.Location = new System.Drawing.Point(0, 189);
             this.CSM.Name = "CSM";
-            this.CSM.Size = new System.Drawing.Size(895, 24);
+            this.CSM.Size = new System.Drawing.Size(900, 24);
             this.CSM.TabIndex = 2;
             this.CSM.Text = "CSM";
             // 
@@ -4443,7 +4443,7 @@
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(895, 183);
+            this.MenuResultsString.Size = new System.Drawing.Size(900, 165);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "BLANK TEXT";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -4523,7 +4523,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(895, 231);
+            this.ClientSize = new System.Drawing.Size(900, 213);
             this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.DateConvInput);
