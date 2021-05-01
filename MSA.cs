@@ -17,6 +17,7 @@ namespace MeritSupportAid
         {
             InitializeComponent();
         }
+        //These events relate to MenuStrip string copy logics
         private void MenuClick(object sender, EventArgs e)
         {
             //Click event begins by setting up variables and bringing in the sender as a menu item
@@ -245,22 +246,12 @@ namespace MeritSupportAid
             }
             
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Label_Click(object sender, EventArgs e)
         {
-            /*
-            on system load define TodaysInternal
-            */
-            SetYourCurrentDateText();
-            /*
-            Use app config to get TopMost property
-            */
-            this.TopMost = false;
-            if (Properties.Settings.Default.AlwaysOnTop == true)
-            {
-                //this being the active current window
-                this.TopMost = true;
-            }
+            //Just re-copy the string to the clipboard
+            Clipboard.SetText(MenuResultsString.Text);
         }
+        //These events relate to the date converter
         private string DateConversion(string PrimaryInput)
         {
             /*
@@ -307,12 +298,7 @@ namespace MeritSupportAid
                 }
 
             }
-        }
-        private void Label_Click(object sender, EventArgs e)
-        {
-            //Just re-copy the string to the clipboard
-            Clipboard.SetText(MenuResultsString.Text);
-        }
+        }  
         private void DateConvClick(object sender, EventArgs e)
         {
             /*
@@ -386,6 +372,7 @@ namespace MeritSupportAid
             TodaysInternal.Text = RightNow;
             TrayIcon.Text = "Your internal date today is " + RightNow;
         }
+        //These events relate to settings and setting updating
         private void SettingButtonClick(object sender, EventArgs e)
         {
             /*
@@ -425,6 +412,7 @@ namespace MeritSupportAid
             AOTCheck.Visible = OnOff;
             ForceClose.Visible = OnOff;
         }
+        //These events relate to the TrayIcon and application close management
         private void TrayClick(object sender, EventArgs e)
         {
             /*
@@ -458,6 +446,22 @@ namespace MeritSupportAid
              */
             Properties.Settings.Default.ForceClose = true;
             Application.Exit();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            /*
+            on system load define TodaysInternal
+            */
+            SetYourCurrentDateText();
+            /*
+            Use app config to get TopMost property
+            */
+            this.TopMost = false;
+            if (Properties.Settings.Default.AlwaysOnTop == true)
+            {
+                //this being the active current window
+                this.TopMost = true;
+            }
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
