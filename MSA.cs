@@ -389,6 +389,7 @@ namespace MeritSupportAid
         {
             bool OnOff = false;
             Properties.Settings.Default.Save();
+            this.TopMost = Properties.Settings.Default.AlwaysOnTop;
             SettingToggleView(OnOff);
         }
 
