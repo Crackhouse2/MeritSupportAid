@@ -558,6 +558,9 @@
             this.ConvertButton = new System.Windows.Forms.Button();
             this.DateConvResult = new System.Windows.Forms.Label();
             this.SettingsButton = new System.Windows.Forms.Button();
+            this.AOTCheck = new System.Windows.Forms.CheckBox();
+            this.SettingSave = new System.Windows.Forms.Button();
+            this.SettingCancel = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -4530,6 +4533,46 @@
             this.SettingsButton.TabIndex = 10;
             this.SettingsButton.UseVisualStyleBackColor = true;
             // 
+            // AOTCheck
+            // 
+            this.AOTCheck.AutoSize = true;
+            this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
+            this.AOTCheck.Name = "AOTCheck";
+            this.AOTCheck.Size = new System.Drawing.Size(115, 19);
+            this.AOTCheck.TabIndex = 11;
+            this.AOTCheck.Text = "Always on top";
+            this.AOTCheck.UseVisualStyleBackColor = true;
+            this.AOTCheck.Visible = false;
+            // 
+            // SettingSave
+            // 
+            this.SettingSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.SettingSave.Location = new System.Drawing.Point(565, 109);
+            this.SettingSave.Name = "SettingSave";
+            this.SettingSave.Size = new System.Drawing.Size(57, 23);
+            this.SettingSave.TabIndex = 12;
+            this.SettingSave.TabStop = false;
+            this.SettingSave.Text = "Save";
+            this.SettingSave.UseVisualStyleBackColor = true;
+            this.SettingSave.Visible = false;
+            // 
+            // SettingCancel
+            // 
+            this.SettingCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
+            this.SettingCancel.Location = new System.Drawing.Point(623, 109);
+            this.SettingCancel.Name = "SettingCancel";
+            this.SettingCancel.Size = new System.Drawing.Size(57, 23);
+            this.SettingCancel.TabIndex = 13;
+            this.SettingCancel.Text = "Cancel";
+            this.SettingCancel.UseVisualStyleBackColor = true;
+            this.SettingCancel.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4538,6 +4581,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 190);
+            this.Controls.Add(this.SettingCancel);
+            this.Controls.Add(this.SettingSave);
+            this.Controls.Add(this.AOTCheck);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.ConvertButton);
@@ -5095,6 +5141,9 @@
         private System.Windows.Forms.Button ConvertButton;
         private System.Windows.Forms.Label DateConvResult;
         private System.Windows.Forms.Button SettingsButton;
+        private System.Windows.Forms.CheckBox AOTCheck;
+        private System.Windows.Forms.Button SettingSave;
+        private System.Windows.Forms.Button SettingCancel;
     }
 }
 

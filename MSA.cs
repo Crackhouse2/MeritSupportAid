@@ -373,5 +373,28 @@ namespace MeritSupportAid
             }
 
         }
+
+        private void SettingButtonClick(object sender, EventArgs e)
+        {
+            bool OnOff = true;
+            SettingToggleView(OnOff);
+        }
+        private void SettingCancelClick(object sender, EventArgs e)
+        {
+            bool OnOff = false;
+            SettingToggleView(OnOff);
+        }
+        private void SettingSaveClick(object sender, EventArgs e)
+        {
+            bool OnOff = false;
+            SettingToggleView(OnOff);
+        }
+
+        private void SettingToggleView(bool OnOff)
+        {
+            SettingCancel.Visible = OnOff;
+            SettingSave.Visible = OnOff;
+            AOTCheck.Visible = OnOff;
+        }
     }
 }
