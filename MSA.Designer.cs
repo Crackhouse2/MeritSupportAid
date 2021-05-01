@@ -557,6 +557,7 @@
             this.DateConvInput = new System.Windows.Forms.TextBox();
             this.ConvertButton = new System.Windows.Forms.Button();
             this.DateConvResult = new System.Windows.Forms.Label();
+            this.SettingsButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -4445,7 +4446,7 @@
             this.MenuResultsString.Name = "MenuResultsString";
             this.MenuResultsString.Size = new System.Drawing.Size(900, 142);
             this.MenuResultsString.TabIndex = 3;
-            this.MenuResultsString.Text = "BLANK TEXT";
+            this.MenuResultsString.Text = "Drop Down Menu Paths";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Visible = false;
             this.MenuResultsString.Click += new System.EventHandler(this.label_Click);
@@ -4457,9 +4458,9 @@
             this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
             this.TodaysInternal.Location = new System.Drawing.Point(85, 36);
             this.TodaysInternal.Name = "TodaysInternal";
-            this.TodaysInternal.Size = new System.Drawing.Size(92, 31);
+            this.TodaysInternal.Size = new System.Drawing.Size(186, 31);
             this.TodaysInternal.TabIndex = 4;
-            this.TodaysInternal.Text = "label1";
+            this.TodaysInternal.Text = "Today\'s Date";
             // 
             // lblYourDateToday
             // 
@@ -4511,10 +4512,23 @@
             this.DateConvResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
             this.DateConvResult.Location = new System.Drawing.Point(169, 109);
             this.DateConvResult.Name = "DateConvResult";
-            this.DateConvResult.Size = new System.Drawing.Size(120, 40);
+            this.DateConvResult.Size = new System.Drawing.Size(143, 40);
             this.DateConvResult.TabIndex = 9;
-            this.DateConvResult.Text = "label1";
+            this.DateConvResult.Text = "Results";
             this.DateConvResult.Visible = false;
+            // 
+            // SettingsButton
+            // 
+            this.SettingsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SettingsButton.BackgroundImage")));
+            this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingsButton.ForeColor = System.Drawing.Color.White;
+            this.SettingsButton.Location = new System.Drawing.Point(834, 139);
+            this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(66, 51);
+            this.SettingsButton.TabIndex = 10;
+            this.SettingsButton.UseVisualStyleBackColor = true;
             // 
             // MSA
             // 
@@ -4524,6 +4538,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 190);
+            this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.DateConvInput);
@@ -5079,6 +5094,7 @@
         private System.Windows.Forms.TextBox DateConvInput;
         private System.Windows.Forms.Button ConvertButton;
         private System.Windows.Forms.Label DateConvResult;
+        private System.Windows.Forms.Button SettingsButton;
     }
 }
 
