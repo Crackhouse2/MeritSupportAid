@@ -25,7 +25,7 @@ namespace MeritSupportAid
 
     static class Program
     {
-        private static String SingleInst = "MeritSupportAid";
+        private static readonly String SingleInst = "MeritSupportAid";
         private static BackgroundWorker singleAppComThread = null;
         private static EventWaitHandle threadComEvent = null;
 
@@ -53,21 +53,23 @@ namespace MeritSupportAid
 
             singleAppComThread.CancelAsync();
             while (singleAppComThread.IsBusy)
-                Thread.Sleep(50);
+            Thread.Sleep(50);
             threadComEvent.Close();
 
         }
 
         static private void CreateInterAppComThread()
         {
-            singleAppComThread = new BackgroundWorker();
-            singleAppComThread.WorkerReportsProgress = false;
-            singleAppComThread.WorkerSupportsCancellation = true;
-            singleAppComThread.DoWork += new DoWorkEventHandler(singleAppComThread_DoWork);
+            singleAppComThread = new BackgroundWorker
+            {
+                WorkerReportsProgress = false,
+                WorkerSupportsCancellation = true
+            };
+            singleAppComThread.DoWork += new DoWorkEventHandler(SingleAppComThread_DoWork);
             singleAppComThread.RunWorkerAsync();
         }
 
-        static private void singleAppComThread_DoWork(object sender, DoWorkEventArgs e)
+        static private void SingleAppComThread_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             WaitHandle[] waitHandles = new WaitHandle[] { threadComEvent };

@@ -43,5 +43,17 @@ namespace MeritSupportAid.Properties {
                 this["AlwaysOnTop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ForceClose {
+            get {
+                return ((bool)(this["ForceClose"]));
+            }
+            set {
+                this["ForceClose"] = value;
+            }
+        }
     }
 }

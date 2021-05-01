@@ -17,7 +17,6 @@ namespace MeritSupportAid
         {
             InitializeComponent();
         }
-
         private void MenuClick(object sender, EventArgs e)
         {
             //Click event begins by setting up variables and bringing in the sender as a menu item
@@ -36,8 +35,8 @@ namespace MeritSupportAid
             checks around CSM calls as the click doesn't have the event being owned by the relevant menu bar as the
             dropdown opened closed events did. howDeep is set at each level to know how big to build the string later on.
             */
-            bool SaferThanSorry = true;
-            bool CSMorWhut = false;
+            bool SaferThanSorry;
+            bool CSMorWhut;
             float howDeep = 1;
 
             /*
@@ -45,8 +44,8 @@ namespace MeritSupportAid
             by checking by name alone, this could prove problematic, but its a basis. isThisTheSystemMenu is the same 
             function returning a more specific bool based on whether its one of the ends in the system menu. 
             */
-            SaferThanSorry = isThisTheEnd(WhatClicked1up);
-            CSMorWhut = isThisTheSystemMenu(WhatClicked1up);
+            SaferThanSorry = IsThisTheEnd(WhatClicked1up);
+            CSMorWhut = IsThisTheSystemMenu(WhatClicked1up);
             if (SaferThanSorry == false)
             {
                 /*
@@ -56,8 +55,8 @@ namespace MeritSupportAid
                 */
                 ToolStripMenuItem miGrandpapaOwnerItem = (ToolStripMenuItem)(miOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                 WhatClicked2up = miGrandpapaOwnerItem.ToString();
-                SaferThanSorry = isThisTheEnd(WhatClicked2up);
-                CSMorWhut = isThisTheSystemMenu(WhatClicked2up);
+                SaferThanSorry = IsThisTheEnd(WhatClicked2up);
+                CSMorWhut = IsThisTheSystemMenu(WhatClicked2up);
                 howDeep = 2;
                 if (SaferThanSorry == false)
                 {
@@ -68,8 +67,8 @@ namespace MeritSupportAid
                     */
                     ToolStripMenuItem miGreatGrandpapaOwnerItem = (ToolStripMenuItem)(miGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                     WhatClicked3up = miGreatGrandpapaOwnerItem.ToString();
-                    SaferThanSorry = isThisTheEnd(WhatClicked3up);
-                    CSMorWhut = isThisTheSystemMenu(WhatClicked3up);
+                    SaferThanSorry = IsThisTheEnd(WhatClicked3up);
+                    CSMorWhut = IsThisTheSystemMenu(WhatClicked3up);
                     howDeep = 3;
                     if (SaferThanSorry == false)
                     {
@@ -80,8 +79,8 @@ namespace MeritSupportAid
                         */
                         ToolStripMenuItem miGreatestGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                         WhatClicked4up = miGreatestGrandpapaOwnerItem.ToString();
-                        SaferThanSorry = isThisTheEnd(WhatClicked4up);
-                        CSMorWhut = isThisTheSystemMenu(WhatClicked4up);
+                        SaferThanSorry = IsThisTheEnd(WhatClicked4up);
+                        CSMorWhut = IsThisTheSystemMenu(WhatClicked4up);
                         howDeep = 4;
                         if (SaferThanSorry == false)
                         {
@@ -95,7 +94,7 @@ namespace MeritSupportAid
                             */
                             ToolStripMenuItem miAncestralGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatestGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                             WhatClicked5up = miAncestralGrandpapaOwnerItem.ToString();
-                            CSMorWhut = isThisTheSystemMenu(WhatClicked5up);
+                            CSMorWhut = IsThisTheSystemMenu(WhatClicked5up);
                             howDeep = 5;
                         }
                             
@@ -150,8 +149,7 @@ namespace MeritSupportAid
             //MenuResultsBox2.Text = MenuResultsBox.Text;
             Clipboard.SetText(MenuResultsString.Text);
         }
-
-        private bool isThisTheEnd(string CheckMyVarOut)
+        private bool IsThisTheEnd(string CheckMyVarOut)
         {
             /*
             This function is to determine whether or not this is the last
@@ -193,8 +191,7 @@ namespace MeritSupportAid
             */
             return false;
         }
-
-        private bool isThisTheSystemMenu(string CheckMyVarOut)
+        private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
             /*
             This function is to determine whether or not this is the last
@@ -236,29 +233,24 @@ namespace MeritSupportAid
             */
             return false;
         }
-
         private string CSMPreString(string CSMPrefix)
         {
             //This will create prefix string
             switch (CSMPrefix)
             {
                 case "CSM":
-                    return CSMPrefix = "Control -> System Menu -> ";
+                    return "Control -> System Menu -> ";
                 default:
-                    return CSMPrefix = "";
+                    return "";
             }
             
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             /*
             on system load define TodaysInternal
             */
-            string DayForLoad = DateTime.Today.ToString();
-            string RightNow = DateConversion(DayForLoad);
-            TodaysInternal.Text = RightNow;
-
+            SetYourCurrentDateText();
             /*
             Use app config to get TopMost property
             */
@@ -269,11 +261,13 @@ namespace MeritSupportAid
                 this.TopMost = true;
             }
         }
-
         private string DateConversion(string PrimaryInput)
         {
-            int i;
-            if (!int.TryParse(PrimaryInput, out i))
+            /*
+            This is the date converter logic here.
+            */
+
+            if (!int.TryParse(PrimaryInput,out _))
             {
                 try
                 {
@@ -308,27 +302,32 @@ namespace MeritSupportAid
                 }
                 catch (FormatException)
                 {
-                   //If error with string conversion, return this error
-                   return "ERROR 002";
+                    //If error with string conversion, return this error
+                    return "ERROR 002";
                 }
 
             }
         }
-
-        private void label_Click(object sender, EventArgs e)
+        private void Label_Click(object sender, EventArgs e)
         {
+            //Just re-copy the string to the clipboard
             Clipboard.SetText(MenuResultsString.Text);
         }
-    
         private void DateConvClick(object sender, EventArgs e)
         {
-            ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipY);
+            /*
+            This is the click event of the converter
+            */
+            ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             string PrimaryInput = DateConvInput.Text;
+            SetYourCurrentDateText();
             if (PrimaryInput != "")
             {
+                //Try parsing the string into DateConversion
                 string ResultCheck = DateConversion(PrimaryInput);
                 if (ResultCheck.StartsWith("ERROR"))
                 {
+                    //Error handling in here
                     string ErrorString;
                     switch (ResultCheck)
                     {
@@ -344,15 +343,18 @@ namespace MeritSupportAid
                             break;
                     }
 
+                    //Hide results label and throw error popup
                     DateConvResult.Visible = false;
                     MessageBox.Show(ErrorString,"Error");
 
                 }
                 else
                 {
-                    DateConvResult.Text = DateConversion(PrimaryInput);
+                    //Display date conversion
+                    DateConvResult.Text = ResultCheck;
                 }
                 
+                //Make some UI colour changes based on originating colours
                 string ColCheck = DateConvResult.ForeColor.ToString();
                 if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
                 {
@@ -368,31 +370,51 @@ namespace MeritSupportAid
             }
             else
             {
+                //Hide results label and throw error here where no value entered
                 DateConvResult.Visible = false;
                 MessageBox.Show("Please enter a value to convert", "Error");
             }
 
         }
-
+        private void SetYourCurrentDateText()
+        {
+            /*
+            This is to get today's date
+            */
+            string DayForLoad = DateTime.Today.ToString();
+            string RightNow = DateConversion(DayForLoad);
+            TodaysInternal.Text = RightNow;
+            TrayIcon.Text = "Your internal date today is " + RightNow;
+        }
         private void SettingButtonClick(object sender, EventArgs e)
         {
+            /*
+            Show the settings screen
+            */
             bool OnOff = true;
             SettingToggleView(OnOff);
         }
         private void SettingCancelClick(object sender, EventArgs e)
         {
+            /*
+            Cancel and hide the system settings and reapply their
+            original settings.
+            */
             bool OnOff = false;
             AOTCheck.Checked = Properties.Settings.Default.AlwaysOnTop;
+            ForceClose.Checked = Properties.Settings.Default.ForceClose;
             SettingToggleView(OnOff);
         }
         private void SettingSaveClick(object sender, EventArgs e)
         {
+            /*
+            Save Settings Here and apply TopMost setting
+            */
             bool OnOff = false;
             Properties.Settings.Default.Save();
             this.TopMost = Properties.Settings.Default.AlwaysOnTop;
             SettingToggleView(OnOff);
         }
-
         private void SettingToggleView(bool OnOff)
         {
             /*
@@ -401,49 +423,62 @@ namespace MeritSupportAid
             SettingCancel.Visible = OnOff;
             SettingSave.Visible = OnOff;
             AOTCheck.Visible = OnOff;
+            ForceClose.Visible = OnOff;
         }
+        private void TrayClick(object sender, EventArgs e)
+        {
+            /*
+            This function handles TrayIcon click 
+            logic put in place to toggle window based 
+            on TrayIcon click
+            */
+            if (FormWindowState.Minimized == WindowState)
+            {
+                //Click now brings to screen and hides trayicon
+                Show();
+                WindowState = FormWindowState.Normal;
+                SetYourCurrentDateText();
+                TrayIcon.Visible = false;
+            }
+            else
+            {
+                //Minimise Here, though antequated since Icon is
+                //now invisible on maximise.
+                Hide();
+                WindowState = FormWindowState.Minimized;
+                SetYourCurrentDateText();
+            }
 
+        }
+        private void CloseApplication(object sender, EventArgs e)
+        {
+            /*
+            This will close the app. If another form is later created
+            this will have to change to Application.Exit();
+             */
+            Properties.Settings.Default.ForceClose = true;
+            Application.Exit();
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             /*
             This overrides the form close to now hide and go to system tray.
             */
-            e.Cancel = true;
-            base.OnFormClosing(e);
-            TrayIcon.Visible = true;
-            Hide();
-        }
-
-        private void TrayClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            if (Properties.Settings.Default.ForceClose == true)
             {
-
+                //Close application if force close true
+                Application.Exit();
             }
             else
             {
-                //logic put in place to toggle window based on notification icon click
-                if (FormWindowState.Minimized == WindowState)
-                {
-                    Show();
-                    WindowState = FormWindowState.Normal;
-                }
-                else
-                {
-                    //.Icon = SystemIcons.Exclamation;
-                    Hide();
-                    WindowState = FormWindowState.Minimized;
-                }
+                //Close form to Tray
+                e.Cancel = true;
+                base.OnFormClosing(e);
+                TrayIcon.Visible = true;
+                Hide();
+                SetYourCurrentDateText();
+                TrayIcon.ShowBalloonTip(500);
             }
-            
-        }
-
-        private void TrayOver(object sender, EventArgs e)
-        {
-            /*
-            Add mouseover tooltip in here
-            */
-
         }
     }
 }

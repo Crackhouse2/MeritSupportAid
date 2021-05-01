@@ -559,12 +559,16 @@
             this.ConvertButton = new System.Windows.Forms.Button();
             this.DateConvResult = new System.Windows.Forms.Label();
             this.SettingsButton = new System.Windows.Forms.Button();
-            this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.SettingSave = new System.Windows.Forms.Button();
             this.SettingCancel = new System.Windows.Forms.Button();
             this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.TrayIconContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ForceClose = new System.Windows.Forms.CheckBox();
+            this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
+            this.TrayIconContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // MMT
@@ -4454,7 +4458,7 @@
             this.MenuResultsString.Text = "Drop Down Menu Paths";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Visible = false;
-            this.MenuResultsString.Click += new System.EventHandler(this.label_Click);
+            this.MenuResultsString.Click += new System.EventHandler(this.Label_Click);
             // 
             // TodaysInternal
             // 
@@ -4536,21 +4540,6 @@
             this.SettingsButton.UseVisualStyleBackColor = true;
             this.SettingsButton.Click += new System.EventHandler(this.SettingButtonClick);
             // 
-            // AOTCheck
-            // 
-            this.AOTCheck.AutoSize = true;
-            this.AOTCheck.Checked = global::MeritSupportAid.Properties.Settings.Default.AlwaysOnTop;
-            this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
-            this.AOTCheck.Name = "AOTCheck";
-            this.AOTCheck.Size = new System.Drawing.Size(115, 19);
-            this.AOTCheck.TabIndex = 11;
-            this.AOTCheck.Text = "Always on top";
-            this.AOTCheck.UseVisualStyleBackColor = true;
-            this.AOTCheck.Visible = false;
-            // 
             // SettingSave
             // 
             this.SettingSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -4582,10 +4571,56 @@
             // 
             // TrayIcon
             // 
-            this.TrayIcon.BalloonTipText = "Nothing to see here";
-            this.TrayIcon.BalloonTipTitle = "Balloon Title";
+            this.TrayIcon.BalloonTipText = "Is still running in your system tray";
+            this.TrayIcon.BalloonTipTitle = "Merit Support Aid";
+            this.TrayIcon.ContextMenuStrip = this.TrayIconContext;
             this.TrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TrayIcon.Icon")));
             this.TrayIcon.Text = "Merit Support Aid";
+            this.TrayIcon.Click += new System.EventHandler(this.TrayClick);
+            // 
+            // TrayIconContext
+            // 
+            this.TrayIconContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitApplicationToolStripMenuItem});
+            this.TrayIconContext.Name = "TrayIconContext";
+            this.TrayIconContext.Size = new System.Drawing.Size(158, 26);
+            // 
+            // exitApplicationToolStripMenuItem
+            // 
+            this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitApplicationToolStripMenuItem.Text = "Exit Application";
+            this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.CloseApplication);
+            // 
+            // ForceClose
+            // 
+            this.ForceClose.AutoSize = true;
+            this.ForceClose.Checked = global::MeritSupportAid.Properties.Settings.Default.ForceClose;
+            this.ForceClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "ForceClose", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ForceClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForceClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.ForceClose.Location = new System.Drawing.Point(565, 62);
+            this.ForceClose.Name = "ForceClose";
+            this.ForceClose.Size = new System.Drawing.Size(200, 19);
+            this.ForceClose.TabIndex = 14;
+            this.ForceClose.Text = "Do not close to system tray";
+            this.ForceClose.UseVisualStyleBackColor = true;
+            this.ForceClose.Visible = false;
+            // 
+            // AOTCheck
+            // 
+            this.AOTCheck.AutoSize = true;
+            this.AOTCheck.Checked = global::MeritSupportAid.Properties.Settings.Default.AlwaysOnTop;
+            this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
+            this.AOTCheck.Name = "AOTCheck";
+            this.AOTCheck.Size = new System.Drawing.Size(115, 19);
+            this.AOTCheck.TabIndex = 11;
+            this.AOTCheck.Text = "Always on top";
+            this.AOTCheck.UseVisualStyleBackColor = true;
+            this.AOTCheck.Visible = false;
             // 
             // MSA
             // 
@@ -4595,6 +4630,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 190);
+            this.Controls.Add(this.ForceClose);
             this.Controls.Add(this.SettingCancel);
             this.Controls.Add(this.SettingSave);
             this.Controls.Add(this.AOTCheck);
@@ -4619,6 +4655,7 @@
             this.MMT.PerformLayout();
             this.CSM.ResumeLayout(false);
             this.CSM.PerformLayout();
+            this.TrayIconContext.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5159,6 +5196,9 @@
         private System.Windows.Forms.Button SettingSave;
         private System.Windows.Forms.Button SettingCancel;
         private System.Windows.Forms.NotifyIcon TrayIcon;
+        private System.Windows.Forms.ContextMenuStrip TrayIconContext;
+        private System.Windows.Forms.ToolStripMenuItem exitApplicationToolStripMenuItem;
+        private System.Windows.Forms.CheckBox ForceClose;
     }
 }
 
