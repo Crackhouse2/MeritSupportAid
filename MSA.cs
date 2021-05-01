@@ -306,61 +306,66 @@ namespace MeritSupportAid
             */
             ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             string PrimaryInput = DateConvInput.Text;
-            SetYourCurrentDateText();
-            if (PrimaryInput != "")
+            if (PrimaryInput == "Sy is awesome!")
             {
-                //Try parsing the string into DateConversion
-                string ResultCheck = DateConversion(PrimaryInput);
-                if (ResultCheck.StartsWith("ERROR"))
-                {
-                    //Error handling in here
-                    string ErrorString;
-                    switch (ResultCheck)
-                    {
-                        case "ERROR 001":
-                            ErrorString = "Error in int conversion, revise your input";
-                            break;
-                        case "ERROR 002":
-                            ErrorString = "Error in string conversion, revise your input. Please use a valid date format.";
-                            break;
-                        default:
-                            ErrorString = "Unknown error, this is why you can't have nice things!";
-                            //Put a thing here for writing a log entry
-                            break;
-                    }
-
-                    //Hide results label and throw error popup
-                    DateConvResult.Visible = false;
-                    MessageBox.Show(ErrorString,"Error");
-
-                }
-                else
-                {
-                    //Display date conversion
-                    DateConvResult.Text = ResultCheck;
-                }
-                
-                //Make some UI colour changes based on originating colours
-                string ColCheck = DateConvResult.ForeColor.ToString();
-                if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
-                {
-                    DateConvResult.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
-                }
-                else
-                {
-                    DateConvResult.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
-                }
-
-                DateConvResult.Visible = true;
-
+                MessageBox.Show("Yeah he is!", "So Damn Right!");
             }
             else
             {
-                //Hide results label and throw error here where no value entered
-                DateConvResult.Visible = false;
-                MessageBox.Show("Please enter a value to convert", "Error");
-            }
+                SetYourCurrentDateText();
+                if (PrimaryInput != "")
+                {
+                    //Try parsing the string into DateConversion
+                    string ResultCheck = DateConversion(PrimaryInput);
+                    if (ResultCheck.StartsWith("ERROR"))
+                    {
+                        //Error handling in here
+                        string ErrorString;
+                        switch (ResultCheck)
+                        {
+                            case "ERROR 001":
+                                ErrorString = "Error in int conversion, revise your input";
+                                break;
+                            case "ERROR 002":
+                                ErrorString = "Error in string conversion, revise your input. Please use a valid date format.";
+                                break;
+                            default:
+                                ErrorString = "Unknown error, this is why you can't have nice things!";
+                                //Put a thing here for writing a log entry
+                                break;
+                        }
 
+                        //Hide results label and throw error popup
+                        DateConvResult.Visible = false;
+                        MessageBox.Show(ErrorString, "Error");
+
+                    }
+                    else
+                    {
+                        //Display date conversion
+                        DateConvResult.Text = ResultCheck;
+                    }
+
+                    //Make some UI colour changes based on originating colours
+                    string ColCheck = DateConvResult.ForeColor.ToString();
+                    if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
+                    {
+                        DateConvResult.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                    }
+                    else
+                    {
+                        DateConvResult.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                    }
+
+                    DateConvResult.Visible = true;
+                }
+                else
+                {
+                    //Hide results label and throw error here where no value entered
+                    DateConvResult.Visible = false;
+                    MessageBox.Show("Please enter a value to convert", "Error");
+                }
+            }
         }
         private void SetYourCurrentDateText()
         {
@@ -371,6 +376,14 @@ namespace MeritSupportAid
             string RightNow = DateConversion(DayForLoad);
             TodaysInternal.Text = RightNow;
             TrayIcon.Text = "Your internal date today is " + RightNow;
+        }
+        private void TextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            //On enter key run convert click
+            if (e.KeyCode == Keys.Enter)
+            {
+                DateConvClick(sender, e);
+            }
         }
         //These events relate to settings and setting updating
         private void SettingButtonClick(object sender, EventArgs e)
