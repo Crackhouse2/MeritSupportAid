@@ -2961,7 +2961,7 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 189);
+            this.CSM.Location = new System.Drawing.Point(0, 166);
             this.CSM.Name = "CSM";
             this.CSM.Size = new System.Drawing.Size(900, 24);
             this.CSM.TabIndex = 2;
@@ -4443,7 +4443,7 @@
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(900, 165);
+            this.MenuResultsString.Size = new System.Drawing.Size(900, 142);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "BLANK TEXT";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -4455,7 +4455,7 @@
             this.TodaysInternal.AutoSize = true;
             this.TodaysInternal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.TodaysInternal.Location = new System.Drawing.Point(86, 51);
+            this.TodaysInternal.Location = new System.Drawing.Point(85, 36);
             this.TodaysInternal.Name = "TodaysInternal";
             this.TodaysInternal.Size = new System.Drawing.Size(92, 31);
             this.TodaysInternal.TabIndex = 4;
@@ -4466,7 +4466,7 @@
             this.lblYourDateToday.AutoSize = true;
             this.lblYourDateToday.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYourDateToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
-            this.lblYourDateToday.Location = new System.Drawing.Point(27, 35);
+            this.lblYourDateToday.Location = new System.Drawing.Point(12, 24);
             this.lblYourDateToday.Name = "lblYourDateToday";
             this.lblYourDateToday.Size = new System.Drawing.Size(151, 12);
             this.lblYourDateToday.TabIndex = 5;
@@ -4477,7 +4477,7 @@
             this.lblInput.AutoSize = true;
             this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.lblInput.Location = new System.Drawing.Point(26, 99);
+            this.lblInput.Location = new System.Drawing.Point(12, 65);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(33, 12);
             this.lblInput.TabIndex = 6;
@@ -4485,7 +4485,7 @@
             // 
             // DateConvInput
             // 
-            this.DateConvInput.Location = new System.Drawing.Point(28, 114);
+            this.DateConvInput.Location = new System.Drawing.Point(14, 80);
             this.DateConvInput.Name = "DateConvInput";
             this.DateConvInput.Size = new System.Drawing.Size(73, 20);
             this.DateConvInput.TabIndex = 7;
@@ -4497,7 +4497,7 @@
             this.ConvertButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ConvertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConvertButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ConvertButton.Location = new System.Drawing.Point(107, 98);
+            this.ConvertButton.Location = new System.Drawing.Point(93, 80);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.Size = new System.Drawing.Size(70, 69);
             this.ConvertButton.TabIndex = 8;
@@ -4509,7 +4509,7 @@
             this.DateConvResult.AutoSize = true;
             this.DateConvResult.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateConvResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
-            this.DateConvResult.Location = new System.Drawing.Point(174, 127);
+            this.DateConvResult.Location = new System.Drawing.Point(169, 109);
             this.DateConvResult.Name = "DateConvResult";
             this.DateConvResult.Size = new System.Drawing.Size(120, 40);
             this.DateConvResult.TabIndex = 9;
@@ -4523,7 +4523,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(900, 213);
+            this.ClientSize = new System.Drawing.Size(900, 190);
             this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.DateConvInput);
