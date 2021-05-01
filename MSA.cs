@@ -277,7 +277,8 @@ namespace MeritSupportAid
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Enter a date or a number", "Error");
+                    //If error in int conversion, return this error
+                    return "ERROR 001";
                 }
 
             }
@@ -296,14 +297,11 @@ namespace MeritSupportAid
                 }
                 catch (FormatException)
                 {
-                   MessageBox.Show("Enter a date or a number", "Error");
+                   //If error with string conversion, return this error
+                   return "ERROR 002";
                 }
 
             }
-            /*
-            Need to add error handling when user entered data is being considered
-            */
-            return "Error in function, neither parses worked";
         }
 
         private void label_Click(object sender, EventArgs e)
@@ -317,7 +315,33 @@ namespace MeritSupportAid
             string PrimaryInput = DateConvInput.Text;
             if (PrimaryInput != "")
             {
-                DateConvResult.Text = DateConversion(PrimaryInput);
+                string ResultCheck = DateConversion(PrimaryInput);
+                if (ResultCheck.StartsWith("ERROR"))
+                {
+                    string ErrorString;
+                    switch (ResultCheck)
+                    {
+                        case "ERROR 001":
+                            ErrorString = "Error in int conversion, revise your input";
+                            break;
+                        case "ERROR 002":
+                            ErrorString = "Error in string conversion, revise your input. Please use a valid date format.";
+                            break;
+                        default:
+                            ErrorString = "Unknown error, this is why you can't have nice things!";
+                            //Put a thing here for writing a log entry
+                            break;
+                    }
+
+                    DateConvResult.Visible = false;
+                    MessageBox.Show(ErrorString,"Error");
+
+                }
+                else
+                {
+                    DateConvResult.Text = DateConversion(PrimaryInput);
+                }
+                
                 string ColCheck = DateConvResult.ForeColor.ToString();
                 if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
                 {
@@ -327,18 +351,13 @@ namespace MeritSupportAid
                 {
                     DateConvResult.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
                 }
-                
-                if (DateConvResult.Text != "label1")
-                {
-                    //DateConvInput.Text = DateConvResult.Text;
-                }
 
                 DateConvResult.Visible = true;
-
 
             }
             else
             {
+                DateConvResult.Visible = false;
                 MessageBox.Show("Please enter a value to convert", "Error");
             }
 
