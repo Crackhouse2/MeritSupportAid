@@ -589,7 +589,7 @@
             this.reportsToolStripMenuItem,
             this.controlToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.MMT.Location = new System.Drawing.Point(0, 24);
+            this.MMT.Location = new System.Drawing.Point(0, 0);
             this.MMT.Name = "MMT";
             this.MMT.Size = new System.Drawing.Size(900, 24);
             this.MMT.TabIndex = 0;
@@ -3075,6 +3075,7 @@
             // CSM
             // 
             this.CSM.BackColor = System.Drawing.Color.Transparent;
+            this.CSM.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CSM.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.systemDefaultsToolStripMenuItem,
             this.branchTablesToolStripMenuItem,
@@ -3082,7 +3083,7 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 0);
+            this.CSM.Location = new System.Drawing.Point(0, 166);
             this.CSM.Name = "CSM";
             this.CSM.Size = new System.Drawing.Size(900, 24);
             this.CSM.TabIndex = 2;
@@ -4752,7 +4753,7 @@
             this.MenuResultsString.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuResultsString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuResultsString.Location = new System.Drawing.Point(0, 48);
+            this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsString.Name = "MenuResultsString";
             this.MenuResultsString.Size = new System.Drawing.Size(900, 142);
             this.MenuResultsString.TabIndex = 3;
