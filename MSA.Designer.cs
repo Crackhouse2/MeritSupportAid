@@ -4455,7 +4455,7 @@
             // 
             this.TodaysInternal.AutoSize = true;
             this.TodaysInternal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
+            this.TodaysInternal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
             this.TodaysInternal.Location = new System.Drawing.Point(85, 36);
             this.TodaysInternal.Name = "TodaysInternal";
             this.TodaysInternal.Size = new System.Drawing.Size(186, 31);
@@ -4477,7 +4477,7 @@
             // 
             this.lblInput.AutoSize = true;
             this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
             this.lblInput.Location = new System.Drawing.Point(12, 65);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(33, 12);
