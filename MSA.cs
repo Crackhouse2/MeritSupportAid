@@ -395,9 +395,55 @@ namespace MeritSupportAid
 
         private void SettingToggleView(bool OnOff)
         {
+            /*
+            This will toggle the settings controls
+            */
             SettingCancel.Visible = OnOff;
             SettingSave.Visible = OnOff;
             AOTCheck.Visible = OnOff;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            /*
+            This overrides the form close to now hide and go to system tray.
+            */
+            e.Cancel = true;
+            base.OnFormClosing(e);
+            TrayIcon.Visible = true;
+            Hide();
+        }
+
+        private void TrayClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+
+            }
+            else
+            {
+                //logic put in place to toggle window based on notification icon click
+                if (FormWindowState.Minimized == WindowState)
+                {
+                    Show();
+                    WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    //.Icon = SystemIcons.Exclamation;
+                    Hide();
+                    WindowState = FormWindowState.Minimized;
+                }
+            }
+            
+        }
+
+        private void TrayOver(object sender, EventArgs e)
+        {
+            /*
+            Add mouseover tooltip in here
+            */
+
         }
     }
 }

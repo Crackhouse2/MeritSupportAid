@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -561,6 +562,7 @@
             this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.SettingSave = new System.Windows.Forms.Button();
             this.SettingCancel = new System.Windows.Forms.Button();
+            this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.SuspendLayout();
@@ -4578,6 +4580,13 @@
             this.SettingCancel.Visible = false;
             this.SettingCancel.Click += new System.EventHandler(this.SettingCancelClick);
             // 
+            // TrayIcon
+            // 
+            this.TrayIcon.BalloonTipText = "Nothing to see here";
+            this.TrayIcon.BalloonTipTitle = "Balloon Title";
+            this.TrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TrayIcon.Icon")));
+            this.TrayIcon.Text = "Merit Support Aid";
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5149,6 +5158,7 @@
         private System.Windows.Forms.CheckBox AOTCheck;
         private System.Windows.Forms.Button SettingSave;
         private System.Windows.Forms.Button SettingCancel;
+        private System.Windows.Forms.NotifyIcon TrayIcon;
     }
 }
 
