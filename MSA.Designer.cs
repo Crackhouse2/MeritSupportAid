@@ -4532,10 +4532,13 @@
             this.SettingsButton.Size = new System.Drawing.Size(66, 51);
             this.SettingsButton.TabIndex = 10;
             this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingButtonClick);
             // 
             // AOTCheck
             // 
             this.AOTCheck.AutoSize = true;
+            this.AOTCheck.Checked = global::MeritSupportAid.Properties.Settings.Default.AlwaysOnTop;
+            this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
             this.AOTCheck.Location = new System.Drawing.Point(565, 36);
@@ -4559,6 +4562,7 @@
             this.SettingSave.Text = "Save";
             this.SettingSave.UseVisualStyleBackColor = true;
             this.SettingSave.Visible = false;
+            this.SettingSave.Click += new System.EventHandler(this.SettingSaveClick);
             // 
             // SettingCancel
             // 
@@ -4572,6 +4576,7 @@
             this.SettingCancel.Text = "Cancel";
             this.SettingCancel.UseVisualStyleBackColor = true;
             this.SettingCancel.Visible = false;
+            this.SettingCancel.Click += new System.EventHandler(this.SettingCancelClick);
             // 
             // MSA
             // 

@@ -262,8 +262,8 @@ namespace MeritSupportAid
             /*
             Use app config to get TopMost property
             */
-            var TopThis = ConfigurationManager.AppSettings["TopThis"];
-            if (TopThis == "true")
+            this.TopMost = false;
+            if (Properties.Settings.Default.AlwaysOnTop == true)
             {
                 //this being the active current window
                 this.TopMost = true;
@@ -382,11 +382,13 @@ namespace MeritSupportAid
         private void SettingCancelClick(object sender, EventArgs e)
         {
             bool OnOff = false;
+            AOTCheck.Checked = Properties.Settings.Default.AlwaysOnTop;
             SettingToggleView(OnOff);
         }
         private void SettingSaveClick(object sender, EventArgs e)
         {
             bool OnOff = false;
+            Properties.Settings.Default.Save();
             SettingToggleView(OnOff);
         }
 
