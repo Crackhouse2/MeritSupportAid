@@ -159,83 +159,103 @@ namespace MeritSupportAid
             is returned
             */
 
-            /*
-            Regular Payroll form drop downs 
-            */
-            if (CheckMyVarOut == "File") { return true; }
-            if (CheckMyVarOut == "Employees") 
+            //This is a list of drop down menu starting points that don't exist in 2 places, meaning that if you see them, this is the topmost menu
+            List<string> OneAndDone = new List<string> { "File", "Clients", "Placements", "Invoicing", "Conversions", "P45/Leavers", "CIS", "Reports", "Control", "Help", "System Defaults", "Branch Tables", "Payroll Tables", "Security", "Utilities", "Supervisor" };
+            if (OneAndDone.Contains(CheckMyVarOut)) 
+            { 
+                //If in list return true
+                return true; 
+            }
+            else if (CheckMyVarOut == "Employees") 
             {
+                //Employees located in more than one place as a menu dropdown
                 List<string> EmpSupervisor = new List<string> { "Contracts Setup","Create Monthly Employee","Delete Employees","Employee Migration Wizard","Move Employee Utilities","Recalc Holiday Pay" };
                 if (EmpSupervisor.Contains(SourceVar))
                 {
+                    //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
                     return false;
                 }
                 else
                 {
+                    //otherwise this is Employees in payroll menu MMT
                     return true;
                 }
             }
-            if (CheckMyVarOut == "Clients") { return true; }
-            if (CheckMyVarOut == "Placements") { return true; }
-            if (CheckMyVarOut == "Timesheets") 
+            else if (CheckMyVarOut == "Timesheets") 
             {
+                //Timesheets located in more than one place as a menu dropdown
                 List<string> TSSupervisor = new List<string> { "Delete Adjustments","Margin Adjustment","Payroll Reversal Wizard","Reverse Pay and Accrual","Timesheet Monthly Reversal","Timesheets Monthly Edit" };
                 if (TSSupervisor.Contains(SourceVar))
                 {
+                    //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
                     return false;
                 }
                 else
                 {
+                    //otherwise this is Timesheets in payroll menu MMT
                     return true;
                 }
                 
             }
-            if (CheckMyVarOut == "Payroll") 
+            else if (CheckMyVarOut == "Payroll") 
             {
+                //Payroll located in more than one place as a menu dropdown
                 List<string> PayrollSupervisor = new List<string> { "Accruals", "Country Codes", "Invoice Options", "Nominals", "Paytype Conversion"};
                 if (PayrollSupervisor.Contains(SourceVar))
                 {
+                    //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
                     return false;
                 }
                 else
                 {
+                    //otherwise this is Payroll in payroll menu MMT
                     return true;
                 }
             }
-            if (CheckMyVarOut == "Invoicing") { return true; }
-            if (CheckMyVarOut == "Conversions") { return true; }
-            if (CheckMyVarOut == "Pensions") 
+            else if (CheckMyVarOut == "Pensions") 
             {
+                //Pensions located in more than one place as a menu dropdown
                 List<string> PenSupervisor = new List<string> { "Import Office Data", "Pension Corrections", "Postponement at Staging","Re-export Contribution Schedule","Pension Defaults","Pension Providers" };
                 if (PenSupervisor.Contains(SourceVar))
                 {
+                    //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
                     return false;
                 }
                 else
                 {
+                    //otherwise this is Pensions in payroll menu MMT
                     return true;
                 }
             }
-            if (CheckMyVarOut == "P45/Leavers") { return true; }
-            if (CheckMyVarOut == "CIS") { return true; }
-            if (CheckMyVarOut == "Reports") { return true; }
-            if (CheckMyVarOut == "Control") { return true; }
-            if (CheckMyVarOut == "Help") { return true; }
+            else
+            {
+                /*
+                Case 1 / Default returns false
+                */
+                return false;
+            }
 
+
+            //Factored out logics
+            //if (CheckMyVarOut == "File") { return true; }
+            //if (CheckMyVarOut == "Clients") { return true; }
+            //if (CheckMyVarOut == "Placements") { return true; }
+            //if (CheckMyVarOut == "P45/Leavers") { return true; }
+            //if (CheckMyVarOut == "CIS") { return true; }
+            //if (CheckMyVarOut == "Reports") { return true; }
+            //if (CheckMyVarOut == "Control") { return true; }
+            //if (CheckMyVarOut == "Help") { return true; }
+            //if (CheckMyVarOut == "Invoicing") { return true; }
+            //if (CheckMyVarOut == "Conversions") { return true; }
             /*
             System Menu Controls
             */
-            if (CheckMyVarOut == "System Defaults") { return true; }
-            if (CheckMyVarOut == "Branch Tables") { return true; }
-            if (CheckMyVarOut == "Payroll Tables") { return true; }
-            if (CheckMyVarOut == "Security") { return true; }
-            if (CheckMyVarOut == "Utilities") { return true; }
-            if (CheckMyVarOut == "Supervisor") { return true; }
-
-            /*
-            Case 1 / Default returns false
-            */
-            return false;
+            //if (CheckMyVarOut == "System Defaults") { return true; }
+            //if (CheckMyVarOut == "Branch Tables") { return true; }
+            //if (CheckMyVarOut == "Payroll Tables") { return true; }
+            //if (CheckMyVarOut == "Security") { return true; }
+            //if (CheckMyVarOut == "Utilities") { return true; }
+            //if (CheckMyVarOut == "Supervisor") { return true; }
         }
         private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
@@ -246,38 +266,30 @@ namespace MeritSupportAid
             on of the system menu roots, true is returned
             */
 
-            /*
-            Regular Payroll form drop downs -Return False
-            */
-            if (CheckMyVarOut == "File") { return false; }
-            if (CheckMyVarOut == "Employees") { return false; }
-            if (CheckMyVarOut == "Clients") { return false; }
-            if (CheckMyVarOut == "Placements") { return false; }
-            if (CheckMyVarOut == "Timesheets") { return false; }
-            if (CheckMyVarOut == "Payroll") { return false; }
-            if (CheckMyVarOut == "Invoicing") { return false; }
-            if (CheckMyVarOut == "Conversions") { return false; }
-            if (CheckMyVarOut == "Pensions") { return false; }
-            if (CheckMyVarOut == "P45/Leavers") { return false; }
-            if (CheckMyVarOut == "CIS") { return false; }
-            if (CheckMyVarOut == "Reports") { return false; }
-            if (CheckMyVarOut == "Control") { return false; }
-            if (CheckMyVarOut == "Help") { return false; }
-
-            /*
-            System Menu Controls
-            */
-            if (CheckMyVarOut == "System Defaults") { return true; }
-            if (CheckMyVarOut == "Branch Tables") { return true; }
-            if (CheckMyVarOut == "Payroll Tables") { return true; }
-            if (CheckMyVarOut == "Security") { return true; }
-            if (CheckMyVarOut == "Utilities") { return true; }
-            if (CheckMyVarOut == "Supervisor") { return true; }
-
-            /*
-            Case 1 / Default returns false
-            */
-            return false;
+            //A list for all the payroll menu and system menu strings seperately.
+            List<string> PayrollMenu = new List<string> { "File","Employees","Clients","Placements","Timesheets","Payroll","Invoicing","Conversions","Pensions","P45/Leavers","CIS","Reports","Control","Help" };
+            List<string> SystemMenu = new List<string> { "System Defaults", "Branch Tables", "Payroll Tables", "Security", "Utilities", "Supervisor" };
+            
+            if (PayrollMenu.Contains(CheckMyVarOut))
+            {
+                /*
+                Regular Payroll form drop downs -Return False
+                */
+               return false;
+           }
+           else if (SystemMenu.Contains(CheckMyVarOut))
+           {
+               /*
+               System Menu Controls
+               */
+                return true;
+            }
+            else
+            {
+                //Case 1 False
+                return false;
+            }
+            
         }
         private string CSMPreString(string CSMPrefix)
         {
