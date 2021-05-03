@@ -533,8 +533,5 @@ namespace MeritSupportAid
                 TrayIcon.ShowBalloonTip(500);
             }
         }
-       
-
-
     }
 }
