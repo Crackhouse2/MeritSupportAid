@@ -45,7 +45,7 @@ namespace MeritSupportAid
             by checking by name alone, this could prove problematic, but its a basis. isThisTheSystemMenu is the same 
             function returning a more specific bool based on whether its one of the ends in the system menu. 
             */
-            SaferThanSorry = IsThisTheEnd(WhatClicked1up);
+            SaferThanSorry = IsThisTheEnd(WhatClicked1up,WhatClicked);
             CSMorWhut = IsThisTheSystemMenu(WhatClicked1up);
             if (SaferThanSorry == false)
             {
@@ -56,7 +56,7 @@ namespace MeritSupportAid
                 */
                 ToolStripMenuItem miGrandpapaOwnerItem = (ToolStripMenuItem)(miOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                 WhatClicked2up = miGrandpapaOwnerItem.ToString();
-                SaferThanSorry = IsThisTheEnd(WhatClicked2up);
+                SaferThanSorry = IsThisTheEnd(WhatClicked2up,WhatClicked1up);
                 CSMorWhut = IsThisTheSystemMenu(WhatClicked2up);
                 howDeep = 2;
                 if (SaferThanSorry == false)
@@ -68,7 +68,7 @@ namespace MeritSupportAid
                     */
                     ToolStripMenuItem miGreatGrandpapaOwnerItem = (ToolStripMenuItem)(miGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                     WhatClicked3up = miGreatGrandpapaOwnerItem.ToString();
-                    SaferThanSorry = IsThisTheEnd(WhatClicked3up);
+                    SaferThanSorry = IsThisTheEnd(WhatClicked3up,WhatClicked2up);
                     CSMorWhut = IsThisTheSystemMenu(WhatClicked3up);
                     howDeep = 3;
                     if (SaferThanSorry == false)
@@ -80,7 +80,7 @@ namespace MeritSupportAid
                         */
                         ToolStripMenuItem miGreatestGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                         WhatClicked4up = miGreatestGrandpapaOwnerItem.ToString();
-                        SaferThanSorry = IsThisTheEnd(WhatClicked4up);
+                        SaferThanSorry = IsThisTheEnd(WhatClicked4up,WhatClicked3up);
                         CSMorWhut = IsThisTheSystemMenu(WhatClicked4up);
                         howDeep = 4;
                         if (SaferThanSorry == false)
@@ -150,7 +150,7 @@ namespace MeritSupportAid
             //MenuResultsBox2.Text = MenuResultsBox.Text;
             Clipboard.SetText(MenuResultsString.Text);
         }
-        private bool IsThisTheEnd(string CheckMyVarOut)
+        private bool IsThisTheEnd(string CheckMyVarOut, string SourceVar)
         {
             /*
             This function is to determine whether or not this is the last
@@ -163,14 +163,59 @@ namespace MeritSupportAid
             Regular Payroll form drop downs 
             */
             if (CheckMyVarOut == "File") { return true; }
-            if (CheckMyVarOut == "Employees") { return true; }
+            if (CheckMyVarOut == "Employees") 
+            {
+                List<string> EmpSupervisor = new List<string> { "Contracts Setup","Create Monthly Employee","Delete Employees","Employee Migration Wizard","Move Employee Utilities","Recalc Holiday Pay" };
+                if (EmpSupervisor.Contains(SourceVar))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             if (CheckMyVarOut == "Clients") { return true; }
             if (CheckMyVarOut == "Placements") { return true; }
-            if (CheckMyVarOut == "Timesheets") { return true; }
-            if (CheckMyVarOut == "Payroll") { return true; }
+            if (CheckMyVarOut == "Timesheets") 
+            {
+                List<string> TSSupervisor = new List<string> { "Delete Adjustments","Margin Adjustment","Payroll Reversal Wizard","Reverse Pay and Accrual","Timesheet Monthly Reversal","Timesheets Monthly Edit" };
+                if (TSSupervisor.Contains(SourceVar))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                
+            }
+            if (CheckMyVarOut == "Payroll") 
+            {
+                List<string> PayrollSupervisor = new List<string> { "Accruals", "Country Codes", "Invoice Options", "Nominals", "Paytype Conversion"};
+                if (PayrollSupervisor.Contains(SourceVar))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             if (CheckMyVarOut == "Invoicing") { return true; }
             if (CheckMyVarOut == "Conversions") { return true; }
-            if (CheckMyVarOut == "Pensions") { return true; }
+            if (CheckMyVarOut == "Pensions") 
+            {
+                List<string> PenSupervisor = new List<string> { "Import Office Data", "Pension Corrections", "Postponement at Staging","Re-export Contribution Schedule","Pension Defaults","Pension Providers" };
+                if (PenSupervisor.Contains(SourceVar))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             if (CheckMyVarOut == "P45/Leavers") { return true; }
             if (CheckMyVarOut == "CIS") { return true; }
             if (CheckMyVarOut == "Reports") { return true; }
@@ -497,5 +542,8 @@ namespace MeritSupportAid
                 TrayIcon.ShowBalloonTip(500);
             }
         }
+       
+
+
     }
 }
