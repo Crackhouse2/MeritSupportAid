@@ -568,6 +568,8 @@
             this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.DateButton = new System.Windows.Forms.Button();
             this.TaxBandsButton = new System.Windows.Forms.Button();
+            this.TaxAllowanceCalc = new System.Windows.Forms.Button();
+            this.TaxAllowInput = new System.Windows.Forms.TextBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -3085,7 +3087,7 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 166);
+            this.CSM.Location = new System.Drawing.Point(0, 191);
             this.CSM.Name = "CSM";
             this.CSM.Size = new System.Drawing.Size(900, 24);
             this.CSM.TabIndex = 2;
@@ -4757,7 +4759,7 @@
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(900, 142);
+            this.MenuResultsString.Size = new System.Drawing.Size(900, 167);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "Drop Down Menu Paths";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -4837,7 +4839,7 @@
             this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
-            this.SettingsButton.Location = new System.Drawing.Point(834, 139);
+            this.SettingsButton.Location = new System.Drawing.Point(834, 156);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(66, 51);
@@ -4930,22 +4932,49 @@
             // DateButton
             // 
             this.DateButton.AccessibleDescription = "DateConvResult";
-            this.DateButton.Location = new System.Drawing.Point(841, 27);
+            this.DateButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DateButton.BackgroundImage")));
+            this.DateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DateButton.Location = new System.Drawing.Point(853, 27);
             this.DateButton.Name = "DateButton";
-            this.DateButton.Size = new System.Drawing.Size(47, 35);
+            this.DateButton.Size = new System.Drawing.Size(47, 47);
             this.DateButton.TabIndex = 15;
-            this.DateButton.Text = "Dates";
             this.DateButton.UseVisualStyleBackColor = true;
+            this.DateButton.Click += new System.EventHandler(this.DateCalcFormMorph);
             // 
             // TaxBandsButton
             // 
             this.TaxBandsButton.AccessibleDescription = "DateConvResult";
-            this.TaxBandsButton.Location = new System.Drawing.Point(841, 65);
+            this.TaxBandsButton.BackColor = System.Drawing.Color.Transparent;
+            this.TaxBandsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TaxBandsButton.BackgroundImage")));
+            this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TaxBandsButton.Location = new System.Drawing.Point(853, 80);
             this.TaxBandsButton.Name = "TaxBandsButton";
-            this.TaxBandsButton.Size = new System.Drawing.Size(47, 35);
+            this.TaxBandsButton.Size = new System.Drawing.Size(47, 47);
             this.TaxBandsButton.TabIndex = 16;
-            this.TaxBandsButton.Text = "TaxBands";
-            this.TaxBandsButton.UseVisualStyleBackColor = true;
+            this.TaxBandsButton.UseVisualStyleBackColor = false;
+            this.TaxBandsButton.Click += new System.EventHandler(this.TaxBandFormMorph);
+            // 
+            // TaxAllowanceCalc
+            // 
+            this.TaxAllowanceCalc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TaxAllowanceCalc.BackgroundImage")));
+            this.TaxAllowanceCalc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TaxAllowanceCalc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TaxAllowanceCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaxAllowanceCalc.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.TaxAllowanceCalc.Location = new System.Drawing.Point(93, 80);
+            this.TaxAllowanceCalc.Name = "TaxAllowanceCalc";
+            this.TaxAllowanceCalc.Size = new System.Drawing.Size(70, 69);
+            this.TaxAllowanceCalc.TabIndex = 17;
+            this.TaxAllowanceCalc.UseVisualStyleBackColor = true;
+            this.TaxAllowanceCalc.Visible = false;
+            // 
+            // TaxAllowInput
+            // 
+            this.TaxAllowInput.Location = new System.Drawing.Point(14, 80);
+            this.TaxAllowInput.Name = "TaxAllowInput";
+            this.TaxAllowInput.Size = new System.Drawing.Size(73, 20);
+            this.TaxAllowInput.TabIndex = 18;
+            this.TaxAllowInput.Visible = false;
             // 
             // MSA
             // 
@@ -4954,7 +4983,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(900, 190);
+            this.ClientSize = new System.Drawing.Size(900, 215);
+            this.Controls.Add(this.TaxAllowInput);
+            this.Controls.Add(this.TaxAllowanceCalc);
             this.Controls.Add(this.TaxBandsButton);
             this.Controls.Add(this.DateButton);
             this.Controls.Add(this.ForceClose);
@@ -5528,6 +5559,8 @@
         private System.Windows.Forms.CheckBox ForceClose;
         private System.Windows.Forms.Button DateButton;
         private System.Windows.Forms.Button TaxBandsButton;
+        private System.Windows.Forms.Button TaxAllowanceCalc;
+        private System.Windows.Forms.TextBox TaxAllowInput;
     }
 }
 

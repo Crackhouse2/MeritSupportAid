@@ -533,5 +533,45 @@ namespace MeritSupportAid
                 TrayIcon.ShowBalloonTip(500);
             }
         }
+
+        //Logics for tax bands and associate tax band dev below here
+        private void TaxBandFormMorph(object sender, EventArgs e)
+        {
+            /*
+            This function hides date conv and setting functionality
+            in favour of TaxAllowance functionality and repurposes
+            some of the labels.
+            */
+            TaxAllowInput.Visible = true;
+            TaxAllowanceCalc.Visible = true;
+            TaxAllowInput.Text = "";
+            lblYourDateToday.Text = "Your standard yearly allowance is";
+            TodaysInternal.Text = "1257L";
+            DateConvInput.Visible = false;
+            DateConvResult.Visible = false;
+            ConvertButton.Visible = false;
+            SettingToggleView(false);
+        }
+        private void DateCalcFormMorph(object sender, EventArgs e)
+        {
+            /*
+            This function hides tax conv and setting functionality
+            in favour of DateConv functionality and resets some 
+            of the labels.
+            */
+            TaxAllowInput.Visible = false;
+            TaxAllowanceCalc.Visible = false;
+            lblYourDateToday.Text = "Your internal date today is";
+            SetYourCurrentDateText();
+            DateConvInput.Visible = true;
+            DateConvResult.Visible = false;
+            ConvertButton.Visible = true;
+            DateConvInput.Text = "";
+            SettingToggleView(false);
+        }
+        private void TaxAllowCalcClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
