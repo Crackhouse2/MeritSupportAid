@@ -235,27 +235,6 @@ namespace MeritSupportAid
                 return false;
             }
 
-
-            //Factored out logics
-            //if (CheckMyVarOut == "File") { return true; }
-            //if (CheckMyVarOut == "Clients") { return true; }
-            //if (CheckMyVarOut == "Placements") { return true; }
-            //if (CheckMyVarOut == "P45/Leavers") { return true; }
-            //if (CheckMyVarOut == "CIS") { return true; }
-            //if (CheckMyVarOut == "Reports") { return true; }
-            //if (CheckMyVarOut == "Control") { return true; }
-            //if (CheckMyVarOut == "Help") { return true; }
-            //if (CheckMyVarOut == "Invoicing") { return true; }
-            //if (CheckMyVarOut == "Conversions") { return true; }
-            /*
-            System Menu Controls
-            */
-            //if (CheckMyVarOut == "System Defaults") { return true; }
-            //if (CheckMyVarOut == "Branch Tables") { return true; }
-            //if (CheckMyVarOut == "Payroll Tables") { return true; }
-            //if (CheckMyVarOut == "Security") { return true; }
-            //if (CheckMyVarOut == "Utilities") { return true; }
-            //if (CheckMyVarOut == "Supervisor") { return true; }
         }
         private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
