@@ -566,6 +566,8 @@
             this.exitApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ForceClose = new System.Windows.Forms.CheckBox();
             this.AOTCheck = new System.Windows.Forms.CheckBox();
+            this.DateButton = new System.Windows.Forms.Button();
+            this.TaxBandsButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -4925,6 +4927,26 @@
             this.AOTCheck.UseVisualStyleBackColor = true;
             this.AOTCheck.Visible = false;
             // 
+            // DateButton
+            // 
+            this.DateButton.AccessibleDescription = "DateConvResult";
+            this.DateButton.Location = new System.Drawing.Point(841, 27);
+            this.DateButton.Name = "DateButton";
+            this.DateButton.Size = new System.Drawing.Size(47, 35);
+            this.DateButton.TabIndex = 15;
+            this.DateButton.Text = "Dates";
+            this.DateButton.UseVisualStyleBackColor = true;
+            // 
+            // TaxBandsButton
+            // 
+            this.TaxBandsButton.AccessibleDescription = "DateConvResult";
+            this.TaxBandsButton.Location = new System.Drawing.Point(841, 65);
+            this.TaxBandsButton.Name = "TaxBandsButton";
+            this.TaxBandsButton.Size = new System.Drawing.Size(47, 35);
+            this.TaxBandsButton.TabIndex = 16;
+            this.TaxBandsButton.Text = "TaxBands";
+            this.TaxBandsButton.UseVisualStyleBackColor = true;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4933,6 +4955,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 190);
+            this.Controls.Add(this.TaxBandsButton);
+            this.Controls.Add(this.DateButton);
             this.Controls.Add(this.ForceClose);
             this.Controls.Add(this.SettingCancel);
             this.Controls.Add(this.SettingSave);
@@ -5502,6 +5526,8 @@
         private System.Windows.Forms.ContextMenuStrip TrayIconContext;
         private System.Windows.Forms.ToolStripMenuItem exitApplicationToolStripMenuItem;
         private System.Windows.Forms.CheckBox ForceClose;
+        private System.Windows.Forms.Button DateButton;
+        private System.Windows.Forms.Button TaxBandsButton;
     }
 }
 
