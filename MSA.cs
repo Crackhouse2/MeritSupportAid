@@ -551,6 +551,10 @@ namespace MeritSupportAid
             DateConvResult.Visible = false;
             ConvertButton.Visible = false;
             SettingToggleView(false);
+            lbl1TaxRes.Visible = true;
+            lbl2TaxRes.Visible = true;
+            lbl3TaxRes.Visible = true;
+            lbl4TaxRes.Visible = true;
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
         {
@@ -568,10 +572,123 @@ namespace MeritSupportAid
             ConvertButton.Visible = true;
             DateConvInput.Text = "";
             SettingToggleView(false);
+            lbl1TaxRes.Visible = false;
+            lbl2TaxRes.Visible = false;
+            lbl3TaxRes.Visible = false;
+            lbl4TaxRes.Visible = false;
         }
         private void TaxAllowCalcClick(object sender, EventArgs e)
         {
+            ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
+            decimal Week = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 52;
+            decimal TwoWeek = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 26;
+            decimal FourWeek = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 13;
+            decimal Month = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 12;
+            lbl1TaxRes.Text = lbl1TaxRes.Text + Week.ToString();
+            lbl2TaxRes.Text = lbl2TaxRes.Text + TwoWeek.ToString();
+            lbl3TaxRes.Text = lbl3TaxRes.Text + FourWeek.ToString();
+            lbl4TaxRes.Text = lbl4TaxRes.Text + Month.ToString();
+        }
 
+        public class ManipulateTaxCode
+        {
+            //A class for Returning Tax Allowance Information for PAYE Calc
+            //RETURNED VALUE IS PERSONAL ALLOWANCE
+            public bool ValidateTaxCode(string TaxCode)
+            {
+                //newly implemented bool
+                string TaxCodeForManipulation;
+                List<string> FullCodes = new List<string> { "0T","BR","D0","D1", "S0T", "SBR", "SD0", "SD1","SD2", "C0T", "CBR", "CD0", "CD1","NT" };
+                if (FullCodes.Contains(TaxCode))
+                {
+                    return true;
+                }
+                else
+                {
+                    if (TaxCode.StartsWith("K"))
+                    {
+                        TaxCodeForManipulation = TaxCode.Replace("K", "");
+                        //TaxCodeForManipulation = Convert.ToInt32(TaxCodeForManipulation);
+                    }
+                }
+                return false;
+            }
+            public string CountryCode(string TaxCode)
+            {
+                //Get Country Code from Tax Code
+                bool CymruCode = TaxCode.StartsWith("C");
+                bool ScotCode = TaxCode.StartsWith("S");
+
+                if (CymruCode == true)
+                {
+                    return "C";
+                }
+                else if (ScotCode == true)
+                {
+                    return "S";
+                }
+                return "";
+
+            }
+
+            public decimal DeduceTaxAllowance(string TaxCode)
+            {
+                //Strip away all to get the tax free allowance as a decimal
+                string EndsWith = TaxCode.Substring(TaxCode.Length - 1, 1);
+                string TaxAllowance = TaxCode;
+                string EndString = "";
+                if (EndString.Contains(EndsWith))
+                {
+
+                    TaxAllowance = TaxCode.Replace(EndsWith, "9");
+                }
+
+                bool TaxCodeCountry = TaxAllowance.StartsWith("C,S");
+                bool TaxAllowanceReady = TaxAllowance.StartsWith("BR,D,K,N");
+                bool DCode = TaxAllowance.StartsWith("D");
+                bool KCode = TaxAllowance.StartsWith("K");
+                bool NCode = TaxAllowance.StartsWith("N");
+                bool BRCode = TaxAllowance.StartsWith("BR");
+
+                if (TaxCodeCountry == true)
+                {
+                    //Clear the country prefix
+                    TaxAllowance = TaxAllowance.Replace("C,S", "");
+                }
+
+                if (TaxAllowanceReady == false)
+                {
+                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
+                    return TaxAllowanceForCalc;
+                }
+
+                else if (DCode == true)
+                {
+                    //D Code no tax allowance, 0 is 45% 1 is 50%
+                    decimal TaxAllowanceForCalc = 0;
+                    return TaxAllowanceForCalc;
+                }
+                else if (KCode == true)
+                {
+                    //Send tax allowance back as a negative for K codes
+                    TaxAllowance = TaxAllowance.Replace("K", "0");
+                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
+                    TaxAllowanceForCalc *= -10;
+                    return TaxAllowanceForCalc;
+                }
+                else if (NCode == true)
+                {
+                    //No Tax
+                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal("No Tax");
+                    return TaxAllowanceForCalc;
+                }
+                else if (BRCode == true)
+                {
+                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal("20 Percent all the way");
+                    return TaxAllowanceForCalc;
+                }
+                return System.Convert.ToDecimal("Error");
+            }
         }
     }
 }

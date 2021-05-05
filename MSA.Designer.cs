@@ -570,6 +570,10 @@
             this.TaxBandsButton = new System.Windows.Forms.Button();
             this.TaxAllowanceCalc = new System.Windows.Forms.Button();
             this.TaxAllowInput = new System.Windows.Forms.TextBox();
+            this.lbl1TaxRes = new System.Windows.Forms.Label();
+            this.lbl2TaxRes = new System.Windows.Forms.Label();
+            this.lbl3TaxRes = new System.Windows.Forms.Label();
+            this.lbl4TaxRes = new System.Windows.Forms.Label();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -4967,6 +4971,7 @@
             this.TaxAllowanceCalc.TabIndex = 17;
             this.TaxAllowanceCalc.UseVisualStyleBackColor = true;
             this.TaxAllowanceCalc.Visible = false;
+            this.TaxAllowanceCalc.Click += new System.EventHandler(this.TaxAllowCalcClick);
             // 
             // TaxAllowInput
             // 
@@ -4976,6 +4981,54 @@
             this.TaxAllowInput.TabIndex = 18;
             this.TaxAllowInput.Visible = false;
             // 
+            // lbl1TaxRes
+            // 
+            this.lbl1TaxRes.AutoSize = true;
+            this.lbl1TaxRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1TaxRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
+            this.lbl1TaxRes.Location = new System.Drawing.Point(173, 89);
+            this.lbl1TaxRes.Name = "lbl1TaxRes";
+            this.lbl1TaxRes.Size = new System.Drawing.Size(63, 15);
+            this.lbl1TaxRes.TabIndex = 19;
+            this.lbl1TaxRes.Text = "Weekly - ";
+            this.lbl1TaxRes.Visible = false;
+            // 
+            // lbl2TaxRes
+            // 
+            this.lbl2TaxRes.AutoSize = true;
+            this.lbl2TaxRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2TaxRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
+            this.lbl2TaxRes.Location = new System.Drawing.Point(173, 104);
+            this.lbl2TaxRes.Name = "lbl2TaxRes";
+            this.lbl2TaxRes.Size = new System.Drawing.Size(88, 15);
+            this.lbl2TaxRes.TabIndex = 20;
+            this.lbl2TaxRes.Text = "Fortnightly - ";
+            this.lbl2TaxRes.Visible = false;
+            // 
+            // lbl3TaxRes
+            // 
+            this.lbl3TaxRes.AutoSize = true;
+            this.lbl3TaxRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3TaxRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
+            this.lbl3TaxRes.Location = new System.Drawing.Point(173, 119);
+            this.lbl3TaxRes.Name = "lbl3TaxRes";
+            this.lbl3TaxRes.Size = new System.Drawing.Size(74, 15);
+            this.lbl3TaxRes.TabIndex = 21;
+            this.lbl3TaxRes.Text = "4 Weekly - ";
+            this.lbl3TaxRes.Visible = false;
+            // 
+            // lbl4TaxRes
+            // 
+            this.lbl4TaxRes.AutoSize = true;
+            this.lbl4TaxRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4TaxRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(59)))), ((int)(((byte)(174)))));
+            this.lbl4TaxRes.Location = new System.Drawing.Point(173, 134);
+            this.lbl4TaxRes.Name = "lbl4TaxRes";
+            this.lbl4TaxRes.Size = new System.Drawing.Size(68, 15);
+            this.lbl4TaxRes.TabIndex = 22;
+            this.lbl4TaxRes.Text = "Monthly - ";
+            this.lbl4TaxRes.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4984,6 +5037,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 215);
+            this.Controls.Add(this.lbl4TaxRes);
+            this.Controls.Add(this.lbl3TaxRes);
+            this.Controls.Add(this.lbl2TaxRes);
+            this.Controls.Add(this.lbl1TaxRes);
             this.Controls.Add(this.TaxAllowInput);
             this.Controls.Add(this.TaxAllowanceCalc);
             this.Controls.Add(this.TaxBandsButton);
@@ -4993,7 +5050,6 @@
             this.Controls.Add(this.SettingSave);
             this.Controls.Add(this.AOTCheck);
             this.Controls.Add(this.SettingsButton);
-            this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.DateConvInput);
             this.Controls.Add(this.lblInput);
@@ -5002,6 +5058,7 @@
             this.Controls.Add(this.MenuResultsString);
             this.Controls.Add(this.MMT);
             this.Controls.Add(this.CSM);
+            this.Controls.Add(this.DateConvResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MMT;
@@ -5561,6 +5618,10 @@
         private System.Windows.Forms.Button TaxBandsButton;
         private System.Windows.Forms.Button TaxAllowanceCalc;
         private System.Windows.Forms.TextBox TaxAllowInput;
+        private System.Windows.Forms.Label lbl1TaxRes;
+        private System.Windows.Forms.Label lbl2TaxRes;
+        private System.Windows.Forms.Label lbl3TaxRes;
+        private System.Windows.Forms.Label lbl4TaxRes;
     }
 }
 
