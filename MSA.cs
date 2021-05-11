@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MeritSupportAid
 {
@@ -45,7 +46,7 @@ namespace MeritSupportAid
             by checking by name alone, this could prove problematic, but its a basis. isThisTheSystemMenu is the same 
             function returning a more specific bool based on whether its one of the ends in the system menu. 
             */
-            SaferThanSorry = IsThisTheEnd(WhatClicked1up,WhatClicked);
+            SaferThanSorry = IsThisTheEnd(WhatClicked1up, WhatClicked);
             CSMorWhut = IsThisTheSystemMenu(WhatClicked1up);
             if (SaferThanSorry == false)
             {
@@ -56,7 +57,7 @@ namespace MeritSupportAid
                 */
                 ToolStripMenuItem miGrandpapaOwnerItem = (ToolStripMenuItem)(miOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                 WhatClicked2up = miGrandpapaOwnerItem.ToString();
-                SaferThanSorry = IsThisTheEnd(WhatClicked2up,WhatClicked1up);
+                SaferThanSorry = IsThisTheEnd(WhatClicked2up, WhatClicked1up);
                 CSMorWhut = IsThisTheSystemMenu(WhatClicked2up);
                 howDeep = 2;
                 if (SaferThanSorry == false)
@@ -68,7 +69,7 @@ namespace MeritSupportAid
                     */
                     ToolStripMenuItem miGreatGrandpapaOwnerItem = (ToolStripMenuItem)(miGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                     WhatClicked3up = miGreatGrandpapaOwnerItem.ToString();
-                    SaferThanSorry = IsThisTheEnd(WhatClicked3up,WhatClicked2up);
+                    SaferThanSorry = IsThisTheEnd(WhatClicked3up, WhatClicked2up);
                     CSMorWhut = IsThisTheSystemMenu(WhatClicked3up);
                     howDeep = 3;
                     if (SaferThanSorry == false)
@@ -80,7 +81,7 @@ namespace MeritSupportAid
                         */
                         ToolStripMenuItem miGreatestGrandpapaOwnerItem = (ToolStripMenuItem)(miGreatGrandpapaOwnerItem.GetCurrentParent() as ToolStripDropDown).OwnerItem;
                         WhatClicked4up = miGreatestGrandpapaOwnerItem.ToString();
-                        SaferThanSorry = IsThisTheEnd(WhatClicked4up,WhatClicked3up);
+                        SaferThanSorry = IsThisTheEnd(WhatClicked4up, WhatClicked3up);
                         CSMorWhut = IsThisTheSystemMenu(WhatClicked4up);
                         howDeep = 4;
                         if (SaferThanSorry == false)
@@ -98,12 +99,12 @@ namespace MeritSupportAid
                             CSMorWhut = IsThisTheSystemMenu(WhatClicked5up);
                             howDeep = 5;
                         }
-                            
+
                     }
 
-                        
+
                 }
-                
+
             }
 
             /*
@@ -161,15 +162,15 @@ namespace MeritSupportAid
 
             //This is a list of drop down menu starting points that don't exist in 2 places, meaning that if you see them, this is the topmost menu
             List<string> OneAndDone = new List<string> { "File", "Clients", "Placements", "Invoicing", "Conversions", "P45/Leavers", "CIS", "Reports", "Control", "Help", "System Defaults", "Branch Tables", "Payroll Tables", "Security", "Utilities", "Supervisor" };
-            if (OneAndDone.Contains(CheckMyVarOut)) 
-            { 
+            if (OneAndDone.Contains(CheckMyVarOut))
+            {
                 //If in list return true
-                return true; 
+                return true;
             }
-            else if (CheckMyVarOut == "Employees") 
+            else if (CheckMyVarOut == "Employees")
             {
                 //Employees located in more than one place as a menu dropdown
-                List<string> EmpSupervisor = new List<string> { "Contracts Setup","Create Monthly Employee","Delete Employees","Employee Migration Wizard","Move Employee Utilities","Recalc Holiday Pay" };
+                List<string> EmpSupervisor = new List<string> { "Contracts Setup", "Create Monthly Employee", "Delete Employees", "Employee Migration Wizard", "Move Employee Utilities", "Recalc Holiday Pay" };
                 if (EmpSupervisor.Contains(SourceVar))
                 {
                     //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
@@ -181,10 +182,10 @@ namespace MeritSupportAid
                     return true;
                 }
             }
-            else if (CheckMyVarOut == "Timesheets") 
+            else if (CheckMyVarOut == "Timesheets")
             {
                 //Timesheets located in more than one place as a menu dropdown
-                List<string> TSSupervisor = new List<string> { "Delete Adjustments","Margin Adjustment","Payroll Reversal Wizard","Reverse Pay and Accrual","Timesheet Monthly Reversal","Timesheets Monthly Edit" };
+                List<string> TSSupervisor = new List<string> { "Delete Adjustments", "Margin Adjustment", "Payroll Reversal Wizard", "Reverse Pay and Accrual", "Timesheet Monthly Reversal", "Timesheets Monthly Edit" };
                 if (TSSupervisor.Contains(SourceVar))
                 {
                     //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
@@ -195,12 +196,12 @@ namespace MeritSupportAid
                     //otherwise this is Timesheets in payroll menu MMT
                     return true;
                 }
-                
+
             }
-            else if (CheckMyVarOut == "Payroll") 
+            else if (CheckMyVarOut == "Payroll")
             {
                 //Payroll located in more than one place as a menu dropdown
-                List<string> PayrollSupervisor = new List<string> { "Accruals", "Country Codes", "Invoice Options", "Nominals", "Paytype Conversion"};
+                List<string> PayrollSupervisor = new List<string> { "Accruals", "Country Codes", "Invoice Options", "Nominals", "Paytype Conversion" };
                 if (PayrollSupervisor.Contains(SourceVar))
                 {
                     //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
@@ -212,10 +213,10 @@ namespace MeritSupportAid
                     return true;
                 }
             }
-            else if (CheckMyVarOut == "Pensions") 
+            else if (CheckMyVarOut == "Pensions")
             {
                 //Pensions located in more than one place as a menu dropdown
-                List<string> PenSupervisor = new List<string> { "Import Office Data", "Pension Corrections", "Postponement at Staging","Re-export Contribution Schedule","Pension Defaults","Pension Providers" };
+                List<string> PenSupervisor = new List<string> { "Import Office Data", "Pension Corrections", "Postponement at Staging", "Re-export Contribution Schedule", "Pension Defaults", "Pension Providers" };
                 if (PenSupervisor.Contains(SourceVar))
                 {
                     //If the previous value(sourcevar) is in the list, this is the supervisor equivelant menu
@@ -246,21 +247,21 @@ namespace MeritSupportAid
             */
 
             //A list for all the payroll menu and system menu strings seperately.
-            List<string> PayrollMenu = new List<string> { "File","Employees","Clients","Placements","Timesheets","Payroll","Invoicing","Conversions","Pensions","P45/Leavers","CIS","Reports","Control","Help" };
+            List<string> PayrollMenu = new List<string> { "File", "Employees", "Clients", "Placements", "Timesheets", "Payroll", "Invoicing", "Conversions", "Pensions", "P45/Leavers", "CIS", "Reports", "Control", "Help" };
             List<string> SystemMenu = new List<string> { "System Defaults", "Branch Tables", "Payroll Tables", "Security", "Utilities", "Supervisor" };
-            
+
             if (PayrollMenu.Contains(CheckMyVarOut))
             {
                 /*
                 Regular Payroll form drop downs -Return False
                 */
-               return false;
-           }
-           else if (SystemMenu.Contains(CheckMyVarOut))
-           {
-               /*
-               System Menu Controls
-               */
+                return false;
+            }
+            else if (SystemMenu.Contains(CheckMyVarOut))
+            {
+                /*
+                System Menu Controls
+                */
                 return true;
             }
             else
@@ -268,7 +269,7 @@ namespace MeritSupportAid
                 //Case 1 False
                 return false;
             }
-            
+
         }
         private string CSMPreString(string CSMPrefix)
         {
@@ -280,7 +281,7 @@ namespace MeritSupportAid
                 default:
                     return "";
             }
-            
+
         }
         private void Label_Click(object sender, EventArgs e)
         {
@@ -294,7 +295,7 @@ namespace MeritSupportAid
             This is the date converter logic here.
             */
 
-            if (!int.TryParse(PrimaryInput,out _))
+            if (!int.TryParse(PrimaryInput, out _))
             {
                 try
                 {
@@ -334,7 +335,7 @@ namespace MeritSupportAid
                 }
 
             }
-        }  
+        }
         private void DateConvClick(object sender, EventArgs e)
         {
             /*
@@ -555,6 +556,10 @@ namespace MeritSupportAid
             lbl2TaxRes.Visible = true;
             lbl3TaxRes.Visible = true;
             lbl4TaxRes.Visible = true;
+            lbl1TaxRes.Text = "Weekly - ";
+            lbl2TaxRes.Text = "Fortnightly - ";
+            lbl3TaxRes.Text = "4 Weekly - ";
+            lbl4TaxRes.Text = "Monthly - ";
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
         {
@@ -579,39 +584,187 @@ namespace MeritSupportAid
         }
         private void TaxAllowCalcClick(object sender, EventArgs e)
         {
+            TaxAllowInput.Text = TaxAllowInput.Text.ToUpper();
             ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
-            decimal Week = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 52;
-            decimal TwoWeek = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 26;
-            decimal FourWeek = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 13;
-            decimal Month = TaxAllowCalculator.DeduceTaxAllowance(TaxAllowInput.Text) / 12;
-            lbl1TaxRes.Text = lbl1TaxRes.Text + Week.ToString();
-            lbl2TaxRes.Text = lbl2TaxRes.Text + TwoWeek.ToString();
-            lbl3TaxRes.Text = lbl3TaxRes.Text + FourWeek.ToString();
-            lbl4TaxRes.Text = lbl4TaxRes.Text + Month.ToString();
+            if (TaxAllowCalculator.TaxCodeValidation(TaxAllowInput.Text) == true)
+            {
+                //Construct the decimal using TaxAllowance function
+                decimal Week = TaxAllowCalculator.TaxAllowance(TaxAllowInput.Text, "", 1, 52);
+                decimal TwoWeek = TaxAllowCalculator.TaxAllowance(TaxAllowInput.Text, "", 1, 26);
+                decimal FourWeek = TaxAllowCalculator.TaxAllowance(TaxAllowInput.Text, "", 1, 13);
+                decimal Month = TaxAllowCalculator.TaxAllowance(TaxAllowInput.Text, "", 1, 12);
+
+                //round to 2 decimal places
+                Week = decimal.Round(Week, 2);
+                TwoWeek = decimal.Round(TwoWeek, 2);
+                FourWeek = decimal.Round(FourWeek, 2);
+                Month = decimal.Round(Month, 2);
+
+                //Create label text
+                lbl1TaxRes.Text = "Weekly - " + Week.ToString();
+                lbl2TaxRes.Text = "Fortnightly - " + TwoWeek.ToString();
+                lbl3TaxRes.Text = "4 Weekly - " + FourWeek.ToString();
+                lbl4TaxRes.Text = "Monthly - " + Month.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Tax Code " + TaxAllowInput.Text + " is invalid, please ensure you've entered a correct tax code");
+            }
         }
 
         public class ManipulateTaxCode
         {
             //A class for Returning Tax Allowance Information for PAYE Calc
             //RETURNED VALUE IS PERSONAL ALLOWANCE
-            public bool ValidateTaxCode(string TaxCode)
+            //A class for Returning Tax Allowance Information for PAYE Calc
+            public string CountryCodeTrim(string TaxCode)
             {
-                //newly implemented bool
-                string TaxCodeForManipulation;
-                List<string> FullCodes = new List<string> { "0T","BR","D0","D1", "S0T", "SBR", "SD0", "SD1","SD2", "C0T", "CBR", "CD0", "CD1","NT" };
-                if (FullCodes.Contains(TaxCode))
+                //Use for trimming scottish and welsh taxcodes
+                bool CymruCode = TaxCode.StartsWith("C");
+                bool ScotCode = TaxCode.StartsWith("S");
+                if (CymruCode == true)
                 {
+                    int TCL = TaxCode.Length;
+                    TaxCode = TaxCode.Substring(1, (TCL - 1)); ;
+                }
+                else if (ScotCode == true)
+                {
+                    int TCL = TaxCode.Length;
+                    TaxCode = TaxCode.Substring(1, (TCL - 1)); ;
+                }
+                return TaxCode;
+            }
+            public bool TaxCodeValidation(string TaxCode)
+            {
+                //Setup regex string for UK tax codes
+                var StandardTaxCodes = "^(BR|D0|NT)$|^(([Kk]{1}[1-9]{1}[0-9]{2,3}$)|([1-9]{1}[0-9]{2,3}[LPTYlpty]{1}$))";
+
+                //Trim off country code to begin with as allowances are the same everywhere
+                TaxCode = CountryCodeTrim(TaxCode);
+
+                //Create a matchcollection for valid codes
+                MatchCollection ValidCodes = Regex.Matches(TaxCode, StandardTaxCodes);
+                foreach (Match m in ValidCodes)
+                {
+                    //only in here if this matches
                     return true;
                 }
-                else
+                //everything else is false
+                return false;
+            }
+            public decimal TaxAllowance(string TaxCode, string TaxBase, byte Week, byte Freq)
+            {
+                //Use TaxCode validation before any use of TaxAllowance to ensure no debugs
+                //Drop country code
+                TaxCode = CountryCodeTrim(TaxCode);
+                decimal TaxAllowanceForCalc;
+                //Setup bools
+                bool StandardTaxCode = false;
+                bool BRCode = false;
+                bool DCode = false;
+                bool KCode = false;
+                bool NCode = false;
+
+                //Predefine TaxAllowance as null
+                string TaxAllowance = "null";
+                //loop here to determine tax allowance for conventional characters defined above in AllowedChars
+                string[] AllowedChars = { "L", "M", "N", "S", "T" };
+                int z = 0;
+                while (z <= 4)
                 {
-                    if (TaxCode.StartsWith("K"))
+                    if (TaxCode.EndsWith(AllowedChars[z]))
                     {
-                        TaxCodeForManipulation = TaxCode.Replace("K", "");
-                        //TaxCodeForManipulation = Convert.ToInt32(TaxCodeForManipulation);
+                        char ForReplace = System.Convert.ToChar(AllowedChars[z]);
+                        TaxAllowance = TaxCode.Replace(ForReplace, System.Convert.ToChar("9"));
+                        StandardTaxCode = true;
+                        z = 5;
+                    }
+                    z = z + 1;
+                }
+
+
+                //Only run second logic if first isn't satisfied
+                if (TaxAllowance == "null") { StandardTaxCode = false; }            //If above loop has not returned a value
+                if (StandardTaxCode == false)
+                {
+                    string[] DifferentCodes = { "BR", "D", "K", "N" };
+                    int j = 0;
+                    while (j <= 3)
+                    {
+                        if (TaxCode.StartsWith(DifferentCodes[j]))
+                        {
+                            if (TaxCode.StartsWith("BR"))
+                            {
+                                TaxAllowance = "0";
+                                BRCode = true;
+                                j = 4;
+                            }
+                            else if (TaxCode.StartsWith("D"))
+                            {
+                                TaxAllowance = "0";
+                                DCode = true;
+                            }
+                            else if (TaxCode.StartsWith("K"))
+                            {
+                                TaxAllowance = TaxCode.Replace("K", "0");
+                                TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
+                                KCode = true;
+                            }
+                            else if (TaxCode.StartsWith("N"))
+                            {
+                                TaxAllowance = "0";
+                                NCode = true;
+                            }
+                        }
+                        j = j + 1;
                     }
                 }
-                return false;
+                if (StandardTaxCode == true)
+                {
+                    //Convert the string to decimal and divide it by freq, if cumulative, times by current period for YTD allowance
+                    TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
+                    TaxAllowanceForCalc = TaxAllowanceForCalc / Freq;
+                    if (TaxBase == "Cumulative")
+                    {
+                        TaxAllowanceForCalc = TaxAllowanceForCalc * Week;
+                    }
+                    return TaxAllowanceForCalc;
+                }
+
+                else if (DCode == true)
+                {
+                    //D Code no tax allowance, 0 is 45% 1 is 50%
+                    //Potential to handle this outside of allowance given there is no allowance
+                    TaxAllowanceForCalc = 0;
+                    return TaxAllowanceForCalc;
+                }
+                else if (KCode == true)
+                {
+                    //Send tax allowance back as a negative for K codes
+                    TaxAllowance = TaxAllowance.Replace("K", "0");
+                    TaxAllowance = TaxAllowance + "9";
+                    TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
+                    TaxAllowanceForCalc = (TaxAllowanceForCalc * -1) / Freq;
+                    if (TaxBase == "Cumulative")
+                    {
+                        TaxAllowanceForCalc = TaxAllowanceForCalc * Week;
+                    }
+                    return TaxAllowanceForCalc;
+                }
+                else if (NCode == true)
+                {
+                    //No Tax
+                    //Potential to handle this outside of allowance given there is no allowance
+                    TaxAllowanceForCalc = 0;
+                    return TaxAllowanceForCalc;
+                }
+                else if (BRCode == true)
+                {
+                    //Potential to handle this outside of allowance given there is no allowance
+                    TaxAllowanceForCalc = 0;
+                    return TaxAllowanceForCalc;
+                }
+                return System.Convert.ToDecimal("Error");
             }
             public string CountryCode(string TaxCode)
             {
@@ -631,64 +784,7 @@ namespace MeritSupportAid
 
             }
 
-            public decimal DeduceTaxAllowance(string TaxCode)
-            {
-                //Strip away all to get the tax free allowance as a decimal
-                string EndsWith = TaxCode.Substring(TaxCode.Length - 1, 1);
-                string TaxAllowance = TaxCode;
-                string EndString = "";
-                if (EndString.Contains(EndsWith))
-                {
-
-                    TaxAllowance = TaxCode.Replace(EndsWith, "9");
-                }
-
-                bool TaxCodeCountry = TaxAllowance.StartsWith("C,S");
-                bool TaxAllowanceReady = TaxAllowance.StartsWith("BR,D,K,N");
-                bool DCode = TaxAllowance.StartsWith("D");
-                bool KCode = TaxAllowance.StartsWith("K");
-                bool NCode = TaxAllowance.StartsWith("N");
-                bool BRCode = TaxAllowance.StartsWith("BR");
-
-                if (TaxCodeCountry == true)
-                {
-                    //Clear the country prefix
-                    TaxAllowance = TaxAllowance.Replace("C,S", "");
-                }
-
-                if (TaxAllowanceReady == false)
-                {
-                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
-                    return TaxAllowanceForCalc;
-                }
-
-                else if (DCode == true)
-                {
-                    //D Code no tax allowance, 0 is 45% 1 is 50%
-                    decimal TaxAllowanceForCalc = 0;
-                    return TaxAllowanceForCalc;
-                }
-                else if (KCode == true)
-                {
-                    //Send tax allowance back as a negative for K codes
-                    TaxAllowance = TaxAllowance.Replace("K", "0");
-                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal(TaxAllowance);
-                    TaxAllowanceForCalc *= -10;
-                    return TaxAllowanceForCalc;
-                }
-                else if (NCode == true)
-                {
-                    //No Tax
-                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal("No Tax");
-                    return TaxAllowanceForCalc;
-                }
-                else if (BRCode == true)
-                {
-                    decimal TaxAllowanceForCalc = System.Convert.ToDecimal("20 Percent all the way");
-                    return TaxAllowanceForCalc;
-                }
-                return System.Convert.ToDecimal("Error");
-            }
         }
     }
 }
+
