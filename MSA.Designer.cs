@@ -4980,6 +4980,7 @@
             this.TaxAllowInput.Size = new System.Drawing.Size(73, 20);
             this.TaxAllowInput.TabIndex = 18;
             this.TaxAllowInput.Visible = false;
+            this.TaxAllowInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TaxAllowKeyDown);
             // 
             // lbl1TaxRes
             // 

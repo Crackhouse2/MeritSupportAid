@@ -422,6 +422,15 @@ namespace MeritSupportAid
                 DateConvClick(sender, e);
             }
         }
+        private void TaxAllowKeyDown(object sender, KeyEventArgs e)
+        {
+            //On enter key run convert click
+            if (e.KeyCode == Keys.Enter)
+            {
+                TaxAllowCalcClick(sender, e);
+            }
+        }
+
         //These events relate to settings and setting updating
         private void SettingButtonClick(object sender, EventArgs e)
         {
