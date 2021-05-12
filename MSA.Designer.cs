@@ -4795,11 +4795,11 @@
             // lblInput
             // 
             this.lblInput.AutoSize = true;
-            this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.lblInput.Location = new System.Drawing.Point(12, 57);
+            this.lblInput.Location = new System.Drawing.Point(12, 66);
             this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(63, 24);
+            this.lblInput.Size = new System.Drawing.Size(40, 15);
             this.lblInput.TabIndex = 6;
             this.lblInput.Text = "Input";
             // 
