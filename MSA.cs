@@ -671,7 +671,7 @@ namespace MeritSupportAid
             public bool TaxCodeValidation(string TaxCode)
             {
                 //Setup regex string for UK tax codes
-                var StandardTaxCodes = "^(BR|D0|NT)$|^(([Kk]{1}[1-9]{1}[0-9]{2,3}$)|([1-9]{1}[0-9]{2,3}[LPTYlpty]{1}$))";
+                var StandardTaxCodes = "^(BR|D0|NT|0T|D1)$|^(([Kk]{1}[1-9]{1}[0-9]{2,3}$)|([1-9]{1}[0-9]{2,3}[LPTYlpty]{1}$))";
 
                 //Trim off country code to begin with as allowances are the same everywhere
                 TaxCode = CountryCodeTrim(TaxCode);
@@ -819,6 +819,7 @@ namespace MeritSupportAid
             }
 
         }
+
     }
 }
 

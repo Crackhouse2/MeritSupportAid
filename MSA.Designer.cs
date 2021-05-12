@@ -4871,7 +4871,7 @@
             this.SettingCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
-            this.SettingCancel.Location = new System.Drawing.Point(623, 109);
+            this.SettingCancel.Location = new System.Drawing.Point(628, 109);
             this.SettingCancel.Name = "SettingCancel";
             this.SettingCancel.Size = new System.Drawing.Size(57, 23);
             this.SettingCancel.TabIndex = 13;
