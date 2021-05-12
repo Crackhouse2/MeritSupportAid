@@ -9,7 +9,7 @@ using System.Net;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace MeritSupportAid
+namespace AutoUpdate
 {
 	static class Updater
 	{

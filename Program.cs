@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading;
 using System.Runtime.InteropServices;
+using AutoUpdate;
 
 namespace MeritSupportAid
 {
@@ -33,8 +34,15 @@ namespace MeritSupportAid
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            Updater.GitHubRepo = "/Crackhouse2/MeritSupportAid";
+            if (Updater.AutoUpdate(args))
+            {
+                return;
+            }
+                
+
             try
             {
                 threadComEvent = EventWaitHandle.OpenExisting(SingleInst);
