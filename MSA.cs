@@ -515,6 +515,8 @@ namespace MeritSupportAid
             /*
             Use app config to get TopMost property
             */
+            DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
+            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             this.TopMost = false;
             if (Properties.Settings.Default.AlwaysOnTop == true)
             {
@@ -552,6 +554,8 @@ namespace MeritSupportAid
             in favour of TaxAllowance functionality and repurposes
             some of the labels.
             */
+            DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
+            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
             TaxAllowInput.Visible = true;
             TaxAllowanceCalc.Visible = true;
             TaxAllowInput.Text = "";
@@ -577,6 +581,8 @@ namespace MeritSupportAid
             in favour of DateConv functionality and resets some 
             of the labels.
             */
+            DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
+            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             TaxAllowInput.Visible = false;
             TaxAllowanceCalc.Visible = false;
             lblYourDateToday.Text = "Your internal date today is";

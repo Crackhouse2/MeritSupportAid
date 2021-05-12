@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MeritSupportAid_1_TemporaryKey.pfx" />
     <None Include="MeritSupportAid_TemporaryKey.pfx" />
@@ -134,6 +135,9 @@
   <ItemGroup>
     <Content Include="ICO_64.ico" />
     <Content Include="MSA_64.ico" />
+    <None Include="Resources\CalendarGreyIcon.png" />
+    <None Include="Resources\TaxIconColour.png" />
+    <None Include="Resources\CalendarColourIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
