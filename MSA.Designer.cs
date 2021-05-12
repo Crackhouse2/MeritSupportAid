@@ -564,8 +564,6 @@
             this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.TrayIconContext = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ForceClose = new System.Windows.Forms.CheckBox();
-            this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.DateButton = new System.Windows.Forms.Button();
             this.TaxBandsButton = new System.Windows.Forms.Button();
             this.TaxAllowanceCalc = new System.Windows.Forms.Button();
@@ -574,6 +572,8 @@
             this.lbl2TaxRes = new System.Windows.Forms.Label();
             this.lbl3TaxRes = new System.Windows.Forms.Label();
             this.lbl4TaxRes = new System.Windows.Forms.Label();
+            this.ForceClose = new System.Windows.Forms.CheckBox();
+            this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -4795,11 +4795,11 @@
             // lblInput
             // 
             this.lblInput.AutoSize = true;
-            this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.lblInput.Location = new System.Drawing.Point(12, 65);
+            this.lblInput.Location = new System.Drawing.Point(12, 57);
             this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(33, 12);
+            this.lblInput.Size = new System.Drawing.Size(63, 24);
             this.lblInput.TabIndex = 6;
             this.lblInput.Text = "Input";
             // 
@@ -4903,36 +4903,6 @@
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.CloseApplication);
             // 
-            // ForceClose
-            // 
-            this.ForceClose.AutoSize = true;
-            this.ForceClose.Checked = global::MeritSupportAid.Properties.Settings.Default.ForceClose;
-            this.ForceClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "ForceClose", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ForceClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForceClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.ForceClose.Location = new System.Drawing.Point(565, 62);
-            this.ForceClose.Name = "ForceClose";
-            this.ForceClose.Size = new System.Drawing.Size(200, 19);
-            this.ForceClose.TabIndex = 14;
-            this.ForceClose.Text = "Do not close to system tray";
-            this.ForceClose.UseVisualStyleBackColor = true;
-            this.ForceClose.Visible = false;
-            // 
-            // AOTCheck
-            // 
-            this.AOTCheck.AutoSize = true;
-            this.AOTCheck.Checked = global::MeritSupportAid.Properties.Settings.Default.AlwaysOnTop;
-            this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
-            this.AOTCheck.Name = "AOTCheck";
-            this.AOTCheck.Size = new System.Drawing.Size(115, 19);
-            this.AOTCheck.TabIndex = 11;
-            this.AOTCheck.Text = "Always on top";
-            this.AOTCheck.UseVisualStyleBackColor = true;
-            this.AOTCheck.Visible = false;
-            // 
             // DateButton
             // 
             this.DateButton.AccessibleDescription = "DateConvResult";
@@ -4951,7 +4921,6 @@
             // 
             this.TaxBandsButton.AccessibleDescription = "DateConvResult";
             this.TaxBandsButton.BackColor = System.Drawing.Color.Transparent;
-            this.TaxBandsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TaxBandsButton.BackgroundImage")));
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxBandsButton.Location = new System.Drawing.Point(853, 80);
@@ -5032,6 +5001,36 @@
             this.lbl4TaxRes.TabIndex = 22;
             this.lbl4TaxRes.Text = "Monthly - ";
             this.lbl4TaxRes.Visible = false;
+            // 
+            // ForceClose
+            // 
+            this.ForceClose.AutoSize = true;
+            this.ForceClose.Checked = global::MeritSupportAid.Properties.Settings.Default.ForceClose;
+            this.ForceClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "ForceClose", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ForceClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForceClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.ForceClose.Location = new System.Drawing.Point(565, 62);
+            this.ForceClose.Name = "ForceClose";
+            this.ForceClose.Size = new System.Drawing.Size(200, 19);
+            this.ForceClose.TabIndex = 14;
+            this.ForceClose.Text = "Do not close to system tray";
+            this.ForceClose.UseVisualStyleBackColor = true;
+            this.ForceClose.Visible = false;
+            // 
+            // AOTCheck
+            // 
+            this.AOTCheck.AutoSize = true;
+            this.AOTCheck.Checked = global::MeritSupportAid.Properties.Settings.Default.AlwaysOnTop;
+            this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
+            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
+            this.AOTCheck.Name = "AOTCheck";
+            this.AOTCheck.Size = new System.Drawing.Size(115, 19);
+            this.AOTCheck.TabIndex = 11;
+            this.AOTCheck.Text = "Always on top";
+            this.AOTCheck.UseVisualStyleBackColor = true;
+            this.AOTCheck.Visible = false;
             // 
             // MSA
             // 
