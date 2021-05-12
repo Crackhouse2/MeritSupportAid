@@ -4910,6 +4910,7 @@
             this.DateButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DateButton.BackgroundImage")));
             this.DateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DateButton.ForeColor = System.Drawing.Color.Transparent;
             this.DateButton.Location = new System.Drawing.Point(853, 27);
             this.DateButton.Name = "DateButton";
             this.DateButton.Size = new System.Drawing.Size(47, 47);
@@ -4923,6 +4924,7 @@
             this.TaxBandsButton.BackColor = System.Drawing.Color.Transparent;
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaxBandsButton.ForeColor = System.Drawing.Color.Transparent;
             this.TaxBandsButton.Location = new System.Drawing.Point(853, 80);
             this.TaxBandsButton.Name = "TaxBandsButton";
             this.TaxBandsButton.Size = new System.Drawing.Size(47, 47);

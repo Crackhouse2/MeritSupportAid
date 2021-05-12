@@ -600,6 +600,7 @@ namespace MeritSupportAid
         private void TaxAllowCalcClick(object sender, EventArgs e)
         {
             TaxAllowInput.Text = TaxAllowInput.Text.ToUpper();
+            TaxAllowanceCalc.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
             if (TaxAllowCalculator.TaxCodeValidation(TaxAllowInput.Text) == true)
             {
@@ -620,6 +621,24 @@ namespace MeritSupportAid
                 lbl2TaxRes.Text = "Fortnightly - " + TwoWeek.ToString();
                 lbl3TaxRes.Text = "4 Weekly - " + FourWeek.ToString();
                 lbl4TaxRes.Text = "Monthly - " + Month.ToString();
+
+                //Toggle colours to show activity
+                string ColCheck = lbl1TaxRes.ForeColor.ToString();
+                if (ColCheck == "Color [A=255, R=252, G=79, B=21]")
+                {
+                    lbl1TaxRes.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                    lbl2TaxRes.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                    lbl3TaxRes.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                    lbl4TaxRes.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+                }
+                else
+                {
+                    lbl1TaxRes.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                    lbl2TaxRes.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                    lbl3TaxRes.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                    lbl4TaxRes.ForeColor = System.Drawing.Color.FromArgb(252, 79, 21);
+                }
+
             }
             else
             {
