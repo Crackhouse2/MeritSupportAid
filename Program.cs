@@ -10,20 +10,7 @@ using AutoUpdate;
 
 namespace MeritSupportAid
 {
-    /* static class Program
-     {
-         /// <summary>
-         /// The main entry point for the application.
-         /// </summary>
-         [STAThread]
-         static void Main()
-         {
-             Application.EnableVisualStyles();
-             Application.SetCompatibleTextRenderingDefault(false);
-             Application.Run(new MSA());
-         }
-     }*/
-
+  
     static class Program
     {
         private static readonly String SingleInst = "MeritSupportAid";
