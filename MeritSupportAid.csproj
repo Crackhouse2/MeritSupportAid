@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Updater.cs" />
     <Compile Include="MSA.cs">
       <SubType>Form</SubType>
     </Compile>
