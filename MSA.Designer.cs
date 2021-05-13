@@ -574,6 +574,11 @@
             this.lbl4TaxRes = new System.Windows.Forms.Label();
             this.ForceClose = new System.Windows.Forms.CheckBox();
             this.AOTCheck = new System.Windows.Forms.CheckBox();
+            this.bandButtNMW = new System.Windows.Forms.Button();
+            this.bandButtTax = new System.Windows.Forms.Button();
+            this.bandButtNI = new System.Windows.Forms.Button();
+            this.bandButtSL = new System.Windows.Forms.Button();
+            this.bandButtPen = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -5034,6 +5039,51 @@
             this.AOTCheck.UseVisualStyleBackColor = true;
             this.AOTCheck.Visible = false;
             // 
+            // bandButtNMW
+            // 
+            this.bandButtNMW.Location = new System.Drawing.Point(565, 36);
+            this.bandButtNMW.Name = "bandButtNMW";
+            this.bandButtNMW.Size = new System.Drawing.Size(38, 31);
+            this.bandButtNMW.TabIndex = 23;
+            this.bandButtNMW.Text = "MW";
+            this.bandButtNMW.UseVisualStyleBackColor = true;
+            // 
+            // bandButtTax
+            // 
+            this.bandButtTax.Location = new System.Drawing.Point(609, 36);
+            this.bandButtTax.Name = "bandButtTax";
+            this.bandButtTax.Size = new System.Drawing.Size(38, 31);
+            this.bandButtTax.TabIndex = 24;
+            this.bandButtTax.Text = "TX";
+            this.bandButtTax.UseVisualStyleBackColor = true;
+            // 
+            // bandButtNI
+            // 
+            this.bandButtNI.Location = new System.Drawing.Point(653, 36);
+            this.bandButtNI.Name = "bandButtNI";
+            this.bandButtNI.Size = new System.Drawing.Size(38, 31);
+            this.bandButtNI.TabIndex = 25;
+            this.bandButtNI.Text = "NI";
+            this.bandButtNI.UseVisualStyleBackColor = true;
+            // 
+            // bandButtSL
+            // 
+            this.bandButtSL.Location = new System.Drawing.Point(697, 36);
+            this.bandButtSL.Name = "bandButtSL";
+            this.bandButtSL.Size = new System.Drawing.Size(38, 31);
+            this.bandButtSL.TabIndex = 26;
+            this.bandButtSL.Text = "SL";
+            this.bandButtSL.UseVisualStyleBackColor = true;
+            // 
+            // bandButtPen
+            // 
+            this.bandButtPen.Location = new System.Drawing.Point(741, 36);
+            this.bandButtPen.Name = "bandButtPen";
+            this.bandButtPen.Size = new System.Drawing.Size(38, 31);
+            this.bandButtPen.TabIndex = 27;
+            this.bandButtPen.Text = "PN";
+            this.bandButtPen.UseVisualStyleBackColor = true;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5042,6 +5092,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 215);
+            this.Controls.Add(this.bandButtPen);
+            this.Controls.Add(this.bandButtSL);
+            this.Controls.Add(this.bandButtNI);
+            this.Controls.Add(this.bandButtTax);
+            this.Controls.Add(this.bandButtNMW);
             this.Controls.Add(this.lbl4TaxRes);
             this.Controls.Add(this.lbl3TaxRes);
             this.Controls.Add(this.lbl2TaxRes);
@@ -5050,10 +5105,6 @@
             this.Controls.Add(this.TaxAllowanceCalc);
             this.Controls.Add(this.TaxBandsButton);
             this.Controls.Add(this.DateButton);
-            this.Controls.Add(this.ForceClose);
-            this.Controls.Add(this.SettingCancel);
-            this.Controls.Add(this.SettingSave);
-            this.Controls.Add(this.AOTCheck);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.DateConvInput);
@@ -5064,6 +5115,10 @@
             this.Controls.Add(this.MMT);
             this.Controls.Add(this.CSM);
             this.Controls.Add(this.DateConvResult);
+            this.Controls.Add(this.ForceClose);
+            this.Controls.Add(this.SettingCancel);
+            this.Controls.Add(this.SettingSave);
+            this.Controls.Add(this.AOTCheck);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MMT;
@@ -5627,6 +5682,11 @@
         private System.Windows.Forms.Label lbl2TaxRes;
         private System.Windows.Forms.Label lbl3TaxRes;
         private System.Windows.Forms.Label lbl4TaxRes;
+        private System.Windows.Forms.Button bandButtNMW;
+        private System.Windows.Forms.Button bandButtTax;
+        private System.Windows.Forms.Button bandButtNI;
+        private System.Windows.Forms.Button bandButtSL;
+        private System.Windows.Forms.Button bandButtPen;
     }
 }
 

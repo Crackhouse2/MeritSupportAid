@@ -7,6 +7,8 @@ using System.ComponentModel;
 using System.Threading;
 using System.Runtime.InteropServices;
 using AutoUpdate;
+using System.Net;
+using System.IO;
 
 namespace MeritSupportAid
 {
@@ -19,10 +21,32 @@ namespace MeritSupportAid
 
         /// <summary>
         /// The main entry point for the application.
+        /// Contains checks for online resources
+        /// Patches to update
+        /// Checks to ensure no additional instances are open
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
+            //Build App Data path and using Environment.Expand...
+            string path = @"%appdata%\MSA\";
+            path = Environment.ExpandEnvironmentVariables(path);
+            string fullpath = path + "TBRes.crk.config";
+
+            //Check if the file already exists in appdata, if not then download
+            if (!File.Exists(fullpath))
+            {
+                //Create folder & web downloader and pull file to path
+                Directory.CreateDirectory(path);
+                WebClient ResourceDownloader = new WebClient();
+                ResourceDownloader.DownloadFile("http://www.meritsoftware.co.uk/YearEnd2021_Config_vals.csv", fullpath);
+
+                //Strip additional data from file
+                string[] lines = File.ReadAllLines(fullpath);
+                File.WriteAllLines(fullpath, lines.Take(lines.Count() - 78));
+
+            }
+
             Updater.GitHubRepo = "/Crackhouse2/MeritSupportAid";
             if (Updater.AutoUpdate(args))
             {
