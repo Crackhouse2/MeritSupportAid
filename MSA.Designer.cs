@@ -579,6 +579,7 @@
             this.bandButtNI = new System.Windows.Forms.Button();
             this.bandButtSL = new System.Windows.Forms.Button();
             this.bandButtPen = new System.Windows.Forms.Button();
+            this.bandsResultsBox = new System.Windows.Forms.RichTextBox();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -5084,6 +5085,15 @@
             this.bandButtPen.Text = "PN";
             this.bandButtPen.UseVisualStyleBackColor = true;
             // 
+            // bandsResultsBox
+            // 
+            this.bandsResultsBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bandsResultsBox.Location = new System.Drawing.Point(565, 73);
+            this.bandsResultsBox.Name = "bandsResultsBox";
+            this.bandsResultsBox.Size = new System.Drawing.Size(214, 96);
+            this.bandsResultsBox.TabIndex = 28;
+            this.bandsResultsBox.Text = "";
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5092,6 +5102,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 215);
+            this.Controls.Add(this.bandsResultsBox);
             this.Controls.Add(this.bandButtPen);
             this.Controls.Add(this.bandButtSL);
             this.Controls.Add(this.bandButtNI);
@@ -5687,6 +5698,7 @@
         private System.Windows.Forms.Button bandButtNI;
         private System.Windows.Forms.Button bandButtSL;
         private System.Windows.Forms.Button bandButtPen;
+        private System.Windows.Forms.RichTextBox bandsResultsBox;
     }
 }
 

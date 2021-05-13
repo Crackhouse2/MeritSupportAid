@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace MeritSupportAid
 {
@@ -517,6 +518,7 @@ namespace MeritSupportAid
             /*
             Use app config to get TopMost property
             */
+            PopulateFormFileValues("NMW");
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             this.TopMost = false;
@@ -527,18 +529,83 @@ namespace MeritSupportAid
             }
         }
 
+        private static String InsertNMWTableInRichTextBox(string[] BandNames, string[] BandRates)
+        {
+            StringBuilder sringTableRtf = new StringBuilder();
+
+            sringTableRtf.Append(@"{\rtf1 ");
+
+            //Prepare the header Row
+            sringTableRtf.Append(@"\trowd");
+
+            //A cell with width 1000.
+            sringTableRtf.Append(@"\cellx1000");
+
+            sringTableRtf.Append(@"\intbl   Band");
+
+            //Another cell with width 1000.Endpoint at 2000(which is 1000+1000).
+            sringTableRtf.Append(@"\cellx2000");
+
+            sringTableRtf.Append(@"\cell    Rate");
+
+            //Another cell with width 1000.Ending at 3000 (which is 2000+1000)
+            sringTableRtf.Append(@"\cellx3000");
+
+            sringTableRtf.AppendFormat(@"\cell    Rate inc. Holiday @12.07");
+
+            //Add the created row
+            sringTableRtf.Append(@"\intbl \cell \row");
+
+            //Add 3 data Rows.Give proper padding space between data.Notice the gap after cell
+            //sringTableRtf.Append(@"\intbl   3" + @"\cell    Chris" + @"\cell    Delhi" + @"\cell   India" + @"\row");
+            for(int i = 0; i < BandRates.Length; i++)
+            {
+                /*
+                This is where we are looping to create a unique table row. 
+                */
+
+               // decimal ThisBandRate;
+              // if(decimal.TryParse(BandRates[i],out ThisBandRate))
+               //{
+                    decimal BandRatesIncHol = 0;
+                        //ThisBandRate * 12.07;
+                    BandRatesIncHol = BandRatesIncHol / 100;
+                    sringTableRtf.Append(@"\intbl " + BandNames[i] + @"\cell " + BandRates[i] + @"\cell  " + BandRates[i] + @"\row");
+               //}
+
+            }
+
+            //Closing offf table here
+            sringTableRtf.Append(@"\pard");
+
+            sringTableRtf.Append(@"}");
+
+            //PopulateTable(sringTableRtf);
+            return sringTableRtf.ToString();
+        }
+
         private void PopulateFormFileValues(string WhatBands)
         {
-            string fullPath = FullPath();
+            //Create the file if possible
+            string fullpath = FullPath();
             EnsureFile();
-            if (!File.Exists(fullPath))
+
+            //catch instances of file not creating
+            if (!File.Exists(fullpath))
             {
                 WhatBands = "FILE FAULT";
             }
 
-                switch (WhatBands)
+            //Strip additional data from file
+            string[] lines = File.ReadAllLines(fullpath);
+
+
+            switch (WhatBands)
             {
                 case "NMW":
+                    string[] BandNames = lines[2].Split(',');
+                    string[] BandRates = lines[3].Split(',');
+                    bandsResultsBox.Rtf = InsertNMWTableInRichTextBox(BandNames, BandRates);
                     return;
                 case "NI":
                     return;
