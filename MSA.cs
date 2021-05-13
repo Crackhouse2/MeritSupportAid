@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
+using System.IO;
+using System.Net;
 
 namespace MeritSupportAid
 {
@@ -525,6 +526,64 @@ namespace MeritSupportAid
                 this.TopMost = true;
             }
         }
+
+        private void PopulateFormFileValues(string WhatBands)
+        {
+            string fullPath = FullPath();
+            EnsureFile();
+            if (!File.Exists(fullPath))
+            {
+                WhatBands = "FILE FAULT";
+            }
+
+                switch (WhatBands)
+            {
+                case "NMW":
+                    return;
+                case "NI":
+                    return;
+                case "TAX":
+                    return;
+                case "PENSION":
+                    return;
+                case "FILE FAULT":
+                    return;
+                default:
+                    return;
+            }
+        }
+
+        public string FullPath()
+        {
+            //Build App Data path and using Environment.Expand...
+            string path = @"%appdata%\MSA\";
+            path = Environment.ExpandEnvironmentVariables(path);
+            string fullpath = path + "TBRes.crk.config";
+            return fullpath;
+        }
+
+        private void EnsureFile()
+        {
+            //Build App Data path and using Environment.Expand...
+            string path = @"%appdata%\MSA\";
+            path = Environment.ExpandEnvironmentVariables(path);
+            string fullpath = path + "TBRes.crk.config";
+
+            //Check if the file already exists in appdata, if not then download
+            if (!File.Exists(fullpath))
+            {
+                //Create folder & web downloader and pull file to path
+                Directory.CreateDirectory(path);
+                WebClient ResourceDownloader = new WebClient();
+                ResourceDownloader.DownloadFile("http://www.meritsoftware.co.uk/YearEnd2021_Config_vals.csv", fullpath);
+
+                //Strip additional data from file
+                string[] lines = File.ReadAllLines(fullpath);
+                File.WriteAllLines(fullpath, lines.Take(lines.Count() - 78));
+
+            }
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             /*
