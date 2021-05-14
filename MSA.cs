@@ -518,7 +518,6 @@ namespace MeritSupportAid
             /*
             Use app config to get TopMost property
             */
-            PopulateFormFileValues("NMW");
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             this.TopMost = false;
@@ -647,7 +646,7 @@ namespace MeritSupportAid
         }
 
         //Logics for tax bands and associate tax band dev below here
-        private void TaxBandFormMorph(object sender, EventArgs e)
+        private void AllowanceCalcFormMorph(object sender, EventArgs e)
         {
             /*
             This function hides date conv and setting functionality
@@ -656,23 +655,29 @@ namespace MeritSupportAid
             */
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
-            TaxAllowInput.Visible = true;
-            TaxAllowanceCalc.Visible = true;
+
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "Your standard yearly allowance is";
             TodaysInternal.Text = "1257L";
-            DateConvInput.Visible = false;
-            DateConvResult.Visible = false;
-            ConvertButton.Visible = false;
-            SettingToggleView(false);
-            lbl1TaxRes.Visible = true;
-            lbl2TaxRes.Visible = true;
-            lbl3TaxRes.Visible = true;
-            lbl4TaxRes.Visible = true;
             lbl1TaxRes.Text = "Weekly - ";
             lbl2TaxRes.Text = "Fortnightly - ";
             lbl3TaxRes.Text = "4 Weekly - ";
             lbl4TaxRes.Text = "Monthly - ";
+
+            SettingToggleView(false);
+            TaxAllowInput.Visible = true;
+            TaxAllowanceCalc.Visible = true;
+            lbl1TaxRes.Visible = true;
+            lbl2TaxRes.Visible = true;
+            lbl3TaxRes.Visible = true;
+            lbl4TaxRes.Visible = true;
+
+            bandsGridView.Visible = false;
+            DateConvInput.Visible = false;
+            DateConvResult.Visible = false;
+            ConvertButton.Visible = false;
+            bandsGridView.Visible = false;
+
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
         {
@@ -683,20 +688,60 @@ namespace MeritSupportAid
             */
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
+
+            lblYourDateToday.Text = "Your internal date today is";
+            DateConvInput.Text = "";
+
+            SetYourCurrentDateText();
+            SettingToggleView(false);
+            DateConvInput.Visible = true;
+            ConvertButton.Visible = true;
+
+            DateConvResult.Visible = false;
+            bandsGridView.Visible = false;
             TaxAllowInput.Visible = false;
             TaxAllowanceCalc.Visible = false;
-            lblYourDateToday.Text = "Your internal date today is";
-            SetYourCurrentDateText();
-            DateConvInput.Visible = true;
-            DateConvResult.Visible = false;
-            ConvertButton.Visible = true;
-            DateConvInput.Text = "";
-            SettingToggleView(false);
             lbl1TaxRes.Visible = false;
             lbl2TaxRes.Visible = false;
             lbl3TaxRes.Visible = false;
             lbl4TaxRes.Visible = false;
         }
+
+        private void BandsFormMorph(object sender, EventArgs e)
+        {
+            /*
+            This function hides date conv, taxAllowance and setting functionality
+            in favour of TaxAllowance functionality and repurposes
+            some of the labels.
+            */
+            DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
+            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
+
+            TaxAllowInput.Text = "";
+            lblYourDateToday.Text = "NMW Rates";
+            TodaysInternal.Text = "";
+            lbl1TaxRes.Text = "Weekly - ";
+            lbl2TaxRes.Text = "Fortnightly - ";
+            lbl3TaxRes.Text = "4 Weekly - ";
+            lbl4TaxRes.Text = "Monthly - ";
+
+            SettingToggleView(false);
+            bandsGridView.Visible = true;
+            PopulateFormFileValues("NMW");
+
+            TaxAllowInput.Visible = false;
+            TaxAllowanceCalc.Visible = false;
+            DateConvInput.Visible = false;
+            DateConvResult.Visible = false;
+            ConvertButton.Visible = false;
+            lbl1TaxRes.Visible = false;
+            lbl2TaxRes.Visible = false;
+            lbl3TaxRes.Visible = false;
+            lbl4TaxRes.Visible = false;
+
+        }
+
+
         private void TaxAllowCalcClick(object sender, EventArgs e)
         {
             TaxAllowInput.Text = TaxAllowInput.Text.ToUpper();
@@ -920,6 +965,45 @@ namespace MeritSupportAid
 
         }
 
+        private void lblYourDateToday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TodaysInternal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl1TaxRes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateConvResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateConvInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblInput_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AOTCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ForceClose_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

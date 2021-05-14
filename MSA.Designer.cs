@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -576,12 +576,8 @@
             this.lbl4TaxRes = new System.Windows.Forms.Label();
             this.ForceClose = new System.Windows.Forms.CheckBox();
             this.AOTCheck = new System.Windows.Forms.CheckBox();
-            this.bandButtNMW = new System.Windows.Forms.Button();
-            this.bandButtTax = new System.Windows.Forms.Button();
-            this.bandButtNI = new System.Windows.Forms.Button();
-            this.bandButtSL = new System.Windows.Forms.Button();
-            this.bandButtPen = new System.Windows.Forms.Button();
             this.bandsGridView = new System.Windows.Forms.DataGridView();
+            this.ratesButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -608,7 +604,7 @@
             this.helpToolStripMenuItem});
             this.MMT.Location = new System.Drawing.Point(0, 0);
             this.MMT.Name = "MMT";
-            this.MMT.Size = new System.Drawing.Size(956, 24);
+            this.MMT.Size = new System.Drawing.Size(953, 24);
             this.MMT.TabIndex = 0;
             this.MMT.Text = "MMT";
             // 
@@ -3100,9 +3096,9 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 259);
+            this.CSM.Location = new System.Drawing.Point(0, 221);
             this.CSM.Name = "CSM";
-            this.CSM.Size = new System.Drawing.Size(956, 24);
+            this.CSM.Size = new System.Drawing.Size(953, 24);
             this.CSM.TabIndex = 2;
             this.CSM.Text = "CSM";
             // 
@@ -4770,9 +4766,9 @@
             this.MenuResultsString.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuResultsString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
+            this.MenuResultsString.Location = new System.Drawing.Point(0, 0);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(956, 235);
+            this.MenuResultsString.Size = new System.Drawing.Size(953, 245);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "Drop Down Menu Paths";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -4789,6 +4785,7 @@
             this.TodaysInternal.Size = new System.Drawing.Size(186, 31);
             this.TodaysInternal.TabIndex = 4;
             this.TodaysInternal.Text = "Today\'s Date";
+            this.TodaysInternal.Click += new System.EventHandler(this.TodaysInternal_Click);
             // 
             // lblYourDateToday
             // 
@@ -4800,6 +4797,7 @@
             this.lblYourDateToday.Size = new System.Drawing.Size(151, 12);
             this.lblYourDateToday.TabIndex = 5;
             this.lblYourDateToday.Text = "Your internal date today is";
+            this.lblYourDateToday.Click += new System.EventHandler(this.lblYourDateToday_Click);
             // 
             // lblInput
             // 
@@ -4811,13 +4809,15 @@
             this.lblInput.Size = new System.Drawing.Size(40, 15);
             this.lblInput.TabIndex = 6;
             this.lblInput.Text = "Input";
+            this.lblInput.Click += new System.EventHandler(this.lblInput_Click);
             // 
             // DateConvInput
             // 
-            this.DateConvInput.Location = new System.Drawing.Point(14, 80);
+            this.DateConvInput.Location = new System.Drawing.Point(14, 81);
             this.DateConvInput.Name = "DateConvInput";
             this.DateConvInput.Size = new System.Drawing.Size(73, 20);
             this.DateConvInput.TabIndex = 7;
+            this.DateConvInput.TextChanged += new System.EventHandler(this.DateConvInput_TextChanged);
             this.DateConvInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxKeyDown);
             // 
             // ConvertButton
@@ -4845,6 +4845,7 @@
             this.DateConvResult.TabIndex = 9;
             this.DateConvResult.Text = "Results";
             this.DateConvResult.Visible = false;
+            this.DateConvResult.Click += new System.EventHandler(this.DateConvResult_Click);
             // 
             // SettingsButton
             // 
@@ -4852,7 +4853,7 @@
             this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
-            this.SettingsButton.Location = new System.Drawing.Point(890, 232);
+            this.SettingsButton.Location = new System.Drawing.Point(885, 192);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(66, 51);
@@ -4865,7 +4866,7 @@
             this.SettingSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(79)))), ((int)(((byte)(21)))));
-            this.SettingSave.Location = new System.Drawing.Point(565, 109);
+            this.SettingSave.Location = new System.Drawing.Point(621, 144);
             this.SettingSave.Name = "SettingSave";
             this.SettingSave.Size = new System.Drawing.Size(57, 23);
             this.SettingSave.TabIndex = 12;
@@ -4880,7 +4881,7 @@
             this.SettingCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
-            this.SettingCancel.Location = new System.Drawing.Point(628, 109);
+            this.SettingCancel.Location = new System.Drawing.Point(684, 144);
             this.SettingCancel.Name = "SettingCancel";
             this.SettingCancel.Size = new System.Drawing.Size(57, 23);
             this.SettingCancel.TabIndex = 13;
@@ -4920,7 +4921,7 @@
             this.DateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateButton.ForeColor = System.Drawing.Color.Transparent;
-            this.DateButton.Location = new System.Drawing.Point(909, 36);
+            this.DateButton.Location = new System.Drawing.Point(906, 38);
             this.DateButton.Name = "DateButton";
             this.DateButton.Size = new System.Drawing.Size(47, 47);
             this.DateButton.TabIndex = 15;
@@ -4934,12 +4935,12 @@
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxBandsButton.ForeColor = System.Drawing.Color.Transparent;
-            this.TaxBandsButton.Location = new System.Drawing.Point(909, 89);
+            this.TaxBandsButton.Location = new System.Drawing.Point(906, 91);
             this.TaxBandsButton.Name = "TaxBandsButton";
             this.TaxBandsButton.Size = new System.Drawing.Size(47, 47);
             this.TaxBandsButton.TabIndex = 16;
             this.TaxBandsButton.UseVisualStyleBackColor = false;
-            this.TaxBandsButton.Click += new System.EventHandler(this.TaxBandFormMorph);
+            this.TaxBandsButton.Click += new System.EventHandler(this.AllowanceCalcFormMorph);
             // 
             // TaxAllowanceCalc
             // 
@@ -4958,7 +4959,7 @@
             // 
             // TaxAllowInput
             // 
-            this.TaxAllowInput.Location = new System.Drawing.Point(14, 80);
+            this.TaxAllowInput.Location = new System.Drawing.Point(14, 81);
             this.TaxAllowInput.Name = "TaxAllowInput";
             this.TaxAllowInput.Size = new System.Drawing.Size(73, 20);
             this.TaxAllowInput.TabIndex = 18;
@@ -4976,6 +4977,7 @@
             this.lbl1TaxRes.TabIndex = 19;
             this.lbl1TaxRes.Text = "Weekly - ";
             this.lbl1TaxRes.Visible = false;
+            this.lbl1TaxRes.Click += new System.EventHandler(this.lbl1TaxRes_Click);
             // 
             // lbl2TaxRes
             // 
@@ -5020,13 +5022,14 @@
             this.ForceClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "ForceClose", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ForceClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForceClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.ForceClose.Location = new System.Drawing.Point(565, 62);
+            this.ForceClose.Location = new System.Drawing.Point(621, 94);
             this.ForceClose.Name = "ForceClose";
             this.ForceClose.Size = new System.Drawing.Size(200, 19);
             this.ForceClose.TabIndex = 14;
             this.ForceClose.Text = "Do not close to system tray";
             this.ForceClose.UseVisualStyleBackColor = true;
             this.ForceClose.Visible = false;
+            this.ForceClose.CheckedChanged += new System.EventHandler(this.ForceClose_CheckedChanged);
             // 
             // AOTCheck
             // 
@@ -5035,59 +5038,14 @@
             this.AOTCheck.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::MeritSupportAid.Properties.Settings.Default, "AlwaysOnTop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.AOTCheck.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AOTCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(181)))));
-            this.AOTCheck.Location = new System.Drawing.Point(565, 36);
+            this.AOTCheck.Location = new System.Drawing.Point(621, 68);
             this.AOTCheck.Name = "AOTCheck";
             this.AOTCheck.Size = new System.Drawing.Size(115, 19);
             this.AOTCheck.TabIndex = 11;
             this.AOTCheck.Text = "Always on top";
             this.AOTCheck.UseVisualStyleBackColor = true;
             this.AOTCheck.Visible = false;
-            // 
-            // bandButtNMW
-            // 
-            this.bandButtNMW.Location = new System.Drawing.Point(593, 36);
-            this.bandButtNMW.Name = "bandButtNMW";
-            this.bandButtNMW.Size = new System.Drawing.Size(38, 31);
-            this.bandButtNMW.TabIndex = 23;
-            this.bandButtNMW.Text = "MW";
-            this.bandButtNMW.UseVisualStyleBackColor = true;
-            this.bandButtNMW.Click += new System.EventHandler(this.bandsNMWClick);
-            // 
-            // bandButtTax
-            // 
-            this.bandButtTax.Location = new System.Drawing.Point(637, 36);
-            this.bandButtTax.Name = "bandButtTax";
-            this.bandButtTax.Size = new System.Drawing.Size(38, 31);
-            this.bandButtTax.TabIndex = 24;
-            this.bandButtTax.Text = "TX";
-            this.bandButtTax.UseVisualStyleBackColor = true;
-            // 
-            // bandButtNI
-            // 
-            this.bandButtNI.Location = new System.Drawing.Point(681, 36);
-            this.bandButtNI.Name = "bandButtNI";
-            this.bandButtNI.Size = new System.Drawing.Size(38, 31);
-            this.bandButtNI.TabIndex = 25;
-            this.bandButtNI.Text = "NI";
-            this.bandButtNI.UseVisualStyleBackColor = true;
-            // 
-            // bandButtSL
-            // 
-            this.bandButtSL.Location = new System.Drawing.Point(725, 36);
-            this.bandButtSL.Name = "bandButtSL";
-            this.bandButtSL.Size = new System.Drawing.Size(38, 31);
-            this.bandButtSL.TabIndex = 26;
-            this.bandButtSL.Text = "SL";
-            this.bandButtSL.UseVisualStyleBackColor = true;
-            // 
-            // bandButtPen
-            // 
-            this.bandButtPen.Location = new System.Drawing.Point(769, 36);
-            this.bandButtPen.Name = "bandButtPen";
-            this.bandButtPen.Size = new System.Drawing.Size(38, 31);
-            this.bandButtPen.TabIndex = 27;
-            this.bandButtPen.Text = "PN";
-            this.bandButtPen.UseVisualStyleBackColor = true;
+            this.AOTCheck.CheckedChanged += new System.EventHandler(this.AOTCheck_CheckedChanged);
             // 
             // bandsGridView
             // 
@@ -5100,25 +5058,25 @@
             this.bandsGridView.BackgroundColor = System.Drawing.Color.White;
             this.bandsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bandsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.bandsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.bandsGridView.GridColor = System.Drawing.Color.White;
-            this.bandsGridView.Location = new System.Drawing.Point(593, 66);
+            this.bandsGridView.Location = new System.Drawing.Point(13, 52);
             this.bandsGridView.Name = "bandsGridView";
             this.bandsGridView.ReadOnly = true;
             this.bandsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -5131,9 +5089,20 @@
             this.bandsGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bandsGridView.ShowCellToolTips = false;
             this.bandsGridView.ShowEditingIcon = false;
-            this.bandsGridView.Size = new System.Drawing.Size(247, 171);
+            this.bandsGridView.Size = new System.Drawing.Size(247, 165);
             this.bandsGridView.StandardTab = true;
             this.bandsGridView.TabIndex = 28;
+            this.bandsGridView.Visible = false;
+            // 
+            // ratesButton
+            // 
+            this.ratesButton.Location = new System.Drawing.Point(906, 144);
+            this.ratesButton.Name = "ratesButton";
+            this.ratesButton.Size = new System.Drawing.Size(47, 47);
+            this.ratesButton.TabIndex = 29;
+            this.ratesButton.Text = "button1";
+            this.ratesButton.UseVisualStyleBackColor = true;
+            this.ratesButton.Click += new System.EventHandler(this.BandsFormMorph);
             // 
             // MSA
             // 
@@ -5142,35 +5111,31 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(956, 283);
-            this.Controls.Add(this.bandsGridView);
-            this.Controls.Add(this.bandButtPen);
-            this.Controls.Add(this.bandButtSL);
-            this.Controls.Add(this.bandButtNI);
-            this.Controls.Add(this.bandButtTax);
-            this.Controls.Add(this.bandButtNMW);
+            this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.SettingsButton);
+            this.Controls.Add(this.TaxBandsButton);
+            this.Controls.Add(this.ratesButton);
+            this.Controls.Add(this.DateButton);
+            this.Controls.Add(this.MMT);
+            this.Controls.Add(this.CSM);
             this.Controls.Add(this.lbl4TaxRes);
             this.Controls.Add(this.lbl3TaxRes);
             this.Controls.Add(this.lbl2TaxRes);
-            this.Controls.Add(this.lbl1TaxRes);
-            this.Controls.Add(this.TaxAllowInput);
-            this.Controls.Add(this.TaxAllowanceCalc);
-            this.Controls.Add(this.TaxBandsButton);
-            this.Controls.Add(this.DateButton);
-            this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.ConvertButton);
-            this.Controls.Add(this.DateConvInput);
+            this.Controls.Add(this.bandsGridView);
+            this.Controls.Add(this.TaxAllowInput);
+            this.Controls.Add(this.DateConvResult);
+            this.Controls.Add(this.lbl1TaxRes);
+            this.Controls.Add(this.TaxAllowanceCalc);
             this.Controls.Add(this.lblInput);
             this.Controls.Add(this.lblYourDateToday);
             this.Controls.Add(this.TodaysInternal);
-            this.Controls.Add(this.MenuResultsString);
-            this.Controls.Add(this.MMT);
-            this.Controls.Add(this.CSM);
-            this.Controls.Add(this.DateConvResult);
+            this.Controls.Add(this.DateConvInput);
             this.Controls.Add(this.ForceClose);
             this.Controls.Add(this.SettingCancel);
             this.Controls.Add(this.SettingSave);
             this.Controls.Add(this.AOTCheck);
+            this.Controls.Add(this.MenuResultsString);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MMT;
@@ -5735,12 +5700,8 @@
         private System.Windows.Forms.Label lbl2TaxRes;
         private System.Windows.Forms.Label lbl3TaxRes;
         private System.Windows.Forms.Label lbl4TaxRes;
-        private System.Windows.Forms.Button bandButtNMW;
-        private System.Windows.Forms.Button bandButtTax;
-        private System.Windows.Forms.Button bandButtNI;
-        private System.Windows.Forms.Button bandButtSL;
-        private System.Windows.Forms.Button bandButtPen;
         private System.Windows.Forms.DataGridView bandsGridView;
+        private System.Windows.Forms.Button ratesButton;
     }
 }
 
