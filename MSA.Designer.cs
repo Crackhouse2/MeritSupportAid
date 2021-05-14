@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -579,10 +581,11 @@
             this.bandButtNI = new System.Windows.Forms.Button();
             this.bandButtSL = new System.Windows.Forms.Button();
             this.bandButtPen = new System.Windows.Forms.Button();
-            this.bandsResultsBox = new System.Windows.Forms.RichTextBox();
+            this.bandsGridView = new System.Windows.Forms.DataGridView();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MMT
@@ -605,7 +608,7 @@
             this.helpToolStripMenuItem});
             this.MMT.Location = new System.Drawing.Point(0, 0);
             this.MMT.Name = "MMT";
-            this.MMT.Size = new System.Drawing.Size(900, 24);
+            this.MMT.Size = new System.Drawing.Size(956, 24);
             this.MMT.TabIndex = 0;
             this.MMT.Text = "MMT";
             // 
@@ -3097,9 +3100,9 @@
             this.securityToolStripMenuItem,
             this.utilitiesToolStripMenuItem,
             this.supervisorToolStripMenuItem});
-            this.CSM.Location = new System.Drawing.Point(0, 191);
+            this.CSM.Location = new System.Drawing.Point(0, 259);
             this.CSM.Name = "CSM";
-            this.CSM.Size = new System.Drawing.Size(900, 24);
+            this.CSM.Size = new System.Drawing.Size(956, 24);
             this.CSM.TabIndex = 2;
             this.CSM.Text = "CSM";
             // 
@@ -4769,7 +4772,7 @@
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuResultsString.Location = new System.Drawing.Point(0, 24);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(900, 167);
+            this.MenuResultsString.Size = new System.Drawing.Size(956, 235);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "Drop Down Menu Paths";
             this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -4849,7 +4852,7 @@
             this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
-            this.SettingsButton.Location = new System.Drawing.Point(834, 156);
+            this.SettingsButton.Location = new System.Drawing.Point(890, 232);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(66, 51);
@@ -4917,7 +4920,7 @@
             this.DateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateButton.ForeColor = System.Drawing.Color.Transparent;
-            this.DateButton.Location = new System.Drawing.Point(853, 27);
+            this.DateButton.Location = new System.Drawing.Point(909, 36);
             this.DateButton.Name = "DateButton";
             this.DateButton.Size = new System.Drawing.Size(47, 47);
             this.DateButton.TabIndex = 15;
@@ -4931,7 +4934,7 @@
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxBandsButton.ForeColor = System.Drawing.Color.Transparent;
-            this.TaxBandsButton.Location = new System.Drawing.Point(853, 80);
+            this.TaxBandsButton.Location = new System.Drawing.Point(909, 89);
             this.TaxBandsButton.Name = "TaxBandsButton";
             this.TaxBandsButton.Size = new System.Drawing.Size(47, 47);
             this.TaxBandsButton.TabIndex = 16;
@@ -5042,16 +5045,17 @@
             // 
             // bandButtNMW
             // 
-            this.bandButtNMW.Location = new System.Drawing.Point(565, 36);
+            this.bandButtNMW.Location = new System.Drawing.Point(593, 36);
             this.bandButtNMW.Name = "bandButtNMW";
             this.bandButtNMW.Size = new System.Drawing.Size(38, 31);
             this.bandButtNMW.TabIndex = 23;
             this.bandButtNMW.Text = "MW";
             this.bandButtNMW.UseVisualStyleBackColor = true;
+            this.bandButtNMW.Click += new System.EventHandler(this.bandsNMWClick);
             // 
             // bandButtTax
             // 
-            this.bandButtTax.Location = new System.Drawing.Point(609, 36);
+            this.bandButtTax.Location = new System.Drawing.Point(637, 36);
             this.bandButtTax.Name = "bandButtTax";
             this.bandButtTax.Size = new System.Drawing.Size(38, 31);
             this.bandButtTax.TabIndex = 24;
@@ -5060,7 +5064,7 @@
             // 
             // bandButtNI
             // 
-            this.bandButtNI.Location = new System.Drawing.Point(653, 36);
+            this.bandButtNI.Location = new System.Drawing.Point(681, 36);
             this.bandButtNI.Name = "bandButtNI";
             this.bandButtNI.Size = new System.Drawing.Size(38, 31);
             this.bandButtNI.TabIndex = 25;
@@ -5069,7 +5073,7 @@
             // 
             // bandButtSL
             // 
-            this.bandButtSL.Location = new System.Drawing.Point(697, 36);
+            this.bandButtSL.Location = new System.Drawing.Point(725, 36);
             this.bandButtSL.Name = "bandButtSL";
             this.bandButtSL.Size = new System.Drawing.Size(38, 31);
             this.bandButtSL.TabIndex = 26;
@@ -5078,21 +5082,58 @@
             // 
             // bandButtPen
             // 
-            this.bandButtPen.Location = new System.Drawing.Point(741, 36);
+            this.bandButtPen.Location = new System.Drawing.Point(769, 36);
             this.bandButtPen.Name = "bandButtPen";
             this.bandButtPen.Size = new System.Drawing.Size(38, 31);
             this.bandButtPen.TabIndex = 27;
             this.bandButtPen.Text = "PN";
             this.bandButtPen.UseVisualStyleBackColor = true;
             // 
-            // bandsResultsBox
+            // bandsGridView
             // 
-            this.bandsResultsBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bandsResultsBox.Location = new System.Drawing.Point(565, 73);
-            this.bandsResultsBox.Name = "bandsResultsBox";
-            this.bandsResultsBox.Size = new System.Drawing.Size(214, 96);
-            this.bandsResultsBox.TabIndex = 28;
-            this.bandsResultsBox.Text = "";
+            this.bandsGridView.AllowUserToAddRows = false;
+            this.bandsGridView.AllowUserToDeleteRows = false;
+            this.bandsGridView.AllowUserToResizeColumns = false;
+            this.bandsGridView.AllowUserToResizeRows = false;
+            this.bandsGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bandsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.bandsGridView.BackgroundColor = System.Drawing.Color.White;
+            this.bandsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bandsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.bandsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.bandsGridView.GridColor = System.Drawing.Color.White;
+            this.bandsGridView.Location = new System.Drawing.Point(593, 66);
+            this.bandsGridView.Name = "bandsGridView";
+            this.bandsGridView.ReadOnly = true;
+            this.bandsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.bandsGridView.RowHeadersVisible = false;
+            this.bandsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.bandsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bandsGridView.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.RowTemplate.ReadOnly = true;
+            this.bandsGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bandsGridView.ShowCellToolTips = false;
+            this.bandsGridView.ShowEditingIcon = false;
+            this.bandsGridView.Size = new System.Drawing.Size(247, 171);
+            this.bandsGridView.StandardTab = true;
+            this.bandsGridView.TabIndex = 28;
             // 
             // MSA
             // 
@@ -5101,8 +5142,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(900, 215);
-            this.Controls.Add(this.bandsResultsBox);
+            this.ClientSize = new System.Drawing.Size(956, 283);
+            this.Controls.Add(this.bandsGridView);
             this.Controls.Add(this.bandButtPen);
             this.Controls.Add(this.bandButtSL);
             this.Controls.Add(this.bandButtNI);
@@ -5142,6 +5183,7 @@
             this.CSM.ResumeLayout(false);
             this.CSM.PerformLayout();
             this.TrayIconContext.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5698,7 +5740,7 @@
         private System.Windows.Forms.Button bandButtNI;
         private System.Windows.Forms.Button bandButtSL;
         private System.Windows.Forms.Button bandButtPen;
-        private System.Windows.Forms.RichTextBox bandsResultsBox;
+        private System.Windows.Forms.DataGridView bandsGridView;
     }
 }
 

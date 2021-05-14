@@ -528,60 +528,10 @@ namespace MeritSupportAid
                 this.TopMost = true;
             }
         }
-
-        private static String InsertNMWTableInRichTextBox(string[] BandNames, string[] BandRates)
+        
+        private void bandsNMWClick(object sender, EventArgs e)
         {
-            StringBuilder sringTableRtf = new StringBuilder();
-
-            sringTableRtf.Append(@"{\rtf1 ");
-
-            //Prepare the header Row
-            sringTableRtf.Append(@"\trowd");
-
-            //A cell with width 1000.
-            sringTableRtf.Append(@"\cellx1000");
-
-            sringTableRtf.Append(@"\intbl   Band");
-
-            //Another cell with width 1000.Endpoint at 2000(which is 1000+1000).
-            sringTableRtf.Append(@"\cellx2000");
-
-            sringTableRtf.Append(@"\cell    Rate");
-
-            //Another cell with width 1000.Ending at 3000 (which is 2000+1000)
-            sringTableRtf.Append(@"\cellx3000");
-
-            sringTableRtf.AppendFormat(@"\cell    Rate inc. Holiday @12.07");
-
-            //Add the created row
-            sringTableRtf.Append(@"\intbl \cell \row");
-
-            //Add 3 data Rows.Give proper padding space between data.Notice the gap after cell
-            //sringTableRtf.Append(@"\intbl   3" + @"\cell    Chris" + @"\cell    Delhi" + @"\cell   India" + @"\row");
-            for(int i = 0; i < BandRates.Length; i++)
-            {
-                /*
-                This is where we are looping to create a unique table row. 
-                */
-
-               // decimal ThisBandRate;
-              // if(decimal.TryParse(BandRates[i],out ThisBandRate))
-               //{
-                    decimal BandRatesIncHol = 0;
-                        //ThisBandRate * 12.07;
-                    BandRatesIncHol = BandRatesIncHol / 100;
-                    sringTableRtf.Append(@"\intbl " + BandNames[i] + @"\cell " + BandRates[i] + @"\cell  " + BandRates[i] + @"\row");
-               //}
-
-            }
-
-            //Closing offf table here
-            sringTableRtf.Append(@"\pard");
-
-            sringTableRtf.Append(@"}");
-
-            //PopulateTable(sringTableRtf);
-            return sringTableRtf.ToString();
+            PopulateFormFileValues("NMW");
         }
 
         private void PopulateFormFileValues(string WhatBands)
@@ -603,9 +553,10 @@ namespace MeritSupportAid
             switch (WhatBands)
             {
                 case "NMW":
-                    string[] BandNames = lines[2].Split(',');
-                    string[] BandRates = lines[3].Split(',');
-                    bandsResultsBox.Rtf = InsertNMWTableInRichTextBox(BandNames, BandRates);
+                    string[] BandNames = lines[1].Split(',');
+                    string[] BandRates = lines[2].Split(',');
+                    DataTable NMWDT = GetNMWTable(BandNames, BandRates);
+                    bandsGridView.DataSource = NMWDT;
                     return;
                 case "NI":
                     return;
@@ -620,6 +571,28 @@ namespace MeritSupportAid
             }
         }
 
+        static DataTable GetNMWTable(string[] BandNames, string[] BandRates)
+        {
+            DataTable NMWTable = new DataTable();
+            NMWTable.Columns.Add("Bands", typeof(string));
+            NMWTable.Columns.Add("Rates", typeof(string));
+            NMWTable.Columns.Add("inc Hols", typeof(string));
+
+            for (int i = 0; i < BandRates.Length; i++)
+            {
+                if (BandNames[i] != "")
+                {
+                    float NMWRate = float.Parse(BandRates[i]);
+                    NMWRate = NMWRate / 100;
+                    float HolRate = (float)(NMWRate * 1.1207);
+                    NMWTable.Rows.Add(BandNames[i], NMWRate.ToString("n2"), HolRate.ToString("n2"));
+                }
+            }
+
+            return NMWTable;
+
+        }
+ 
         public string FullPath()
         {
             //Build App Data path and using Environment.Expand...
