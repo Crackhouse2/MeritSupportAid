@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -584,11 +586,14 @@
             this.PenEesButton = new System.Windows.Forms.Button();
             this.PenErsButton = new System.Windows.Forms.Button();
             this.SloanButton = new System.Windows.Forms.Button();
+            this.NIratesCombo = new System.Windows.Forms.ComboBox();
+            this.niRateDGV = new System.Windows.Forms.DataGridView();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.multibandGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.niRateDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // MMT
@@ -5056,23 +5061,23 @@
             this.bandsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bandsGridView.BackgroundColor = System.Drawing.Color.White;
             this.bandsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.bandsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.bandsGridView.Enabled = false;
             this.bandsGridView.GridColor = System.Drawing.Color.White;
             this.bandsGridView.Location = new System.Drawing.Point(13, 42);
@@ -5089,7 +5094,7 @@
             this.bandsGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bandsGridView.ShowCellToolTips = false;
             this.bandsGridView.ShowEditingIcon = false;
-            this.bandsGridView.Size = new System.Drawing.Size(247, 165);
+            this.bandsGridView.Size = new System.Drawing.Size(209, 165);
             this.bandsGridView.StandardTab = true;
             this.bandsGridView.TabIndex = 28;
             this.bandsGridView.Visible = false;
@@ -5192,6 +5197,63 @@
             this.SloanButton.UseVisualStyleBackColor = true;
             this.SloanButton.Visible = false;
             // 
+            // NIratesCombo
+            // 
+            this.NIratesCombo.BackColor = System.Drawing.SystemColors.Window;
+            this.NIratesCombo.FormattingEnabled = true;
+            this.NIratesCombo.Location = new System.Drawing.Point(228, 43);
+            this.NIratesCombo.Name = "NIratesCombo";
+            this.NIratesCombo.Size = new System.Drawing.Size(121, 21);
+            this.NIratesCombo.TabIndex = 36;
+            this.NIratesCombo.Visible = false;
+            // 
+            // niRateDGV
+            // 
+            this.niRateDGV.AllowUserToAddRows = false;
+            this.niRateDGV.AllowUserToDeleteRows = false;
+            this.niRateDGV.AllowUserToResizeColumns = false;
+            this.niRateDGV.AllowUserToResizeRows = false;
+            this.niRateDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.niRateDGV.BackgroundColor = System.Drawing.Color.White;
+            this.niRateDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.niRateDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.niRateDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.niRateDGV.DefaultCellStyle = dataGridViewCellStyle4;
+            this.niRateDGV.Enabled = false;
+            this.niRateDGV.GridColor = System.Drawing.Color.White;
+            this.niRateDGV.Location = new System.Drawing.Point(228, 70);
+            this.niRateDGV.MultiSelect = false;
+            this.niRateDGV.Name = "niRateDGV";
+            this.niRateDGV.ReadOnly = true;
+            this.niRateDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.niRateDGV.RowHeadersVisible = false;
+            this.niRateDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.niRateDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.niRateDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.niRateDGV.RowTemplate.ReadOnly = true;
+            this.niRateDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.niRateDGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.niRateDGV.ShowCellToolTips = false;
+            this.niRateDGV.ShowEditingIcon = false;
+            this.niRateDGV.Size = new System.Drawing.Size(121, 121);
+            this.niRateDGV.StandardTab = true;
+            this.niRateDGV.TabIndex = 37;
+            this.niRateDGV.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5200,6 +5262,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.niRateDGV);
+            this.Controls.Add(this.NIratesCombo);
             this.Controls.Add(this.SloanButton);
             this.Controls.Add(this.PenErsButton);
             this.Controls.Add(this.PenEesButton);
@@ -5244,6 +5308,7 @@
             this.TrayIconContext.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.multibandGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.niRateDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5803,6 +5868,8 @@
         private System.Windows.Forms.Button PenEesButton;
         private System.Windows.Forms.Button PenErsButton;
         private System.Windows.Forms.Button SloanButton;
+        private System.Windows.Forms.ComboBox NIratesCombo;
+        private System.Windows.Forms.DataGridView niRateDGV;
     }
 }
 

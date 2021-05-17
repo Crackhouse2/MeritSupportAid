@@ -550,6 +550,12 @@ namespace MeritSupportAid
                 Mode = "Ers";
 
             }
+            if (WhatBands.StartsWith("RateNI"))
+            {
+                Mode = WhatBands;
+                Mode.Replace("RateNI", "");
+                WhatBands = "RateNI";
+            }
 
             switch (WhatBands)
             {
@@ -565,6 +571,56 @@ namespace MeritSupportAid
                     string[] NIErBandRates = lines[33].Split(',');
                     DataTable NIDT = GetNITable(NIBandNames, NIBandRates, NIErBandRates, Mode);
                     multibandGridView.DataSource = NIDT;
+                    return;
+                case "RateNI":
+                    int EeBandPos = 34;
+                    int ErBandPos = 41;
+                    switch (Mode)
+                    {
+                        case "A":
+                            EeBandPos = 34;
+                            ErBandPos = 41;
+                            break;
+                        case "B":
+                            EeBandPos = 35;
+                            ErBandPos = 41;
+                            break;
+                        case "C":
+                            EeBandPos = 36;
+                            ErBandPos = 41;
+                            break;
+                        case "H":
+                            EeBandPos = 37;
+                            ErBandPos = 42;
+                            break;
+                        case "J":
+                            EeBandPos = 38;
+                            ErBandPos = 41;
+                            break;
+                        case "M":
+                            EeBandPos = 39;
+                            ErBandPos = 43;
+                            break;
+                        case "Z":
+                            EeBandPos = 40;
+                            ErBandPos = 44;
+                            break;
+                        default:
+                            break;
+                    }
+                    string[] NIRateBandNames = lines[31].Split(',');
+                    string[] NIRateEes = lines[EeBandPos].Split(',');
+                    string[] NIRateErs  = lines[ErBandPos].Split(',');
+                    DataTable RateNIDT = NIRateTable(NIRateBandNames, NIRateEes, NIRateErs);
+                    niRateDGV.DataSource = RateNIDT;
+                    return;
+                case "ComboNI":
+                    string[] ComboNICode = lines[45].Split(',');
+                    for (int i = 0; i < ComboNICode.Length; i++)
+                    {
+                        NIratesCombo.Items.Add(ComboNICode[i]);
+                    }
+                    NIratesCombo.Text = ComboNICode[0];
                     return;
                 case "TAX":
                     return;
@@ -693,7 +749,28 @@ namespace MeritSupportAid
 
         }
 
+        static DataTable NIRateTable(string[] Bands, string[] BandRates,string[] BandErRates)
+        {
+            DataTable NIRateTable = new DataTable();
+            NIRateTable.Columns.Add("Bands", typeof(string));
+            NIRateTable.Columns.Add("Ees", typeof(string));
+            NIRateTable.Columns.Add("Ers", typeof(string));
 
+            for (int i = 0; i < BandRates.Length; i++)
+            {
+                if (Bands[i] != "")
+                {
+                    float EeRate = float.Parse(BandRates[i]);
+                    EeRate = EeRate / 100;
+                    float ErRate = float.Parse(BandRates[i]);
+                    ErRate = ErRate / 100;
+                    NIRateTable.Rows.Add(Bands[i], EeRate.ToString("n2"), ErRate.ToString("n2"));
+                }
+            }
+
+            return NIRateTable;
+
+        }
 
         public string FullPath()
         {
@@ -843,8 +920,12 @@ namespace MeritSupportAid
             SettingToggleView(false);
             bandsGridView.Visible = true;
             multibandGridView.Visible = true;
+            niRateDGV.Visible = true;
+            NIratesCombo.Visible = true;
+            PopulateFormFileValues("ComboNI");
             PopulateFormFileValues("NMW");
             PopulateFormFileValues("NI");
+            PopulateFormFileValues("RateNIA");
 
             NIEesBands.Visible = true;
             NIErsBands.Visible = true;
