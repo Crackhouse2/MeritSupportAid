@@ -527,11 +527,7 @@ namespace MeritSupportAid
                 this.TopMost = true;
             }
         }
-        
-        private void bandsNMWClick(object sender, EventArgs e)
-        {
-            PopulateFormFileValues("NMW");
-        }
+
 
         private void PopulateFormFileValues(string WhatBands)
         {
@@ -547,7 +543,13 @@ namespace MeritSupportAid
 
             //Strip additional data from file
             string[] lines = File.ReadAllLines(fullpath);
+            string Mode = "Ees";
+            if (WhatBands == "NIers")
+            {
+                WhatBands = "NI";
+                Mode = "Ers";
 
+            }
 
             switch (WhatBands)
             {
@@ -558,6 +560,11 @@ namespace MeritSupportAid
                     bandsGridView.DataSource = NMWDT;
                     return;
                 case "NI":
+                    string[] NIBandNames = lines[31].Split(',');
+                    string[] NIBandRates = lines[32].Split(',');
+                    string[] NIErBandRates = lines[33].Split(',');
+                    DataTable NIDT = GetNITable(NIBandNames, NIBandRates, NIErBandRates, Mode);
+                    multibandGridView.DataSource = NIDT;
                     return;
                 case "TAX":
                     return;
@@ -591,7 +598,103 @@ namespace MeritSupportAid
             return NMWTable;
 
         }
- 
+
+        static DataTable GetNITable(string[] NIBandNames, string[] NIBandRates, string[] NIErBandRates, string Mode)
+        {
+            DataTable NITable = new DataTable();
+
+            //Add band names per file
+            NITable.Columns.Add("Frequency", typeof(string));
+            for (int i = 0;i < NIBandNames.Length; i++)
+            {
+                if (NIBandNames[i] != "")
+                {
+                    NITable.Columns.Add(NIBandNames[i], typeof(string));
+                }
+            }
+            string[] freq = { "Weekly", "Weekly Ers", "Fortnightly", "Fortnightly Ers", "4 Weekly", "4 Weekly Ers", "Monthly", "Monthly Ers", "Annual", "Annual Ers" };
+            for (int j = 0; j < freq.Length; j++)
+            {
+                //define a divider
+                string thisfreq = freq[j];
+                int divider;
+                switch (thisfreq)
+                {
+                    case "Weekly":
+                        divider = 52;
+                        break;
+                    case "Weekly Ers":
+                        divider = 52;
+                        break;
+                    case "Fortnightly":
+                        divider = 26;
+                        break;
+                    case "Fortnightly Ers":
+                        divider = 26;
+                        break;
+                    case "4 Weekly":
+                        divider = 13;
+                        break;
+                    case "4 Weekly Ers":
+                        divider = 13;
+                        break;
+                    case "Monthly":
+                        divider = 12;
+                        break;
+                    case "Monthly Ers":
+                        divider = 12;
+                        break;
+                    default:
+                        divider = 1;
+                        break;
+                }
+
+                //This list is no longer dynamically formed. This is a static use of the array
+                //if an additional band comes into play, add 5 [4] etc. Created with a view to 
+                //a dynamic selection.
+                float NIRate1 = float.Parse(NIBandRates[0]);
+                NIRate1 = NIRate1 / 100;
+                float NIErRate1 = float.Parse(NIErBandRates[0]);
+                NIErRate1 = NIErRate1 / 100;
+                float NIRate2 = float.Parse(NIBandRates[1]);
+                NIRate2 = NIRate2 / 100;
+                float NIErRate2 = float.Parse(NIErBandRates[1]);
+                NIErRate2 = NIErRate2 / 100;
+                float NIRate3 = float.Parse(NIBandRates[2]);
+                NIRate3 = NIRate3 / 100;
+                float NIErRate3 = float.Parse(NIErBandRates[2]);
+                NIErRate3 = NIErRate3 / 100;
+                float NIRate4 = float.Parse(NIBandRates[3]);
+                NIRate4 = NIRate4 / 100;
+                float NIErRate4 = float.Parse(NIErBandRates[3]);
+                NIErRate4 = NIErRate4 / 100;
+
+                NIRate1 = NIRate1 / divider;
+                NIErRate1 = NIErRate1 / divider;
+                NIRate2 = NIRate2 / divider;
+                NIErRate2 = NIErRate2 / divider;
+                NIRate3 = NIRate3 / divider;
+                NIErRate3 = NIErRate3 / divider;
+
+
+
+                //Add row in here. Ers and ees different bands
+                if (Mode == "Ers" & thisfreq.EndsWith("Ers"))
+                {
+                    NITable.Rows.Add(thisfreq, NIErRate1.ToString("n2"), NIErRate2.ToString("n2"), NIErRate3.ToString("n2"), NIErRate4.ToString("n2"));
+                }
+                else if (Mode == "Ees" & !thisfreq.EndsWith("Ers"))
+                {
+                    NITable.Rows.Add(thisfreq, NIRate1.ToString("n2"), NIRate2.ToString("n2"), NIRate3.ToString("n2"), NIRate4.ToString("n2"));
+                }
+            }
+            
+            return NITable;
+
+        }
+
+
+
         public string FullPath()
         {
             //Build App Data path and using Environment.Expand...
@@ -628,7 +731,7 @@ namespace MeritSupportAid
             /*
             This overrides the form close to now hide and go to system tray.
             */
-            if (Properties.Settings.Default.ForceClose == true)
+                    if (Properties.Settings.Default.ForceClose == true)
             {
                 //Close application if force close true
                 Application.Exit();
@@ -672,11 +775,18 @@ namespace MeritSupportAid
             lbl3TaxRes.Visible = true;
             lbl4TaxRes.Visible = true;
 
+            multibandGridView.Visible = false;
             bandsGridView.Visible = false;
             DateConvInput.Visible = false;
             DateConvResult.Visible = false;
             ConvertButton.Visible = false;
             bandsGridView.Visible = false;
+
+            NIEesBands.Visible = false;
+            NIErsBands.Visible = false;
+            PenEesButton.Visible = false;
+            PenErsButton.Visible = false;
+            SloanButton.Visible = false;
 
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
@@ -698,6 +808,13 @@ namespace MeritSupportAid
             DateConvInput.Visible = true;
             ConvertButton.Visible = true;
 
+            NIEesBands.Visible = false;
+            NIErsBands.Visible = false;
+            PenEesButton.Visible = false;
+            PenErsButton.Visible = false;
+            SloanButton.Visible = false;
+
+            multibandGridView.Visible = false;
             DateConvResult.Visible = false;
             bandsGridView.Visible = false;
             TaxAllowInput.Visible = false;
@@ -722,14 +839,19 @@ namespace MeritSupportAid
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "NMW Rates";
             TodaysInternal.Text = "";
-            lbl1TaxRes.Text = "Weekly - ";
-            lbl2TaxRes.Text = "Fortnightly - ";
-            lbl3TaxRes.Text = "4 Weekly - ";
-            lbl4TaxRes.Text = "Monthly - ";
 
             SettingToggleView(false);
             bandsGridView.Visible = true;
+            multibandGridView.Visible = true;
             PopulateFormFileValues("NMW");
+            PopulateFormFileValues("NI");
+
+            NIEesBands.Visible = true;
+            NIErsBands.Visible = true;
+            PenEesButton.Visible = true;
+            PenErsButton.Visible = true;
+            SloanButton.Visible = true;
+
 
             TaxAllowInput.Visible = false;
             TaxAllowanceCalc.Visible = false;
@@ -967,49 +1089,21 @@ namespace MeritSupportAid
 
         }
 
-        private void lblYourDateToday_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TodaysInternal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl1TaxRes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateConvResult_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateConvInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblInput_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AOTCheck_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ForceClose_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void ClearDGSelect(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             bandsGridView.ClearSelection();
+        }
+
+        private void EesBandsClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("NI");
+        }
+
+        private void ErsBandsClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("NIers");
         }
     }
 }

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -578,10 +578,17 @@
             this.AOTCheck = new System.Windows.Forms.CheckBox();
             this.bandsGridView = new System.Windows.Forms.DataGridView();
             this.ratesButton = new System.Windows.Forms.Button();
+            this.multibandGridView = new System.Windows.Forms.DataGridView();
+            this.NIEesBands = new System.Windows.Forms.Button();
+            this.NIErsBands = new System.Windows.Forms.Button();
+            this.PenEesButton = new System.Windows.Forms.Button();
+            this.PenErsButton = new System.Windows.Forms.Button();
+            this.SloanButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multibandGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MMT
@@ -4785,7 +4792,6 @@
             this.TodaysInternal.Size = new System.Drawing.Size(186, 31);
             this.TodaysInternal.TabIndex = 4;
             this.TodaysInternal.Text = "Today\'s Date";
-            this.TodaysInternal.Click += new System.EventHandler(this.TodaysInternal_Click);
             // 
             // lblYourDateToday
             // 
@@ -4797,7 +4803,6 @@
             this.lblYourDateToday.Size = new System.Drawing.Size(151, 12);
             this.lblYourDateToday.TabIndex = 5;
             this.lblYourDateToday.Text = "Your internal date today is";
-            this.lblYourDateToday.Click += new System.EventHandler(this.lblYourDateToday_Click);
             // 
             // lblInput
             // 
@@ -4809,7 +4814,6 @@
             this.lblInput.Size = new System.Drawing.Size(40, 15);
             this.lblInput.TabIndex = 6;
             this.lblInput.Text = "Input";
-            this.lblInput.Click += new System.EventHandler(this.lblInput_Click);
             // 
             // DateConvInput
             // 
@@ -4817,7 +4821,6 @@
             this.DateConvInput.Name = "DateConvInput";
             this.DateConvInput.Size = new System.Drawing.Size(73, 20);
             this.DateConvInput.TabIndex = 7;
-            this.DateConvInput.TextChanged += new System.EventHandler(this.DateConvInput_TextChanged);
             this.DateConvInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxKeyDown);
             // 
             // ConvertButton
@@ -4845,7 +4848,6 @@
             this.DateConvResult.TabIndex = 9;
             this.DateConvResult.Text = "Results";
             this.DateConvResult.Visible = false;
-            this.DateConvResult.Click += new System.EventHandler(this.DateConvResult_Click);
             // 
             // SettingsButton
             // 
@@ -4978,7 +4980,6 @@
             this.lbl1TaxRes.TabIndex = 19;
             this.lbl1TaxRes.Text = "Weekly - ";
             this.lbl1TaxRes.Visible = false;
-            this.lbl1TaxRes.Click += new System.EventHandler(this.lbl1TaxRes_Click);
             // 
             // lbl2TaxRes
             // 
@@ -5030,7 +5031,6 @@
             this.ForceClose.Text = "Do not close to system tray";
             this.ForceClose.UseVisualStyleBackColor = true;
             this.ForceClose.Visible = false;
-            this.ForceClose.CheckedChanged += new System.EventHandler(this.ForceClose_CheckedChanged);
             // 
             // AOTCheck
             // 
@@ -5046,7 +5046,6 @@
             this.AOTCheck.Text = "Always on top";
             this.AOTCheck.UseVisualStyleBackColor = true;
             this.AOTCheck.Visible = false;
-            this.AOTCheck.CheckedChanged += new System.EventHandler(this.AOTCheck_CheckedChanged);
             // 
             // bandsGridView
             // 
@@ -5057,23 +5056,23 @@
             this.bandsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bandsGridView.BackgroundColor = System.Drawing.Color.White;
             this.bandsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.bandsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.bandsGridView.Enabled = false;
             this.bandsGridView.GridColor = System.Drawing.Color.White;
             this.bandsGridView.Location = new System.Drawing.Point(13, 42);
@@ -5109,6 +5108,90 @@
             this.ratesButton.UseVisualStyleBackColor = true;
             this.ratesButton.Click += new System.EventHandler(this.BandsFormMorph);
             // 
+            // multibandGridView
+            // 
+            this.multibandGridView.AllowUserToAddRows = false;
+            this.multibandGridView.AllowUserToDeleteRows = false;
+            this.multibandGridView.AllowUserToResizeColumns = false;
+            this.multibandGridView.AllowUserToResizeRows = false;
+            this.multibandGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.multibandGridView.BackgroundColor = System.Drawing.Color.White;
+            this.multibandGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.multibandGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.multibandGridView.Enabled = false;
+            this.multibandGridView.GridColor = System.Drawing.Color.White;
+            this.multibandGridView.Location = new System.Drawing.Point(566, 66);
+            this.multibandGridView.MultiSelect = false;
+            this.multibandGridView.Name = "multibandGridView";
+            this.multibandGridView.ReadOnly = true;
+            this.multibandGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.multibandGridView.RowHeadersVisible = false;
+            this.multibandGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.multibandGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.multibandGridView.ShowCellToolTips = false;
+            this.multibandGridView.ShowEditingIcon = false;
+            this.multibandGridView.Size = new System.Drawing.Size(334, 125);
+            this.multibandGridView.StandardTab = true;
+            this.multibandGridView.TabIndex = 30;
+            this.multibandGridView.Visible = false;
+            // 
+            // NIEesBands
+            // 
+            this.NIEesBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NIEesBands.Location = new System.Drawing.Point(566, 36);
+            this.NIEesBands.Name = "NIEesBands";
+            this.NIEesBands.Size = new System.Drawing.Size(49, 23);
+            this.NIEesBands.TabIndex = 31;
+            this.NIEesBands.Text = "NI Ees";
+            this.NIEesBands.UseVisualStyleBackColor = true;
+            this.NIEesBands.Visible = false;
+            this.NIEesBands.Click += new System.EventHandler(this.EesBandsClick);
+            // 
+            // NIErsBands
+            // 
+            this.NIErsBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NIErsBands.Location = new System.Drawing.Point(621, 36);
+            this.NIErsBands.Name = "NIErsBands";
+            this.NIErsBands.Size = new System.Drawing.Size(48, 23);
+            this.NIErsBands.TabIndex = 32;
+            this.NIErsBands.Text = "NI Ers";
+            this.NIErsBands.UseVisualStyleBackColor = true;
+            this.NIErsBands.Visible = false;
+            this.NIErsBands.Click += new System.EventHandler(this.ErsBandsClick);
+            // 
+            // PenEesButton
+            // 
+            this.PenEesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PenEesButton.Location = new System.Drawing.Point(675, 36);
+            this.PenEesButton.Name = "PenEesButton";
+            this.PenEesButton.Size = new System.Drawing.Size(61, 23);
+            this.PenEesButton.TabIndex = 33;
+            this.PenEesButton.Text = "Pen Ees";
+            this.PenEesButton.UseVisualStyleBackColor = true;
+            this.PenEesButton.Visible = false;
+            // 
+            // PenErsButton
+            // 
+            this.PenErsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PenErsButton.Location = new System.Drawing.Point(742, 36);
+            this.PenErsButton.Name = "PenErsButton";
+            this.PenErsButton.Size = new System.Drawing.Size(61, 23);
+            this.PenErsButton.TabIndex = 34;
+            this.PenErsButton.Text = "Pen Ers";
+            this.PenErsButton.UseVisualStyleBackColor = true;
+            this.PenErsButton.Visible = false;
+            // 
+            // SloanButton
+            // 
+            this.SloanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SloanButton.Location = new System.Drawing.Point(809, 36);
+            this.SloanButton.Name = "SloanButton";
+            this.SloanButton.Size = new System.Drawing.Size(45, 23);
+            this.SloanButton.TabIndex = 35;
+            this.SloanButton.Text = "Sloan";
+            this.SloanButton.UseVisualStyleBackColor = true;
+            this.SloanButton.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5117,8 +5200,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.SloanButton);
+            this.Controls.Add(this.PenErsButton);
+            this.Controls.Add(this.PenEesButton);
+            this.Controls.Add(this.NIErsBands);
+            this.Controls.Add(this.NIEesBands);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.MenuResultsString);
+            this.Controls.Add(this.multibandGridView);
             this.Controls.Add(this.TodaysInternal);
             this.Controls.Add(this.lblYourDateToday);
             this.Controls.Add(this.bandsGridView);
@@ -5154,6 +5243,7 @@
             this.CSM.PerformLayout();
             this.TrayIconContext.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bandsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multibandGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5707,6 +5797,12 @@
         private System.Windows.Forms.Label lbl4TaxRes;
         private System.Windows.Forms.DataGridView bandsGridView;
         private System.Windows.Forms.Button ratesButton;
+        private System.Windows.Forms.DataGridView multibandGridView;
+        private System.Windows.Forms.Button NIEesBands;
+        private System.Windows.Forms.Button NIErsBands;
+        private System.Windows.Forms.Button PenEesButton;
+        private System.Windows.Forms.Button PenErsButton;
+        private System.Windows.Forms.Button SloanButton;
     }
 }
 
