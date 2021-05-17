@@ -588,6 +588,7 @@
             this.SloanButton = new System.Windows.Forms.Button();
             this.NIratesCombo = new System.Windows.Forms.ComboBox();
             this.niRateDGV = new System.Windows.Forms.DataGridView();
+            this.PGLoanButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -5125,7 +5126,7 @@
             this.multibandGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.multibandGridView.Enabled = false;
             this.multibandGridView.GridColor = System.Drawing.Color.White;
-            this.multibandGridView.Location = new System.Drawing.Point(566, 66);
+            this.multibandGridView.Location = new System.Drawing.Point(564, 66);
             this.multibandGridView.MultiSelect = false;
             this.multibandGridView.Name = "multibandGridView";
             this.multibandGridView.ReadOnly = true;
@@ -5143,7 +5144,7 @@
             // NIEesBands
             // 
             this.NIEesBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NIEesBands.Location = new System.Drawing.Point(566, 36);
+            this.NIEesBands.Location = new System.Drawing.Point(563, 36);
             this.NIEesBands.Name = "NIEesBands";
             this.NIEesBands.Size = new System.Drawing.Size(49, 23);
             this.NIEesBands.TabIndex = 31;
@@ -5155,7 +5156,7 @@
             // NIErsBands
             // 
             this.NIErsBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NIErsBands.Location = new System.Drawing.Point(621, 36);
+            this.NIErsBands.Location = new System.Drawing.Point(618, 36);
             this.NIErsBands.Name = "NIErsBands";
             this.NIErsBands.Size = new System.Drawing.Size(48, 23);
             this.NIErsBands.TabIndex = 32;
@@ -5167,7 +5168,7 @@
             // PenEesButton
             // 
             this.PenEesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PenEesButton.Location = new System.Drawing.Point(675, 36);
+            this.PenEesButton.Location = new System.Drawing.Point(672, 36);
             this.PenEesButton.Name = "PenEesButton";
             this.PenEesButton.Size = new System.Drawing.Size(61, 23);
             this.PenEesButton.TabIndex = 33;
@@ -5178,7 +5179,7 @@
             // PenErsButton
             // 
             this.PenErsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PenErsButton.Location = new System.Drawing.Point(742, 36);
+            this.PenErsButton.Location = new System.Drawing.Point(739, 36);
             this.PenErsButton.Name = "PenErsButton";
             this.PenErsButton.Size = new System.Drawing.Size(61, 23);
             this.PenErsButton.TabIndex = 34;
@@ -5189,11 +5190,11 @@
             // SloanButton
             // 
             this.SloanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SloanButton.Location = new System.Drawing.Point(809, 36);
+            this.SloanButton.Location = new System.Drawing.Point(806, 36);
             this.SloanButton.Name = "SloanButton";
-            this.SloanButton.Size = new System.Drawing.Size(45, 23);
+            this.SloanButton.Size = new System.Drawing.Size(40, 23);
             this.SloanButton.TabIndex = 35;
-            this.SloanButton.Text = "Sloan";
+            this.SloanButton.Text = "SL";
             this.SloanButton.UseVisualStyleBackColor = true;
             this.SloanButton.Visible = false;
             // 
@@ -5254,6 +5255,17 @@
             this.niRateDGV.TabIndex = 37;
             this.niRateDGV.Visible = false;
             // 
+            // PGLoanButton
+            // 
+            this.PGLoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PGLoanButton.Location = new System.Drawing.Point(852, 36);
+            this.PGLoanButton.Name = "PGLoanButton";
+            this.PGLoanButton.Size = new System.Drawing.Size(45, 23);
+            this.PGLoanButton.TabIndex = 38;
+            this.PGLoanButton.Text = "PGL";
+            this.PGLoanButton.UseVisualStyleBackColor = true;
+            this.PGLoanButton.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5262,6 +5274,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.PGLoanButton);
             this.Controls.Add(this.niRateDGV);
             this.Controls.Add(this.NIratesCombo);
             this.Controls.Add(this.SloanButton);
@@ -5870,6 +5883,7 @@
         private System.Windows.Forms.Button SloanButton;
         private System.Windows.Forms.ComboBox NIratesCombo;
         private System.Windows.Forms.DataGridView niRateDGV;
+        private System.Windows.Forms.Button PGLoanButton;
     }
 }
 
