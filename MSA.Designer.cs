@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSA));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MMT = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -4761,17 +4761,17 @@
             // 
             // MenuResultsString
             // 
+            this.MenuResultsString.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.MenuResultsString.BackColor = System.Drawing.Color.Transparent;
-            this.MenuResultsString.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuResultsString.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuResultsString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(211)))), ((int)(((byte)(0)))));
             this.MenuResultsString.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuResultsString.Location = new System.Drawing.Point(0, 0);
+            this.MenuResultsString.Location = new System.Drawing.Point(0, 194);
             this.MenuResultsString.Name = "MenuResultsString";
-            this.MenuResultsString.Size = new System.Drawing.Size(953, 245);
+            this.MenuResultsString.Size = new System.Drawing.Size(953, 27);
             this.MenuResultsString.TabIndex = 3;
             this.MenuResultsString.Text = "Drop Down Menu Paths";
-            this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MenuResultsString.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MenuResultsString.Visible = false;
             this.MenuResultsString.Click += new System.EventHandler(this.Label_Click);
             // 
@@ -4932,6 +4932,7 @@
             // 
             this.TaxBandsButton.AccessibleDescription = "DateConvResult";
             this.TaxBandsButton.BackColor = System.Drawing.Color.Transparent;
+            this.TaxBandsButton.BackgroundImage = global::MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage;
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxBandsButton.ForeColor = System.Drawing.Color.Transparent;
@@ -5053,30 +5054,30 @@
             this.bandsGridView.AllowUserToDeleteRows = false;
             this.bandsGridView.AllowUserToResizeColumns = false;
             this.bandsGridView.AllowUserToResizeRows = false;
-            this.bandsGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bandsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bandsGridView.BackgroundColor = System.Drawing.Color.White;
             this.bandsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bandsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bandsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.bandsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bandsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.bandsGridView.Enabled = false;
             this.bandsGridView.GridColor = System.Drawing.Color.White;
-            this.bandsGridView.Location = new System.Drawing.Point(13, 52);
+            this.bandsGridView.Location = new System.Drawing.Point(13, 42);
+            this.bandsGridView.MultiSelect = false;
             this.bandsGridView.Name = "bandsGridView";
             this.bandsGridView.ReadOnly = true;
             this.bandsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -5093,14 +5094,18 @@
             this.bandsGridView.StandardTab = true;
             this.bandsGridView.TabIndex = 28;
             this.bandsGridView.Visible = false;
+            this.bandsGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ClearDGSelect);
             // 
             // ratesButton
             // 
+            this.ratesButton.BackgroundImage = global::MeritSupportAid.Properties.Resources.RatesIconGrey;
+            this.ratesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ratesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ratesButton.ForeColor = System.Drawing.Color.Transparent;
             this.ratesButton.Location = new System.Drawing.Point(906, 144);
             this.ratesButton.Name = "ratesButton";
             this.ratesButton.Size = new System.Drawing.Size(47, 47);
             this.ratesButton.TabIndex = 29;
-            this.ratesButton.Text = "button1";
             this.ratesButton.UseVisualStyleBackColor = true;
             this.ratesButton.Click += new System.EventHandler(this.BandsFormMorph);
             // 
@@ -5113,6 +5118,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
             this.Controls.Add(this.SettingsButton);
+            this.Controls.Add(this.MenuResultsString);
+            this.Controls.Add(this.TodaysInternal);
+            this.Controls.Add(this.lblYourDateToday);
+            this.Controls.Add(this.bandsGridView);
             this.Controls.Add(this.TaxBandsButton);
             this.Controls.Add(this.ratesButton);
             this.Controls.Add(this.DateButton);
@@ -5122,20 +5131,16 @@
             this.Controls.Add(this.lbl3TaxRes);
             this.Controls.Add(this.lbl2TaxRes);
             this.Controls.Add(this.ConvertButton);
-            this.Controls.Add(this.bandsGridView);
             this.Controls.Add(this.TaxAllowInput);
-            this.Controls.Add(this.DateConvResult);
             this.Controls.Add(this.lbl1TaxRes);
             this.Controls.Add(this.TaxAllowanceCalc);
             this.Controls.Add(this.lblInput);
-            this.Controls.Add(this.lblYourDateToday);
-            this.Controls.Add(this.TodaysInternal);
             this.Controls.Add(this.DateConvInput);
             this.Controls.Add(this.ForceClose);
             this.Controls.Add(this.SettingCancel);
             this.Controls.Add(this.SettingSave);
             this.Controls.Add(this.AOTCheck);
-            this.Controls.Add(this.MenuResultsString);
+            this.Controls.Add(this.DateConvResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MMT;

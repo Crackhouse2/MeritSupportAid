@@ -83,6 +83,26 @@ namespace MeritSupportAid.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RatesIcon {
+            get {
+                object obj = ResourceManager.GetObject("RatesIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RatesIconGrey {
+            get {
+                object obj = ResourceManager.GetObject("RatesIconGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TaxBandsButton_BackgroundImage {
             get {
                 object obj = ResourceManager.GetObject("TaxBandsButton.BackgroundImage", resourceCulture);

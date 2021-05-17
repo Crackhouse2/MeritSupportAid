@@ -655,7 +655,7 @@ namespace MeritSupportAid
             */
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
-
+            ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "Your standard yearly allowance is";
             TodaysInternal.Text = "1257L";
@@ -688,6 +688,7 @@ namespace MeritSupportAid
             */
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
+            ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
 
             lblYourDateToday.Text = "Your internal date today is";
             DateConvInput.Text = "";
@@ -715,7 +716,8 @@ namespace MeritSupportAid
             some of the labels.
             */
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
-            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
+            TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
+            ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIcon);
 
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "NMW Rates";
@@ -1003,6 +1005,11 @@ namespace MeritSupportAid
         private void ForceClose_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearDGSelect(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            bandsGridView.ClearSelection();
         }
     }
 }
