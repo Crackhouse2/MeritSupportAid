@@ -641,14 +641,54 @@ namespace MeritSupportAid
                             EeBandPos = 40;
                             ErBandPos = 44;
                             break;
+                        case "Pensions":
+                            break;
+                        case "SL/PG":
+                            break;
                         default:
                             break;
                     }
-                    string[] NIRateBandNames = lines[31].Split(',');
-                    string[] NIRateEes = lines[EeBandPos].Split(',');
-                    string[] NIRateErs  = lines[ErBandPos].Split(',');
-                    DataTable RateNIDT = NIRateTable(NIRateBandNames, NIRateEes, NIRateErs);
-                    niRateDGV.DataSource = RateNIDT;
+                    if (Mode == "Pensions")
+                    {
+                        DataTable PenRates = new DataTable();
+                        PenRates.Columns.Add("Type", typeof(string));
+                        PenRates.Columns.Add("Perc", typeof(string));
+                        
+                        float TotalPen = float.Parse(lines[57]);
+                        float Ers = float.Parse(lines[58]);
+                        float Ees = TotalPen - Ers;
+                        TotalPen = TotalPen / 100;
+                        Ers = Ers / 100;
+                        Ees = Ees / 100;
+
+                        PenRates.Rows.Add("Ees", Ees.ToString("n2"));
+                        PenRates.Rows.Add("Ers", Ers.ToString("n2"));
+                        PenRates.Rows.Add("Total", TotalPen.ToString("n2"));
+                        niRateDGV.DataSource = PenRates;
+                    }
+                    else if (Mode == "SL/PG")
+                    {
+                        DataTable SLPGTab = new DataTable();
+                        SLPGTab.Columns.Add("Type", typeof(string));
+                        SLPGTab.Columns.Add("Perc", typeof(string));
+
+                        float SLRate = float.Parse(lines[10]);
+                        float PGRate = float.Parse(lines[13]);
+                        SLRate = SLRate / 100;
+                        PGRate = PGRate / 100;
+
+                        SLPGTab.Rows.Add("Sloan", SLRate.ToString("n2"));
+                        SLPGTab.Rows.Add("PG Loan", PGRate.ToString("n2"));
+                        niRateDGV.DataSource = SLPGTab;
+                    }
+                    else
+                    {
+                        string[] NIRateBandNames = lines[31].Split(',');
+                        string[] NIRateEes = lines[EeBandPos].Split(',');
+                        string[] NIRateErs = lines[ErBandPos].Split(',');
+                        DataTable RateNIDT = NIRateTable(NIRateBandNames, NIRateEes, NIRateErs);
+                        niRateDGV.DataSource = RateNIDT;
+                    }
                     return;
                 case "ComboNI":
                     string[] ComboNICode = lines[45].Split(',');
@@ -656,6 +696,8 @@ namespace MeritSupportAid
                     {
                         NIratesCombo.Items.Add(ComboNICode[i]);
                     }
+                    NIratesCombo.Items.Add("Pensions");
+                    NIratesCombo.Items.Add("SL/PG");
                     NIratesCombo.Text = ComboNICode[0];
                     return;
                 case "TAX":
