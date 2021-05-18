@@ -544,7 +544,7 @@ namespace MeritSupportAid
             }
         }
 
-
+        //These events relate to populating datagridview tables
         private void PopulateFormFileValues(string WhatBands)
         {
             /*
@@ -717,7 +717,6 @@ namespace MeritSupportAid
                     return;
             }
         }
-
         static DataTable GetSLTable(string[] Plans)
         {
             /*
@@ -747,8 +746,6 @@ namespace MeritSupportAid
 
             return SLTable;
         }
-
-
         static DataTable GetNMWTable(string[] BandNames, string[] BandRates)
         {
             /*
@@ -793,7 +790,6 @@ namespace MeritSupportAid
             return PenTable;
 
         }
-
         static DataTable GetNITable(string[] NIBandNames, string[] NIBandRates, string[] NIErBandRates, string Mode)
         {
             DataTable NITable = new DataTable();
@@ -887,7 +883,6 @@ namespace MeritSupportAid
             return NITable;
 
         }
-
         static DataTable NIRateTable(string[] Bands, string[] BandRates,string[] BandErRates)
         {
             DataTable NIRateTable = new DataTable();
@@ -911,6 +906,7 @@ namespace MeritSupportAid
 
         }
 
+        //The below relate to ensuring the appdata config file is created
         public string FullPath()
         {
             //Build App Data path and using Environment.Expand...
@@ -919,7 +915,6 @@ namespace MeritSupportAid
             string fullpath = path + "TBRes.crk.config";
             return fullpath;
         }
-
         private void EnsureFile()
         {
             //Build App Data path and using Environment.Expand...
@@ -941,7 +936,7 @@ namespace MeritSupportAid
 
             }
         }
-
+        //Form closing arguments
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             /*
@@ -964,7 +959,7 @@ namespace MeritSupportAid
             }
         }
 
-        //Logics for tax bands and associate tax band dev below here
+        //Logics for form morphs/hiding of controls below/
         private void AllowanceCalcFormMorph(object sender, EventArgs e)
         {
             /*
@@ -1044,7 +1039,6 @@ namespace MeritSupportAid
             lbl4TaxRes.Visible = false;
             NIratelbl.Visible = false;
         }
-
         private void BandsFormMorph(object sender, EventArgs e)
         {
             /*
@@ -1088,13 +1082,84 @@ namespace MeritSupportAid
 
         }
 
-
+        //Tax allowance calculator
         private void TaxAllowCalcClick(object sender, EventArgs e)
         {
+            //Create the file if possible
+            string fullpath = FullPath();
+            EnsureFile();
+            String D0FailSafe;
+            //catch instances of file not creating
+            if (!File.Exists(fullpath))
+            {
+                D0FailSafe = "FILE FAULT";
+            }
+
+            //Strip additional data from file
+            string[] lines = File.ReadAllLines(fullpath);
+
             TaxAllowInput.Text = TaxAllowInput.Text.ToUpper();
             TaxAllowanceCalc.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
-            if (TaxAllowCalculator.TaxCodeValidation(TaxAllowInput.Text) == true)
+            float SingleRate;
+            string MSGBoxRes;
+            if (TaxAllowInput.Text == "0T")
+            {
+                SingleRate = float.Parse(lines[16]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at the normal rate of tax from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "D0")
+            {
+                SingleRate = float.Parse(lines[16]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "SD0")
+            {
+                SingleRate = float.Parse(lines[17]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "CD0")
+            {
+                SingleRate = float.Parse(lines[21]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "D1")
+            {
+                SingleRate = float.Parse(lines[18]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "SD1")
+            {
+                SingleRate = float.Parse(lines[19]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "CD1")
+            {
+                SingleRate = float.Parse(lines[22]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowInput.Text == "SD2")
+            {
+                SingleRate = float.Parse(lines[20]);
+                MSGBoxRes = TaxAllowInput.Text + " entered. This calculates at " + (SingleRate / 100).ToString("n2") + "% from the first pound";
+                MessageBox.Show(MSGBoxRes);
+                return;
+            }
+            else if (TaxAllowCalculator.TaxCodeValidation(TaxAllowInput.Text) == true)
             {
                 //Construct the decimal using TaxAllowance function
                 decimal Week = TaxAllowCalculator.TaxAllowance(TaxAllowInput.Text, "", 1, 52);
