@@ -473,6 +473,26 @@ namespace MeritSupportAid
             SettingSave.Visible = OnOff;
             AOTCheck.Visible = OnOff;
             ForceClose.Visible = OnOff;
+            if (OnOff == false & NIratesCombo.Visible == true)
+            {
+                NIEesBands.Visible = NIratesCombo.Visible;
+                NIErsBands.Visible = NIratesCombo.Visible;
+                PenEesButton.Visible = NIratesCombo.Visible;
+                PenErsButton.Visible = NIratesCombo.Visible;
+                SloanButton.Visible = NIratesCombo.Visible;
+                PGLoanButton.Visible = NIratesCombo.Visible;
+                multibandGridView.Visible = NIratesCombo.Visible;
+            }
+            else if (NIEesBands.Visible == true & OnOff == true)
+            {
+                NIEesBands.Visible = false;
+                NIErsBands.Visible = false;
+                PenEesButton.Visible = false;
+                PenErsButton.Visible = false;
+                SloanButton.Visible = false;
+                PGLoanButton.Visible = false;
+                multibandGridView.Visible = false;
+            }
         }
         //These events relate to the TrayIcon and application close management
         private void TrayClick(object sender, EventArgs e)
@@ -553,7 +573,7 @@ namespace MeritSupportAid
             if (WhatBands.StartsWith("RateNI"))
             {
                 Mode = WhatBands;
-                Mode.Replace("RateNI", "");
+                Mode = Mode.Replace("RateNI", "");
                 WhatBands = "RateNI";
             }
 
@@ -762,7 +782,7 @@ namespace MeritSupportAid
                 {
                     float EeRate = float.Parse(BandRates[i]);
                     EeRate = EeRate / 100;
-                    float ErRate = float.Parse(BandRates[i]);
+                    float ErRate = float.Parse(BandErRates[i]);
                     ErRate = ErRate / 100;
                     NIRateTable.Rows.Add(Bands[i], EeRate.ToString("n2"), ErRate.ToString("n2"));
                 }
@@ -843,6 +863,7 @@ namespace MeritSupportAid
             lbl2TaxRes.Text = "Fortnightly - ";
             lbl3TaxRes.Text = "4 Weekly - ";
             lbl4TaxRes.Text = "Monthly - ";
+            NIratelbl.Visible = false;
 
             SettingToggleView(false);
             TaxAllowInput.Visible = true;
@@ -858,6 +879,9 @@ namespace MeritSupportAid
             DateConvResult.Visible = false;
             ConvertButton.Visible = false;
             bandsGridView.Visible = false;
+            niRateDGV.Visible = false;
+            NIratesCombo.Visible = false;
+            PGLoanButton.Visible = false;
 
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
@@ -890,6 +914,9 @@ namespace MeritSupportAid
             PenEesButton.Visible = false;
             PenErsButton.Visible = false;
             SloanButton.Visible = false;
+            niRateDGV.Visible = false;
+            NIratesCombo.Visible = false;
+            PGLoanButton.Visible = false;
 
             multibandGridView.Visible = false;
             DateConvResult.Visible = false;
@@ -900,6 +927,7 @@ namespace MeritSupportAid
             lbl2TaxRes.Visible = false;
             lbl3TaxRes.Visible = false;
             lbl4TaxRes.Visible = false;
+            NIratelbl.Visible = false;
         }
 
         private void BandsFormMorph(object sender, EventArgs e)
@@ -932,7 +960,7 @@ namespace MeritSupportAid
             PenEesButton.Visible = true;
             PenErsButton.Visible = true;
             SloanButton.Visible = true;
-
+            NIratelbl.Visible = true;
 
             TaxAllowInput.Visible = false;
             TaxAllowanceCalc.Visible = false;
@@ -1185,6 +1213,11 @@ namespace MeritSupportAid
         private void ErsBandsClick(object sender, EventArgs e)
         {
             PopulateFormFileValues("NIers");
+        }
+
+        private void ComboNIChange(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("RateNI"+NIratesCombo.Text);
         }
     }
 }
