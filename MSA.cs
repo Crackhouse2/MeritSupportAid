@@ -480,7 +480,6 @@ namespace MeritSupportAid
                 PenEesButton.Visible = NIratesCombo.Visible;
                 PenErsButton.Visible = NIratesCombo.Visible;
                 SloanButton.Visible = NIratesCombo.Visible;
-                PGLoanButton.Visible = NIratesCombo.Visible;
                 multibandGridView.Visible = NIratesCombo.Visible;
             }
             else if (NIEesBands.Visible == true & OnOff == true)
@@ -490,7 +489,6 @@ namespace MeritSupportAid
                 PenEesButton.Visible = false;
                 PenErsButton.Visible = false;
                 SloanButton.Visible = false;
-                PGLoanButton.Visible = false;
                 multibandGridView.Visible = false;
             }
         }
@@ -551,6 +549,19 @@ namespace MeritSupportAid
 
         private void PopulateFormFileValues(string WhatBands)
         {
+            /*
+            To use pass in string to populate the relevant control's values
+            Pass in
+            -NMW for NMW Rates box
+            -NI for NIees bands
+            -NIers for NIers bands
+            -RateNIA for NI code A's rates, this is expandable to RateNIC, RateNIH etc
+            -ComboNI to popultate the NIRate combo property
+            -SL for the SL/PG tab
+            -PENSION for pension ees bands
+            -PENSIONers for pension ers bands
+            -TAX for tax bands
+            */
             //Create the file if possible
             string fullpath = FullPath();
             EnsureFile();
@@ -569,6 +580,11 @@ namespace MeritSupportAid
                 WhatBands = "NI";
                 Mode = "Ers";
 
+            }
+            if (WhatBands == "PENSIONers")
+            {
+                WhatBands = "PENSION";
+                Mode = "Ers";
             }
             if (WhatBands.StartsWith("RateNI"))
             {
@@ -646,6 +662,11 @@ namespace MeritSupportAid
                     return;
                 case "PENSION":
                     return;
+                case "SL":
+                    string[] Plans = { lines[9], lines[11], lines[75], lines[12] };
+                    DataTable SLT = GetSLTable(Plans);
+                    multibandGridView.DataSource = SLT;
+                    return;
                 case "FILE FAULT":
                     return;
                 default:
@@ -653,8 +674,42 @@ namespace MeritSupportAid
             }
         }
 
+        static DataTable GetSLTable(string[] Plans)
+        {
+            /*
+            SLoan data table
+            */
+            DataTable SLTable = new DataTable();
+            SLTable.Columns.Add("Freq", typeof(string));
+            SLTable.Columns.Add("Plan 1", typeof(string));
+            SLTable.Columns.Add("Plan 2", typeof(string));
+            SLTable.Columns.Add("Plan 4", typeof(string));
+            SLTable.Columns.Add("PG Loan", typeof(string));
+
+            float Plan1 = float.Parse(Plans[0]);
+            Plan1 = Plan1 / 100;
+            float Plan2 = float.Parse(Plans[1]);
+            Plan2 = Plan2 / 100;
+            float Plan4 = float.Parse(Plans[2]);
+            Plan4 = Plan4 / 100;
+            float PGL = float.Parse(Plans[3]);
+            PGL = PGL / 100;
+
+            SLTable.Rows.Add("Weekly", (Plan1 / 52).ToString("n2"), (Plan2 / 52).ToString("n2"), (Plan4 / 52).ToString("n2"), (PGL / 52).ToString("n2"));
+            SLTable.Rows.Add("Fortnightly", (Plan1 / 26).ToString("n2"), (Plan2 / 26).ToString("n2"), (Plan4 / 26).ToString("n2"), (PGL / 26).ToString("n2"));
+            SLTable.Rows.Add("4 Weekly", (Plan1 / 13).ToString("n2"), (Plan2 / 13).ToString("n2"), (Plan4 / 13).ToString("n2"), (PGL / 13).ToString("n2"));
+            SLTable.Rows.Add("Monthly", (Plan1 / 12).ToString("n2"), (Plan2 / 12).ToString("n2"), (Plan4 / 12).ToString("n2"), (PGL / 12).ToString("n2"));
+            SLTable.Rows.Add("Annually", (Plan1 / 1).ToString("n2"), (Plan2 / 1).ToString("n2"), (Plan4 / 1).ToString("n2"), (PGL / 1).ToString("n2"));
+
+            return SLTable;
+        }
+
+
         static DataTable GetNMWTable(string[] BandNames, string[] BandRates)
         {
+            /*
+            NMW Table population
+            */
             DataTable NMWTable = new DataTable();
             NMWTable.Columns.Add("Bands", typeof(string));
             NMWTable.Columns.Add("Rates", typeof(string));
@@ -881,7 +936,6 @@ namespace MeritSupportAid
             bandsGridView.Visible = false;
             niRateDGV.Visible = false;
             NIratesCombo.Visible = false;
-            PGLoanButton.Visible = false;
 
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
@@ -916,7 +970,6 @@ namespace MeritSupportAid
             SloanButton.Visible = false;
             niRateDGV.Visible = false;
             NIratesCombo.Visible = false;
-            PGLoanButton.Visible = false;
 
             multibandGridView.Visible = false;
             DateConvResult.Visible = false;
@@ -1218,6 +1271,11 @@ namespace MeritSupportAid
         private void ComboNIChange(object sender, EventArgs e)
         {
             PopulateFormFileValues("RateNI"+NIratesCombo.Text);
+        }
+
+        private void SLButtonClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("SL");
         }
     }
 }
