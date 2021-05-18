@@ -478,7 +478,6 @@ namespace MeritSupportAid
                 NIEesBands.Visible = NIratesCombo.Visible;
                 NIErsBands.Visible = NIratesCombo.Visible;
                 PenEesButton.Visible = NIratesCombo.Visible;
-                PenErsButton.Visible = NIratesCombo.Visible;
                 SloanButton.Visible = NIratesCombo.Visible;
                 multibandGridView.Visible = NIratesCombo.Visible;
             }
@@ -487,7 +486,6 @@ namespace MeritSupportAid
                 NIEesBands.Visible = false;
                 NIErsBands.Visible = false;
                 PenEesButton.Visible = false;
-                PenErsButton.Visible = false;
                 SloanButton.Visible = false;
                 multibandGridView.Visible = false;
             }
@@ -581,11 +579,6 @@ namespace MeritSupportAid
                 Mode = "Ers";
 
             }
-            if (WhatBands == "PENSIONers")
-            {
-                WhatBands = "PENSION";
-                Mode = "Ers";
-            }
             if (WhatBands.StartsWith("RateNI"))
             {
                 Mode = WhatBands;
@@ -600,6 +593,7 @@ namespace MeritSupportAid
                     string[] BandRates = lines[2].Split(',');
                     DataTable NMWDT = GetNMWTable(BandNames, BandRates);
                     bandsGridView.DataSource = NMWDT;
+                    multibandGridView.ClearSelection();
                     return;
                 case "NI":
                     string[] NIBandNames = lines[31].Split(',');
@@ -607,6 +601,7 @@ namespace MeritSupportAid
                     string[] NIErBandRates = lines[33].Split(',');
                     DataTable NIDT = GetNITable(NIBandNames, NIBandRates, NIErBandRates, Mode);
                     multibandGridView.DataSource = NIDT;
+                    multibandGridView.ClearSelection();
                     return;
                 case "RateNI":
                     int EeBandPos = 34;
@@ -665,6 +660,7 @@ namespace MeritSupportAid
                         PenRates.Rows.Add("Ers", Ers.ToString("n2"));
                         PenRates.Rows.Add("Total", TotalPen.ToString("n2"));
                         niRateDGV.DataSource = PenRates;
+                        niRateDGV.ClearSelection();
                     }
                     else if (Mode == "SL/PG")
                     {
@@ -680,6 +676,7 @@ namespace MeritSupportAid
                         SLPGTab.Rows.Add("Sloan", SLRate.ToString("n2"));
                         SLPGTab.Rows.Add("PG Loan", PGRate.ToString("n2"));
                         niRateDGV.DataSource = SLPGTab;
+                        niRateDGV.ClearSelection();
                     }
                     else
                     {
@@ -688,6 +685,7 @@ namespace MeritSupportAid
                         string[] NIRateErs = lines[ErBandPos].Split(',');
                         DataTable RateNIDT = NIRateTable(NIRateBandNames, NIRateEes, NIRateErs);
                         niRateDGV.DataSource = RateNIDT;
+                        niRateDGV.ClearSelection();
                     }
                     return;
                 case "ComboNI":
@@ -703,11 +701,15 @@ namespace MeritSupportAid
                 case "TAX":
                     return;
                 case "PENSION":
+                    DataTable PenTab = GetPenTable(lines);
+                    multibandGridView.DataSource = PenTab;
+                    multibandGridView.ClearSelection();
                     return;
                 case "SL":
                     string[] Plans = { lines[9], lines[11], lines[75], lines[12] };
                     DataTable SLT = GetSLTable(Plans);
                     multibandGridView.DataSource = SLT;
+                    multibandGridView.ClearSelection();
                     return;
                 case "FILE FAULT":
                     return;
@@ -769,6 +771,26 @@ namespace MeritSupportAid
             }
 
             return NMWTable;
+
+        }
+        static DataTable GetPenTable(string[] lines)
+        {
+            DataTable PenTable = new DataTable();
+
+            //Add band names per file
+            PenTable.Columns.Add("Frequency", typeof(string));
+            PenTable.Columns.Add("Qual Pay", typeof(string));
+            PenTable.Columns.Add("Min Pay", typeof(string));
+            PenTable.Columns.Add("Max Pay", typeof(string));
+
+            //Add row in here. Ers and ees different bands
+            PenTable.Rows.Add("Weekly",(float.Parse(lines[59])/100).ToString("n2"), (float.Parse(lines[60]) / 100).ToString("n2"), (float.Parse(lines[61]) / 100).ToString("n2"));
+            PenTable.Rows.Add("Fortnightly", (float.Parse(lines[65]) / 100).ToString("n2"), (float.Parse(lines[66]) / 100).ToString("n2"), (float.Parse(lines[67]) / 100).ToString("n2"));
+            PenTable.Rows.Add("4 Weekly", (float.Parse(lines[68]) / 100).ToString("n2"), (float.Parse(lines[69]) / 100).ToString("n2"), (float.Parse(lines[70]) / 100).ToString("n2"));
+            PenTable.Rows.Add("Monthly", (float.Parse(lines[62]) / 100).ToString("n2"), (float.Parse(lines[63]) / 100).ToString("n2"), (float.Parse(lines[64]) / 100).ToString("n2"));
+            PenTable.Rows.Add("Annually", (float.Parse(lines[54]) / 100).ToString("n2"), (float.Parse(lines[55]) / 100).ToString("n2"), (float.Parse(lines[56]) / 100).ToString("n2"));
+
+            return PenTable;
 
         }
 
@@ -982,7 +1004,6 @@ namespace MeritSupportAid
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
             PenEesButton.Visible = false;
-            PenErsButton.Visible = false;
             SloanButton.Visible = false;
 
         }
@@ -1008,7 +1029,6 @@ namespace MeritSupportAid
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
             PenEesButton.Visible = false;
-            PenErsButton.Visible = false;
             SloanButton.Visible = false;
             niRateDGV.Visible = false;
             NIratesCombo.Visible = false;
@@ -1053,7 +1073,6 @@ namespace MeritSupportAid
             NIEesBands.Visible = true;
             NIErsBands.Visible = true;
             PenEesButton.Visible = true;
-            PenErsButton.Visible = true;
             SloanButton.Visible = true;
             NIratelbl.Visible = true;
 
@@ -1302,11 +1321,20 @@ namespace MeritSupportAid
 
         private void EesBandsClick(object sender, EventArgs e)
         {
+            NIEesBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            NIErsBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            PenEesButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            // "234,71,179";
             PopulateFormFileValues("NI");
         }
 
         private void ErsBandsClick(object sender, EventArgs e)
         {
+            NIErsBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            PenEesButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("NIers");
         }
 
@@ -1317,7 +1345,20 @@ namespace MeritSupportAid
 
         private void SLButtonClick(object sender, EventArgs e)
         {
+            SloanButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            NIErsBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            PenEesButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("SL");
+        }
+
+        private void PensionsButtonClick(object sender, EventArgs e)
+        {
+            PenEesButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            NIErsBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            PopulateFormFileValues("PENSION");
         }
     }
 }
