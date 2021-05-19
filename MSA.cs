@@ -1081,6 +1081,9 @@ namespace MeritSupportAid
             lbl3TaxRes.Visible = true;
             lbl4TaxRes.Visible = true;
             multibandGridView.Visible = true;
+            ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            scotBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            cymruBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
 
             //bands and tax form visible turned off
             NIratelbl.Visible = false;
@@ -1527,19 +1530,25 @@ namespace MeritSupportAid
             NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("PENSION");
         }
-
         private void UKButtonClick(object sender, EventArgs e)
         {
+            ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            scotBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            cymruBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("TAXUK");
         }
-
         private void ScotBandClick(object sender, EventArgs e)
         {
+            ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            scotBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
+            cymruBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("TAXS");
         }
-
         private void cymruBandBClick(object sender, EventArgs e)
         {
+            ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            scotBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+            cymruBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
             PopulateFormFileValues("TAXC");
         }
     }
