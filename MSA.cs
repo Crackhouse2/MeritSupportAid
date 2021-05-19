@@ -585,7 +585,11 @@ namespace MeritSupportAid
                 Mode = Mode.Replace("RateNI", "");
                 WhatBands = "RateNI";
             }
-
+            if (WhatBands.StartsWith("TAX"))
+            {
+                Mode = WhatBands.Replace("TAX", "");
+                WhatBands = "TAX";
+            }
             switch (WhatBands)
             {
                 case "NMW":
@@ -700,6 +704,24 @@ namespace MeritSupportAid
                     NIratesCombo.Text = ComboNICode[0];
                     return;
                 case "TAX":
+                    DataTable TaxTable = new DataTable();
+                    switch (Mode)
+                    {
+                        case "UK":
+                            TaxTable = GetUKTable(lines,Mode);
+                            break;
+                        case "S":
+                            TaxTable = GetScotTable(lines);
+                            break;
+                        case "C":
+                            TaxTable = GetUKTable(lines, Mode);
+                            break;
+                        default:
+                            TaxTable = GetUKTable(lines, Mode);
+                            break;
+                    } 
+                    multibandGridView.DataSource = TaxTable;
+                    multibandGridView.ClearSelection();
                     return;
                 case "PENSION":
                     DataTable PenTab = GetPenTable(lines);
@@ -770,6 +792,73 @@ namespace MeritSupportAid
 
             return NMWTable;
 
+        }
+
+        static DataTable GetUKTable(string[] lines , string Mode)
+        {
+            DataTable UKTable = new DataTable();
+            UKTable.Columns.Add("Freq", typeof(string));
+            string[] rateBands = lines[27].Split(',');
+            if (Mode == "C")
+            {
+                rateBands = lines[29].Split(',');
+            }
+           
+            for (int i = 0; i < rateBands.Length; i++)
+            {
+                if (rateBands[i] != "")
+                {
+                    float uk = float.Parse(rateBands[i])/100;
+                    UKTable.Columns.Add(uk.ToString(), typeof(string));
+                }
+            }
+
+
+            string[] bandline = lines[24].Split(',');
+            if (Mode == "C")
+            {
+                bandline = lines[26].Split(',');
+            }
+            float band1 = float.Parse(bandline[0])/100;
+            float band2 = float.Parse(bandline[1])/100;
+            float band3 = float.Parse(bandline[2])/100;
+
+            UKTable.Rows.Add("Weekly", (band1/ 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3 / 1).ToString("n0"));
+            UKTable.Rows.Add("Fortnightly", (band1 / 26).ToString("n2"), (band2 / 26).ToString("n2"), (band3 / 1).ToString("n0"));
+            UKTable.Rows.Add("4 Weekly", (band1 / 13).ToString("n2"), (band2 / 13).ToString("n2"), (band3 / 1).ToString("n0"));
+            UKTable.Rows.Add("Monthly", (band1 / 12).ToString("n2"), (band2 / 12).ToString("n2"), (band3 / 1).ToString("n0"));
+            UKTable.Rows.Add("Annually", (band1 / 1).ToString("n2"), (band2 / 1).ToString("n2"), (band3 / 1).ToString("n0"));
+
+            return UKTable;
+        }
+        static DataTable GetScotTable(string[] lines)
+        {
+            DataTable ScotTable = new DataTable();
+            ScotTable.Columns.Add("Freq", typeof(string));
+            string[] rateBands = lines[28].Split(',');
+            for (int i = 0; i < rateBands.Length; i++)
+            {
+                if (rateBands[i] != "")
+                {
+                    float Scot = float.Parse(rateBands[i])/100;
+                    ScotTable.Columns.Add(Scot.ToString(), typeof(string));
+                }
+            }
+
+            string[] bandline = lines[25].Split(',');
+            float band1 = float.Parse(bandline[0]) / 100;
+            float band2 = float.Parse(bandline[1]) / 100;
+            float band3 = float.Parse(bandline[2]) / 100;
+            float band4 = float.Parse(bandline[3]) / 100;
+            float band5 = float.Parse(bandline[4]) / 100;
+
+            ScotTable.Rows.Add("Wk", (band1 / 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3/ 52).ToString("n2"), (band4 / 52).ToString("n2"), "Bal");
+            ScotTable.Rows.Add("Fort", (band1 / 26).ToString("n2"), (band2 / 26).ToString("n2"), (band3 / 26).ToString("n2"), (band4 / 26).ToString("n2"), "Bal");
+            ScotTable.Rows.Add("4W", (band1 / 13).ToString("n2"), (band2 / 13).ToString("n2"), (band3 / 13).ToString("n2"), (band4 / 13).ToString("n2"), "Bal");
+            ScotTable.Rows.Add("M", (band1 / 12).ToString("n2"), (band2 / 12).ToString("n2"), (band3 / 12).ToString("n2"), (band4 / 12).ToString("n2"), "Bal");
+            ScotTable.Rows.Add("An.", (band1 / 1).ToString("n2"), (band2 / 1).ToString("n2"), (band3 / 1).ToString("n2"), (band4 / 1).ToString("n2"), "Bal");
+
+            return ScotTable;
         }
         static DataTable GetPenTable(string[] lines)
         {
@@ -983,6 +1072,7 @@ namespace MeritSupportAid
             lbl4TaxRes.Text = "Monthly - ";
 
             //Tax allowance controls enabled
+            PopulateFormFileValues("TAXUK");
             SettingToggleView(false);
             TaxAllowInput.Visible = true;
             TaxAllowanceCalc.Visible = true;
@@ -1008,7 +1098,7 @@ namespace MeritSupportAid
             ukBandsButton.Visible = true;
             scotBands.Visible = true;
             cymruBands.Visible = true;
-
+            multibandGridView.ClearSelection();
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
         {
@@ -1031,7 +1121,7 @@ namespace MeritSupportAid
             SettingToggleView(false);
             DateConvInput.Visible = true;
             ConvertButton.Visible = true;
-            multibandGridView.Visible = true;
+            multibandGridView.Visible = false;
 
             //Bands and tax controls cleared
             NIEesBands.Visible = false;
@@ -1224,7 +1314,6 @@ namespace MeritSupportAid
                 MessageBox.Show("Tax Code " + TaxAllowInput.Text + " is invalid, please ensure you've entered a correct tax code");
             }
         }
-
         public class ManipulateTaxCode
         {
             //A class for Returning Tax Allowance Information for PAYE Calc
@@ -1398,24 +1487,18 @@ namespace MeritSupportAid
             }
 
         }
-
- 
-
         private void ClearDGSelect(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             bandsGridView.ClearSelection();
         }
-
         private void EesBandsClick(object sender, EventArgs e)
         {
             NIEesBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
             NIErsBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PenEesButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            // "234,71,179";
             PopulateFormFileValues("NI");
         }
-
         private void ErsBandsClick(object sender, EventArgs e)
         {
             NIErsBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
@@ -1424,12 +1507,10 @@ namespace MeritSupportAid
             NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("NIers");
         }
-
         private void ComboNIChange(object sender, EventArgs e)
         {
             PopulateFormFileValues("RateNI"+NIratesCombo.Text);
         }
-
         private void SLButtonClick(object sender, EventArgs e)
         {
             SloanButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
@@ -1438,7 +1519,6 @@ namespace MeritSupportAid
             NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("SL");
         }
-
         private void PensionsButtonClick(object sender, EventArgs e)
         {
             PenEesButton.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
@@ -1446,6 +1526,21 @@ namespace MeritSupportAid
             SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             NIEesBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("PENSION");
+        }
+
+        private void UKButtonClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("TAXUK");
+        }
+
+        private void ScotBandClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("TAXS");
+        }
+
+        private void cymruBandBClick(object sender, EventArgs e)
+        {
+            PopulateFormFileValues("TAXC");
         }
     }
 }
