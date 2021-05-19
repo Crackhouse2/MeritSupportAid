@@ -690,6 +690,7 @@ namespace MeritSupportAid
                     return;
                 case "ComboNI":
                     string[] ComboNICode = lines[45].Split(',');
+                    NIratesCombo.Items.Clear();
                     for (int i = 0; i < ComboNICode.Length; i++)
                     {
                         NIratesCombo.Items.Add(ComboNICode[i]);
@@ -986,6 +987,7 @@ namespace MeritSupportAid
             lbl2TaxRes.Visible = true;
             lbl3TaxRes.Visible = true;
             lbl4TaxRes.Visible = true;
+            //NIratesCombo
 
             multibandGridView.Visible = false;
             bandsGridView.Visible = false;
