@@ -968,9 +968,12 @@ namespace MeritSupportAid
             in favour of TaxAllowance functionality and repurposes
             some of the labels.
             */
+            //Button image morphs
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
             ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
+
+            //Label adjustment
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "Your standard yearly allowance is";
             TodaysInternal.Text = "1257L";
@@ -978,8 +981,8 @@ namespace MeritSupportAid
             lbl2TaxRes.Text = "Fortnightly - ";
             lbl3TaxRes.Text = "4 Weekly - ";
             lbl4TaxRes.Text = "Monthly - ";
-            NIratelbl.Visible = false;
 
+            //Tax allowance controls enabled
             SettingToggleView(false);
             TaxAllowInput.Visible = true;
             TaxAllowanceCalc.Visible = true;
@@ -987,9 +990,10 @@ namespace MeritSupportAid
             lbl2TaxRes.Visible = true;
             lbl3TaxRes.Visible = true;
             lbl4TaxRes.Visible = true;
-            //NIratesCombo
+            multibandGridView.Visible = true;
 
-            multibandGridView.Visible = false;
+            //bands and tax form visible turned off
+            NIratelbl.Visible = false;
             bandsGridView.Visible = false;
             DateConvInput.Visible = false;
             DateConvResult.Visible = false;
@@ -997,11 +1001,13 @@ namespace MeritSupportAid
             bandsGridView.Visible = false;
             niRateDGV.Visible = false;
             NIratesCombo.Visible = false;
-
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
             PenEesButton.Visible = false;
             SloanButton.Visible = false;
+            ukBandsButton.Visible = true;
+            scotBands.Visible = true;
+            cymruBands.Visible = true;
 
         }
         private void DateCalcFormMorph(object sender, EventArgs e)
@@ -1011,26 +1017,29 @@ namespace MeritSupportAid
             in favour of DateConv functionality and resets some 
             of the labels.
             */
+            //button image morphs
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
 
+            //label manipulations
             lblYourDateToday.Text = "Your internal date today is";
             DateConvInput.Text = "";
 
+            //Date controls visible
             SetYourCurrentDateText();
             SettingToggleView(false);
             DateConvInput.Visible = true;
             ConvertButton.Visible = true;
+            multibandGridView.Visible = true;
 
+            //Bands and tax controls cleared
             NIEesBands.Visible = false;
             NIErsBands.Visible = false;
             PenEesButton.Visible = false;
             SloanButton.Visible = false;
             niRateDGV.Visible = false;
             NIratesCombo.Visible = false;
-
-            multibandGridView.Visible = false;
             DateConvResult.Visible = false;
             bandsGridView.Visible = false;
             TaxAllowInput.Visible = false;
@@ -1040,6 +1049,11 @@ namespace MeritSupportAid
             lbl3TaxRes.Visible = false;
             lbl4TaxRes.Visible = false;
             NIratelbl.Visible = false;
+
+            ukBandsButton.Visible = false;
+            scotBands.Visible = false;
+            cymruBands.Visible = false;
+
         }
         private void BandsFormMorph(object sender, EventArgs e)
         {
@@ -1048,14 +1062,17 @@ namespace MeritSupportAid
             in favour of TaxAllowance functionality and repurposes
             some of the labels.
             */
+            //Button morphs
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIcon);
 
+            //label adjustments here
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "NMW Rates";
             TodaysInternal.Text = "";
 
+            //Bands controls visible
             SettingToggleView(false);
             bandsGridView.Visible = true;
             multibandGridView.Visible = true;
@@ -1065,13 +1082,13 @@ namespace MeritSupportAid
             PopulateFormFileValues("NMW");
             PopulateFormFileValues("NI");
             PopulateFormFileValues("RateNIA");
-
             NIEesBands.Visible = true;
             NIErsBands.Visible = true;
             PenEesButton.Visible = true;
             SloanButton.Visible = true;
             NIratelbl.Visible = true;
 
+            //Tax Bands control hidden
             TaxAllowInput.Visible = false;
             TaxAllowanceCalc.Visible = false;
             DateConvInput.Visible = false;
@@ -1081,6 +1098,9 @@ namespace MeritSupportAid
             lbl2TaxRes.Visible = false;
             lbl3TaxRes.Visible = false;
             lbl4TaxRes.Visible = false;
+            ukBandsButton.Visible = false;
+            scotBands.Visible = false;
+            cymruBands.Visible = false;
 
         }
 

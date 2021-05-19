@@ -590,6 +590,9 @@
             this.NIratesCombo = new System.Windows.Forms.ComboBox();
             this.niRateDGV = new System.Windows.Forms.DataGridView();
             this.NIratelbl = new System.Windows.Forms.Label();
+            this.ukBandsButton = new System.Windows.Forms.Button();
+            this.scotBands = new System.Windows.Forms.Button();
+            this.cymruBands = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -5281,6 +5284,40 @@
             this.NIratelbl.Text = "Rates";
             this.NIratelbl.Visible = false;
             // 
+            // ukBandsButton
+            // 
+            this.ukBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(71)))), ((int)(((byte)(179)))));
+            this.ukBandsButton.Location = new System.Drawing.Point(563, 36);
+            this.ukBandsButton.Name = "ukBandsButton";
+            this.ukBandsButton.Size = new System.Drawing.Size(49, 23);
+            this.ukBandsButton.TabIndex = 40;
+            this.ukBandsButton.Text = "UK";
+            this.ukBandsButton.UseVisualStyleBackColor = true;
+            this.ukBandsButton.Visible = false;
+            // 
+            // scotBands
+            // 
+            this.scotBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.scotBands.Location = new System.Drawing.Point(618, 36);
+            this.scotBands.Name = "scotBands";
+            this.scotBands.Size = new System.Drawing.Size(48, 23);
+            this.scotBands.TabIndex = 41;
+            this.scotBands.Text = "S";
+            this.scotBands.UseVisualStyleBackColor = true;
+            this.scotBands.Visible = false;
+            // 
+            // cymruBands
+            // 
+            this.cymruBands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cymruBands.Location = new System.Drawing.Point(672, 36);
+            this.cymruBands.Name = "cymruBands";
+            this.cymruBands.Size = new System.Drawing.Size(48, 23);
+            this.cymruBands.TabIndex = 42;
+            this.cymruBands.Text = "C";
+            this.cymruBands.UseVisualStyleBackColor = true;
+            this.cymruBands.Visible = false;
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5289,6 +5326,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.cymruBands);
+            this.Controls.Add(this.scotBands);
+            this.Controls.Add(this.ukBandsButton);
             this.Controls.Add(this.NIratelbl);
             this.Controls.Add(this.niRateDGV);
             this.Controls.Add(this.NIratesCombo);
@@ -5897,6 +5937,9 @@
         private System.Windows.Forms.ComboBox NIratesCombo;
         private System.Windows.Forms.DataGridView niRateDGV;
         private System.Windows.Forms.Label NIratelbl;
+        private System.Windows.Forms.Button ukBandsButton;
+        private System.Windows.Forms.Button scotBands;
+        private System.Windows.Forms.Button cymruBands;
     }
 }
 
