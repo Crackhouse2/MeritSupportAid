@@ -873,11 +873,11 @@ namespace MeritSupportAid
                 //Add row in here. Ers and ees different bands
                 if (Mode == "Ers" & thisfreq.EndsWith("Ers"))
                 {
-                    NITable.Rows.Add(thisfreq, NIErRate1.ToString("n2"), NIErRate2.ToString("n2"), NIErRate3.ToString("n2"), NIErRate4.ToString("n2"));
+                    NITable.Rows.Add(thisfreq, NIErRate1.ToString("n2"), NIErRate2.ToString("n2"), NIErRate3.ToString("n2"), NIErRate4.ToString("n0"));
                 }
                 else if (Mode == "Ees" & !thisfreq.EndsWith("Ers"))
                 {
-                    NITable.Rows.Add(thisfreq, NIRate1.ToString("n2"), NIRate2.ToString("n2"), NIRate3.ToString("n2"), NIRate4.ToString("n2"));
+                    NITable.Rows.Add(thisfreq, NIRate1.ToString("n2"), NIRate2.ToString("n2"), NIRate3.ToString("n2"), NIRate4.ToString("n0"));
                 }
             }
             
