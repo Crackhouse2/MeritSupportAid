@@ -5319,7 +5319,7 @@
             this.cymruBands.Text = "C";
             this.cymruBands.UseVisualStyleBackColor = true;
             this.cymruBands.Visible = false;
-            this.cymruBands.Click += new System.EventHandler(this.cymruBandBClick);
+            this.cymruBands.Click += new System.EventHandler(this.CymruBandBClick);
             // 
             // MSA
             // 

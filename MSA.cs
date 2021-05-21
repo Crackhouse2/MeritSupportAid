@@ -503,7 +503,10 @@ namespace MeritSupportAid
                 //Click now brings to screen and hides trayicon
                 Show();
                 WindowState = FormWindowState.Normal;
-                SetYourCurrentDateText();
+                if (TodaysInternal.Text != "1257L")
+                {
+                    SetYourCurrentDateText();
+                }
                 TrayIcon.Visible = false;
             }
             else
@@ -512,7 +515,10 @@ namespace MeritSupportAid
                 //now invisible on maximise.
                 Hide();
                 WindowState = FormWindowState.Minimized;
-                SetYourCurrentDateText();
+                if (TodaysInternal.Text != "1257L") 
+                { 
+                   SetYourCurrentDateText(); 
+                }
             }
 
         }
@@ -530,7 +536,10 @@ namespace MeritSupportAid
             /*
             on system load define TodaysInternal
             */
-            SetYourCurrentDateText();
+            if (TodaysInternal.Text != "1257L")
+            {
+                SetYourCurrentDateText();
+            }
             /*
             Use app config to get TopMost property
             */
@@ -1044,7 +1053,10 @@ namespace MeritSupportAid
                 base.OnFormClosing(e);
                 TrayIcon.Visible = true;
                 Hide();
-                SetYourCurrentDateText();
+                if (TodaysInternal.Text != "1257L")
+                {
+                    SetYourCurrentDateText();
+                }
                 TrayIcon.ShowBalloonTip(500);
             }
         }
@@ -1061,7 +1073,7 @@ namespace MeritSupportAid
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarGreyIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxIconColour);
             ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
-
+            TodaysInternal.Visible = true;
             //Label adjustment
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "Your standard yearly allowance is";
@@ -1114,7 +1126,7 @@ namespace MeritSupportAid
             DateButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.CalendarColourIcon);
             TaxBandsButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.TaxBandsButton_BackgroundImage);
             ratesButton.BackgroundImage = new Bitmap(MeritSupportAid.Properties.Resources.RatesIconGrey);
-
+            TodaysInternal.Visible = true;
             //label manipulations
             lblYourDateToday.Text = "Your internal date today is";
             DateConvInput.Text = "";
@@ -1164,6 +1176,7 @@ namespace MeritSupportAid
             TaxAllowInput.Text = "";
             lblYourDateToday.Text = "NMW Rates";
             TodaysInternal.Text = "";
+            TodaysInternal.Visible = false;
 
             //Bands controls visible
             SettingToggleView(false);
@@ -1544,7 +1557,7 @@ namespace MeritSupportAid
             cymruBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PopulateFormFileValues("TAXS");
         }
-        private void cymruBandBClick(object sender, EventArgs e)
+        private void CymruBandBClick(object sender, EventArgs e)
         {
             ukBandsButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             scotBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
