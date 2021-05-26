@@ -47,6 +47,7 @@ namespace MeritSupportAid
 
             }
 
+            
             Updater.GitHubRepo = "/Crackhouse2/MeritSupportAid";
             if (Updater.AutoUpdate(args))
             {

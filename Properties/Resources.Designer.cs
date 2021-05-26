@@ -91,6 +91,16 @@ namespace MeritSupportAid.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Merit_Support_Aid_Application {
+            get {
+                object obj = ResourceManager.GetObject("Merit_Support_Aid_Application", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap RatesIcon {
