@@ -494,6 +494,21 @@ namespace MeritSupportAid
                 SloanButton.Visible = false;
                 multibandGridView.Visible = false;
             }
+            else if (lblYourDateToday.Text == "Your standard yearly allowance is" & OnOff == true)
+            {
+                ukBandsButton.Visible = false;
+                scotBands.Visible = false;
+                cymruBands.Visible = false;
+                multibandGridView.Visible = false;
+            }
+            else if (lblYourDateToday.Text == "Your standard yearly allowance is" & OnOff == false)
+            {
+                ukBandsButton.Visible = true;
+                scotBands.Visible = true;
+                cymruBands.Visible = true;
+                multibandGridView.Visible = true;
+            }
+
         }
         //These events relate to the TrayIcon and application close management
         private void TrayClick(object sender, EventArgs e)
@@ -1194,9 +1209,13 @@ namespace MeritSupportAid
             PopulateFormFileValues("NI");
             PopulateFormFileValues("RateNIA");
             NIEesBands.Visible = true;
+            NIEesBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
             NIErsBands.Visible = true;
+            NIErsBands.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             PenEesButton.Visible = true;
+            PenEesButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             SloanButton.Visible = true;
+            SloanButton.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             NIratelbl.Visible = true;
 
             //Tax Bands control hidden
