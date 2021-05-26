@@ -240,6 +240,11 @@ namespace MeritSupportAid
             }
 
         }
+        private void CopyDebugString(object sender, EventArgs e)
+        {
+            string debugstring = "if @user1<6> = 'SUPPORT' then debug";
+            Clipboard.SetText(debugstring);
+        }
         private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
             /*

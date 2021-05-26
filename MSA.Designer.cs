@@ -569,6 +569,7 @@
             this.SettingCancel = new System.Windows.Forms.Button();
             this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.TrayIconContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DateButton = new System.Windows.Forms.Button();
             this.TaxBandsButton = new System.Windows.Forms.Button();
@@ -593,6 +594,7 @@
             this.ukBandsButton = new System.Windows.Forms.Button();
             this.scotBands = new System.Windows.Forms.Button();
             this.cymruBands = new System.Windows.Forms.Button();
+            this.debugButton = new System.Windows.Forms.Button();
             this.MMT.SuspendLayout();
             this.CSM.SuspendLayout();
             this.TrayIconContext.SuspendLayout();
@@ -4865,10 +4867,10 @@
             this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
-            this.SettingsButton.Location = new System.Drawing.Point(885, 192);
+            this.SettingsButton.Location = new System.Drawing.Point(885, 194);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(66, 51);
+            this.SettingsButton.Size = new System.Drawing.Size(66, 49);
             this.SettingsButton.TabIndex = 10;
             this.SettingsButton.UseVisualStyleBackColor = true;
             this.SettingsButton.Click += new System.EventHandler(this.SettingButtonClick);
@@ -4914,9 +4916,17 @@
             // TrayIconContext
             // 
             this.TrayIconContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyDebugToolStripMenuItem,
             this.exitApplicationToolStripMenuItem});
             this.TrayIconContext.Name = "TrayIconContext";
-            this.TrayIconContext.Size = new System.Drawing.Size(158, 26);
+            this.TrayIconContext.Size = new System.Drawing.Size(158, 48);
+            // 
+            // copyDebugToolStripMenuItem
+            // 
+            this.copyDebugToolStripMenuItem.Name = "copyDebugToolStripMenuItem";
+            this.copyDebugToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.copyDebugToolStripMenuItem.Text = "Copy Debug";
+            this.copyDebugToolStripMenuItem.Click += new System.EventHandler(this.CopyDebugString);
             // 
             // exitApplicationToolStripMenuItem
             // 
@@ -4933,7 +4943,7 @@
             this.DateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateButton.ForeColor = System.Drawing.Color.Transparent;
-            this.DateButton.Location = new System.Drawing.Point(906, 38);
+            this.DateButton.Location = new System.Drawing.Point(906, 18);
             this.DateButton.Name = "DateButton";
             this.DateButton.Size = new System.Drawing.Size(47, 47);
             this.DateButton.TabIndex = 15;
@@ -4948,7 +4958,7 @@
             this.TaxBandsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TaxBandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxBandsButton.ForeColor = System.Drawing.Color.Transparent;
-            this.TaxBandsButton.Location = new System.Drawing.Point(906, 91);
+            this.TaxBandsButton.Location = new System.Drawing.Point(906, 66);
             this.TaxBandsButton.Name = "TaxBandsButton";
             this.TaxBandsButton.Size = new System.Drawing.Size(47, 47);
             this.TaxBandsButton.TabIndex = 16;
@@ -5111,7 +5121,7 @@
             this.ratesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ratesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ratesButton.ForeColor = System.Drawing.Color.Transparent;
-            this.ratesButton.Location = new System.Drawing.Point(906, 144);
+            this.ratesButton.Location = new System.Drawing.Point(906, 114);
             this.ratesButton.Name = "ratesButton";
             this.ratesButton.Size = new System.Drawing.Size(47, 47);
             this.ratesButton.TabIndex = 29;
@@ -5321,6 +5331,19 @@
             this.cymruBands.Visible = false;
             this.cymruBands.Click += new System.EventHandler(this.CymruBandBClick);
             // 
+            // debugButton
+            // 
+            this.debugButton.BackgroundImage = global::MeritSupportAid.Properties.Resources.bug;
+            this.debugButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.debugButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.debugButton.ForeColor = System.Drawing.Color.Transparent;
+            this.debugButton.Location = new System.Drawing.Point(915, 163);
+            this.debugButton.Name = "debugButton";
+            this.debugButton.Size = new System.Drawing.Size(31, 31);
+            this.debugButton.TabIndex = 43;
+            this.debugButton.UseVisualStyleBackColor = true;
+            this.debugButton.Click += new System.EventHandler(this.CopyDebugString);
+            // 
             // MSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5329,6 +5352,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(953, 245);
+            this.Controls.Add(this.debugButton);
             this.Controls.Add(this.cymruBands);
             this.Controls.Add(this.scotBands);
             this.Controls.Add(this.ukBandsButton);
@@ -5943,6 +5967,8 @@
         private System.Windows.Forms.Button ukBandsButton;
         private System.Windows.Forms.Button scotBands;
         private System.Windows.Forms.Button cymruBands;
+        private System.Windows.Forms.ToolStripMenuItem copyDebugToolStripMenuItem;
+        private System.Windows.Forms.Button debugButton;
     }
 }
 

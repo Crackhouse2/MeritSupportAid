@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="ICO_64.ico" />
     <Content Include="MSA_64.ico" />
+    <None Include="Resources\bug.png" />
     <None Include="Resources\RatesIcon.bmp" />
     <None Include="Resources\RatesIconGrey.bmp" />
     <EmbeddedResource Include="ZZupdater0.exe" />
