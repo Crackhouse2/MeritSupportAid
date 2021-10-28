@@ -12,11 +12,13 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
+using Google.Cloud.Firestore;
 
 namespace MeritSupportAid
 {
     public partial class MSA : Form
     {
+        FirestoreDb database;
         public MSA()
         {
             InitializeComponent();
@@ -153,6 +155,8 @@ namespace MeritSupportAid
             MenuResultsString.Visible = true;
             //MenuResultsBox2.Text = MenuResultsBox.Text;
             Clipboard.SetText(MenuResultsString.Text);
+
+            Add_Document_with_AutoID("menuItemClicks",MenuResultsString.Text);
         }
         private bool IsThisTheEnd(string CheckMyVarOut, string SourceVar)
         {
@@ -244,6 +248,7 @@ namespace MeritSupportAid
         {
             string debugstring = "if @user1<6> = 'SUPPORT' then debug";
             Clipboard.SetText(debugstring);
+            Add_Document_with_AutoID("debugClicks","");
         }
         private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
@@ -295,6 +300,7 @@ namespace MeritSupportAid
         {
             //Just re-copy the string to the clipboard
             Clipboard.SetText(MenuResultsString.Text);
+            Add_Document_with_AutoID("labelClicks", MenuResultsString.Text);
         }
         //These events relate to the date converter
         private string DateConversion(string PrimaryInput)
@@ -302,7 +308,6 @@ namespace MeritSupportAid
             /*
             This is the date converter logic here.
             */
-
             if (!int.TryParse(PrimaryInput, out _))
             {
                 try
@@ -319,7 +324,7 @@ namespace MeritSupportAid
                 catch (FormatException)
                 {
                     //If error in int conversion, return this error
-                    return "ERROR 001";
+                    return "ERR001";
                 }
 
             }
@@ -339,7 +344,7 @@ namespace MeritSupportAid
                 catch (FormatException)
                 {
                     //If error with string conversion, return this error
-                    return "ERROR 002";
+                    return "ERR002";
                 }
 
             }
@@ -351,6 +356,7 @@ namespace MeritSupportAid
             */
             ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             string PrimaryInput = DateConvInput.Text;
+            Add_Document_with_AutoID("dateConvClicks", "");
             if (PrimaryInput == "Sy is awesome!")
             {
                 MessageBox.Show("Yeah he is!", "So Damn Right!");
@@ -362,16 +368,16 @@ namespace MeritSupportAid
                 {
                     //Try parsing the string into DateConversion
                     string ResultCheck = DateConversion(PrimaryInput);
-                    if (ResultCheck.StartsWith("ERROR"))
+                    if (ResultCheck.StartsWith("ERR"))
                     {
                         //Error handling in here
                         string ErrorString;
                         switch (ResultCheck)
                         {
-                            case "ERROR 001":
+                            case "ERR001":
                                 ErrorString = "Error in int conversion, revise your input";
                                 break;
-                            case "ERROR 002":
+                            case "ERR002":
                                 ErrorString = "Error in string conversion, revise your input. Please use a valid date format.";
                                 break;
                             default:
@@ -379,6 +385,9 @@ namespace MeritSupportAid
                                 //Put a thing here for writing a log entry
                                 break;
                         }
+
+                        ErrorString = ResultCheck + " - " + ErrorString;
+                        Add_Document_with_AutoID("knownErrorLog",ErrorString);
 
                         //Hide results label and throw error popup
                         DateConvResult.Visible = false;
@@ -518,6 +527,7 @@ namespace MeritSupportAid
             logic put in place to toggle window based 
             on TrayIcon click
             */
+            Add_Document_with_AutoID("trayClicks","");
             if (FormWindowState.Minimized == WindowState)
             {
                 //Click now brings to screen and hides trayicon
@@ -554,8 +564,18 @@ namespace MeritSupportAid
         private void Form1_Load(object sender, EventArgs e)
         {
             /*
+            on system load create firestore db 
+            */
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"msadb-9edc9-firebase-adminsdk-91mug-6c5c4ad061.json";
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+
+             database = FirestoreDb.Create("msadb-9edc9");
+
+            /*
             on system load define TodaysInternal
             */
+            Add_Document_with_AutoID("appStarted","");
+
             if (TodaysInternal.Text != "1257L")
             {
                 SetYourCurrentDateText();
@@ -1255,6 +1275,7 @@ namespace MeritSupportAid
             ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
             float SingleRate;
             string MSGBoxRes;
+            Add_Document_with_AutoID("taxAllowClicks","");
             if (TaxAllowInput.Text == "0T")
             {
                 SingleRate = float.Parse(lines[16]);
@@ -1588,7 +1609,34 @@ namespace MeritSupportAid
             cymruBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
             PopulateFormFileValues("TAXC");
         }
-    
+        void Add_Document_with_AutoID(string CollName , string relevantData)
+        {
+            CollectionReference coll = database.Collection(CollName);
+            //string thisName = "";
+            //string currentDT = "";
+            Dictionary<string, object> sendData = new Dictionary<string, object>()
+            {
+                {"stationID", Environment.MachineName },
+                {"dateTime", DateTime.Now.ToString() }
+            };
+            switch (relevantData)
+            {
+                case "menuItemClicks":
+                    sendData.Add("requestResponse", MenuResultsString.Text);
+                    break;
+                case "labelClicks":
+                    sendData.Add("requestResponse", MenuResultsString.Text);
+                    break;
+                case "knownErrorLog":
+                    sendData.Add();
+                    break;
+                default:
+                    break;
+            }
+
+            coll.AddAsync(sendData);
+        }
     }
+
 }
 
