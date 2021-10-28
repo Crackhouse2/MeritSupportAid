@@ -1622,13 +1622,13 @@ namespace MeritSupportAid
             switch (relevantData)
             {
                 case "menuItemClicks":
-                    sendData.Add("requestResponse", MenuResultsString.Text);
+                    sendData.Add("requestResponse", relevantData);
                     break;
                 case "labelClicks":
-                    sendData.Add("requestResponse", MenuResultsString.Text);
+                    sendData.Add("requestResponse", relevantData);
                     break;
                 case "knownErrorLog":
-                    sendData.Add();
+                    sendData.Add("requestData",relevantData);
                     break;
                 default:
                     break;
