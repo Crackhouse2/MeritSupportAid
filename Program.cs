@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using AutoUpdate;
+using System;
 using System.ComponentModel;
-using System.Threading;
-using System.Runtime.InteropServices;
-using AutoUpdate;
-using System.Net;
 using System.IO;
+using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace MeritSupportAid
 {
-  
+
     static class Program
     {
         private static readonly String SingleInst = "MeritSupportAid";
@@ -47,13 +45,13 @@ namespace MeritSupportAid
 
             }
 
-            
+
             Updater.GitHubRepo = "/Crackhouse2/MeritSupportAid";
             if (Updater.AutoUpdate(args))
             {
                 return;
             }
-                
+
 
             try
             {
@@ -73,7 +71,7 @@ namespace MeritSupportAid
 
             singleAppComThread.CancelAsync();
             while (singleAppComThread.IsBusy)
-            Thread.Sleep(50);
+                Thread.Sleep(50);
             threadComEvent.Close();
 
         }

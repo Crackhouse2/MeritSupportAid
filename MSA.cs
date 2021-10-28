@@ -1,18 +1,13 @@
-﻿using System;
+﻿using Google.Cloud.Firestore;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using System.IO;
+using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices;
-using Google.Cloud.Firestore;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace MeritSupportAid
 {
@@ -156,7 +151,7 @@ namespace MeritSupportAid
             //MenuResultsBox2.Text = MenuResultsBox.Text;
             Clipboard.SetText(MenuResultsString.Text);
 
-            Add_Document_with_AutoID("menuItemClicks",MenuResultsString.Text);
+            Add_Document_with_AutoID("menuItemClicks", MenuResultsString.Text);
         }
         private bool IsThisTheEnd(string CheckMyVarOut, string SourceVar)
         {
@@ -248,7 +243,7 @@ namespace MeritSupportAid
         {
             string debugstring = "if @user1<6> = 'SUPPORT' then debug";
             Clipboard.SetText(debugstring);
-            Add_Document_with_AutoID("debugClicks","");
+            Add_Document_with_AutoID("debugClicks", "");
         }
         private bool IsThisTheSystemMenu(string CheckMyVarOut)
         {
@@ -387,7 +382,7 @@ namespace MeritSupportAid
                         }
 
                         ErrorString = ResultCheck + " - " + ErrorString;
-                        Add_Document_with_AutoID("knownErrorLog",ErrorString);
+                        Add_Document_with_AutoID("knownErrorLog", ErrorString);
 
                         //Hide results label and throw error popup
                         DateConvResult.Visible = false;
@@ -527,7 +522,7 @@ namespace MeritSupportAid
             logic put in place to toggle window based 
             on TrayIcon click
             */
-            Add_Document_with_AutoID("trayClicks","");
+            Add_Document_with_AutoID("trayClicks", "");
             if (FormWindowState.Minimized == WindowState)
             {
                 //Click now brings to screen and hides trayicon
@@ -545,9 +540,9 @@ namespace MeritSupportAid
                 //now invisible on maximise.
                 Hide();
                 WindowState = FormWindowState.Minimized;
-                if (TodaysInternal.Text != "1257L") 
-                { 
-                   SetYourCurrentDateText(); 
+                if (TodaysInternal.Text != "1257L")
+                {
+                    SetYourCurrentDateText();
                 }
             }
 
@@ -569,12 +564,12 @@ namespace MeritSupportAid
             string path = AppDomain.CurrentDomain.BaseDirectory + @"msadb-9edc9-firebase-adminsdk-91mug-6c5c4ad061.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-             database = FirestoreDb.Create("msadb-9edc9");
+            database = FirestoreDb.Create("msadb-9edc9");
 
             /*
             on system load define TodaysInternal
             */
-            Add_Document_with_AutoID("appStarted","");
+            Add_Document_with_AutoID("appStarted", "");
 
             if (TodaysInternal.Text != "1257L")
             {
@@ -701,7 +696,7 @@ namespace MeritSupportAid
                         DataTable PenRates = new DataTable();
                         PenRates.Columns.Add("Type", typeof(string));
                         PenRates.Columns.Add("Perc", typeof(string));
-                        
+
                         float TotalPen = float.Parse(lines[57]);
                         float Ers = float.Parse(lines[58]);
                         float Ees = TotalPen - Ers;
@@ -757,7 +752,7 @@ namespace MeritSupportAid
                     switch (Mode)
                     {
                         case "UK":
-                            TaxTable = GetUKTable(lines,Mode);
+                            TaxTable = GetUKTable(lines, Mode);
                             break;
                         case "S":
                             TaxTable = GetScotTable(lines);
@@ -768,7 +763,7 @@ namespace MeritSupportAid
                         default:
                             TaxTable = GetUKTable(lines, Mode);
                             break;
-                    } 
+                    }
                     multibandGridView.DataSource = TaxTable;
                     multibandGridView.ClearSelection();
                     return;
@@ -843,7 +838,7 @@ namespace MeritSupportAid
 
         }
 
-        static DataTable GetUKTable(string[] lines , string Mode)
+        static DataTable GetUKTable(string[] lines, string Mode)
         {
             DataTable UKTable = new DataTable();
             UKTable.Columns.Add("Freq", typeof(string));
@@ -852,12 +847,12 @@ namespace MeritSupportAid
             {
                 rateBands = lines[29].Split(',');
             }
-           
+
             for (int i = 0; i < rateBands.Length; i++)
             {
                 if (rateBands[i] != "")
                 {
-                    float uk = float.Parse(rateBands[i])/100;
+                    float uk = float.Parse(rateBands[i]) / 100;
                     UKTable.Columns.Add(uk.ToString(), typeof(string));
                 }
             }
@@ -868,11 +863,11 @@ namespace MeritSupportAid
             {
                 bandline = lines[26].Split(',');
             }
-            float band1 = float.Parse(bandline[0])/100;
-            float band2 = float.Parse(bandline[1])/100;
-            float band3 = float.Parse(bandline[2])/100;
+            float band1 = float.Parse(bandline[0]) / 100;
+            float band2 = float.Parse(bandline[1]) / 100;
+            float band3 = float.Parse(bandline[2]) / 100;
 
-            UKTable.Rows.Add("Weekly", (band1/ 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3 / 1).ToString("n0"));
+            UKTable.Rows.Add("Weekly", (band1 / 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3 / 1).ToString("n0"));
             UKTable.Rows.Add("Fortnightly", (band1 / 26).ToString("n2"), (band2 / 26).ToString("n2"), (band3 / 1).ToString("n0"));
             UKTable.Rows.Add("4 Weekly", (band1 / 13).ToString("n2"), (band2 / 13).ToString("n2"), (band3 / 1).ToString("n0"));
             UKTable.Rows.Add("Monthly", (band1 / 12).ToString("n2"), (band2 / 12).ToString("n2"), (band3 / 1).ToString("n0"));
@@ -889,7 +884,7 @@ namespace MeritSupportAid
             {
                 if (rateBands[i] != "")
                 {
-                    float Scot = float.Parse(rateBands[i])/100;
+                    float Scot = float.Parse(rateBands[i]) / 100;
                     ScotTable.Columns.Add(Scot.ToString(), typeof(string));
                 }
             }
@@ -901,7 +896,7 @@ namespace MeritSupportAid
             float band4 = float.Parse(bandline[3]) / 100;
             float band5 = float.Parse(bandline[4]) / 100;
 
-            ScotTable.Rows.Add("Wk", (band1 / 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3/ 52).ToString("n2"), (band4 / 52).ToString("n2"), "Bal");
+            ScotTable.Rows.Add("Wk", (band1 / 52).ToString("n2"), (band2 / 52).ToString("n2"), (band3 / 52).ToString("n2"), (band4 / 52).ToString("n2"), "Bal");
             ScotTable.Rows.Add("Fort", (band1 / 26).ToString("n2"), (band2 / 26).ToString("n2"), (band3 / 26).ToString("n2"), (band4 / 26).ToString("n2"), "Bal");
             ScotTable.Rows.Add("4W", (band1 / 13).ToString("n2"), (band2 / 13).ToString("n2"), (band3 / 13).ToString("n2"), (band4 / 13).ToString("n2"), "Bal");
             ScotTable.Rows.Add("M", (band1 / 12).ToString("n2"), (band2 / 12).ToString("n2"), (band3 / 12).ToString("n2"), (band4 / 12).ToString("n2"), "Bal");
@@ -920,7 +915,7 @@ namespace MeritSupportAid
             PenTable.Columns.Add("Max Pay", typeof(string));
 
             //Add row in here. Ers and ees different bands
-            PenTable.Rows.Add("Weekly",(float.Parse(lines[59])/100).ToString("n2"), (float.Parse(lines[60]) / 100).ToString("n2"), (float.Parse(lines[61]) / 100).ToString("n2"));
+            PenTable.Rows.Add("Weekly", (float.Parse(lines[59]) / 100).ToString("n2"), (float.Parse(lines[60]) / 100).ToString("n2"), (float.Parse(lines[61]) / 100).ToString("n2"));
             PenTable.Rows.Add("Fortnightly", (float.Parse(lines[65]) / 100).ToString("n2"), (float.Parse(lines[66]) / 100).ToString("n2"), (float.Parse(lines[67]) / 100).ToString("n2"));
             PenTable.Rows.Add("4 Weekly", (float.Parse(lines[68]) / 100).ToString("n2"), (float.Parse(lines[69]) / 100).ToString("n2"), (float.Parse(lines[70]) / 100).ToString("n2"));
             PenTable.Rows.Add("Monthly", (float.Parse(lines[62]) / 100).ToString("n2"), (float.Parse(lines[63]) / 100).ToString("n2"), (float.Parse(lines[64]) / 100).ToString("n2"));
@@ -935,7 +930,7 @@ namespace MeritSupportAid
 
             //Add band names per file
             NITable.Columns.Add("Frequency", typeof(string));
-            for (int i = 0;i < NIBandNames.Length; i++)
+            for (int i = 0; i < NIBandNames.Length; i++)
             {
                 if (NIBandNames[i] != "")
                 {
@@ -1018,11 +1013,11 @@ namespace MeritSupportAid
                     NITable.Rows.Add(thisfreq, NIRate1.ToString("n2"), NIRate2.ToString("n2"), NIRate3.ToString("n2"), NIRate4.ToString("n0"));
                 }
             }
-            
+
             return NITable;
 
         }
-        static DataTable NIRateTable(string[] Bands, string[] BandRates,string[] BandErRates)
+        static DataTable NIRateTable(string[] Bands, string[] BandRates, string[] BandErRates)
         {
             DataTable NIRateTable = new DataTable();
             NIRateTable.Columns.Add("Bands", typeof(string));
@@ -1081,7 +1076,7 @@ namespace MeritSupportAid
             /*
             This overrides the form close to now hide and go to system tray.
             */
-                    if (Properties.Settings.Default.ForceClose == true)
+            if (Properties.Settings.Default.ForceClose == true)
             {
                 //Close application if force close true
                 Application.Exit();
@@ -1275,7 +1270,7 @@ namespace MeritSupportAid
             ManipulateTaxCode TaxAllowCalculator = new ManipulateTaxCode();
             float SingleRate;
             string MSGBoxRes;
-            Add_Document_with_AutoID("taxAllowClicks","");
+            Add_Document_with_AutoID("taxAllowClicks", "");
             if (TaxAllowInput.Text == "0T")
             {
                 SingleRate = float.Parse(lines[16]);
@@ -1570,7 +1565,7 @@ namespace MeritSupportAid
         }
         private void ComboNIChange(object sender, EventArgs e)
         {
-            PopulateFormFileValues("RateNI"+NIratesCombo.Text);
+            PopulateFormFileValues("RateNI" + NIratesCombo.Text);
         }
         private void SLButtonClick(object sender, EventArgs e)
         {
@@ -1609,7 +1604,7 @@ namespace MeritSupportAid
             cymruBands.ForeColor = System.Drawing.Color.FromArgb(234, 71, 179);
             PopulateFormFileValues("TAXC");
         }
-        void Add_Document_with_AutoID(string CollName , string relevantData)
+        void Add_Document_with_AutoID(string CollName, string relevantData)
         {
             CollectionReference coll = database.Collection(CollName);
             //string thisName = "";
