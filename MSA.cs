@@ -1619,7 +1619,7 @@ namespace MeritSupportAid
                 {"stationID", Environment.MachineName },
                 {"dateTime", DateTime.Now.ToString() }
             };
-            switch (relevantData)
+            switch (CollName)
             {
                 case "menuItemClicks":
                     sendData.Add("requestResponse", relevantData);
@@ -1628,7 +1628,7 @@ namespace MeritSupportAid
                     sendData.Add("requestResponse", relevantData);
                     break;
                 case "knownErrorLog":
-                    sendData.Add("requestData",relevantData);
+                    sendData.Add("requestData", relevantData);
                     break;
                 default:
                     break;
