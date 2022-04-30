@@ -352,7 +352,7 @@ namespace MeritSupportAid
             ConvertButton.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             string PrimaryInput = DateConvInput.Text;
             Add_Document_with_AutoID("dateConvClicks", "");
-            if (PrimaryInput == "Sy is awesome!")
+            if (PrimaryInput == "Stu is awesome!")
             {
                 MessageBox.Show("Yeah he is!", "So Damn Right!");
             }
