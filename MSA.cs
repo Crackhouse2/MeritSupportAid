@@ -354,7 +354,7 @@ namespace MeritSupportAid
             Add_Document_with_AutoID("dateConvClicks", "");
             if (PrimaryInput == "Stu is awesome!")
             {
-                MessageBox.Show("Yeah he is!", "So Damn Right!");
+                MessageBox.Show("Yeah he is!", "God Damn Right!");
             }
             else
             {
